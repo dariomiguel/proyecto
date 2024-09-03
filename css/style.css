@@ -1,0 +1,22 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "SUSE", sans-serif;
+}
+
+header {
+    background-color: #eff1f3;
+    height: 12vh;
+}
+
+.logo {
+    height: 100%;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    text-decoration: none;
+}
