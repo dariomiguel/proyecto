@@ -180,6 +180,7 @@ h2 {
     justify-content: space-around;
     margin-top: 200px;
     background-color: grey;
+    margin-bottom: 0;
 }
 
 .datos {
@@ -196,4 +197,8 @@ h2 {
     margin-top: 10px;
 }
 
-/*FOOTER*/
+/* FOOTER
+.pieDePagina {
+    position: absolute;
+    bottom: 0;
+} */
