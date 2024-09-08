@@ -1,58 +1,65 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+body {
     margin: 0 auto;
-    
 }
 
-    /*HEADER*/
+/*HEADER*/
 
-header svg{
+header svg {
     width: 40px;
     height: 40px;
     margin-right: 60px;
 }
-.contenedorCarrito{
+
+.logo img {
+    display: block;
+    height: 128px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.contenedorCarrito {
     width: 40px;
     background-color: grey;
-    
 }
-.headerTop{
+.headerTop {
     display: flex;
     justify-content: space-around;
     padding-top: 20px;
     margin-bottom: 20px;
 }
 
-.headerBot{
+.headerBot {
     text-align: center;
     background-color: grey;
     font-size: 20px;
-    
 }
-li{
+li {
     display: inline;
     margin-inline: 70px;
 }
-li a{
+li a {
     text-decoration: none;
     color: #fff;
 }
 
-header input{
+header input {
     padding: 10px;
     padding-right: 300px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    
 }
-.buscador{
+.buscador {
     display: flex;
 }
-header button{
+header button {
     background: crimson;
     margin: auto;
     padding: 15px 20px;
@@ -65,131 +72,128 @@ header button{
     color: #fff;
     cursor: pointer;
 }
-header{
+header {
     background: darkgrey;
 }
 
-    /*HEADER*/
+/*HEADER*/
 
-    /*MAIN*/
-    .carruselImagenes{
-        height: 700px;
-        width: 700px;
-        text-align: center;
-        background-color: darkgray;
-        align-content: center;
-        margin: auto;
-        margin-top: 30px;
-        font-size: 20px;
-    }
-    
-    .pasos{
-        display: flex;
-        justify-content: space-around;
-        margin-top: 30px;
-    }
-    .paso{
-        height: 300px;
-        width: 300px;
-        background-color: darkgrey;
-        align-content: center;
-        text-align: center;
-    }
+/*MAIN*/
+.carruselImagenes {
+    height: 700px;
+    width: 700px;
+    text-align: center;
+    background-color: darkgray;
+    align-content: center;
+    margin: auto;
+    margin-top: 30px;
+    font-size: 20px;
+}
 
-    h2{
-        text-align: center;
-        margin-top: 50px;
-        margin-bottom: 50px;
-    }
+.pasos {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+.paso {
+    height: 300px;
+    width: 300px;
+    background-color: darkgrey;
+    align-content: center;
+    text-align: center;
+}
 
-    .curso{
-        height: 300px;
-        width: 300px;
-        border-style: solid;
-        align-content: center;
-        font-size: 20px;
-    }
-    .fotoCurso{
-        height: 200px;
-        width: 250px;
-        margin: auto;
-        background-color:grey;
-    }
-    .precioFotoCurso{
-        height: 180px;
-        width: 250px;
-        color: #fff;
-        display: flex;
-        justify-content: right;
-        align-items: end;
-    }
+h2 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
 
-    .infoCurso{
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    .horasCurso{
-        font-size: 25px;
-        font-weight: 700;
-    }
-    .linkDetalle{
-        font-size: 15px;
-        text-align: right;
-    }
-    .botonComprar{
-        text-align: right;
-    }
+.curso {
+    height: 300px;
+    width: 300px;
+    border-style: solid;
+    align-content: center;
+    font-size: 20px;
+}
+.fotoCurso {
+    height: 200px;
+    width: 250px;
+    margin: auto;
+    background-color: grey;
+}
+.precioFotoCurso {
+    height: 180px;
+    width: 250px;
+    color: #fff;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+}
 
-    .cursosDestacados{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        gap: 20px;
-        justify-items: center;
-    }
+.infoCurso {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.horasCurso {
+    font-size: 25px;
+    font-weight: 700;
+}
+.linkDetalle {
+    font-size: 15px;
+    text-align: right;
+}
+.botonComprar {
+    text-align: right;
+}
 
+.cursosDestacados {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
 
-    .mediosDePago{
-        display: flex;
-        justify-content: space-around;
-        margin-top: 50px;
-    }
+.mediosDePago {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
 
-    .medio{
-        height: 300px;
-        width: 300px;
-        background-color: darkgrey;
-        align-content: center;
-        text-align: center;
-        font-size: 20px;
-    }
+.medio {
+    height: 300px;
+    width: 300px;
+    background-color: darkgrey;
+    align-content: center;
+    text-align: center;
+    font-size: 20px;
+}
 
-    /*MAIN*/
+/*MAIN*/
 
-    /*FOOTER*/
-    .pieDePagina{
-        display: flex;
-        justify-content: space-around;
-        margin-top: 200px;
-        background-color: grey;
+/*FOOTER*/
+.pieDePagina {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 200px;
+    background-color: grey;
+}
 
-    }
+.datos {
+    height: 150px;
+    width: 450px;
+    background-color: darkgrey;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 2px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
 
-    .datos{
-        height: 150px;
-        width: 450px;
-        background-color: darkgrey;
-        border-color: #fff;
-        border-style: solid;
-        border-width: 2px;
-        font-size: 20px;
-        font-weight: 600;
-        color: #fff;
-        margin-bottom: 10px;
-        margin-top: 10px;
-    }
-
-    /*FOOTER*/
-
+/*FOOTER*/
