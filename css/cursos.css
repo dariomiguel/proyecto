@@ -67,6 +67,39 @@
     text-align: center;
 }
 
+/*------------- PERFIL DOCENTE -------------*/
+.contenedor-docente{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contenedor-docente .info-docente{
+    width: 100%;
+    height: fit-content;
+    background-color: grey;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.contenedor-imagen__docente{
+    width: 180px;
+}
+
+.contenedor-imagen__docente img{
+    width: 100%;
+    border-radius: 100px;
+}
+
+.nombre-docente{
+    font-size: 1.5rem;
+}
+
+.descripcion-docente{
+    font-size: 1.2rem;
+}
+
 /* ------------- MAIN (extras) ------------- */
 
 .curso-item{
