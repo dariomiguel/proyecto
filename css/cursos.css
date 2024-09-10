@@ -89,7 +89,49 @@
 
 .contenedor-imagen__docente img{
     width: 100%;
-    border-radius: 100px;
+    border-radius: 50%;
+}
+
+.contenedor-info__docente{
+    width: 70%;
+}
+
+.rating{
+    display: flex;
+    gap: 0.8rem;
+    position: relative;
+    flex-direction: row-reverse;
+    justify-content: left;
+}
+
+
+
+.rating input{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.rating input::before{
+    content: '\f005';
+    position: absolute;
+    font-family: fontAwesome;
+    font-size: 20px;
+    color: #111;
+    transition: .5s;
+}
+
+.rating input:hover ~ input::before,
+.rating input:hover::before,
+.rating input:checked ~ input::before,
+.rating input:checked::before{
+    color: var(--c);
 }
 
 .nombre-docente{
