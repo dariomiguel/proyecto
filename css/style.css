@@ -307,3 +307,31 @@ input:disabled {
 }
 
 /*MEDIA QUERIES*/
+
+/*CALENDARIO*/
+.contenedorCalendario{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(7,0fr);
+}
+
+.contenedorCalendario_dia{
+    width: 220px;
+    height: 220px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    line-height: 40px;
+}
+
+.cursoCalendario{
+    width:200px;
+    text-align: left;
+    background-color: goldenrod;
+    border-radius: 10px 10px 10px 10px;
+    padding-left:10px;
+}
+
+/*CALENDARIO*/
