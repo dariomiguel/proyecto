@@ -83,6 +83,12 @@
     gap: 1rem;
 }
 
+.descripcion-docente {
+    font-family: "Poiret One", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
 .contenedor-imagen__docente{
     width: 180px;
 }
@@ -104,8 +110,6 @@
     justify-content: left;
 }
 
-
-
 .rating input{
     position: relative;
     width: 40px;
@@ -114,6 +118,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    border-color: gray;
     appearance: none;
     -webkit-appearance: none;
 }
