@@ -11,29 +11,195 @@
             rel="stylesheet"
         />
         <link rel="icon" href="../img/favicon.ico" />
-        <title>Inicio</title>
+        <title>Formulario de Inscrición</title>
     </head>
     <body>
         <header>
-            <img class="logo" src="../img/logo.png" alt="logo de la empresa" />
+            <div class="headerTop">
+                <div class="logo">
+                    <a href="../index.html"><h1>Logo</h1></a>
+                </div>
+
+                <div class="buscador">
+                    <input type="text" placeholder="Buscar" />
+                    <button>Ok</button>
+                </div>
+                <div class="contenedorCarrito">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="carritoCompra"
+                    >
+                        <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                        />
+                    </svg>
+                </div>
+            </div>
+            <div class="headerBot">
+                <nav>
+                    <ul>
+                        <li><a href="./contacto.html">Contacto</a></li>
+                        <li>
+                            <a href="./calendario_de_cursos.html">Calendario</a>
+                        </li>
+                        <li>
+                            <a href="./detalle_de_curso.html">Detalles</a>
+                        </li>
+                        <li>
+                            <a href="./descripcion.html">Inscripcion</a>
+                        </li>
+                        <li>
+                            <a href="./personalizacion_de_gift_card.html"
+                                >Gift Card</a
+                            >
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </header>
-        <nav>
-            <ul>
-                <li><a href="./contacto.html">Contacto</a></li>
-                <li>
-                    <a href="../index.html">Inicio</a>
-                </li>
-                <li><a href="./detalle_de_curso.html">Detalles</a></li>
-                <li>
-                    <a href="./formulario_de_inscripcion.html">Inscripción</a>
-                </li>
-                <li>
-                    <a href="./personalizacion_de_gift_card.html">Gift card</a>
-                </li>
-            </ul>
-        </nav>
         <main>
-            <h1>Titulo</h1>
+            <h1>TITULO CURSO</h1>
+            <h2>INSCRIPCIÓN</h2>
+            <div class="contenedorInscripciones">
+                <form action="#" method="POST">
+                    <div class="inscripcion">
+                        <div class="inscripcion__contenedor">
+                            <div class="inscripcion__input">
+                                <label for="curso">Curso</label>
+                                <input
+                                    name="curso"
+                                    type="text"
+                                    placeholder="Seleccionar
+                                    "
+                                />
+                            </div>
+
+                            <div class="inscripcion__input">
+                                <label for="descripcion">Descripción</label>
+                                <input
+                                    type="descripcion"
+                                    name="descripcion"
+                                    placeholder="..."
+                                />
+                            </div>
+
+                            <div class="inscripcion__input">
+                                <label for="duracion">Duración</label>
+                                <input
+                                    type="text"
+                                    name="duracion"
+                                    placeholder="..."
+                                />
+                            </div>
+
+                            <button type="button" class="removerCurso"></button>
+                        </div>
+                    </div>
+                </form>
+                <form action="#" method="POST">
+                    <div class="inscripcion">
+                        <div class="inscripcion__contenedor">
+                            <div class="inscripcion__input">
+                                <label for="curso">Curso</label>
+                                <input
+                                    name="curso"
+                                    type="text"
+                                    placeholder="Seleccionar
+                                    "
+                                />
+                            </div>
+
+                            <div class="inscripcion__input">
+                                <label for="descripcion">Descripción</label>
+                                <input
+                                    type="descripcion"
+                                    name="descripcion"
+                                    placeholder="..."
+                                />
+                            </div>
+
+                            <div class="inscripcion__input">
+                                <label for="duracion">Duración</label>
+                                <input
+                                    type="text"
+                                    name="duracion"
+                                    placeholder="..."
+                                />
+                            </div>
+
+                            <button type="button" class="removerCurso"></button>
+                        </div>
+                    </div>
+                </form>
+                <form action="#" method="POST">
+                    <div class="inscripcion">
+                        <div class="inscripcion__contenedor">
+                            <div class="inscripcion__input">
+                                <label for="curso">Curso</label>
+                                <input
+                                    name="curso"
+                                    type="text"
+                                    placeholder="Seleccionar
+                                    "
+                                />
+                            </div>
+
+                            <div class="inscripcion__input">
+                                <label for="descripcion">Descripción</label>
+                                <input
+                                    type="descripcion"
+                                    name="descripcion"
+                                    placeholder="..."
+                                />
+                            </div>
+
+                            <div class="inscripcion__input">
+                                <label for="duracion">Duración</label>
+                                <input
+                                    type="text"
+                                    id="duracion"
+                                    name="duracion"
+                                    placeholder="..."
+                                />
+                            </div>
+
+                            <button type="button" class="removerCurso"></button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="contenedorAgregarPersona">
+                    <button type="button" class="agregarPersona"></button>
+                    <p>Agregar Persona</p>
+                </div>
+
+                <div class="contenedorInscribirse">
+                    <p>$ 0.00</p>
+                    <button type="button" class="inscribirse">
+                        Inscribirse
+                    </button>
+                </div>
+            </div>
         </main>
+
+        <footer>
+            <div class="pieDePagina">
+                <div class="datos">
+                    <p>Datos del Grupo</p>
+                </div>
+                <div class="datos">
+                    <p>Menu Inferior</p>
+                </div>
+                <div class="datos">
+                    <p>Redes Sociales</p>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>

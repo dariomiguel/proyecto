@@ -1,36 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../css/style.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap"
-            rel="stylesheet"
-        />
-        <link rel="icon" href="../img/favicon.ico" />
-        <title>Inicio</title>
-    </head>
-    <body>
-        <header>
-            <img class="logo" src="../img/logo.png" alt="logo de la empresa" />
-        </header>
-        <nav>
-            <ul>
-                <li><a href="./contacto.html">Contacto</a></li>
-                <li>
-                    <a href="../index.html">Inicio</a>
-                </li>
-                <li><a href="./detalle_de_curso.html">Detalles</a></li>
-                <li>
-                    <a href="./formulario_de_inscripcion.html">Inscripción</a>
-                </li>
-                <li>
-                    <a href="./personalizacion_de_gift_card.html">Gift card</a>
-                </li>
-            </ul>
-        </nav>
-    </body>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/cursos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet" />
+    
+    <link rel="icon" href="../img/favicon.ico" />
+    <title>Detalle de Curso</title>
+</head>
+
+<body>
+    <header>
+        <div class="headerTop">
+            <div class="logo">
+                <a href="../index.html">
+                    <h1>Logo</h1>
+                </a>
+            </div>
+
+            <div class="buscador">
+                <input type="text" placeholder="Buscar" />
+                <button>Ok</button>
+            </div>
+            <div class="contenedorCarrito">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="carritoCompra">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                </svg>
+            </div>
+        </div>
+        <div class="headerBot">
+            <nav>
+                <ul>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                    <li>
+                        <a href="./calendario_de_cursos.html">Calendario</a>
+                    </li>
+                    <li>
+                        <a href="./detalle_de_curso.html">Detalles</a>
+                    </li>
+                    <li>
+                        <a href="./formulario_de_inscripcion.html">Inscripcion</a>
+                    </li>
+                    <li>
+                        <a href="./personalizacion_de_gift_card.html">Gift Card</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main-detalle">
+        <div class="descripcion">
+            <section class="descripcion__imagen">
+                <div class="contenedor-imagen">
+                    <img src="../img/ejemplo-cursos.jpg" alt="imagen de ejemplo">
+                </div>
+            </section>
+            <div class="contenedor-descripcion">
+                <section class="descripcion__info-curso">
+                    <h2 class="subtitulo-curso">Titulo Curso</h2>
+                    <h4 class="curso-item">Valor:</h4>
+                    <h4 class="curso-item">Tiempo de dedicacion necesario:</h4>
+                    <h4 class="curso-item">Descripcion del curso:</h4>
+                    <h4 class="curso-item">Requisitos Previos:</h4>
+                    <button class="boton-inscripcion">Inscibirse</button>
+                </section>
+                <section class="descripcion__contenido">
+                    <h2 class="subtitulo-curso">Contenidos por clase</h2>
+                    <p class="menu-desplegable">menu desplegable con contenido</p>
+                </section>
+            </div>
+        </div>
+        <div class="contenedor-docente">
+            <h2 class="subtitulo-curso">Docente</h2>
+            <div class="info-docente">
+                <div class="contenedor-imagen__docente">
+                    <img src="../img/perfilDocente.jpeg" alt="">
+                </div>
+                <div class="contenedor-info__docente">
+                    <p class="nombre-docente">Nombre y apellido</p>
+                    <div class="contenedor-calificacion">
+                        <div class="rating">
+                            <input type="radio" name="clr1" style="--c:#ff9933">
+                            <input type="radio" name="clr1" style="--c:#ff9933">
+                            <input type="radio" name="clr1" style="--c:#ff9933">
+                            <input type="radio" name="clr1" style="--c:#ff9933">
+                            <input type="radio" name="clr1" style="--c:#ff9933">
+                        </div>
+                    </div>
+                    <p class="descripcion-docente">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti,
+                        optio officia earum ex ut dolores natus facere delectus dicta quod provident. Alias rem
+                        temporibus aperiam accusamus tenetur magni autem accusantium!</p>
+                    <p class="descripcion-docente">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates
+                        voluptas dolore dolor ut ab, ad tenetur quae consequatur accusamus maiores, doloribus deleniti
+                        nobis tempora molestias natus corporis animi repellendus eum!</p>
+                </div>
+            </div>
+        </div>
+        <section class="cursos-info">
+            <div class="curso">
+                
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="pieDePagina">
+            <div class="datos">
+                <p>Datos del Grupo</p>
+            </div>
+            <div class="datos">
+                <p>Menu Inferior</p>
+            </div>
+            <div class="datos">
+                <p>Redes Sociales</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
 </html>

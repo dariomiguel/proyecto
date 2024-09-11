@@ -1,58 +1,70 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+body {
     margin: 0 auto;
-    
 }
 
-    /*HEADER*/
+h1 {
+    margin-top: 15px;
+    text-align: center;
+}
 
-header svg{
+/*HEADER*/
+
+header svg {
     width: 40px;
     height: 40px;
     margin-right: 60px;
 }
-.contenedorCarrito{
+
+.logo img {
+    display: block;
+    height: 128px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.contenedorCarrito {
     width: 40px;
     background-color: grey;
-    
 }
-.headerTop{
+.headerTop {
     display: flex;
     justify-content: space-around;
     padding-top: 20px;
     margin-bottom: 20px;
 }
 
-.headerBot{
+.headerBot {
     text-align: center;
     background-color: grey;
     font-size: 20px;
-    
 }
-li{
+li {
     display: inline;
     margin-inline: 70px;
 }
-li a{
+li a {
     text-decoration: none;
     color: #fff;
 }
 
-header input{
+header input {
     padding: 10px;
     padding-right: 300px;
     border-radius: 5px 0 0 5px;
     outline: none;
-    
 }
-.buscador{
+.buscador {
     display: flex;
 }
-header button{
+header button {
     background: crimson;
     margin: auto;
     padding: 15px 20px;
@@ -65,131 +77,345 @@ header button{
     color: #fff;
     cursor: pointer;
 }
-header{
+header {
     background: darkgrey;
 }
 
-    /*HEADER*/
+/*HEADER*/
 
-    /*MAIN*/
-    .carruselImagenes{
-        height: 700px;
-        width: 700px;
-        text-align: center;
-        background-color: darkgray;
-        align-content: center;
-        margin: auto;
-        margin-top: 30px;
-        font-size: 20px;
-    }
-    
-    .pasos{
-        display: flex;
-        justify-content: space-around;
-        margin-top: 30px;
-    }
-    .paso{
-        height: 300px;
-        width: 300px;
-        background-color: darkgrey;
-        align-content: center;
-        text-align: center;
+/*MAIN*/
+.carruselImagenes {
+    height: 700px;
+    width: 700px;
+    text-align: center;
+    background-color: darkgray;
+    align-content: center;
+    margin: auto;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.pasos {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+.paso {
+    height: 300px;
+    width: 300px;
+    background-color: darkgrey;
+    align-content: center;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.curso {
+    height: 300px;
+    width: 300px;
+    border-style: solid;
+    align-content: center;
+    font-size: 20px;
+}
+.fotoCurso {
+    height: 200px;
+    width: 250px;
+    margin: auto;
+    background-color: grey;
+}
+.precioFotoCurso {
+    height: 180px;
+    width: 250px;
+    color: #fff;
+    display: flex;
+    justify-content: right;
+    align-items: end;
+}
+
+.infoCurso {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.horasCurso {
+    font-size: 25px;
+    font-weight: 700;
+}
+.linkDetalle {
+    font-size: 15px;
+    text-align: right;
+}
+.botonComprar {
+    text-align: right;
+}
+
+.cursosDestacados {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+}
+
+.mediosDePago {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.medio {
+    height: 300px;
+    width: 300px;
+    background-color: darkgrey;
+    align-content: center;
+    text-align: center;
+    font-size: 20px;
+    margin: 10px;
+}
+
+/*Contactos*/
+.contenedorContactos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.contenedorContactos h1 {
+    margin: 20px;
+}
+
+.contacto {
+    display: flex;
+    margin: 10px;
+    column-gap: 30px;
+}
+
+.ubicacion__map {
+    width: 500px;
+    height: 300px;
+    border: 1px black solid;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contacto__input {
+    row-gap: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+input:disabled {
+    background-color: #f5f5f5;
+    color: #aaa;
+    cursor: not-allowed;
+}
+
+.contacto button,
+button.inscribirse {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+.contacto button:hover,
+button.inscribirse:hover {
+    cursor: pointer;
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.bloqueDeTexto {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 10px;
+}
+.bloqueDeTexto textarea {
+    height: 80%;
+    width: 500px;
+    font-size: 16px;
+}
+
+/*Contactos*/
+
+/*Formulario de Inscrición*/
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedorInscripciones {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.inscripcion {
+    display: flex;
+    margin: 10px;
+}
+
+.inscripcion__contenedor {
+    display: flex;
+    gap: 30px;
+}
+
+.inscripcion__input {
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedorInscripciones button.removerCurso,
+button.agregarPersona {
+    width: 50px;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    cursor: pointer;
+    margin: 5px;
+    border-radius: 50%;
+    border: none;
+}
+
+button.removerCurso {
+    background-image: url(../img/icon/icons8-menos-100.png);
+}
+
+.contenedorAgregarPersona {
+    display: flex;
+    margin-top: 10px;
+    height: 50px;
+    align-items: center;
+}
+
+button.agregarPersona {
+    background-image: url(../img/icon/icons8-más-100.png);
+    height: 50px;
+}
+
+.contenedorInscribirse {
+    margin: 10px;
+    margin-left: 50px;
+    display: flex;
+    gap: 10px;
+}
+
+.contenedorInscribirse p {
+    font-size: 24px;
+    width: 100px;
+    align-content: center;
+    font-weight: 600;
+}
+
+.contenedorAgregarPersona button,
+.contenedorInscribirse button {
+    margin-right: auto; /* Alinea el botón al inicio */
+}
+
+/*Formulario de Inscrición*/
+
+/*MAIN*/
+
+/*FOOTER*/
+.pieDePagina {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 200px;
+    background-color: grey;
+    margin-bottom: 0;
+}
+
+.datos {
+    height: 150px;
+    width: 450px;
+    background-color: darkgrey;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 2px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+/* FOOTER*/
+
+/*MEDIA QUERIES*/
+
+@media (max-width: 768px) {
+    .carruselImagenes {
+        display: none;
     }
 
-    h2{
-        text-align: center;
-        margin-top: 50px;
-        margin-bottom: 50px;
+    .mediosDePago,
+    .pasos {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 10px;
     }
 
-    .curso{
-        height: 300px;
-        width: 300px;
-        border-style: solid;
-        align-content: center;
-        font-size: 20px;
+    .cursosDestacados {
+        grid-template-columns: repeat(1, 1fr);
     }
-    .fotoCurso{
-        height: 200px;
-        width: 250px;
-        margin: auto;
-        background-color:grey;
-    }
-    .precioFotoCurso{
-        height: 180px;
-        width: 250px;
-        color: #fff;
-        display: flex;
-        justify-content: right;
-        align-items: end;
-    }
+}
 
-    .infoCurso{
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-        margin-left: 10px;
-        margin-right: 10px;
-    }
-    .horasCurso{
-        font-size: 25px;
-        font-weight: 700;
-    }
-    .linkDetalle{
-        font-size: 15px;
-        text-align: right;
-    }
-    .botonComprar{
-        text-align: right;
-    }
+/*MEDIA QUERIES*/
 
-    .cursosDestacados{
-        display: grid;
-        grid-template-columns: repeat(3,1fr);
-        gap: 20px;
-        justify-items: center;
-    }
+/*CALENDARIO*/
+.contenedorCalendario {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(7, 0fr);
+}
 
+.contenedorCalendario_dia {
+    width: 220px;
+    height: 220px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    line-height: 40px;
+}
 
-    .mediosDePago{
-        display: flex;
-        justify-content: space-around;
-        margin-top: 50px;
-    }
+.cursoCalendario {
+    width: 200px;
+    text-align: left;
+    background-color: goldenrod;
+    border-radius: 10px 10px 10px 10px;
+    padding-left: 10px;
+}
 
-    .medio{
-        height: 300px;
-        width: 300px;
-        background-color: darkgrey;
-        align-content: center;
-        text-align: center;
-        font-size: 20px;
-    }
-
-    /*MAIN*/
-
-    /*FOOTER*/
-    .pieDePagina{
-        display: flex;
-        justify-content: space-around;
-        margin-top: 200px;
-        background-color: grey;
-
-    }
-
-    .datos{
-        height: 150px;
-        width: 450px;
-        background-color: darkgrey;
-        border-color: #fff;
-        border-style: solid;
-        border-width: 2px;
-        font-size: 20px;
-        font-weight: 600;
-        color: #fff;
-        margin-bottom: 10px;
-        margin-top: 10px;
-    }
-
-    /*FOOTER*/
-
+/*CALENDARIO*/

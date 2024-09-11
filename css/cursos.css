@@ -1,0 +1,171 @@
+/* ESTILOS CURSOS */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ------------- MAIN ------------- */
+
+.main-detalle .descripcion{
+    display: flex;
+    padding: 2rem 1rem;
+    gap: 1rem;
+    width: 100%;
+}
+
+.subtitulo-curso{
+    text-align: start;
+    margin: 0;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.6rem;
+}
+
+.main-detalle .descripcion .descripcion__imagen{
+    width: 30%;
+    display: flex;
+    justify-content: end;
+}
+
+.main-detalle .descripcion .descripcion__imagen .contenedor-imagen{
+    height: 260px;
+    width: 260px;
+}
+
+.main-detalle .descripcion .descripcion__imagen .contenedor-imagen img{
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 10px 10px rgba(0, 0, 0, .15);
+}
+
+.main-detalle .descripcion .contenedor-descripcion{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-detalle .descripcion .contenedor-descripcion .descripcion__info-curso{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: fit-content;
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main-detalle .descripcion .contenedor-descripcion .descripcion__contenido{
+    width: 100%;
+    height: 50%;
+}
+
+.main-detalle .descripcion .contenedor-descripcion .menu-desplegable{
+    width: 400px;
+    height: 300px;
+    background-color: gray;
+    text-align: center;
+}
+
+/*------------- PERFIL DOCENTE -------------*/
+.contenedor-docente{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contenedor-docente .info-docente{
+    width: 100%;
+    height: fit-content;
+    background-color: grey;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.descripcion-docente {
+    font-family: "Poiret One", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.contenedor-imagen__docente{
+    width: 180px;
+}
+
+.contenedor-imagen__docente img{
+    width: 100%;
+    border-radius: 50%;
+}
+
+.contenedor-info__docente{
+    width: 70%;
+}
+
+.rating{
+    display: flex;
+    gap: 0.8rem;
+    position: relative;
+    flex-direction: row-reverse;
+    justify-content: left;
+}
+
+.rating input{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-color: gray;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.rating input::before{
+    content: '\f005';
+    position: absolute;
+    font-family: fontAwesome;
+    font-size: 20px;
+    color: #111;
+    transition: .5s;
+}
+
+.rating input:hover ~ input::before,
+.rating input:hover::before,
+.rating input:checked ~ input::before,
+.rating input:checked::before{
+    color: var(--c);
+}
+
+.nombre-docente{
+    font-size: 1.5rem;
+}
+
+.descripcion-docente{
+    font-size: 1.2rem;
+}
+
+/* ------------- MAIN (extras) ------------- */
+
+.curso-item{
+    font-size: 1.1rem;
+}
+
+.contenedor-docente .subtitulo-curso{
+    margin-left: 3rem;
+}
+
+.boton-inscripcion{
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    padding: 6px;
+    width: fit-content;
+    height: 2.8rem;
+    background-color: #80ff00;
+    cursor: pointer;
+    border: 0;
+    border-radius: 8px;
+    font-size: 1rem;
+}
