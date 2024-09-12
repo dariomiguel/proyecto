@@ -147,6 +147,58 @@
     font-size: 1.2rem;
 }
 
+.cursos-info{
+    display: flex;
+    height: fit-content;
+    width: 100%;
+    padding: 2rem;
+    justify-content: space-around;
+}
+
+.cursos-encuadre{
+    height: 10rem;
+    width: 10rem;
+}
+
+.cursos-info-container{
+    background-color: rgb(204, 204, 204);
+    width: 20em;
+    height: fit-content;
+    border: solid;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.cursos-info-container img{
+    width: 100%;
+    height: 70%;
+}
+
+.cursos-info__detalles{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.cursos-info__contenedor__titulo-detalles{
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+}
+
+.cursos-info__contenedor__titulo-detalles a{
+    font-family: "Poiret One", sans-serif;
+}
+
+.cursos-info-container button{
+    align-self: flex-end;
+}
+
 /* ------------- MAIN (extras) ------------- */
 
 .curso-item{
