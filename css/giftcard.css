@@ -1,0 +1,120 @@
+.box{
+    display: flex;    
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+
+}
+
+.giftcard-main{
+    display: flex;
+    flex-direction: row;
+    margin: 2rem;
+}
+
+.formulario-giftcard{
+    display: flex;
+    flex-direction: column;
+}
+
+.giftcard-destinatario{
+    height: 24rem;
+    width: 28rem;
+    margin: 2rem;
+    text-align: center;
+    align-content: center;
+    background-color: rgb(185, 185, 185);
+}
+
+.destinatario-texto{
+    font-weight: 100;
+    font-size: 1rem;
+    padding-bottom: 70px;
+
+}
+.negrita {
+    font-weight: 700;
+    font-size: 3rem;
+}
+
+.giftcard-colores{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    height: 5rem;
+    width: 3rem;
+}
+
+.circulos{
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: rgb(167, 167, 167);
+    margin: 0.5rem;
+}
+.circulos-input{
+    height: 16px;
+    width: 16px;
+}
+
+.contenedor-colores{
+    width: 20rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+
+.contenedor-fuentes{
+    width: 20rem;
+    height: 5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+}
+.giftcard-fuentes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 5rem;
+    width: 3rem;
+    gap: 0.1rem;
+}
+
+.fuentes{
+    box-sizing: border-box;
+    margin: 0.5rem;
+}
+
+.veinte-pixeles{
+
+font-size: 14px;
+}
+
+.veintiocho-pixeles{
+font-size: 16px;
+}
+
+.treintaydos-pixeles{
+    font-size: 18px;
+}
+
+.cuarentayocho-pixeles{
+    font-size: 20px;
+}
+
+.sesenta-pixeles{
+    font-size: 22px;
+}
+
+.separador{
+    display: flex;
+    box-sizing: border-box;
+    height: 25px;
+    align-items: center;
+}
