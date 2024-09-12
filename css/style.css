@@ -11,15 +11,12 @@ h1 {
 
 /*HEADER*/
 
-header svg {
-    width: 40px;
-    height: 40px;
-    margin-right: 60px;
+.logo{
+    width: 10em;
 }
 
-.logo img {
-    display: block;
-    height: 128px;
+.logo img{
+    width: 100%;
 }
 
 a {
@@ -28,9 +25,13 @@ a {
 }
 
 .contenedorCarrito {
-    width: 40px;
-    background-color: grey;
+    width: 3em;
 }
+
+.contenedorCarrito svg{
+    width: 100%;
+}
+
 .headerTop {
     display: flex;
     justify-content: space-around;
@@ -40,8 +41,8 @@ a {
 
 .headerBot {
     text-align: center;
-    background-color: grey;
-    font-size: 20px;
+    font-size: 1.2em;
+    padding-bottom: 0.5em;
 }
 li {
     display: inline;
@@ -49,7 +50,15 @@ li {
 }
 li a {
     text-decoration: none;
-    color: #fff;
+    color: #424242;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    transition: .5s;
+}
+
+li a:hover{
+    color: #48CFCB;
 }
 
 header input {
@@ -62,7 +71,7 @@ header input {
     display: flex;
 }
 header button {
-    background: crimson;
+    background: #48CFCB;
     margin: auto;
     padding: 15px 20px;
     position: relative;
@@ -75,7 +84,8 @@ header button {
     cursor: pointer;
 }
 header {
-    background: darkgrey;
+    background: #F5F5F5;
+    box-shadow: 0 0 15px rgb(72, 207, 203, 0.5);
 }
 
 /*HEADER*/
