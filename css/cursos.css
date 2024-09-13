@@ -6,13 +6,12 @@
 }
 /* ------------- MAIN ------------- */
 
-
-
 .main-detalle .descripcion{
     display: flex;
     padding: 2rem 1rem;
     gap: 1rem;
     width: 100%;
+    height: 100%;
 }
 
 .subtitulo-curso{
@@ -37,32 +36,26 @@
 .main-detalle .descripcion .descripcion__imagen .contenedor-imagen img{
     width: 100%;
     border-radius: 5px;
-    box-shadow: 10px 10px rgba(0, 0, 0, .15);
+    box-shadow: 0 0 5px rgb(66, 66, 66, .5);
 }
 
-.main-detalle .descripcion .contenedor-descripcion{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.main-detalle .descripcion .contenedor-descripcion .descripcion__info-curso{
+.main-detalle .descripcion .descripcion__info-curso{
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     height: fit-content;
-    font-size: small;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
 }
 
-.main-detalle .descripcion .contenedor-descripcion .descripcion__contenido{
+.main-detalle .descripcion .descripcion__contenido{
     width: 100%;
     height: 50%;
 }
 
-.main-detalle .descripcion .contenedor-descripcion .menu-desplegable{
+.main-detalle .descripcion .menu-desplegable{
     width: 400px;
     height: 300px;
     background-color: gray;
@@ -79,16 +72,17 @@
 .contenedor-docente .info-docente{
     width: 100%;
     height: fit-content;
-    background-color: grey;
+    background-color: #229799;
     padding: 1.5rem;
     display: flex;
     gap: 1rem;
 }
 
 .descripcion-docente {
-    font-family: "Poiret One", sans-serif;
-    font-weight: 600;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
     font-style: normal;
+    color: #000000;
 }
 
 .contenedor-imagen__docente{
@@ -120,7 +114,7 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    border-color: gray;
+    border-style: none;
     appearance: none;
     -webkit-appearance: none;
 }
@@ -148,13 +142,28 @@
 .descripcion-docente{
     font-size: 1.2rem;
 }
+/* ------------- FIN DOCENTE ------------- */
+
+
+/* ------------- CURSOS (INFO) ------------- */
+.cursos-container{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-around;
+}
 
 .cursos-info{
     display: flex;
-    height: fit-content;
+    flex-direction: column;
+    height: 100%;
     width: 100%;
-    padding: 2rem;
+    padding: 3em;
     justify-content: space-around;
+}
+
+.cursos-info .subtitulo-curso{
+    text-align: center;
+    padding: 2em;
 }
 
 .cursos-encuadre{
@@ -163,27 +172,33 @@
 }
 
 .cursos-info-container{
-    background-color: rgb(204, 204, 204);
-    width: 20em;
+    width: fit-content;
     height: fit-content;
-    border: solid;
+    border-radius: 1em;
+    box-shadow: 0 0 5px rgb(66, 66, 66, .5);
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2em;
 }
 
-.cursos-info-container img{
+.contenedor-imagen__curso{
+    width: 20em;
+}
+
+.cursos-info-container .contenedor-imagen__curso img{
     width: 100%;
-    height: 70%;
+    height: 100%;
 }
 
 .cursos-info__detalles{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: #000000;
     width: 100%;
     display: flex;
     justify-content: space-between;
-    font-weight: 600;
     font-size: 1.3rem;
 }
 
@@ -217,9 +232,14 @@
     padding: 6px;
     width: fit-content;
     height: 2.8rem;
-    background-color: #80ff00;
+    background-color: #229799;
     cursor: pointer;
     border: 0;
     border-radius: 8px;
     font-size: 1rem;
+    transition: .5s;
+}
+
+.boton-inscripcion:hover{
+    background-color: #48CFCB;
 }
