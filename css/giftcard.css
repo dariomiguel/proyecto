@@ -4,6 +4,7 @@
     width: 100%;
     height: 100%;
     justify-content: center;
+    background-color: #fff;
 
 }
 
@@ -98,7 +99,6 @@ font-size: 16px;
     display: flex;
     box-sizing: border-box;
     height: 25px;
-    margin-bottom: 10px;
     align-items: center;
 }
 
@@ -162,11 +162,13 @@ font-size: 16px;
 .monto{
     width: 82%;
 }
-.monto1{
+.monto-contenedor{
     justify-content: space-between;
+    height: 4rem;
 }
 .texto-personalizacion{
-    color:#0008;
+    color: #0008;
+    margin: 0.25rem;
 }
 
 .titulo{
@@ -175,4 +177,30 @@ font-size: 16px;
 }
 .personalizacion-fuente{
     height: fit-content;
+}
+
+.input-destinatario{
+    width: 100%;
+    padding-bottom: 0.5rem;
+}
+
+.boton-confirmar{
+    box-sizing: border-box;
+    width: 8rem;
+    height: 2.5rem;
+    border: 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px; 
+    font-size: 14px;
+    cursor: pointer;
+    background-color: grey;
+    color: white;
+}
+
+.contenedor-enviar{
+    padding: 1rem;
+    padding-left: 0;
 }
