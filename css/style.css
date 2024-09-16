@@ -104,99 +104,135 @@ header button {
 /*HEADER*/
 
 /*MAIN*/
-.carruselImagenes {
-    height: 700px;
-    width: 700px;
-    text-align: center;
+/*CARRUSEL IMAGENES*/
+.contenedorImagen-carrusel img{
+    width: 100%;
+}
+/*CARRUSEL IMAGENES*/
+
+/*PASOS DE REGISTRO*/
+.contenedor-pasosRegistro{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
+    column-gap: 10rem;
+}
+
+.pasoDeRegistro{
+    width: 20rem;
+    height: fit-content;
     background-color: darkgray;
-    align-content: center;
-    margin: auto;
-    margin-top: 30px;
-    font-size: 20px;
+    margin: 1rem 0;
 }
-
-.pasos {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 30px;
-}
-.paso {
-    height: 300px;
-    width: 300px;
-    background-color: darkgrey;
-    align-content: center;
+.pasoDeRegistro .pasoDeRegistro-titulo{
     text-align: center;
 }
+.pasoDeRegistro .pasoDeRegistro-texto{
+    text-align: justify;
+}
+/*PASOS DE REGISTRO*/
 
-h2 {
+
+/*SUBTITULOS*/
+.subtitulo-pagina{
     text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+/*SUBTITULOS*/
+
+/*CURSOS DESTACADOS*/
+
+.contenedor-cursosDestacados{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 3rem;
+    column-gap: 10rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
 }
 
-.curso {
-    height: 300px;
-    width: 300px;
-    border-style: solid;
-    align-content: center;
-    font-size: 20px;
+.cursoDestacado{
+    width: 20rem;
+    height: 20rem;
+    border: solid;
 }
-.fotoCurso {
-    height: 200px;
-    width: 250px;
-    margin: auto;
-    background-color: grey;
+
+.contenedorImagen-curso {
+    margin: 1rem;
+    position: relative;
 }
-.precioFotoCurso {
-    height: 180px;
-    width: 250px;
-    color: #fff;
+.contenedorImagen-curso img {
+    max-width: 100%;
+    display: block;
+}
+
+.contenedorImagen-curso .precioCurso{
+    position: absolute;
+    right: 0;
+    bottom: 20%;
+    background-color: black;
+    color: white;
+    font-size: 2rem;
+    padding: 0.2rem;
+}
+
+.cursoDestacado .cursoDestacado-segundaFila{
     display: flex;
-    justify-content: right;
+    justify-content: space-between;
+    margin: 1rem;
+}
+
+.cursoDestacado .cursoDestacado-segundaFila .primeraColumna{
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+.cursoDestacado .cursoDestacado-segundaFila .segundaColumna{
+    display: flex;
+    flex-direction: column;
     align-items: end;
 }
 
-.infoCurso {
+.cursoDestacado .cursoDestacado-segundaFila .segundaColumna p{
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.cursoDestacado .cursoDestacado-segundaFila .segundaColumna a{
+    font-size: 1.1rem;
+
+}
+.cursoDestacado .cursoDestacado-segundaFila .segundaColumna button{
+    font-size: 1.2rem;
+    padding: 0.2rem;
+}
+/*CURSOS DESTACADOS*/
+
+
+/*MEDIOS DE PAGO*/
+.contenedor-mediosDePago{
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-}
-.horasCurso {
-    font-size: 25px;
-    font-weight: 700;
-}
-.linkDetalle {
-    font-size: 15px;
-    text-align: right;
-}
-.botonComprar {
-    text-align: right;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5rem;
+    align-items: center;
+
 }
 
-.cursosDestacados {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-items: center;
+.contenedor-mediosDePago .medioDePago{
+    width: 14rem;
+    
 }
+.contenedor-mediosDePago .medioDePago img{
+    display: block;
+    width: 100%;
+    
+}
+/*MEDIOS DE PAGO*/
 
-.mediosDePago {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 50px;
-}
-
-.medio {
-    height: 300px;
-    width: 300px;
-    background-color: darkgrey;
-    align-content: center;
-    text-align: center;
-    font-size: 20px;
-    margin: 10px;
-}
+/*MAIN*/
 
 /*Contactos*/
 .contenedorContactos {
