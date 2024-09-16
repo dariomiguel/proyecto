@@ -68,6 +68,8 @@
     display: flex;
     padding: .5em;
     background-color: #424242;
+    width: 100%;
+    margin: 0;
 }
 
 .contenedor-checkbox input{
