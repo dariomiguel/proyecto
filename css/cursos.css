@@ -51,7 +51,7 @@
 }
 
 .main-detalle .descripcion .descripcion__contenido{
-    width: fit-content;
+    width: 22em;
     height: 50%;
 }
 
@@ -65,7 +65,10 @@
 }
 
 .contenedor-checkbox{
+    font-family: 'Courier New', Courier, monospace;
+    color: #f5f5f5;
     display: flex;
+    gap: .5em;
     padding: .5em;
     background-color: #424242;
     width: 100%;
@@ -164,6 +167,7 @@
     display: flex;
     gap: 2rem;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .cursos-info{
@@ -172,12 +176,32 @@
     height: 100%;
     width: 100%;
     padding: 3em;
+    gap: 3.8em;
     justify-content: space-around;
 }
 
 .cursos-info .subtitulo-curso{
     text-align: center;
-    padding: 2em;
+}
+
+.navbar-cursos__lista{
+    height: fit-content;
+}
+
+.navbar-cursos__lista-elemento{
+    color: #f5f5f5;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: rgba(66, 66, 66, .5);
+    padding: 1em;
+    border-radius: 1em;
+    margin: 0;
+    cursor: pointer;
+}
+
+.navbar-cursos__lista-elemento:hover{
+    background-color: #229799;
 }
 
 .cursos-encuadre{
