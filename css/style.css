@@ -241,7 +241,8 @@ header button {
     margin: 20px;
 }
 
-.contacto {
+.contacto,
+.login {
     display: flex;
     margin: 10px;
     column-gap: 30px;
@@ -294,6 +295,7 @@ input:disabled {
 }
 
 .contacto button,
+.login button,
 button.inscribirse {
     width: 100%;
     padding: 1rem;
@@ -304,6 +306,7 @@ button.inscribirse {
 }
 
 .contacto button:hover,
+.login button:hover,
 button.inscribirse:hover {
     cursor: pointer;
     border-color: #007bff;
@@ -404,6 +407,23 @@ button.agregarPersona {
 }
 
 /*Formulario de Inscrición*/
+
+/*Login*/
+
+.contenedorLogin {
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+
+    height: 75%;
+    max-width: 700px;
+    width: 75%;
+
+    margin: 2rem;
+}
+
+/*Login*/
 
 /*MAIN*/
 
