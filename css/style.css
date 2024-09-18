@@ -2,10 +2,10 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: "Bebas Neue", sans-serif;
 }
 
-h2{
-    font-family: "Bebas Neue", sans-serif;
+h2 {
     font-weight: 400;
     font-style: normal;
 }
@@ -16,11 +16,11 @@ header {
     position: relative;
 }
 
-main{
-    background-color: #F5F5F5;
+main {
+    background-color: #f5f5f5;
 }
 
-footer{
+footer {
     background: #424242;
     box-shadow: 0 0 20px rgba(72, 207, 203, 0.5);
     position: relative;
@@ -28,11 +28,11 @@ footer{
 
 /*HEADER*/
 
-.logo{
+.logo {
     width: 10em;
 }
 
-.logo img{
+.logo img {
     width: 100%;
 }
 
@@ -45,7 +45,7 @@ a {
     width: 3em;
 }
 
-.contenedorCarrito svg{
+.contenedorCarrito svg {
     width: 100%;
 }
 
@@ -71,11 +71,11 @@ li a {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
-    transition: .5s;
+    transition: 0.5s;
 }
 
-li a:hover{
-    color: #48CFCB;
+li a:hover {
+    color: #48cfcb;
 }
 
 header input {
@@ -88,7 +88,7 @@ header input {
     display: flex;
 }
 header button {
-    background: #48CFCB;
+    background: #48cfcb;
     margin: auto;
     padding: 15px 20px;
     position: relative;
@@ -105,13 +105,13 @@ header button {
 
 /*MAIN*/
 /*CARRUSEL IMAGENES*/
-.contenedorImagen-carrusel img{
+.contenedorImagen-carrusel img {
     width: 100%;
 }
 /*CARRUSEL IMAGENES*/
 
 /*PASOS DE REGISTRO*/
-.contenedor-pasosRegistro{
+.contenedor-pasosRegistro {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -120,23 +120,22 @@ header button {
     column-gap: 10rem;
 }
 
-.pasoDeRegistro{
+.pasoDeRegistro {
     width: 20rem;
     height: fit-content;
     background-color: darkgray;
     margin: 1rem 0;
 }
-.pasoDeRegistro .pasoDeRegistro-titulo{
+.pasoDeRegistro .pasoDeRegistro-titulo {
     text-align: center;
 }
-.pasoDeRegistro .pasoDeRegistro-texto{
+.pasoDeRegistro .pasoDeRegistro-texto {
     text-align: justify;
 }
 /*PASOS DE REGISTRO*/
 
-
 /*SUBTITULOS*/
-.subtitulo-pagina{
+.subtitulo-pagina {
     text-align: center;
     font-size: 2rem;
     margin: 1rem 0;
@@ -145,7 +144,7 @@ header button {
 
 /*CURSOS DESTACADOS*/
 
-.contenedor-cursosDestacados{
+.contenedor-cursosDestacados {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -155,7 +154,7 @@ header button {
     margin-right: 5rem;
 }
 
-.cursoDestacado{
+.cursoDestacado {
     width: 20rem;
     height: 20rem;
     border: solid;
@@ -170,7 +169,7 @@ header button {
     display: block;
 }
 
-.contenedorImagen-curso .precioCurso{
+.contenedorImagen-curso .precioCurso {
     position: absolute;
     right: 0;
     bottom: 20%;
@@ -180,55 +179,50 @@ header button {
     padding: 0.2rem;
 }
 
-.cursoDestacado .cursoDestacado-segundaFila{
+.cursoDestacado .cursoDestacado-segundaFila {
     display: flex;
     justify-content: space-between;
     margin: 1rem;
 }
 
-.cursoDestacado .cursoDestacado-segundaFila .primeraColumna{
+.cursoDestacado .cursoDestacado-segundaFila .primeraColumna {
     font-size: 1.5rem;
     font-weight: 800;
 }
-.cursoDestacado .cursoDestacado-segundaFila .segundaColumna{
+.cursoDestacado .cursoDestacado-segundaFila .segundaColumna {
     display: flex;
     flex-direction: column;
     align-items: end;
 }
 
-.cursoDestacado .cursoDestacado-segundaFila .segundaColumna p{
+.cursoDestacado .cursoDestacado-segundaFila .segundaColumna p {
     font-size: 1.5rem;
     font-weight: 600;
 }
-.cursoDestacado .cursoDestacado-segundaFila .segundaColumna a{
+.cursoDestacado .cursoDestacado-segundaFila .segundaColumna a {
     font-size: 1.1rem;
-
 }
-.cursoDestacado .cursoDestacado-segundaFila .segundaColumna button{
+.cursoDestacado .cursoDestacado-segundaFila .segundaColumna button {
     font-size: 1.2rem;
     padding: 0.2rem;
 }
 /*CURSOS DESTACADOS*/
 
-
 /*MEDIOS DE PAGO*/
-.contenedor-mediosDePago{
+.contenedor-mediosDePago {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 5rem;
     align-items: center;
-
 }
 
-.contenedor-mediosDePago .medioDePago{
+.contenedor-mediosDePago .medioDePago {
     width: 14rem;
-    
 }
-.contenedor-mediosDePago .medioDePago img{
+.contenedor-mediosDePago .medioDePago img {
     display: block;
     width: 100%;
-    
 }
 /*MEDIOS DE PAGO*/
 
@@ -254,13 +248,23 @@ header button {
 }
 
 .ubicacion__map {
-    width: 500px;
-    height: 300px;
+    width: 32rem;
+    height: 400px;
     border: 1px black solid;
+    margin: 2rem;
 
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.ubicacion h2 {
+    margin: 20px;
+}
+
+.ubicacion__map img {
+    width: 100%;
+    height: 100%;
 }
 
 .contacto__input {
@@ -326,7 +330,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-} 
+}
 
 .contenedorInscripciones {
     display: flex;
@@ -445,5 +449,3 @@ button.agregarPersona {
 }
 
 /*MEDIA QUERIES*/
-
-
