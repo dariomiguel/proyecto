@@ -1,239 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="stylesheet" href="../css/style.css" />
-        <link rel="stylesheet" href="../css/giftcard.css" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap"
-            rel="stylesheet"
-        />
-        <!-- Fonts -->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/giftcard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet" />
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet" />
 
     <link rel="icon" href="../img/favicon.ico" />
-        <title>Giftcard</title>
-    </head>
-    <body>
-        <header>
-            <div class="headerTop">
-                <div class="logo">
-                    <a href="../index.html">
-                        <img src="/img/logoPW.png" alt="">
-                    </a>
+    <title>Giftcard</title>
+</head>
+
+<body>
+    <header>
+        <div class="headerTop">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="/img/logoPW.png" alt="">
+                </a>
+            </div>
+            <div class="buscador">
+                <input type="text" placeholder="Buscar" />
+                <button>Ok</button>
+            </div>
+            <div class="contenedorCarrito">
+                <a href="./login.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
+                        </svg></a>
+            </div>
+        </div>
+        <div class="headerBot">
+            <nav>
+                <ul>
+                    <li><a href="./contacto.html">Contacto</a></li>
+                    <li>
+                        <a href="./calendario_de_cursos.html">Calendario</a>
+                    </li>
+                    <li>
+                        <a href="./detalle_de_curso.html">Detalles</a>
+                    </li>
+                    <li>
+                        <a href="./formulario_de_inscripcion.html">Inscripcion</a>
+                    </li>
+                    <li>
+                        <a href="./personalizacion_de_gift_card.html">Gift Card</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="giftcard-main">
+        <div class="box">
+            <div class="giftcard-destinatario">
+                <div class="giftcard-precio">
+                    <p>$0000.-</p>
                 </div>
-                <div class="buscador">
-                    <input type="text" placeholder="Buscar" />
-                    <button>Ok</button>
-                </div>
-                <div class="contenedorCarrito">
-                    <a href="./login.html">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512"
-                        >
-                            <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                            <path
-                                d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
-                            /></svg
-                    ></a>
+                <div class="gifcard-texto">
+                    <p>
+                        GIFTCARD para <br> <span class="negrita"> destinatario</span>
+                    </p>
                 </div>
             </div>
-            <div class="headerBot">
-                <nav>
-                    <ul>
-                        <li><a href="./contacto.html">Contacto</a></li>
-                        <li>
-                            <a href="./calendario_de_cursos.html">Calendario</a>
-                        </li>
-                        <li>
-                            <a href="./detalle_de_curso.html">Detalles</a>
-                        </li>
-                        <li>
-                            <a href="./formulario_de_inscripcion.html"
-                                >Inscripcion</a
-                            >
-                        </li>
-                        <li>
-                            <a href="./personalizacion_de_gift_card.html"
-                                >Gift Card</a
-                            >
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
-        <main class="giftcard-main">
-            <div class="box">
-                <div class="giftcard-destinatario">
-                    <div class="giftcard-precio">
-                        <p                                                                                                                                                      >$0000.-</p>
-                    </div>
-                    <div class="gifcard-texto">
-                        <p>
-                            GIFTCARD para  <br> <span class="negrita"> destinatario</span>          
-                        </p>
-                    </div>
-                </div>
-                <div class="boxita2">
-                    <form class="formulario-giftcard">
-                        <h1 class="titulo">
-                            Personalizacion de Giftcard
-                        </h1>
-                        <div class="input-destinatario">
+            <div class="boxita2">
+                <form class="formulario-giftcard">
+                    <h1 class="titulo">
+                        Personalizacion de Giftcard
+                    </h1>
+                    <div class="input-destinatario">
                         <input type="text" placeholder="Nombre Destinatario">
-                        </div>
-                        <p class="texto-personalizacion">Color</p>
+                    </div>
+                    <p class="texto-personalizacion">Color</p>
                     <div class="contenedor-personalizacion">
                         <div class="giftcard-personalizacion">
                             <label class="circulos" class="verde" for="verde"></label>
-                            <input class="personalizacion-input"  type="radio" id="verde" name="colores" value="verde">
+                            <input class="personalizacion-input" type="radio" id="verde" name="colores" value="verde">
                         </div>
                         <div class="giftcard-personalizacion">
                             <label class="circulos" class="rojo" for="rojo"></label>
-                            <input class="personalizacion-input"  type="radio" id="rojo" name="colores" value="rojo">
-                        </div>   
+                            <input class="personalizacion-input" type="radio" id="rojo" name="colores" value="rojo">
+                        </div>
                         <div class="giftcard-personalizacion">
                             <label class="circulos" class="azul" for="azul"></label>
-                            <input class="personalizacion-input"  type="radio" id="azul" name="colores" value="azul">
-                        </div> 
+                            <input class="personalizacion-input" type="radio" id="azul" name="colores" value="azul">
+                        </div>
                         <div class="giftcard-personalizacion">
                             <label class="circulos" class="amarillo" for="amarillo"></label>
-                            <input class="personalizacion-input"  type="radio" id="amarillo" name="colores" value="amarillo">
+                            <input class="personalizacion-input" type="radio" id="amarillo" name="colores"
+                                value="amarillo">
                         </div>
                         <div class="giftcard-personalizacion">
                             <label class="circulos" class="naranja" for="naranja"></label>
-                            <input class="personalizacion-input"  type="radio" id="naranja" name="colores" value="naranja">
-                        </div>  
+                            <input class="personalizacion-input" type="radio" id="naranja" name="colores"
+                                value="naranja">
+                        </div>
                     </div>
                     <p class="texto-personalizacion">Tamaño de fuente</p>
-                        <div class="contenedor-personalizacion personalizacion-fuente">
-                            <div class="giftcard-personalizacion personalizacion-fuente">
-                                <div class="separador">
-                                    <label class="fuentes veinte-pixeles" for="20px">20px</label>
-                                </div>
-                                <div class="separador">
-                                    <input class="personalizacion-input"  type="radio" id="20px" name="fuentes" value="20px">
-                                </div>
+                    <div class="contenedor-personalizacion personalizacion-fuente">
+                        <div class="giftcard-personalizacion personalizacion-fuente">
+                            <div class="separador">
+                                <label class="fuentes veinte-pixeles" for="20px">20px</label>
                             </div>
-                            <div class="giftcard-personalizacion personalizacion-fuente">
-                                <div class="separador">
+                            <div class="separador">
+                                <input class="personalizacion-input" type="radio" id="20px" name="fuentes" value="20px">
+                            </div>
+                        </div>
+                        <div class="giftcard-personalizacion personalizacion-fuente">
+                            <div class="separador">
                                 <label class="fuentes veintiocho-pixeles" for="28px">28px</label>
-                                </div>
-                                <div class="separador">
-                                    <input class="personalizacion-input"  type="radio" id="28px" name="fuentes" value="28px">
-                                </div>  
-                            </div>   
-                            <div class="giftcard-personalizacion personalizacion-fuente">
-                                <div class="separador">
-                                    <label class="fuentes, treintaydos-pixeles" for="32px">32px</label>
-                                </div>
-                                <div class="separador">
-                                    <input class="personalizacion-input"  type="radio" id="32px" name="fuentes" value="32px">
-                                </div>
-                            </div> 
-                            <div class="giftcard-personalizacion personalizacion-fuente">
-                                <div class="separador">
-                                    <label class="fuentes cuarentayocho-pixeles" for="48px">48px</label>
-                                </div>
-                                <div class="separador">
-                                    <input class="personalizacion-input"  type="radio" id="48px" name="fuentes" value="48px">
-                                </div>
                             </div>
-                            <div class="giftcard-personalizacion personalizacion-fuente">
-                                <div class="separador">
-                                    <label class="fuentes sesenta-pixeles" for="60px">60px</label>
-                                </div>
-                                <div class="separador">
-                                <input class="personalizacion-input"  type="radio" id="60px" name="fuentes" value="60px">
-                                </div>
-                            </div>  
-                        </div>
-                        <div class="contenedor-personalizacion monto-contenedor">
-                            <p class="texto-personalizacion"> Monto $</p> <input class="monto" type="text">
-                        </div>
-                        <p class="texto-personalizacion">Ubicación</p>
-                        <div class="contenedor-personalizacion">
-                            <div class="giftcard-personalizacion">
-                                <label class="ubicacion" for="abajo-derecha">
-                                    <div class="ubicacion-abajo-derecha"></div>
-                                </label>
-                                <input class="personalizacion-input"  type="radio" id="abajo-derecha" name="ubicacion" value="abajo-derecha">
-                            </div>
-                            <div class="giftcard-personalizacion">
-                                <label class="ubicacion"  for="arriba-izquierda">
-                                    <div class="ubicacion-arriba-izquierda"></div>
-                                </label>
-                                <input class="personalizacion-input"  type="radio" id="arriba-izquierda" name="ubicacion" value="arriba-izquierda">
-                            </div>
-                            <div class="giftcard-personalizacion">
-                                <label class="ubicacion" for="arriba-derecha">
-                                    <div class="ubicacion-arriba-derecha"></div>
-                                </label>
-                                <input class="personalizacion-input"  type="radio" id="arriba-derecha" name="ubicacion" value="arriba-derecha">
+                            <div class="separador">
+                                <input class="personalizacion-input" type="radio" id="28px" name="fuentes" value="28px">
                             </div>
                         </div>
-                        <p class="texto-personalizacion">Fondo</p>
-                        <div class="contenedor-personalizacion">
-                            <div class="giftcard-personalizacion">
-                                <label class="fondo" class="verde" for="fondo-verde"></label>
-                                <input class="personalizacion-input"  type="radio" id="fondo-verde" name="fondos" value="fondo-verde">
+                        <div class="giftcard-personalizacion personalizacion-fuente">
+                            <div class="separador">
+                                <label class="fuentes, treintaydos-pixeles" for="32px">32px</label>
                             </div>
-                            <div class="giftcard-personalizacion">
-                                <label class="fondo" class="rojo" for="fondo-rojo"></label>
-                                <input class="personalizacion-input"  type="radio" id="fondo-rojo" name="fondos" value="fondo-rojo">
-                            </div>   
-                            <div class="giftcard-personalizacion">
-                                <label class="fondo" class="azul" for="fondo-azul"></label>
-                                <input class="personalizacion-input"  type="radio" id="fondo-azul" name="fondos" value="fondo-azul">
-                            </div> 
-                            <div class="giftcard-personalizacion">
-                                <label class="fondo" class="amarillo" for="fondo-amarillo"></label>
-                                <input class="personalizacion-input"  type="radio" id="fondo-amarillo" name="fondos" value="fondo-amarillo">
+                            <div class="separador">
+                                <input class="personalizacion-input" type="radio" id="32px" name="fuentes" value="32px">
                             </div>
-                            <div class="giftcard-personalizacion">
-                                <label class="fondo" class="naranja" for="fondo-naranja"></label>
-                                <input class="personalizacion-input"  type="radio" id="fondo-naranja" name="fondos" value="fondo-naranja">
-                            </div>  
                         </div>
-                        <div class="contenedor-enviar">
+                        <div class="giftcard-personalizacion personalizacion-fuente">
+                            <div class="separador">
+                                <label class="fuentes cuarentayocho-pixeles" for="48px">48px</label>
+                            </div>
+                            <div class="separador">
+                                <input class="personalizacion-input" type="radio" id="48px" name="fuentes" value="48px">
+                            </div>
+                        </div>
+                        <div class="giftcard-personalizacion personalizacion-fuente">
+                            <div class="separador">
+                                <label class="fuentes sesenta-pixeles" for="60px">60px</label>
+                            </div>
+                            <div class="separador">
+                                <input class="personalizacion-input" type="radio" id="60px" name="fuentes" value="60px">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contenedor-personalizacion monto-contenedor">
+                        <p class="texto-personalizacion"> Monto $</p> <input class="monto" type="text">
+                    </div>
+                    <p class="texto-personalizacion">Ubicación</p>
+                    <div class="contenedor-personalizacion">
+                        <div class="giftcard-personalizacion">
+                            <label class="ubicacion" for="abajo-derecha">
+                                <div class="ubicacion-abajo-derecha"></div>
+                            </label>
+                            <input class="personalizacion-input" type="radio" id="abajo-derecha" name="ubicacion"
+                                value="abajo-derecha">
+                        </div>
+                        <div class="giftcard-personalizacion">
+                            <label class="ubicacion" for="arriba-izquierda">
+                                <div class="ubicacion-arriba-izquierda"></div>
+                            </label>
+                            <input class="personalizacion-input" type="radio" id="arriba-izquierda" name="ubicacion"
+                                value="arriba-izquierda">
+                        </div>
+                        <div class="giftcard-personalizacion">
+                            <label class="ubicacion" for="arriba-derecha">
+                                <div class="ubicacion-arriba-derecha"></div>
+                            </label>
+                            <input class="personalizacion-input" type="radio" id="arriba-derecha" name="ubicacion"
+                                value="arriba-derecha">
+                        </div>
+                    </div>
+                    <p class="texto-personalizacion">Fondo</p>
+                    <div class="contenedor-personalizacion">
+                        <div class="giftcard-personalizacion">
+                            <label class="fondo" class="verde" for="fondo-verde"></label>
+                            <input class="personalizacion-input" type="radio" id="fondo-verde" name="fondos"
+                                value="fondo-verde">
+                        </div>
+                        <div class="giftcard-personalizacion">
+                            <label class="fondo" class="rojo" for="fondo-rojo"></label>
+                            <input class="personalizacion-input" type="radio" id="fondo-rojo" name="fondos"
+                                value="fondo-rojo">
+                        </div>
+                        <div class="giftcard-personalizacion">
+                            <label class="fondo" class="azul" for="fondo-azul"></label>
+                            <input class="personalizacion-input" type="radio" id="fondo-azul" name="fondos"
+                                value="fondo-azul">
+                        </div>
+                        <div class="giftcard-personalizacion">
+                            <label class="fondo" class="amarillo" for="fondo-amarillo"></label>
+                            <input class="personalizacion-input" type="radio" id="fondo-amarillo" name="fondos"
+                                value="fondo-amarillo">
+                        </div>
+                        <div class="giftcard-personalizacion">
+                            <label class="fondo" class="naranja" for="fondo-naranja"></label>
+                            <input class="personalizacion-input" type="radio" id="fondo-naranja" name="fondos"
+                                value="fondo-naranja">
+                        </div>
+                    </div>
+                    <div class="contenedor-enviar">
                         <input class="boton-confirmar" type="submit" value="CONFIRMAR">
-                        </div>
+                    </div>
 
-                    </div>
-                    </div>
-                        
-                            </div>
-                        </div>
-                    </form>
-                </div>
             </div>
-        </main>
-        <footer>
-            <div class="pieDePagina">
-                <div class="datos">
-                    <p>Datos del Grupo</p>
-                </div>
-                <div class="datos">
-                    <p>Menu Inferior</p>
-                </div>
-                <div class="datos">
-                    <p>Redes Sociales</p>
-                </div>
+        </div>
+
+        </div>
+        </div>
+        </form>
+        </div>
+        </div>
+    </main>
+    <footer>
+        <div class="pieDePagina">
+            <div class="datos">
+                <h4 class="titulo-grupo">Nuestro Grupo</h4>
+                <p class="detalle-alumno">Thaile Recchia - 44.512.056</p>
+                <p class="detalle-alumno">Francisco Larralde - 43.086.886</p>
+                <p class="detalle-alumno">Dario Miguel - 37.194.372</p>
+                <p class="detalle-alumno">Tomas Diuorno - 42.134.513</p>
             </div>
-        </footer>
-    </body>
+            <div class="datos">
+                <p>Menu Inferior</p>
+            </div>
+            <div class="datos">
+                <p>Redes Sociales</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
 </html>
