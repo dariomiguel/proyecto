@@ -1,284 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Inicio</title>
-        <link rel="stylesheet" href="./css/style.css" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap"
-            rel="stylesheet"
-        />
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/cursos.css">
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-            rel="stylesheet"
-        />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet" />
 
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap"
-            rel="stylesheet"
-        />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet" />
 
-        <link rel="icon" href="../img/favicon.ico" />
-    </head>
-    <body>
-        <header>
-            <div class="headerTop">
-                <div class="logo">
-                    <a href="../index.html">
-                        <img src="/img/logoPW.png" alt="" />
-                    </a>
-                </div>
-                <div class="buscador">
-                    <input type="text" placeholder="Buscar" />
-                    <button>Ok</button>
-                </div>
-                <div class="contenedorCarrito">
-                    <a href="./pages/login.html">
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 576 512"
-                        >
-                            <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
-                            <path
-                                d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"
-                            /></svg
-                    ></a>
-                </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap" rel="stylesheet" />
+
+    <link rel="icon" href="../img/favicon.ico" />
+</head>
+
+<body>
+    <header>
+        <div class="headerTop">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="/img/logoPW.png" alt="" />
+                </a>
             </div>
-            <div class="headerBot">
-                <nav>
-                    <ul>
-                        <li><a href="./pages/contacto.html">Contacto</a></li>
-                        <li>
-                            <a href="./pages/calendario_de_cursos.html"
-                                >Calendario</a
-                            >
-                        </li>
-                        <li>
-                            <a href="./pages/detalle_de_curso.html">Detalles</a>
-                        </li>
-                        <li>
-                            <a href="./pages/formulario_de_inscripcion.html"
-                                >Inscripcion</a
-                            >
-                        </li>
-                        <li>
-                            <a href="./pages/personalizacion_de_gift_card.html"
-                                >Gift Card</a
-                            >
-                        </li>
-                    </ul>
-                </nav>
+            <div class="buscador">
+                <input type="text" placeholder="Buscar" />
+                <button>Ok</button>
             </div>
-        </header>
-
-        <main>
-            <section class="contenedor-carruselImagenes">
-                <article class="contenedorImagen-carrusel">
-                    <img src="./img/inicioImagenes/imagenCarrusel.png" alt="" />
-                </article>
-            </section>
-
-            <section class="contenedor-pasosRegistro">
-                <article class="pasoDeRegistro">
-                    <h2 class="pasoDeRegistro-titulo">Paso 1</h2>
-                    <p class="pasoDeRegistro-texto">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Rem voluptates sit illum culpa sint fugiat a esse
-                        ratione, velit neque! Ad culpa ut, vel corporis facilis
-                        voluptate obcaecati fugit architecto?
-                    </p>
-                </article>
-                <article class="pasoDeRegistro">
-                    <h2 class="pasoDeRegistro-titulo">Paso 2</h2>
-                    <p class="pasoDeRegistro-texto">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Rem voluptates sit illum culpa sint fugiat a esse
-                        ratione, velit neque! Ad culpa ut, vel corporis facilis
-                        voluptate obcaecati fugit architecto?
-                    </p>
-                </article>
-                <article class="pasoDeRegistro">
-                    <h2 class="pasoDeRegistro-titulo">Paso 3</h2>
-                    <p class="pasoDeRegistro-texto">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing
-                        elit. Rem voluptates sit illum culpa sint fugiat a esse
-                        ratione, velit neque! Ad culpa ut, vel corporis facilis
-                        voluptate obcaecati fugit architecto?
-                    </p>
-                </article>
-            </section>
-
-            <h2 class="subtitulo-pagina">Cursos Destacados</h2>
-
-            <section class="contenedor-cursosDestacados">
-                <article class="cursoDestacado">
-                    <div class="cursoDestacado-primeraFila">
-                        <div class="contenedorImagen-curso">
-                            <img
-                                src="./img/inicioImagenes/imagenCurso.png"
-                                alt=""
-                            />
-                            <p class="precioCurso">$1000-</p>
-                        </div>
-                    </div>
-                    <div class="cursoDestacado-segundaFila">
-                        <div class="primeraColumna">
-                            <p>60hs</p>
-                        </div>
-                        <div class="segundaColumna">
-                            <p>Nombre del curso</p>
-                            <a href="#">Ver detalle</a>
-                            <button>Comprar</button>
-                        </div>
-                    </div>
-                </article>
-                <article class="cursoDestacado">
-                    <div class="cursoDestacado-primeraFila">
-                        <div class="contenedorImagen-curso">
-                            <img
-                                src="./img/inicioImagenes/imagenCurso.png"
-                                alt=""
-                            />
-                            <p class="precioCurso">$1000-</p>
-                        </div>
-                    </div>
-                    <div class="cursoDestacado-segundaFila">
-                        <div class="primeraColumna">
-                            <p>60hs</p>
-                        </div>
-                        <div class="segundaColumna">
-                            <p>Nombre del curso</p>
-                            <a href="#">Ver detalle</a>
-                            <button>Comprar</button>
-                        </div>
-                    </div>
-                </article>
-                <article class="cursoDestacado">
-                    <div class="cursoDestacado-primeraFila">
-                        <div class="contenedorImagen-curso">
-                            <img
-                                src="./img/inicioImagenes/imagenCurso.png"
-                                alt=""
-                            />
-                            <p class="precioCurso">$1000-</p>
-                        </div>
-                    </div>
-                    <div class="cursoDestacado-segundaFila">
-                        <div class="primeraColumna">
-                            <p>60hs</p>
-                        </div>
-                        <div class="segundaColumna">
-                            <p>Nombre del curso</p>
-                            <a href="#">Ver detalle</a>
-                            <button>Comprar</button>
-                        </div>
-                    </div>
-                </article>
-                <article class="cursoDestacado">
-                    <div class="cursoDestacado-primeraFila">
-                        <div class="contenedorImagen-curso">
-                            <img
-                                src="./img/inicioImagenes/imagenCurso.png"
-                                alt=""
-                            />
-                            <p class="precioCurso">$1000-</p>
-                        </div>
-                    </div>
-                    <div class="cursoDestacado-segundaFila">
-                        <div class="primeraColumna">
-                            <p>60hs</p>
-                        </div>
-                        <div class="segundaColumna">
-                            <p>Nombre del curso</p>
-                            <a href="#">Ver detalle</a>
-                            <button>Comprar</button>
-                        </div>
-                    </div>
-                </article>
-                <article class="cursoDestacado">
-                    <div class="cursoDestacado-primeraFila">
-                        <div class="contenedorImagen-curso">
-                            <img
-                                src="./img/inicioImagenes/imagenCurso.png"
-                                alt=""
-                            />
-                            <p class="precioCurso">$1000-</p>
-                        </div>
-                    </div>
-                    <div class="cursoDestacado-segundaFila">
-                        <div class="primeraColumna">
-                            <p>60hs</p>
-                        </div>
-                        <div class="segundaColumna">
-                            <p>Nombre del curso</p>
-                            <a href="#">Ver detalle</a>
-                            <button>Comprar</button>
-                        </div>
-                    </div>
-                </article>
-                <article class="cursoDestacado">
-                    <div class="cursoDestacado-primeraFila">
-                        <div class="contenedorImagen-curso">
-                            <img
-                                src="./img/inicioImagenes/imagenCurso.png"
-                                alt=""
-                            />
-                            <p class="precioCurso">$1000-</p>
-                        </div>
-                    </div>
-                    <div class="cursoDestacado-segundaFila">
-                        <div class="primeraColumna">
-                            <p>60hs</p>
-                        </div>
-                        <div class="segundaColumna">
-                            <p>Nombre del curso</p>
-                            <a href="#">Ver detalle</a>
-                            <button>Comprar</button>
-                        </div>
-                    </div>
-                </article>
-            </section>
-
-            <h2 class="subtitulo-pagina">Medios de pago</h2>
-
-            <section class="contenedor-mediosDePago">
-                <article class="medioDePago">
-                    <img src="./img/inicioImagenes/masterCard.png" alt="" />
-                </article>
-                <article class="medioDePago">
-                    <img src="./img/inicioImagenes/mercadoPago.png" alt="" />
-                </article>
-                <article class="medioDePago">
-                    <img src="./img/inicioImagenes/paypal.png" alt="" />
-                </article>
-                <article class="medioDePago">
-                    <img src="./img/inicioImagenes/visa.png" alt="" />
-                </article>
-            </section>
-        </main>
-
-        <footer>
-            <div class="pieDePagina">
-                <div class="datos">
-                    <p>Datos del Grupo</p>
-                </div>
-                <div class="datos">
-                    <p>Menu Inferior</p>
-                </div>
-                <div class="datos">
-                    <p>Redes Sociales</p>
-                </div>
+            <div class="contenedorCarrito">
+                <a href="./pages/login.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                        <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+                        <path
+                            d="M0 24C0 10.7 10.7 0 24 0L69.5 0c22 0 41.5 12.8 50.6 32l411 0c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3l-288.5 0 5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5L488 336c13.3 0 24 10.7 24 24s-10.7 24-24 24l-288.3 0c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5L24 48C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
+                        </svg></a>
             </div>
-        </footer>
-    </body>
+        </div>
+        <div class="headerBot">
+            <nav>
+                <ul>
+                    <li><a href="./pages/contacto.html">Contacto</a></li>
+                    <li>
+                        <a href="./pages/calendario_de_cursos.html">Calendario</a>
+                    </li>
+                    <li>
+                        <a href="./pages/detalle_de_curso.html">Detalles</a>
+                    </li>
+                    <li>
+                        <a href="./pages/formulario_de_inscripcion.html">Inscripcion</a>
+                    </li>
+                    <li>
+                        <a href="./pages/personalizacion_de_gift_card.html">Gift Card</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="contenedor-carruselImagenes">
+            <article class="contenedorImagen-carrusel">
+                <img src="./img/inicioImagenes/imagenCarrusel.png" alt="" />
+            </article>
+        </section>
+
+        <section class="contenedor-pasosRegistro">
+            <article class="pasoDeRegistro">
+                <h2 class="pasoDeRegistro-titulo">Paso 1</h2>
+                <p class="pasoDeRegistro-texto">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing
+                    elit. Rem voluptates sit illum culpa sint fugiat a esse
+                    ratione, velit neque! Ad culpa ut, vel corporis facilis
+                    voluptate obcaecati fugit architecto?
+                </p>
+            </article>
+            <article class="pasoDeRegistro">
+                <h2 class="pasoDeRegistro-titulo">Paso 2</h2>
+                <p class="pasoDeRegistro-texto">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing
+                    elit. Rem voluptates sit illum culpa sint fugiat a esse
+                    ratione, velit neque! Ad culpa ut, vel corporis facilis
+                    voluptate obcaecati fugit architecto?
+                </p>
+            </article>
+            <article class="pasoDeRegistro">
+                <h2 class="pasoDeRegistro-titulo">Paso 3</h2>
+                <p class="pasoDeRegistro-texto">
+                    Lorem ipsum dolor sit amet consectetur, adipisicing
+                    elit. Rem voluptates sit illum culpa sint fugiat a esse
+                    ratione, velit neque! Ad culpa ut, vel corporis facilis
+                    voluptate obcaecati fugit architecto?
+                </p>
+            </article>
+        </section>
+
+        <h2 class="subtitulo-pagina">Cursos Destacados</h2>
+
+        <section class="cursos-info">
+            <div class="cursos-container">
+                <div class="cursos-info-container">
+                    <div class="contenedor-imagen__curso">
+                        <img src="../img/ejemplo-cursos.jpg" alt="" />
+                    </div>
+                    <div class="cursos-info__detalles">
+                        <p class="cursos-info__horas">60hs</p>
+                        <div class="cursos-info__contenedor__titulo-detalles">
+                            <p class="cursos-info__titulo">
+                                Nombre del curso
+                            </p>
+                            <a href="" target="_blank">Ver Detalles</a>
+                        </div>
+                    </div>
+                    <button class="boton-inscripcion">Comprar</button>
+                </div>
+                <div class="cursos-info-container">
+                    <div class="contenedor-imagen__curso">
+                        <img src="../img/ejemplo-cursos.jpg" alt="" />
+                    </div>
+                    <div class="cursos-info__detalles">
+                        <p class="cursos-info__detalles-horas">60hs</p>
+                        <div class="cursos-info__contenedor__titulo-detalles">
+                            <p class="cursos-info__titulo">
+                                Nombre del curso
+                            </p>
+                            <a href="" target="_blank">Ver Detalles</a>
+                        </div>
+                    </div>
+                    <button class="boton-inscripcion">Comprar</button>
+                </div>
+                <div class="cursos-info-container">
+                    <div class="contenedor-imagen__curso">
+                        <img src="../img/ejemplo-cursos.jpg" alt="" />
+                    </div>
+                    <div class="cursos-info__detalles">
+                        <p class="cursos-info__detalles-horas">60hs</p>
+                        <div class="cursos-info__contenedor__titulo-detalles">
+                            <p class="cursos-info__titulo">
+                                Nombre del curso
+                            </p>
+                            <a href="" target="_blank">Ver Detalles</a>
+                        </div>
+                    </div>
+                    <button class="boton-inscripcion">Comprar</button>
+                </div>
+        </section>
+
+        <h2 class="subtitulo-pagina">Medios de pago</h2>
+
+        <section class="contenedor-mediosDePago">
+            <article class="medioDePago">
+                <img src="./img/inicioImagenes/masterCard.png" alt="" />
+            </article>
+            <article class="medioDePago">
+                <img src="./img/inicioImagenes/mercadoPago.png" alt="" />
+            </article>
+            <article class="medioDePago">
+                <img src="./img/inicioImagenes/paypal.png" alt="" />
+            </article>
+            <article class="medioDePago">
+                <img src="./img/inicioImagenes/visa.png" alt="" />
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <div class="pieDePagina">
+            <div class="datos">
+                <p>Datos del Grupo</p>
+            </div>
+            <div class="datos">
+                <p>Menu Inferior</p>
+            </div>
+            <div class="datos">
+                <p>Redes Sociales</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
 </html>
