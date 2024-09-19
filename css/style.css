@@ -31,18 +31,18 @@ footer {
     height: fit-content;
 }
 
-.nav-footer ul li{
+.nav-footer ul li {
     list-style-type: none;
 }
 
-.redes-container{
+.redes-container {
     width: 40%;
     text-align: center;
     display: flex;
     justify-content: space-around;
 }
 
-.red-social{
+.red-social {
     width: 20%;
 }
 
@@ -432,11 +432,12 @@ button.agregarPersona {
 /*Login*/
 
 .loginMain {
-    min-height: 100vh;
+    min-height: calc(100vh - 14rem);
     background-image: url(../img/fondo__login.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    padding: 0;
 }
 
 .contenedorLogin {
@@ -555,6 +556,7 @@ button.agregarPersona {
     display: flex;
     justify-content: space-around;
     margin-bottom: 0rem;
+    height: 14rem;
 }
 
 .titulo-footer {
@@ -563,7 +565,7 @@ button.agregarPersona {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
 }
 
 .detalle-alumno {
@@ -575,12 +577,12 @@ button.agregarPersona {
 
 .datos {
     padding: 1em;
+    padding-bottom: 0;
     height: 100%;
     width: 28rem;
     border-width: 2px;
     font-size: 1.2em;
     margin-bottom: 10px;
-    margin-top: 10px;
 }
 
 /* FOOTER*/
