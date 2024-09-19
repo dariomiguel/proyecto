@@ -417,11 +417,11 @@ button.agregarPersona {
 /*Login*/
 
 .loginMain {
-    min-height: calc(100vh - 10rem);
+    min-height: 100vh;
     background-image: url(../img/fondo__login.jpg);
     background-size: cover;
-    background-position: center; /* Centra la imagen en el contenedor */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .contenedorLogin {
@@ -542,7 +542,7 @@ button.agregarPersona {
     margin-bottom: 0rem;
 }
 
-.titulo-grupo{
+.titulo-grupo {
     font-size: 1.5em;
     color: #229799;
     font-family: "Roboto", sans-serif;
@@ -550,7 +550,7 @@ button.agregarPersona {
     font-style: normal;
 }
 
-.detalle-alumno{
+.detalle-alumno {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
