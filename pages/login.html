@@ -35,39 +35,38 @@
         <main class="loginMain">
             <div class="contenedorLogin">
                 <div class="contenedorLogin__bienvenida">
+                    <img src="../img/logoPW.png" alt="logo" />
                     <h1>Bienvenido!!</h1>
                     <p>Inicia sesión para disfrutar de nuestros cursos.</p>
                 </div>
                 <div class="contenedorLogin__datosInicio">
                     <h1>Iniciar Sesión</h1>
                     <section class="contenedorLogin__datosInicio--modosLogin">
-                        <p>Facebook</p>
-                        <p>Google</p>
-                        <p>Linkedin</p>
+                        <div class="loginPlatform"></div>
+                        <div class="loginPlatform"></div>
+                        <div class="loginPlatform"></div>
                     </section>
-                    <form action="../index.html" method="get">
-                        <div class="login">
-                            <div class="login__input">
-                                <label for="usuario">Usuario</label>
-                                <input
-                                    type="text"
-                                    id="usuario"
-                                    name="usuario"
-                                    size="40"
-                                    placeholder="Ingresar usuario"
-                                    required
-                                />
-                                <label for="contrasena">Contraseña</label>
-                                <input
-                                    type="password"
-                                    id="contrasena"
-                                    name="contrasena"
-                                    size="40"
-                                    placeholder="Ingresar contrasena"
-                                    required
-                                />
-                                <button type="submit">Enviar</button>
-                            </div>
+                    <form action="../index.html" method="get" class="login">
+                        <div class="login__input">
+                            <label for="usuario">Usuario</label>
+                            <input
+                                type="text"
+                                id="usuario"
+                                name="usuario"
+                                size="40"
+                                placeholder="Ingresar usuario"
+                                required
+                            />
+                            <label for="contrasena">Contraseña</label>
+                            <input
+                                type="password"
+                                id="contrasena"
+                                name="contrasena"
+                                size="40"
+                                placeholder="Ingresar contrasena"
+                                required
+                            />
+                            <button type="submit">Enviar</button>
                         </div>
                     </form>
                 </div>
