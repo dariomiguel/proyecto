@@ -32,6 +32,21 @@ footer {
     height: fit-content;
 }
 
+.nav-footer ul li{
+    list-style-type: none;
+}
+
+.redes-container{
+    width: 40%;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+}
+
+.red-social{
+    width: 20%;
+}
+
 /*HEADER*/
 
 .logo {
@@ -67,10 +82,11 @@ a {
     font-size: 1.2em;
     padding-bottom: 0.5em;
 }
-li {
+.headerBot nav ul li {
     display: inline;
     margin-inline: 70px;
 }
+
 li a {
     text-decoration: none;
     color: #f5f5f5;
@@ -542,12 +558,13 @@ button.agregarPersona {
     margin-bottom: 0rem;
 }
 
-.titulo-grupo {
+.titulo-footer {
     font-size: 1.5em;
     color: #229799;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: normal;
+    margin-bottom: .5em;
 }
 
 .detalle-alumno {
