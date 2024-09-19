@@ -64,7 +64,13 @@
 .personalizacion-input{
     height: 16px;
     width: 16px;
+
 }
+
+ .personalizacion-input:focus{
+    box-shadow: none;
+}
+
 
 .contenedor-personalizacion{
     width: 25rem;
