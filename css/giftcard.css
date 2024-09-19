@@ -12,6 +12,7 @@
     display: flex;
     flex-direction: row;
     margin: 2rem;
+    background-color: #fff;
 }
 
 .formulario-giftcard{
@@ -26,7 +27,7 @@
     margin: 2rem;
     text-align: center;
     align-content: center;
-    background-color: rgb(167, 167, 167);
+    background-color: #CF7848;
 }
 
 .destinatario-texto{
@@ -46,6 +47,11 @@
     align-items: center;
     height: 5rem;
     width: 3rem;
+    transition: .3s;
+}
+
+.giftcard-personalizacion:hover{
+    transform: scale(1.08);
 }
 
 .circulos{
@@ -198,11 +204,48 @@ font-size: 16px;
     font-size: 18px;
     font-weight: 400;
     cursor: pointer;
-    background-color: grey;
+    background-color: #229799;
+    transition: background-color 0.3s;
     color: white;
 }
 
 .contenedor-enviar{
+    width: 8rem;
+    height: 2.5rem;
     padding: 1rem;
     padding-left: 0;
+    transition: 0.3s;
+}
+
+.contenedor-enviar:hover{
+    transform: scale(1.02);
+}
+
+
+.boton-confirmar:hover{
+    background-color: #48CFCB;
+}
+
+.azul-gris{
+    background-color: #434F4F;
+}
+
+.marron{
+    background-color: #7A6153;
+}
+
+.cian{
+    background-color: #48CECA;
+}
+
+.cian-oscuro{
+    background-color: #568F8D;
+}
+
+.naranja{
+    background-color: #CF7848;
+}
+
+.negro{
+    background-color: #000;
 }
