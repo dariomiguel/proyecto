@@ -142,11 +142,18 @@ header button {
 }
 
 .pasoDeRegistro {
-    width: 20rem;
-    height: fit-content;
-    background-color: darkgray;
+    max-width: 20rem;
+    padding: 0.5rem;
+    border-radius: 1em;
+    box-shadow: 0 0 5px rgb(66,66,66, .5);
     margin: 1rem 0;
+    align-content: center;
+    transition: .3s;
 }
+.pasoDeRegistro:hover{
+    transform: scale(1.08);
+}
+
 .pasoDeRegistro .pasoDeRegistro-titulo {
     text-align: center;
 }
@@ -162,72 +169,6 @@ header button {
     margin: 1rem 0;
 }
 /*SUBTITULOS*/
-
-/*CURSOS DESTACADOS*/
-
-.contenedor-cursosDestacados {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: 3rem;
-    column-gap: 10rem;
-    margin-left: 5rem;
-    margin-right: 5rem;
-}
-
-.cursoDestacado {
-    width: 20rem;
-    height: 20rem;
-    border: solid;
-}
-
-.contenedorImagen-curso {
-    margin: 1rem;
-    position: relative;
-}
-.contenedorImagen-curso img {
-    max-width: 100%;
-    display: block;
-}
-
-.contenedorImagen-curso .precioCurso {
-    position: absolute;
-    right: 0;
-    bottom: 20%;
-    background-color: black;
-    color: white;
-    font-size: 2rem;
-    padding: 0.2rem;
-}
-
-.cursoDestacado .cursoDestacado-segundaFila {
-    display: flex;
-    justify-content: space-between;
-    margin: 1rem;
-}
-
-.cursoDestacado .cursoDestacado-segundaFila .primeraColumna {
-    font-size: 1.5rem;
-    font-weight: 800;
-}
-.cursoDestacado .cursoDestacado-segundaFila .segundaColumna {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-}
-
-.cursoDestacado .cursoDestacado-segundaFila .segundaColumna p {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-.cursoDestacado .cursoDestacado-segundaFila .segundaColumna a {
-    font-size: 1.1rem;
-}
-.cursoDestacado .cursoDestacado-segundaFila .segundaColumna button {
-    font-size: 1.2rem;
-    padding: 0.2rem;
-}
-/*CURSOS DESTACADOS*/
 
 /*MEDIOS DE PAGO*/
 .contenedor-mediosDePago {
