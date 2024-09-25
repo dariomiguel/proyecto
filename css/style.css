@@ -367,7 +367,8 @@ button.agregarPersona {
     margin-bottom: 1rem;
 }
 
-.login button {
+.login button,
+.contactoMain button {
     background-color: #229799;
     color: white;
     width: 55%;
@@ -376,7 +377,8 @@ button.agregarPersona {
     margin-bottom: 1rem;
 }
 
-.login button:hover {
+.login button:hover,
+.contactoMain button:hover {
     background-color: #48cfcb;
     color: black;
     width: 55%;
@@ -396,6 +398,15 @@ button.agregarPersona {
 
     .contenedorLogin__bienvenida {
         display: none;
+    }
+
+    .contacto {
+        flex-direction: column-reverse;
+    }
+
+    .bloqueDeTexto {
+        margin: 1rem 0 1rem 0;
+        height: 10rem;
     }
 }
 
@@ -428,6 +439,19 @@ button.agregarPersona {
         min-height: 100%;
         margin: 0;
         border-radius: 0;
+    }
+
+    .contenedorContactos {
+        width: 90%;
+    }
+
+    .contactoMain input {
+        width: 75%;
+    }
+
+    .ubicacion__map {
+        width: 100%;
+        margin: 0;
     }
 }
 
