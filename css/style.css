@@ -402,6 +402,7 @@ button.agregarPersona {
 
     .contacto {
         flex-direction: column-reverse;
+        align-items: center;
     }
 
     .bloqueDeTexto {
