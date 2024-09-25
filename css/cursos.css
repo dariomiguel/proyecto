@@ -103,7 +103,7 @@
 }
 
 .contenedor-imagen__docente{
-    width: 180px;
+    max-width: 12em;
 }
 
 .contenedor-imagen__docente img{
@@ -310,5 +310,31 @@
     .navbar-cursos__lista{
         display: flex;
         flex-direction: column;
+    }
+    .descripcion__contenido{
+        display: none;
+    }
+    .descripcion__info-curso .curso-item,
+    .subtitulo-curso, .boton-inscripcion{
+        font-size: 1.5em;
+    }
+    .descripcion-docente{
+        font-size: 1.5em;
+    }
+    .nombre-docente{
+        font-size: 1.6em;
+    }
+    .cursos-info__detalles{
+        font-size: 1.5em;
+    }
+
+}
+
+@media(max-width: 64em){
+    .descripcion__info-curso .curso-item{
+        font-size: 1.8em;
+    }
+    .descripcion__contenido{
+        display: none;
     }
 }
