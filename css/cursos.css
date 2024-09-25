@@ -29,8 +29,8 @@
 }
 
 .main-detalle .descripcion .descripcion__imagen .contenedor-imagen{
-    height: 260px;
-    width: 260px;
+    max-height: 25em;
+    max-width: 25em;
 }
 
 .main-detalle .descripcion .descripcion__imagen .contenedor-imagen img{
@@ -40,7 +40,7 @@
 }
 
 .main-detalle .descripcion .descripcion__info-curso{
-    width: 40%;
+    width: 35%;
     display: flex;
     flex-direction: column;
     gap: 1rem;
@@ -163,6 +163,7 @@
 
 
 /* ------------- CURSOS (INFO) ------------- */
+
 .cursos-container{
     display: flex;
     gap: 2rem;
@@ -186,9 +187,12 @@
 
 .navbar-cursos__lista{
     height: fit-content;
+    display: flex;
+    gap: 1em;
 }
 
 .navbar-cursos__lista-elemento{
+    list-style-type: none;
     color: #f5f5f5;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
@@ -226,7 +230,7 @@
 }
 
 .contenedor-imagen__curso{
-    width: 20em;
+    max-width: 20em;
 }
 
 .cursos-info-container .contenedor-imagen__curso img{
@@ -263,7 +267,7 @@
 /* ------------- MAIN (extras) ------------- */
 
 .curso-item{
-    font-size: 1.1rem;
+    font-size: 1.8rem;
 }
 
 .contenedor-docente .subtitulo-curso{
