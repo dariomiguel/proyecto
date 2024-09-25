@@ -74,7 +74,7 @@ main {
 }
 
 .contenedor-mediosDePago .medioDePago {
-    width: 14rem;
+    max-width: 14rem;
 }
 .contenedor-mediosDePago .medioDePago img {
     display: block;
@@ -367,15 +367,18 @@ button.agregarPersona {
     margin-bottom: 1rem;
 }
 
-.login button {
+.login button,
+.contactoMain button {
     background-color: #229799;
     color: white;
     width: 55%;
     border-radius: 0.75rem;
     transition: background-color 0.45s ease;
+    margin-bottom: 1rem;
 }
 
-.login button:hover {
+.login button:hover,
+.contactoMain button:hover {
     background-color: #48cfcb;
     color: black;
     width: 55%;
@@ -387,9 +390,30 @@ button.agregarPersona {
 
 /*MEDIA QUERIES*/
 
+/* Tablets */
+@media (max-width: 60em) {
+    .contenedorLogin {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedorLogin__bienvenida {
+        display: none;
+    }
+
+    .contacto {
+        flex-direction: column-reverse;
+    }
+
+    .bloqueDeTexto {
+        margin: 1rem 0 1rem 0;
+        height: 10rem;
+    }
+}
+
 /* Smartphones */
 @media (max-width: 47em) {
-    .contenedor-carruselImagenes {
+    .contenedor-carruselImagenes,
+    .contenedorLogin__bienvenida {
         display: none;
     }
 
@@ -403,10 +427,32 @@ button.agregarPersona {
     .cursosDestacados {
         grid-template-columns: repeat(1, 1fr);
     }
-}
 
-/* Tablets */
-@media (max-width: 60em) {
+    .loginMain {
+        margin: 0;
+        min-height: 100%;
+    }
+
+    .contenedorLogin {
+        width: 100vw;
+        height: 100%;
+        min-height: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .contenedorContactos {
+        width: 90%;
+    }
+
+    .contactoMain input {
+        width: 75%;
+    }
+
+    .ubicacion__map {
+        width: 100%;
+        margin: 0;
+    }
 }
 
 /*MEDIA QUERIES*/
