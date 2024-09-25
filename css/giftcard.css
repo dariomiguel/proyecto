@@ -249,8 +249,18 @@
     background-color: #000;
 }
 
-@media (max-width: 60em) {
+@media screen and (max-width: 60rem) {
     .box {
         flex-direction: column;
+        padding: 0;
+    }
+
+    .giftcard-main {
+        padding: 0.5rem;
+        margin: 0;
+    }
+
+    .giftcard-destinatario {
+        margin: auto;
     }
 }
