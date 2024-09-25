@@ -165,8 +165,16 @@ li a:hover {
 /*FOOTER*/
 
 @media screen and (max-width:47em){
-    .buscador , .logo , .headerBot{
+    .buscador, .headerBot{
         display: none;
+    }
+
+    .logo{
+        width: 5em;
+    }
+
+    .carrito{
+        width: 2em;
     }
 
     .headerTop{

@@ -332,9 +332,13 @@
 
 @media(max-width: 64em){
     .descripcion__info-curso .curso-item{
-        font-size: 1.8em;
+        font-size: 1.5em;
     }
     .descripcion__contenido{
         display: none;
+    }
+    .descripcion__info-curso .curso-item,
+    .subtitulo-curso, .boton-inscripcion{
+        font-size: 1.5em;
     }
 }
