@@ -74,7 +74,7 @@ main {
 }
 
 .contenedor-mediosDePago .medioDePago {
-    width: 14rem;
+    max-width: 14rem;
 }
 .contenedor-mediosDePago .medioDePago img {
     display: block;
