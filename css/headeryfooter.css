@@ -11,6 +11,9 @@ header{
     bottom: 0;
     height: fit-content;
     padding: 10px;
+    font-family: "Bebas Neue", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 .headerTop{
     display: flex;
@@ -31,7 +34,6 @@ header{
     padding: 10px;
     width: 100%;
     border-radius: 5px 0 0 5px;
-    
 }
 .buscador-boton{
     background: #48cfcb;
@@ -52,7 +54,6 @@ header{
     background-color: #fff;
     color: black;
     text-decoration: none;
-    
 }
 .registrarse{
     width: 100%;

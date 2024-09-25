@@ -299,3 +299,16 @@
     font-size: 1.3em;
     text-align: center;
 }
+
+/*MQ*/
+
+/*SmartPhones*/
+@media (max-width: 47em){
+    .main-detalle{
+        font-size: .5em;
+    }
+    .navbar-cursos__lista{
+        display: flex;
+        flex-direction: column;
+    }
+}
