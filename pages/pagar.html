@@ -65,6 +65,7 @@
             </nav>
         </div>
     </header>
+    <div class="main-container">
     <main>
         <section class="datos-bancarios">
             <div class="pagar">
@@ -72,12 +73,17 @@
             </div>
             <div class="parte-arriba-pago">
                 <h2>Método de pago</h2>
-                <p>Conexión segura</p>
+                <span>Conexión segura</span>
             </div>
             <div class="medio-de-pago">
                 <div class="tarjeta">
-                <input class="input-check" type="radio">
+                <input id="metodo-pago-1" class="input-check" type="radio" name="metodo-de-pago">
+                <label for="metodo-pago-1" class="tarjeta-label">
+                <div class="iconos-contenedor">
+                    <img class="iconos" src="../img/inicioImagenes/357601b14f5c87d02924c457fd31f34e-icono-de-color-de-tarjeta-de-credito.webp">
+                </div>
                 <h2> Tarjeta de crédito/debito</h2>
+            </label>
                 </div>
                 <div class="datos-de-tarjeta">
                 <div>
@@ -106,17 +112,43 @@
                     <p> Guardar esta tarjeta de forma segura para comprar más adelante</p>
                 </div>
             </div>
-            </div>
-        </div>
         <div class="mercado-pago">
-            <input class="input-check" type="radio">
+            <input id="metodo-pago-2" class="input-check" type="radio" name="metodo-de-pago">
+            <label for="metodo-pago-2" class="tarjeta-label">
             <div class="iconos-contenedor">
             <img class="iconos" src="../img/inicioImagenes/logo-mercado-pago-icone-1024.webp">
             </div>
             <h2>MercadoPago</h2>
+            </label>
         </div>
-        </section>
+        </secton>
     </main>
+    <aside class="resumen">
+        <div>
+            <h2 class="resumen-texto">Resumen</h2>
+        </div>
+            <div>
+                <div class="total">
+                    <span>Precio original: </span>
+                    <span>$74,99 US$</span>
+                </div>
+
+                <div class="total">
+                    <span>Descuentos</span>
+                    <span>$0,00 US$</span>
+                </div>
+                <div class="linea"></div>
+                <div class="total">
+                    <h3 class="total-texto">Total</h3>
+                    <h3 class="total-texto">$74,99 US$</h3>
+                </div>
+            </div>
+            <div class="contenedor-confirmar">
+                <input class="boton-confirmar" type="submit" value="Pagar">
+            </div>
+    </aside>
+    </div>
+    </body>
     <footer>
         <div class="pieDePagina">
             <div class="datos">
