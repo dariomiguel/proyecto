@@ -8,15 +8,84 @@ main{
     margin: auto;
 }
 
+.datos-de-tarjeta{
+    padding: 20px;
+    padding-top: 0;
+}
+
+
 .datos-bancarios{
     display: flex;
     flex-direction: column;
 }
+.input-tarjeta{
+    width: 100%;
+    height: 2.5rem;
+    border: 2px solid #000;
+    border-radius: 0%;
+}
+.input-vencimiento{
+    width: 95%;
+}
 
+.input-especifico{
+    display: flex;
+    justify-content: right;
+}
 .parte-arriba-pago{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     height: 30px;
+}
+
+.medio-de-pago{
+    border: 2px solid #bbba;
+}
+
+
+.tarjeta{
+    border-bottom: 2px solid #bbba;
+    padding: 8px;
+    display: flex;
+    background-color: #bbb5;
+}
+
+h2{
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0;
+    font-size: 1rem;
+}
+
+h3{
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 10px;
+    padding-left: 0;
+}
+
+h1{
+    padding: ;
+}
+
+.input-check{
+    height: 16px;
+    width: 16px;
+}
+
+.pagar{
+    padding: 10px;
+    padding-left: 0;
+    font-size: 20px;
+}
+
+.input-check:focus{
+    box-shadow: none;
+}
+
+.fecha-vencimiento{
+    display: flex;
+    justify-content: space-between;
 }

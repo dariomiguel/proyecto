@@ -67,35 +67,40 @@
     </header>
     <main>
         <section class="datos-bancarios">
-            <h1> pagar</h1>
+            <div class="pagar">
+                <h1> Pagar</h1>
+            </div>
             <div class="parte-arriba-pago">
                 <h2>Método de pago</h2>
                 <p>Conexión segura</p>
             </div>
-            <div>
-                <div>
+            <div class="medio-de-pago">
+                <div class="tarjeta">
+                <input class="input-check" type="radio">
                 <h2> Tarjeta de crédito/debito</h2>
                 </div>
+                <div class="datos-de-tarjeta">
                 <div>
                 <h3> Nombre en la tarjeta</h3>
-                <input type="text" placeholder="Nombre en la tarjeta" required>
+                <input class="input-tarjeta" type="text" placeholder="Nombre en la tarjeta" required>
                 </div>
                 <div>
                     <h3>Número de tarjeta</h3>
-                    <input type="number" placeholder="1234 5678 9012 3456" required>
+                    <input class="input-tarjeta" type="text" placeholder="1234 5678 9012 3456" required>
                 </div>
-                <div>
+                <div class="fecha-vencimiento">
                     <div>
-                        <h2>Fecha de vencimiento</h2>
-                        <input type="month" placeholder="MM/AA" required>
+                        <h3>Fecha de vencimiento</h2>
+                        <input class="input-tarjeta input-vencimiento" type="month" placeholder="MM/AA" required>
                     </div>
                     <div>
-                        <h2> CVC/CVV </h2>
-                        <input type="number" placeholder="CVC" required>
+                        <h3> CVC/CVV </h2>
+                        <input class="input-tarjeta input-vencimiento" type="text" placeholder="CVC" required>
                     </div>
                 </div>
+                </div>
                 <div>
-                    <input type="checkbox">
+                    <input class="input-check" type="checkbox">
                     <p> Guardar esta tarjeta de forma segura para comprar más adelante</p>
                 </div>
             </div>
@@ -104,6 +109,7 @@
         <div>
             <h2>MercadoPago</h2>
         </div>
+        </section>
     </main>
     <footer>
         <div class="pieDePagina">
