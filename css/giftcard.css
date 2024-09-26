@@ -45,10 +45,13 @@
     align-items: center;
     height: 5rem;
     width: 3rem;
+}
+
+.fondo, .ubicacion, .fuentes, .circulos{
     transition: 0.3s;
 }
 
-.giftcard-personalizacion:hover {
+.fondo:hover, .ubicacion:hover, .fuentes:hover, .circulos:hover{
     transform: scale(1.08);
 }
 
