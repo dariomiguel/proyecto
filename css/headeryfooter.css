@@ -79,6 +79,27 @@ header{
     text-align: center;
     font-size: 1.2rem;
 }
+
+.nav_list-vertical{
+    display: none;
+}
+
+.menu_desplegable{
+    display: none;
+}
+
+.menu_desplegable:hover .nav_list-vertical {
+    display: block;
+    position: absolute;
+    background: #424242;
+}
+
+.menu_desplegable  .nav_list-item {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+
 .nav_list-item {
     display: inline;
     text-decoration: none;
@@ -165,21 +186,33 @@ li a:hover {
 /*FOOTER*/
 
 @media screen and (max-width:47em){
-    .buscador, .headerBot{
+    .buscador, .headerBot , .registrarse , .iniciarSesion{
         display: none;
     }
 
+    .headerTop{
+        display: grid ;
+        grid-template-areas: "menu logo carrito";
+        justify-content: space-between;
+    }
+
+    .menu_desplegable{
+        display: block;
+        width: fit-content;
+        grid-area: menu;
+    }
+
     .logo{
+        grid-area: logo;
         width: 5em;
     }
 
     .carrito{
+        grid-area: carrito;
         width: 2em;
     }
 
-    .headerTop{
-        justify-content: space-between;
-    }
+    
 
     .pieDePagina{
         display: flex;
