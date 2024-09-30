@@ -491,6 +491,30 @@ button.agregarPersona {
         width: 100%;
         margin: 0;
     }
+
+    .inscripcion:nth-of-type(2),
+    .inscripcion:nth-of-type(3),
+    .removerCurso{
+        display: none;
+    }
+
+    .inscripcion__contenedor{
+        flex-direction: column;
+    }
+
+    .contenedorAgregarPersona button{
+        margin-right: 0;
+    }
+
+    .contenedorInscribirse{
+        flex-direction: column;
+        padding-left: 0;
+        align-items: normal;
+        margin-top: 1rem;
+        width: fit-content;
+    }
+
+
 }
 
 /*MEDIA QUERIES*/
