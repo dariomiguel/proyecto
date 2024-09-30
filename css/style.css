@@ -204,13 +204,14 @@ a.inscribirse{
 
 .bloqueDeTexto {
     display: flex;
+    width: 100%;
     align-items: center;
     flex-direction: column;
     row-gap: 1rem;
 }
 .bloqueDeTexto textarea {
     height: 80%;
-    width: 30rem;
+    width: 100%;
     font-size: 1rem;
     padding: 1rem;
 }
