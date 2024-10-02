@@ -323,7 +323,7 @@
     }
 }
 
-@media(min-width:48em), (max-width: 64em){
+@media(max-width: 60em){
     .subtitulo-curso, .nombre-docente, .titulos-unidades{
         font-size: 1.1em;
     }
