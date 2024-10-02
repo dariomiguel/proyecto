@@ -22,7 +22,8 @@
 .giftcard-destinatario {
     position: relative;
     height: 24rem;
-    width: 28rem;
+    width: 100%;
+    max-width: 28rem;
     margin: 2rem;
     text-align: center;
     align-content: center;
@@ -34,6 +35,7 @@
     font-size: 1rem;
     padding-bottom: 70px;
 }
+
 .negrita {
     font-weight: 700;
     font-size: 3rem;
@@ -47,11 +49,17 @@
     width: 3rem;
 }
 
-.fondo, .ubicacion, .fuentes, .circulos{
+.fondo,
+.ubicacion,
+.fuentes,
+.circulos {
     transition: 0.3s;
 }
 
-.fondo:hover, .ubicacion:hover, .fuentes:hover, .circulos:hover{
+.fondo:hover,
+.ubicacion:hover,
+.fuentes:hover,
+.circulos:hover {
     transform: scale(1.08);
 }
 
@@ -265,5 +273,35 @@
 
     .giftcard-destinatario {
         margin: auto;
+    }
+
+    .negrita {
+        font-size: vw;
+    }
+}
+
+@media screen and (max-width: 60rem) {
+    .box {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .giftcard-main {
+        padding: 0.5rem;
+        margin: 0;
+    }
+
+    .giftcard-destinatario {
+        margin: auto;
+    }
+
+    .negrita {
+        font-size: 5vw;
+    }
+}
+
+@media (max-width: 47em) {
+    .negrita {
+        font-size: 7vw;
     }
 }
