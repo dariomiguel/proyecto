@@ -201,6 +201,8 @@ aside{
 @media screen and (max-width: 60rem){
     .main-container{
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
 
     .resumen{
@@ -208,5 +210,25 @@ aside{
         background-color: #fff;
         padding: 2rem;
         
+    }
+}
+
+@media screen and (max-width: 40rem){
+    main{
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    header, footer, body{
+        width: 100%;
+    }
+
+    .fecha-vencimiento{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .input-vencimiento{
+        width: 100%;
     }
 }
