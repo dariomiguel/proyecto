@@ -156,7 +156,7 @@ button.inscribirse {
     width: 100%;
     padding: 1rem;
     font-size: 1rem;
-    border: 2px solid #ccc;
+    border: .125em solid #ccc;
     border-radius: 0.25rem;
     outline: none;
 }
@@ -183,13 +183,13 @@ a.inscribirse{
     width: 8rem;
     height: 2.5rem;
     border: 0;
-    border-radius: 5px;
+    border-radius: .315em;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px;
+    border-radius: .315em;
     text-decoration: none;
-    font-size: 18px;
+    font-size: 1.125em;
     font-weight: 400;
     cursor: pointer;
     background-color: #229799;
