@@ -51,7 +51,7 @@
 }
 
 .main-detalle .descripcion .descripcion__contenido{
-    width: 22em;
+    max-width: 22em;
     height: 50%;
 }
 
@@ -125,8 +125,8 @@
 
 .rating input{
     position: relative;
-    width: 40px;
-    height: 40px;
+    width: 2.5em;
+    height: 2.5em;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -153,14 +153,13 @@
 }
 
 .nombre-docente{
-    font-size: 1.5rem;
+    font-size: 1.6rem;
 }
 
 .descripcion-docente{
-    font-size: 1.2rem;
+    font-size: 1.25rem;
 }
 /* ------------- FIN DOCENTE ------------- */
-
 
 /* ------------- CURSOS (INFO) ------------- */
 
@@ -267,7 +266,7 @@
 /* ------------- MAIN (extras) ------------- */
 
 .curso-item{
-    font-size: 1.8rem;
+    font-size: 1.5rem;
 }
 
 .contenedor-docente .subtitulo-curso{
@@ -304,41 +303,39 @@
 
 /*SmartPhones*/
 @media (max-width: 47em){
-    .main-detalle{
-        font-size: .5em;
-    }
     .navbar-cursos__lista{
         display: flex;
         flex-direction: column;
     }
-    .descripcion__contenido{
-        display: none;
-    }
     .descripcion__info-curso .curso-item,
     .subtitulo-curso, .boton-inscripcion{
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
     .descripcion-docente{
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
     .nombre-docente{
-        font-size: 1.6em;
+        font-size: 1.2em;
     }
     .cursos-info__detalles{
-        font-size: 1.5em;
+        font-size: 1.2em;
     }
 
 }
 
-@media(max-width: 64em){
-    .descripcion__info-curso .curso-item{
-        font-size: 1.5em;
+@media(min-width:48em), (max-width: 64em){
+    .descripcion{
+        display: flex;
+        flex-direction: column;
     }
     .descripcion__contenido{
-        display: none;
+        display: block;
+    }
+    .contenedor-checkbox, .contenedor-docente, .navbar-cursos__lista-elemento, .cursos-info__detalles{
+        font-size: .7em;
     }
     .descripcion__info-curso .curso-item,
     .subtitulo-curso, .boton-inscripcion{
-        font-size: 1.5em;
+        font-size: .7em;
     }
 }
