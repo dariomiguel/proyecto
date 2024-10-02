@@ -6,11 +6,11 @@
 /*HEADER*/
 header{
     background: #424242;
-    box-shadow: 0 0 20px rgba(72, 207, 203, 0.5);
+    box-shadow: 0 0 1.25em rgba(72, 207, 203, 0.5);
     width: 100%;
     bottom: 0;
     height: fit-content;
-    padding: 10px;
+    padding: .625em;
     font-family: "Bebas Neue", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -31,20 +31,20 @@ header{
     width: 30%;
 }
 .buscador-barra{
-    padding: 10px;
+    padding: .625em;
     width: 100%;
-    border-radius: 5px 0 0 5px;
+    border-radius: .315em 0 0 .315em;
 }
 .buscador-boton{
     background: #48cfcb;
     margin: auto;
-    padding: 13px 20px;
+    padding: .81em 1.25em;
     position: relative;
     border: 0;
     top: 0;
     bottom: 0;
     right: 0;
-    border-radius: 0 5px 5px 0;
+    border-radius: 0 .315em .315em 0;
     color: #fff;
     cursor: pointer;
 }
@@ -118,7 +118,7 @@ header{
 /*FOOTER*/
 footer {
     background: #424242;
-    box-shadow: 0 0 20px rgba(72, 207, 203, 0.5);
+    box-shadow: 0 0 1.25em rgba(72, 207, 203, 0.5);
     width: 100%;
     bottom: 0;
     min-height: fit-content;
@@ -136,9 +136,9 @@ footer {
     padding-bottom: 0;
     height: 100%;
     width: 28rem;
-    border-width: 2px;
+    border-width: .125em;
     font-size: 1.2em;
-    margin-bottom: 10px;
+    margin-bottom: .625em;
 }
 .titulo-footer {
     font-size: 1.5em;
