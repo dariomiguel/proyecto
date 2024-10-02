@@ -53,7 +53,7 @@
 
 
             <div class="buscador">
-                <input class="buscador-barra" type="text" placeholder="Buscar..">
+                <input class="buscador-barra" type="text" placeholder="Buscar..."  id="buscador__barra--input">
                 <button class="buscador-boton">OK</button>
             </div>
             <div class="botonAcceso">
@@ -106,26 +106,26 @@
                 <div class="datos-de-tarjeta">
                 <div>
                 <h3> Nombre en la tarjeta</h3>
-                <input class="input-tarjeta" type="tel" placeholder="Nombre en la tarjeta" required>
+                <input id="nombreTarjeta__input--Id" type="tel" placeholder="Nombre en la tarjeta" required>
                 </div>
                 <div>
                     <h3>Número de tarjeta</h3>
-                    <input class="input-tarjeta" type="tel" placeholder="1234 5678 9012 3456" pattern="\d*" title="Por favor, ingresar solo números" required>
+                    <input id="numeroTarjeta__input--Id" class="input-tarjeta" type="tel" placeholder="1234 5678 9012 3456" pattern="\d*" title="Por favor, ingresar solo números" required>
                 </div>
                 <div class="fecha-vencimiento">
                     <div>
-                        <h3>Fecha de vencimiento</h2>
-                        <input class="input-tarjeta input-vencimiento" type="tel" placeholder="MM/AA" pattern="\d*" title="Por favor, ingresar solo números" required>
+                        <h3>Fecha de vencimiento</h3>
+                        <input id="vencimientoTarjeta__input--Id" class="input-tarjeta input-vencimiento" type="tel" placeholder="MM/AA" pattern="\d*" title="Por favor, ingresar solo números" required>
                     </div>
                     <div>
-                        <h3> CVC/CVV </h2>
-                        <input class="input-tarjeta input-vencimiento" type="tel" placeholder="CVC" pattern="\d*" title="Por favor, ingresar solo números" required>
+                        <h3> CVC/CVV </h3>
+                        <input id="CVC__input--Id" class="input-tarjeta input-vencimiento" type="tel" placeholder="CVC" pattern="\d*" title="Por favor, ingresar solo números" required>
                     </div>
                 </div>
                 </div>
                 <div class="guardar-informacion">
                     <div class="input-guardar">
-                    <input class="input-check" type="checkbox">
+                    <input id="guardarTarjeta__input--Id" class="input-check" type="checkbox">
                     </div>
                     <p> Guardar esta tarjeta de forma segura para comprar más adelante</p>
                 </div>
@@ -139,7 +139,7 @@
             <h2>MercadoPago</h2>
             </label>
         </div>
-        </secton>
+        </section>
     </main>
     <aside class="resumen">
         <div>

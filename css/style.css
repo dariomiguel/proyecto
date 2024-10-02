@@ -169,7 +169,7 @@ button.inscribirse:hover {
     box-shadow: 0 0 0.25rem rgba(0, 123, 255, 0.5);
 }
 
-a.inscribirse{
+a.inscribirse {
     height: 2.5rem;
     width: 7rem;
     display: flex;
@@ -197,9 +197,9 @@ a.inscribirse{
     color: white;
 }
 
-.boton-confirmar:hover{
-        background-color: #48cfcb;
-        transform: scale(1.02);
+.boton-confirmar:hover {
+    background-color: #48cfcb;
+    transform: scale(1.02);
 }
 
 .bloqueDeTexto {
@@ -267,6 +267,7 @@ button.removerCurso {
 
 .contenedorAgregarPersona {
     display: flex;
+    flex-direction: row-reverse;
     margin-top: 0.625rem;
     height: 3.125rem;
     align-items: center;
@@ -494,27 +495,25 @@ button.agregarPersona {
 
     .inscripcion:nth-of-type(2),
     .inscripcion:nth-of-type(3),
-    .removerCurso{
+    .removerCurso {
         display: none;
     }
 
-    .inscripcion__contenedor{
+    .inscripcion__contenedor {
         flex-direction: column;
     }
 
-    .contenedorAgregarPersona button{
+    .contenedorAgregarPersona button {
         margin-right: 0;
     }
 
-    .contenedorInscribirse{
+    .contenedorInscribirse {
         flex-direction: column;
         padding-left: 0;
         align-items: normal;
         margin-top: 1rem;
         width: fit-content;
     }
-
-
 }
 
 /*MEDIA QUERIES*/
