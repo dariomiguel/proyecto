@@ -56,7 +56,7 @@
 
             
             <div class="buscador">
-                <input class="buscador-barra" type="text" placeholder="Buscar..">
+                <input class="buscador-barra" type="text" placeholder="Buscar..."  id="buscador__barra--input">
                 <button class="buscador-boton">OK</button>
             </div>
             <div class="botonAcceso">
@@ -94,69 +94,32 @@
                     <div class="inscripcion__contenedor">
                         <div class="inscripcion__input">
                             <label for="curso">Nombre</label>
-                            <input name="curso" type="text" placeholder="Nombre" required/>
+                            <input id="curso" name="curso" type="text" placeholder="Nombre" required/>
                         </div>
                         <div class="inscripcion__input">
                             <label for="descripcion">Apellido</label>
-                            <input type="descripcion" name="descripcion" placeholder="Apellido" required/>
+                            <input id="descripcion" name="descripcion" placeholder="Apellido" required/>
                         </div>
 
                         <div class="inscripcion__input">
                             <label for="duracion">DNI</label>
-                            <input type="tel" name="duracion" placeholder="DNI" pattern="\d*" title="Por favor, ingrese un DNI válido" required/>
+                            <input id="tel" name="duracion" placeholder="DNI" pattern="\d*" title="Por favor, ingrese un DNI válido" required/>
                         </div>
 
                         <button type="button" class="removerCurso"></button>
                     </div>
                 </div>
-                <div class="inscripcion">
-                    <div class="inscripcion__contenedor">
-                        <div class="inscripcion__input">
-                            <label for="curso">Nombre</label>
-                            <input name="curso" type="text" placeholder="Nombre" required/>
-                        </div>
-                        <div class="inscripcion__input">
-                            <label for="descripcion">Apellido</label>
-                            <input type="descripcion" name="descripcion" placeholder="Apellido" required/>
-                        </div>
 
-                        <div class="inscripcion__input">
-                            <label for="duracion">DNI</label>
-                            <input type="tel" name="duracion" placeholder="DNI" pattern="\d*" title="Por favor, ingrese un DNI válido" required/>
-                        </div>
-
-                        <button type="button" class="removerCurso"></button>
-                    </div>
-                </div>
-                <div class="inscripcion">
-                    <div class="inscripcion__contenedor">
-                        <div class="inscripcion__input">
-                            <label for="curso">Nombre</label>
-                            <input name="curso" type="text" placeholder="Nombre" required/>
-                        </div>
-
-                        <div class="inscripcion__input">
-                            <label for="descripcion">Apellido</label>
-                            <input type="descripcion" name="descripcion" placeholder="Apellido" required/>
-                        </div>
-
-                        <div class="inscripcion__input">
-                            <label for="duracion">DNI</label>
-                            <input type="tel" id="duracion" name="duracion" placeholder="DNI" pattern="\d*" title="Por favor, ingrese un DNI válido" required/>
-                        </div>
-                        <button type="button" class="removerCurso"></button>
-                    </div>
-                </div>
             <div class="contenedorAgregarPersona">
-                <button type="button" class="agregarPersona"></button>
+                <button id="boton__agregarPersona" type="button" class="agregarPersona"></button>
                 <p>Agregar Persona</p>
             </div>
             <div class="contenedorInscribirse">
                 <p>$ 0.00</p>
-                    <input type="submit" class="inscribirse boton-confirmar" value="Inscribirse"></button>
+                    <input id="boton__confirmar" type="submit" class="inscribirse boton-confirmar" value="Inscribirse"></button>
             </div>
+        </form>
         </div>
-    </form>
     </main>
 
     <footer>
