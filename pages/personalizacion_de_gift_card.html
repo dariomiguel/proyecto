@@ -86,11 +86,11 @@
     </header>
     <main class="giftcard-main">
         <div class="box">
-            <div class="giftcard-destinatario">
+            <div class="giftcard-destinatario" id="giftcard">
                 <div class="giftcard-precio">
                     <p>$0000.-</p>
                 </div>
-                <div class="gifcard-texto">
+                <div class="gifcard-texto" id="giftcardTexto">
                     <p>
                         GIFTCARD para <br> <span class="negrita"> destinatario</span>
                     </p>
@@ -112,25 +112,23 @@
                     <div class="contenedor-personalizacion">
                         <div class="giftcard-personalizacion">
                             <label class="circulos naranja" for="naranja"></label>
-                            <input  class="personalizacion-input" type="radio" id="naranja" name="colores" value="naranja">
+                            <input  class="personalizacion-input" type="radio" id="naranja" name="colores" value="#cf7848">
                         </div>
                         <div class="giftcard-personalizacion">
                             <label class="circulos cian-oscuro" for="cian-oscuro"></label>
-                            <input class="personalizacion-input" type="radio" id="cian-oscuro" name="colores" value="cian-oscuro">
+                            <input class="personalizacion-input" type="radio" id="cian-oscuro" name="colores" value="#568f8d">
                         </div>
                         <div class="giftcard-personalizacion">
                             <label class="circulos cian" for="cian"></label>
-                            <input class="personalizacion-input" type="radio" id="cian" name="colores" value="cian">
+                            <input class="personalizacion-input" type="radio" id="cian" name="colores" value="#48ceca">
                         </div>
                         <div class="giftcard-personalizacion">
                             <label class="circulos marron" for="marron"></label>
-                            <input class="personalizacion-input" type="radio" id="marron" name="colores"
-                                value="marron">
+                            <input class="personalizacion-input" type="radio" id="marron" name="colores" value="#7a6153">
                         </div>
                         <div class="giftcard-personalizacion">
                             <label class="circulos azul-gris" for="azul-gris"></label>
-                            <input class="personalizacion-input" type="radio" id="azul-gris" name="colores"
-                                value="azul-gris">
+                            <input class="personalizacion-input" type="radio" id="azul-gris" name="colores" value="#434f4f">
                         </div>
                     </div>
                     <p class="texto-personalizacion">Tamaño de fuente</p>
@@ -208,27 +206,27 @@
                         <div class="giftcard-personalizacion">
                             <label class="fondo naranja" for="fondo-naranja"></label>
                             <input class="personalizacion-input" type="radio" id="fondo-naranja" name="fondos"
-                                value="fondo-naranja">
+                                value="#cf7848">
                         </div>
                         <div class="giftcard-personalizacion">
                             <label class="fondo cian-oscuro" for="fondo-cian-oscuro"></label>
                             <input class="personalizacion-input" type="radio" id="fondo-cian-oscuro" name="fondos"
-                                value="fondo-cian-oscuro">
+                                value="#568f8d">
                         </div>
                         <div class="giftcard-personalizacion">
                             <label class="fondo cian" for="fondo-cian"></label>
                             <input class="personalizacion-input" type="radio" id="fondo-cian" name="fondos"
-                                value="fondo-cian">
+                                value="#48ceca">
                         </div>
                         <div class="giftcard-personalizacion">
                             <label class="fondo marron" for="fondo-marron"></label>
                             <input class="personalizacion-input" type="radio" id="fondo-marron" name="fondos"
-                                value="fondo-marron">
+                                value="#7a6153">
                         </div>
                         <div class="giftcard-personalizacion">
                             <label class="fondo azul-gris" for="fondo-azul-gris"></label>
                             <input class="personalizacion-input" type="radio" id="fondo-azul-gris" name="fondos"
-                                value="fondo-azul-gris">
+                                value="#434f4f">
                         </div>
                     </div>
                     <div class="contenedor-enviar">
@@ -285,6 +283,7 @@
             </div>
         </div>
     </footer>
+    <script src="../Js/giftcard.js"></script>
 </body>
 
 </html>
