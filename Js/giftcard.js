@@ -20,5 +20,20 @@ function cambiarColorDelTextoDeLaGiftCard(){
     });
 }
 
+function cambiarTamañoDelTextoDeLaGiftCard(){
+    const radios = document.querySelectorAll('input[name="fuentes"]');
+    const giftcardFuentes = document.getElementById('giftcardFuente');
+    const destinatario = document.getElementById('destinatario');
+
+    radios.forEach(radio => {
+        radio.addEventListener('change', (event) => {
+            const tamañoFuente = parseFloat(event.target.value);
+            giftcardFuentes.style.fontSize = event.target.value;
+            destinatario.style.fontSize = (tamañoFuente * 2) + 'rem';
+        });
+    });
+}
+
+cambiarTamañoDelTextoDeLaGiftCard();
 cambiarColorDelTextoDeLaGiftCard();
 cambiarColorDeLaGiftCard();

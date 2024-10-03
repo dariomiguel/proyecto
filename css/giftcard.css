@@ -36,9 +36,13 @@
     padding-bottom: 4.4em;
 }
 
+.giftcard-texto{
+    font-size: 1.2rem;
+}
+
 .negrita {
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 2.4rem;
 }
 
 .giftcard-personalizacion {
@@ -274,34 +278,5 @@
     .giftcard-destinatario {
         margin: auto;
     }
-
-    .negrita {
-        font-size: vw;
-    }
 }
 
-@media screen and (max-width: 60rem) {
-    .box {
-        flex-direction: column;
-        padding: 0;
-    }
-
-    .giftcard-main {
-        padding: 0.5rem;
-        margin: 0;
-    }
-
-    .giftcard-destinatario {
-        margin: auto;
-    }
-
-    .negrita {
-        font-size: 5vw;
-    }
-}
-
-@media (max-width: 47em) {
-    .negrita {
-        font-size: 7vw;
-    }
-}
