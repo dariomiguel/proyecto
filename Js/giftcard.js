@@ -20,5 +20,5 @@ function cambiarColorDelTextoDeLaGiftCard(){
     });
 }
 
-document.addEventListener('DOMContentLoaded', cambiarColorDelTextoDeLaGiftCard);
-document.addEventListener('DOMContentLoaded', cambiarColorDeLaGiftCard);
+cambiarColorDelTextoDeLaGiftCard();
+cambiarColorDeLaGiftCard();
