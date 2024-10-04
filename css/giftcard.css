@@ -17,6 +17,7 @@
 .formulario-giftcard {
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .giftcard-destinatario {
@@ -38,6 +39,10 @@
 
 .giftcard-texto{
     font-size: 1.2rem;
+}
+
+.boxita2{
+    height: 50rem;
 }
 
 .negrita {
@@ -95,30 +100,10 @@
     margin: 0.5rem;
 }
 
-.veinte-pixeles {
-    font-size: .9em;
-}
-
-.veintiocho-pixeles {
-    font-size: 1em;
-}
-
-.treintaydos-pixeles {
-    font-size: 1.1em;
-}
-
-.cuarentayocho-pixeles {
-    font-size: 1.2em;
-}
-
-.sesenta-pixeles {
-    font-size: 1.3em;
-}
-
 .separador {
     display: flex;
     box-sizing: border-box;
-    height: 1.5em;
+    height: 2rem;
     align-items: center;
 }
 
@@ -191,12 +176,17 @@
     margin: 0.25rem;
 }
 
+.tamaño-fuente {
+    margin-bottom: 0.5rem;
+}
+
 .titulo {
     padding: 1em;
     padding-left: 0;
 }
 .personalizacion-fuente {
     height: fit-content;
+    width: fit-content;
 }
 
 .input-destinatario {
