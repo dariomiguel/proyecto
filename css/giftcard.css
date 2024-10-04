@@ -112,12 +112,15 @@
     position: absolute;
     top: 0;
     right: 0;
+    left: inherit;
+    bottom: inherit;
     background-color: rgb(0, 0, 0);
-    width: 4.5rem;
+    width: 5rem;
     height: 2rem;
     color: white;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 }
 
 .ubicacion {
@@ -133,6 +136,8 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    left: inherit;
+    top: inherit;
     width: 1em;
     height: .5em;
     background-color: rgb(167, 167, 167);
@@ -142,6 +147,8 @@
     position: absolute;
     top: 0;
     left: 0;
+    bottom: inherit;
+    right: inherit;
     width: 1em;
     height: .5em;
     background-color: rgb(167, 167, 167);
@@ -151,6 +158,8 @@
     position: absolute;
     top: 0;
     right: 0;
+    bottom: inherit;
+    left: inherit;
     width: 1em;
     height: .5em;
     background-color: rgb(167, 167, 167);

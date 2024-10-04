@@ -87,8 +87,8 @@
     <main class="giftcard-main">
         <div class="box">
             <div class="giftcard-destinatario" id="giftcard">
-                <div class="giftcard-precio">
-                    <p>$0000.-</p>
+                <div class="giftcard-precio" id="giftcardPrecio">
+                    <p id="monto">$0000.-</p>
                 </div>
                 <div id="giftcardTexto">
                     <p class="giftcard-texto" id="giftcardFuente">
@@ -175,7 +175,7 @@
                         </div>
                     </div>
                     <div class="contenedor-personalizacion monto-contenedor">
-                        <p class="texto-personalizacion"> Monto $</p> <input class="monto" id="monto" placeholder="Sólo números" type="tel" pattern="\d*" title="Por favor, ingresar solo números" required>
+                        <p class="texto-personalizacion"> Monto $</p> <input class="monto" id="inputMonto" placeholder="Sólo números" type="tel" pattern="\d*" title="Por favor, ingresar solo números" required>
                     </div>
                     <p class="texto-personalizacion">Ubicación</p>
                     <div class="contenedor-personalizacion">
