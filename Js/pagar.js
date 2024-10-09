@@ -36,11 +36,11 @@ function desplegarMercadoPago(){
 function soloPermitirLetrasEnElNombre(){
     const inputNombre = document.getElementById('nombreTarjeta__input--Id');
 
-    inputNombre.addEventListener('input', (inputDelUsuario) =>{
-        let valorDelInput = inputDelUsuario.target.value;
+    inputNombre.addEventListener('input', (event) =>{
+        let valorDelInput = event.target.value;
         valorDelInput = valorDelInput.replace(/[^A-Za-z\s]/g, '');
 
-        inputDelUsuario.target.value = valorDelInput;
+        event.target.value = valorDelInput;
     });
 }
 
