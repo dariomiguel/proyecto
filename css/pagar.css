@@ -1,10 +1,10 @@
 .main-container{
     display: flex;
     margin: 0 auto;
-    max-width: 98.4rem;
     align-items: flex-start;
     flex-direction: row;
     justify-content: center;
+    max-width: 100%;
 }
 
 .resumen{
@@ -18,22 +18,42 @@ span{
 
 main{
     display: flex;
-    width: 35rem;
+    width: 30rem;
     flex-direction: row;
     justify-content: center;
     background-color: #fff;
     align-items: center;
+    box-sizing: border-box;
 }
 
 .datos-de-tarjeta{
     padding: 1.5rem;
     padding-top: 0;
+    border-top: 2px solid #bbba;
+    display: none;
+}
+
+.pagar-mercado-pago{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 1rem 2rem 1rem;
+    border-right: 2px solid #bbba;
+    border-left: 2px solid #bbba;
+    border-bottom: 2px solid #bbba;
+    font-size: 1rem;
+    display: none;
 }
 
 
 .datos-bancarios{
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 3rem;
+    height: 35rem;
+    width: 30rem;
 }
 .input-tarjeta{
     width: 100%;
@@ -64,13 +84,13 @@ main{
 
 
 .tarjeta, .mercado-pago{
-    border-bottom: 2px solid #bbba;
     border-top: 2px solid #bbba;
     padding: 0.5rem;
     display: flex;
     align-items: center;
     background-color: #bbb5;
     flex-direction: row;
+    cursor: pointer;
 }
 
 .tarjeta-label{
@@ -79,6 +99,7 @@ main{
 }
 
 .mercado-pago{
+    border-bottom: 2px solid #bbba;
     border-right: 2px solid #bbba;
     border-left: 2px solid #bbba;
 }
@@ -127,12 +148,13 @@ h3{
     font-size: 12px;
     justify-content: left;
     align-items: center;
-    padding-bottom: 0.5rem;
+    padding-top: 0.5rem 
 }
 
 .input-guardar{
-    padding: 0.5rem;
-    padding-left: 1.5rem;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.5rem 0.5rem 0
 }
 
 .iconos{
@@ -198,12 +220,35 @@ aside{
 }
 
 
-@media screen and (max-width: 60rem){
+@media screen and (max-width: 50rem){
     .main-container{
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
+        height: fit-content;
+        margin: auto;
     }
+
+
+    main{
+        height: fit-content;
+        padding-bottom: 10rem;
+        min-height: 0;
+        width: 90%;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+    }
+    .datos-bancarios{
+        height: fit-content;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .medio-de-pago, .mercado-pago, .pagar-mercado-pago{
+        width: 25rem;
+    }
+
 
     .resumen{
         width: 100%;
@@ -226,6 +271,12 @@ aside{
     .fecha-vencimiento{
         display: flex;
         flex-direction: column;
+    }
+
+    .medio-de-pago{
+        width: 100%;
+        justify-content: center;
+        align-items: center;
     }
 
     .input-vencimiento{

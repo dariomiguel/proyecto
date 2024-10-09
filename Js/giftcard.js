@@ -65,7 +65,6 @@ function cambiarElPrecioDeLaGiftcardEnTiempoReal(){
         radios.forEach(radio => {    
             radio.addEventListener('change', (event) => {
                 const value = event.target.value;
-                // Restablecer las posiciones
                 divMonto.style.top = 'inherit';
                 divMonto.style.right = 'inherit';
                 divMonto.style.bottom = 'inherit';

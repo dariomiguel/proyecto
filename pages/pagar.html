@@ -92,10 +92,10 @@
                 <h2>Método de pago</h2>
                 <span>Conexión segura</span>
             </div>
-            <form action="./pago_realizado.html" method="get">
+            <form action="./pago_realizado.html" method="get" id="formularioDePago">
             <div class="medio-de-pago">
                 <div class="tarjeta">
-                <input id="metodo-pago-1" class="input-check" type="radio" name="metodo-de-pago">
+                <input id="metodo-pago-1" class="input-check" type="radio" name="metodo-de-pago" onclick="desplegarTarjeta()">
                 <label for="metodo-pago-1" class="tarjeta-label">
                 <div class="iconos-contenedor">
                     <img class="iconos" src="../img/inicioImagenes/357601b14f5c87d02924c457fd31f34e-icono-de-color-de-tarjeta-de-credito.webp">
@@ -103,42 +103,47 @@
                 <h2> Tarjeta de crédito/debito</h2>
             </label>
                 </div>
-                <div class="datos-de-tarjeta">
+                <div class="datos-de-tarjeta" id="datosDeTarjeta">
                 <div>
                 <h3> Nombre en la tarjeta</h3>
-                <input id="nombreTarjeta__input--Id" class="input-tarjeta" type="tel" placeholder="Nombre en la tarjeta" required>
+                <input id="nombreTarjeta__input--Id" class="input-tarjeta required" name="nombre-tarjeta" type="tel" placeholder="Nombre en la tarjeta" required>
                 </div>
                 <div>
                     <h3>Número de tarjeta</h3>
-                    <input id="numeroTarjeta__input--Id" class="input-tarjeta" type="tel" placeholder="1234 5678 9012 3456" pattern="\d*" title="Por favor, ingresar solo números" required>
+                    <input id="numeroTarjeta__input--Id" class="input-tarjeta required" type="tel" name="numero-tarjeta" placeholder="1234 5678 9012 3456" pattern="\d*" title="Por favor, ingresar solo números" required>
                 </div>
                 <div class="fecha-vencimiento">
                     <div>
                         <h3>Fecha de vencimiento</h3>
-                        <input id="vencimientoTarjeta__input--Id" class="input-tarjeta input-vencimiento" type="tel" placeholder="MM/AA" pattern="\d*" title="Por favor, ingresar solo números" required>
+                        <input id="vencimientoTarjeta__input--Id" class="input-tarjeta input-vencimiento required" name="fecha-vencimiento-tarjeta" type="tel" placeholder="MM/AA" pattern="\d*" title="Por favor, ingresar solo números" required>
                     </div>
                     <div>
                         <h3> CVC/CVV </h3>
-                        <input id="CVC__input--Id" class="input-tarjeta input-vencimiento" type="tel" placeholder="CVC" pattern="\d*" title="Por favor, ingresar solo números" required>
+                        <input id="CVC__input-- Id" class="input-tarjeta input-vencimiento required" name="cvc" type="tel" placeholder="CVC" pattern="\d*" title="Por favor, ingresar solo números" required>
                     </div>
-                </div>
                 </div>
                 <div class="guardar-informacion">
                     <div class="input-guardar">
-                    <input id="guardarTarjeta__input--Id" class="input-check" type="checkbox">
-                    </div>
-                    <p> Guardar esta tarjeta de forma segura para comprar más adelante</p>
+                    <input id="guardarTarjeta__input--Id" name="guardar-tarjeta" class="input-check" type="checkbox">
+                </div>
+                <label for="guardarTarjeta__input--Id"> Guardar esta tarjeta de forma segura para comprar más adelante</label>
+                </div>
                 </div>
             </div>
         <div class="mercado-pago">
-            <input id="metodo-pago-2" class="input-check" type="radio" name="metodo-de-pago">
+            <input id="metodo-pago-2" class="input-check" type="radio" name="metodo-de-pago" onclick="desplegarMercadoPago()">
             <label for="metodo-pago-2" class="tarjeta-label">
             <div class="iconos-contenedor">
             <img class="iconos" src="../img/inicioImagenes/logo-mercado-pago-icone-1024.webp">
             </div>
             <h2>MercadoPago</h2>
             </label>
-        </div>
+            </div>
+            <div class="pagar-mercado-pago" id="datosMercadoPago">
+                <p>
+                    Para completar la transacción, te enviaremos a los servidores seguros de MercadoPago.
+                </p>
+            </div>
         </section>
     </main>
     <aside class="resumen">
@@ -162,7 +167,7 @@
                 </div>
             </div>
                 <div class="contenedor-confirmar">
-                    <input class="boton-confirmar" type="submit" value="Pagar">
+                    <input class="boton-confirmar" id="botonConfirmar" type="submit" value="Pagar">
                 </div>
         </form>
     </aside>
@@ -209,5 +214,6 @@
             </div>
         </div>
     </footer>
+    <script src="../Js/pagar.js"></script>
 </body>
 </html>
