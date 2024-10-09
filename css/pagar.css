@@ -19,10 +19,11 @@ span{
 main{
     display: flex;
     width: 30rem;
+    height: 30rem;
     flex-direction: row;
     justify-content: center;
     background-color: #fff;
-    align-items: center;
+    align-items: flex-start;
     box-sizing: border-box;
 }
 
@@ -58,8 +59,8 @@ main{
 .input-tarjeta{
     width: 100%;
     height: 2.5rem;
-    border: .125em solid #000;
-    border-radius: 0%;
+    border: 1.5px solid #000;
+    border-radius: 0;
 }
 .input-vencimiento{
     width: 95%;
@@ -220,7 +221,7 @@ aside{
 }
 
 
-@media screen and (max-width: 50rem){
+@media (max-width: 60rem){
     .main-container{
         flex-direction: column;
         justify-content: center;
@@ -236,7 +237,7 @@ aside{
         min-height: 0;
         width: 90%;
         margin: 0 auto;
-        align-items: center;
+        align-items: flex-start;
         justify-content: center;
     }
     .datos-bancarios{
@@ -258,7 +259,7 @@ aside{
     }
 }
 
-@media screen and (max-width: 40rem){
+@media(max-width: 40rem){
     main{
         width: 100%;
         overflow-x: hidden;
@@ -268,10 +269,18 @@ aside{
         width: 100%;
     }
 
+    .medio-de-pago, .mercado-pago, .pagar-mercado-pago {
+        width: 100%;
+    }
+
     .fecha-vencimiento{
         display: flex;
         flex-direction: column;
     }
+
+.main-container{
+    width: 100%;
+}
 
     .medio-de-pago{
         width: 100%;

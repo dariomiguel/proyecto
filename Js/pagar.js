@@ -32,3 +32,16 @@ function desplegarMercadoPago(){
     datosTarjeta.style.display = 'none';
     mercadoPago.style.display = 'block';
 }
+
+function soloPermitirLetrasEnElNombre(){
+    const inputNombre = document.getElementById('nombreTarjeta__input--Id');
+
+    inputNombre.addEventListener('input', (inputDelUsuario) =>{
+        let valorDelInput = inputDelUsuario.target.value;
+        valorDelInput = valorDelInput.replace(/[^A-Za-z\s]/g, '');
+
+        inputDelUsuario.target.value = valorDelInput;
+    });
+}
+
+soloPermitirLetrasEnElNombre();
