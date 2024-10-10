@@ -61,7 +61,11 @@ main{
     border-radius: 0;
 }
 .input-vencimiento{
-    width: 95%;
+    width: 90%;
+}
+
+.input-vencimiento-cvc{
+    width: 100%;
 }
 
 .input-especifico{
@@ -230,23 +234,28 @@ aside{
 
 
     main{
-        height: fit-content;
+        /* height: fit-content; */
         padding-bottom: 10rem;
         min-height: 0;
-        width: 90%;
+       /* width: 90%;*/
         margin: 0 auto;
         align-items: flex-start;
         justify-content: center;
     }
     .datos-bancarios{
+        display: block;
+
+        margin: auto;
+        padding: auto;
         height: fit-content;
         align-items: flex-start;
-        width: 100%;
+   /*     width: 100%; */
     }
 
-    .medio-de-pago, .mercado-pago, .pagar-mercado-pago{
+   /* .medio-de-pago, .mercado-pago, .pagar-mercado-pago{
         width: 25rem;
-    }
+    } */
+
 
 
     .resumen{
@@ -267,31 +276,23 @@ aside{
         width: 100%;
     }
 
-    .medio-de-pago, .mercado-pago, .pagar-mercado-pago {
-        width: 21rem;
-    }
-
-.datos-bancarios{
-    height: auto;
-    width: 100%;
-}
-
     .fecha-vencimiento{
         display: flex;
         flex-direction: column;
     }
 
-.main-container{
-    width: 100%;
-}
-
-    .medio-de-pago{
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .input-vencimiento{
+    .input-vencimiento {
         width: 100%;
     }
+
+    .datos-bancarios{
+        display: block;
+        margin: auto;
+        padding: auto;
+    }
+
+  /*  .medio-de-pago, .mercado-pago, .pagar-mercado-pago, .tarjeta{
+        width: 100%;
+    } */
+
 }
