@@ -48,8 +48,8 @@ function cambiarElPrecioDeLaGiftcardEnTiempoReal(){
     const monto = document.getElementById('monto');
 
 
-    inputMonto.addEventListener('input', (inputDelUsuario) => {
-        let valorDeLaGiftcard = inputDelUsuario.target.value.replace(/[^0-9]/g, '').slice(0, 6);
+    inputMonto.addEventListener('input', (event) => {
+        let valorDeLaGiftcard = event.target.value.replace(/[^0-9]/g, '').slice(0, 6);
         if (valorDeLaGiftcard.length > 0 && valorDeLaGiftcard[0] < '1') {
             valorDeLaGiftcard = '';
         }
