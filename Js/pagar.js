@@ -44,4 +44,28 @@ function soloPermitirLetrasEnElNombre(){
     });
 }
 
+function soloPermitirNumerosEnLaTarjeta(){
+    const inputNumero = document.getElementById('numeroTarjeta__input--Id');
+
+    inputNumero.addEventListener('input', () =>{
+        let numerosDeLaTarjeta = inputNumero.value.replace(/[^0-9]/g, '');
+        inputNumero.value = numerosDeLaTarjeta;
+    });
+}
+function soloPermitir16Digitos(){
+
+    const inputNumero = document.getElementById('numeroTarjeta__input--Id');
+    const formulario = document.getElementById('formularioDePago');
+    
+formulario.addEventListener('submit', (event)=>{
+    if(inputNumero.value.length < 16){
+        alert("Ingrese un numero de tarjeta válido");
+        event.preventDefault();
+        console.log('caca');
+        }
+    });
+}
+
+
+soloPermitirNumerosEnLaTarjeta();
 soloPermitirLetrasEnElNombre();

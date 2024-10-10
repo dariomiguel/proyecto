@@ -1,13 +1,16 @@
 .main-container{
+    position: relative;
     display: flex;
     margin: 0 auto;
     align-items: flex-start;
     flex-direction: row;
     justify-content: center;
     max-width: 100%;
+    background-color: #fff;
 }
 
 .resumen{
+
     padding-top: 7.5rem;
 }
 
@@ -222,6 +225,22 @@ aside{
     background-color: #48CFCB;
 }
 
+.mensaje-de-error{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    justify-items: center;
+    align-content: center;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-weight: 700;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+    width: 20rem;
+    height: 10rem;
+    background-color: #f007;
+}
 
 @media (max-width: 60rem){
     .main-container{

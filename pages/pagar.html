@@ -110,7 +110,7 @@
                 </div>
                 <div>
                     <h3>Número de tarjeta</h3>
-                    <input id="numeroTarjeta__input--Id" class="input-tarjeta required" type="tel" name="numero-tarjeta" placeholder="1234 5678 9012 3456" pattern="\d*" title="Por favor, ingresar solo números" required>
+                    <input id="numeroTarjeta__input--Id" class="input-tarjeta required" type="tel" name="numero-tarjeta" placeholder="1234 5678 9012 3456" minlength="15" maxlength="16" title="Por favor, ingresar una tarjeta válida" required>
                 </div>
                 <div class="fecha-vencimiento">
                     <div>
@@ -167,10 +167,16 @@
                 </div>
             </div>
                 <div class="contenedor-confirmar">
-                    <input class="boton-confirmar" id="botonConfirmar" type="submit" value="Pagar">
+                    <input class="boton-confirmar" onclick="soloPermitir16Digitos();" id="botonConfirmar" type="submit" value="Pagar">
                 </div>
+               
         </form>
     </aside>
+    <div class="mensaje-de-error" id="mensajeDeError">
+        <img 
+        <p>alerta de error
+Datos de la tarjeta no válidos. No se te ha cobrado nada. Introduce los datos de la tarjeta exactamente como aparecen en ella y vuelve a intentarlo.</p>
+    </div>
     </div>
     </body>
     <footer>
