@@ -234,10 +234,8 @@ aside{
 
 
     main{
-        /* height: fit-content; */
         padding-bottom: 10rem;
         min-height: 0;
-       /* width: 90%;*/
         margin: 0 auto;
         align-items: flex-start;
         justify-content: center;
@@ -249,14 +247,7 @@ aside{
         padding: auto;
         height: fit-content;
         align-items: flex-start;
-   /*     width: 100%; */
     }
-
-   /* .medio-de-pago, .mercado-pago, .pagar-mercado-pago{
-        width: 25rem;
-    } */
-
-
 
     .resumen{
         width: 100%;
@@ -290,9 +281,5 @@ aside{
         margin: auto;
         padding: auto;
     }
-
-  /*  .medio-de-pago, .mercado-pago, .pagar-mercado-pago, .tarjeta{
-        width: 100%;
-    } */
 
 }
