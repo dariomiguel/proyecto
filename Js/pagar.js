@@ -22,9 +22,14 @@ function desplegarMercadoPago(){
     const boton = document.getElementById('botonConfirmar');
     const formulario = document.getElementById('formularioDePago');
     const inputs = document.querySelectorAll('input.required');
+    const contenidoDeLosInputs = document.querySelectorAll('.input-tarjeta');
 
     inputs.forEach(input => {
         input.removeAttribute('required') 
+    });
+
+    contenidoDeLosInputs.forEach(input =>{
+        input.value = null;
     });
 
     formulario.action = 'https://www.mercadopago.com.ar/home';
@@ -56,16 +61,19 @@ function soloPermitir16Digitos(){
 
     const inputNumero = document.getElementById('numeroTarjeta__input--Id');
     const formulario = document.getElementById('formularioDePago');
+    const mensajeError = document.getElementById('mensajeDeError');
     
 formulario.addEventListener('submit', (event)=>{
-    if(inputNumero.value.length < 16){
-        alert("Ingrese un numero de tarjeta válido");
+    if(inputNumero.value.length !== 16 && inputNumero.value.length > 0 ){
+        mensajeError.classList.add('visible');
+
+        setTimeout(() =>{
+            mensajeError.classList.remove('visible');
+        }, 7000);
         event.preventDefault();
-        console.log('caca');
         }
     });
 }
-
 
 soloPermitirNumerosEnLaTarjeta();
 soloPermitirLetrasEnElNombre();
