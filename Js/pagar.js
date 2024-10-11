@@ -54,17 +54,42 @@ function soloPermitirNumerosEnLaTarjeta(){
 
     inputNumero.addEventListener('input', () =>{
         let numerosDeLaTarjeta = inputNumero.value.replace(/[^0-9]/g, '');
-        inputNumero.value = numerosDeLaTarjeta;
+        let nuevoValor = numerosDeLaTarjeta.replace(/(.{4})/g, '$1 ');
+        inputNumero.value = nuevoValor.trim();
     });
 }
-function soloPermitir16Digitos(){
 
+function soloPermitirNumerosEnlaFechaDeVencimiento(){
+    const inputVencimiento = document.getElementById('vencimientoTarjeta__input--Id');
+
+    inputVencimiento.addEventListener('input', () =>{
+    let fechaDeVencimiento = inputVencimiento.value.replace(/[^0-9]/g, '');
+    if(fechaDeVencimiento >= 3){
+    let nuevoValor = fechaDeVencimiento.replace(/(.{2})/, '$1/');
+    inputVencimiento.value = nuevoValor;
+    } else {
+        inputVencimiento.value = fechaDeVencimiento;
+    }
+    });
+
+    inputVencimiento.addEventListener('keydown', (event) => {
+        if (event.key === 'Backspace' || event.key === 'Delete') {
+            let valorActual = inputVencimiento.value;
+            if (valorActual.length === 3 && valorActual.charAt(2) === '/') {
+                inputVencimiento.value = valorActual.slice(0, 2); 
+                event.preventDefault(); 
+            }
+        }
+    });
+}
+
+function soloPermitir16Digitos(){
     const inputNumero = document.getElementById('numeroTarjeta__input--Id');
     const formulario = document.getElementById('formularioDePago');
     const mensajeError = document.getElementById('mensajeDeError');
     
 formulario.addEventListener('submit', (event)=>{
-    if(inputNumero.value.length !== 16 && inputNumero.value.length > 0 ){
+    if(inputNumero.value.length !== 19 && inputNumero.value.length > 0 ){
         mensajeError.classList.add('visible');
 
         setTimeout(() =>{
@@ -75,5 +100,6 @@ formulario.addEventListener('submit', (event)=>{
     });
 }
 
+soloPermitirNumerosEnlaFechaDeVencimiento();
 soloPermitirNumerosEnLaTarjeta();
 soloPermitirLetrasEnElNombre();

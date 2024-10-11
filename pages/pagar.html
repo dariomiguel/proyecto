@@ -110,16 +110,16 @@
                 </div>
                 <div>
                     <h3>Número de tarjeta</h3>
-                    <input id="numeroTarjeta__input--Id" class="input-tarjeta required" type="tel" name="numero-tarjeta" placeholder="1234 5678 9012 3456" minlength="15" maxlength="16" title="Por favor, ingresar una tarjeta válida" required>
+                    <input id="numeroTarjeta__input--Id" class="input-tarjeta required" type="tel" name="numero-tarjeta" placeholder="1234 5678 9012 3456" minlength="18" maxlength="19" title="Por favor, ingresar una tarjeta válida" required>
                 </div>
                 <div class="fecha-vencimiento">
                     <div>
                         <h3>Fecha de vencimiento</h3>
-                        <input id="vencimientoTarjeta__input--Id" class="input-tarjeta input-vencimiento required" name="fecha-vencimiento-tarjeta" type="tel" placeholder="MM/AA" pattern="\d*" title="Por favor, ingresar solo números" required>
+                        <input id="vencimientoTarjeta__input--Id" maxlength="5" class="input-tarjeta input-vencimiento required" name="fecha-vencimiento-tarjeta" type="tel" placeholder="MM/AA" pattern="\d*" title="Por favor, ingresar solo números" required>
                     </div>
                     <div>
                         <h3> CVC/CVV </h3>
-                        <input id="CVC__input-- Id" class="input-tarjeta input-vencimiento-cvc required" name="cvc" type="tel" placeholder="CVC" pattern="\d*" title="Por favor, ingresar solo números" required>
+                        <input id="CVC__input-- Id" maxlength="4" class="input-tarjeta input-vencimiento-cvc required" name="cvc" type="tel" placeholder="CVC" pattern="\d*" title="Por favor, ingresar solo números" required>
                     </div>
                 </div>
                 <div class="guardar-informacion">
