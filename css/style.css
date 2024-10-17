@@ -422,6 +422,17 @@ button.agregarPersona {
     width: 55%;
     border-radius: 0.75rem;
 }
+
+.precio-javascript{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.precio{
+    font-size: 1.2rem;
+}
 /*Login*/
 
 /*MAIN*/
