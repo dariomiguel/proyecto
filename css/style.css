@@ -20,7 +20,31 @@ main {
 
 /*MAIN*/
 /*CARRUSEL IMAGENES*/
-.contenedorImagen-carrusel img {
+.contenedorSlider{
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    margin:auto;
+    overflow: hidden;
+    position: relative;
+    
+}
+
+.contenedorOpciones{
+    position: absolute;
+    display: flex;
+    gap: .5rem;
+    z-index: 1;
+    right: 46%;
+    bottom: 5%;
+}
+
+.contenedorImagenesSlider{
+    display: flex;
+    transition: all 0.6s ease-in;/*Transicion de imagenes*/
+}
+
+.contenedorImagenesSlider img{
     width: 100%;
 }
 /*CARRUSEL IMAGENES*/
@@ -462,7 +486,7 @@ button.agregarPersona {
 
 /* Smartphones */
 @media (max-width: 47em) {
-    .contenedor-carruselImagenes,
+    .contenedorSlider,
     .contenedorLogin__bienvenida {
         display: none;
     }

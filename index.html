@@ -81,10 +81,20 @@
     </header>
 
     <main>
-        <section class="contenedor-carruselImagenes">
-            <article class="contenedorImagen-carrusel">
-                <img src="./img/inicioImagenes/imagenCarrusel.png" alt="" />
-            </article>
+        <section class="contenedorSlider">
+            <div class="contenedorOpciones">
+                <input class="opcionCarrusel" type="radio" name="opcionImagen" value="0">
+                <input class="opcionCarrusel" type="radio" name="opcionImagen" value="1">
+                <input class="opcionCarrusel" type="radio" name="opcionImagen" value="2">
+                <input class="opcionCarrusel" type="radio" name="opcionImagen" value="3">
+            </div>
+            <div class="contenedorImagenesSlider">
+                <img class="imagenCarrusel" src="../proyecto/img/inicioImagenes/imagenCarrusel1.png" alt="">
+                <img class="imagenCarrusel" src="../proyecto/img/inicioImagenes/imagenCarrusel2.png" alt="">
+                <img class="imagenCarrusel" src="../proyecto/img/inicioImagenes/imagenCarrusel3.png" alt="">
+                <img class="imagenCarrusel" src="../proyecto/img/inicioImagenes/imagenCarrusel1.png" alt="">
+            </div>
+            
         </section>
 
         <section class="contenedor-pasosRegistro">
@@ -223,6 +233,7 @@
             </div>
         </div>
     </footer>
+    <script src="./Js/carruselImagenes.js"></script>
 </body>
 
 </html>
