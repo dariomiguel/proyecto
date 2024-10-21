@@ -84,20 +84,47 @@ header{
     display: none;
 }
 
+
+.nav_list-vertical {
+    display: none;
+    flex-direction: row;
+    gap: 5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: #1c1c1c;
+    padding: .5rem;
+    font-size: 1.5rem;
+    height: 100vh;
+    box-shadow: 0 0 0 100vmax rgba(0,0,0, .5);
+}
+
+.abrirMenu{
+    width: 1.7rem;
+}
+
+
+.cerrarMenu{
+    width: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu_desplegable  .nav_list-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
 .menu_desplegable{
     display: none;
 }
 
-.menu_desplegable:hover .nav_list-vertical {
-    display: block;
-    position: absolute;
-    background: #424242;
+.menu_desplegable svg{
+    cursor: pointer;
 }
 
-.menu_desplegable  .nav_list-item {
-    display: block;
-    margin-bottom: 0.5em;
-}
+
 
 
 .nav_list-item {
