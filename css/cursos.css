@@ -28,7 +28,6 @@
 .descripcion__imagen{
     justify-self: flex-end;
     padding-right: 3rem;
-    padding-top: 3rem;
 }
 
 .negrita {
@@ -38,7 +37,8 @@
 
 .descripcion{
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);  
+    margin-bottom: 10rem;
 }
 
 .main-detalle .descripcion .descripcion__imagen .contenedor-imagen{
@@ -46,7 +46,19 @@
     max-width: 25em;
 }
 
-.main-detalle .descripcion .descripcion__imagen .contenedor-imagen img{
+.contenedor-imagen{
+    display: flex;
+    height: 25rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.imagen-cursos{
+    width: 100%;
+    align
+}
+
+.main-detalle .descripcion .descripcion__imagen .contenedor-imagen {
     width: 100%;
     border-radius: .4em;
     box-shadow: 0 0 5px rgb(66, 66, 66, .5);
@@ -84,6 +96,8 @@
     background-color: rgb(155, 155, 155);
 }
 
+
+
 .contenido__unidades{
     display: flex;
     flex-direction: column;
@@ -105,7 +119,13 @@
 }
 
 .unidades{
-    display: none;
+    max-height: 0; 
+    overflow: hidden; 
+    transition: 0.5s; 
+}
+
+.unidades.activo{
+    max-height: 10rem;
 }
 
 /*------------- PERFIL DOCENTE -------------*/
@@ -311,8 +331,9 @@
     width: 100%;
     display: flex;
     justify-content: space-between;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
+
 
 .cursos-info__contenedor__titulo-detalles{
     display: flex;
