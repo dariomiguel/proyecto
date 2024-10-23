@@ -20,31 +20,31 @@ main {
 
 /*MAIN*/
 /*CARRUSEL IMAGENES*/
-.contenedorSlider{
+.contenedorSlider {
     display: flex;
     justify-content: center;
     width: 60%;
-    margin:auto;
+    max-width: 76rem;
+    margin: auto;
     overflow: hidden;
     position: relative;
-    
 }
 
-.contenedorOpciones{
+.contenedorOpciones {
     position: absolute;
     display: flex;
-    gap: .5rem;
+    gap: 0.5rem;
     z-index: 1;
     right: 46%;
     bottom: 5%;
 }
 
-.contenedorImagenesSlider{
+.contenedorImagenesSlider {
     display: flex;
-    transition: all 0.6s ease-in;/*Transicion de imagenes*/
+    transition: all 0.6s ease-in; /*Transicion de imagenes*/
 }
 
-.contenedorImagenesSlider img{
+.contenedorImagenesSlider img {
     width: 100%;
 }
 /*CARRUSEL IMAGENES*/
@@ -179,7 +179,7 @@ button.inscribirse {
     width: 100%;
     padding: 1rem;
     font-size: 1rem;
-    border: .125em solid #ccc;
+    border: 0.125em solid #ccc;
     border-radius: 0.25rem;
     outline: none;
 }
@@ -206,11 +206,11 @@ a.inscribirse {
     width: 8rem;
     height: 2.5rem;
     border: 0;
-    border-radius: .315em;
+    border-radius: 0.315em;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: .315em;
+    border-radius: 0.315em;
     text-decoration: none;
     font-size: 1.125em;
     font-weight: 400;
@@ -446,14 +446,14 @@ button.agregarPersona {
     border-radius: 0.75rem;
 }
 
-.precio-cursos{
+.precio-cursos {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-.precio{
+.precio {
     font-size: 1.2rem;
 }
 /*Login*/
