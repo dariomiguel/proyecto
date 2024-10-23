@@ -223,20 +223,23 @@
         </section>
         <section class="cursos-info">
             <h2 class="subtitulo-curso">otros cursos</h2>
-            <nav class="navbar-cursos">
-                <ul class="navbar-cursos__lista">
-                    <li class="navbar-cursos__lista-elemento">Todos</li>
-                    <li class="navbar-cursos__lista-elemento">
-                        Programacion
-                    </li>
-                    <li class="navbar-cursos__lista-elemento">Data</li>
-                    <li class="navbar-cursos__lista-elemento">Diseño</li>
-                </ul>
-            </nav>
-            <div class="cursos-container">
+            <div class="contenedor-filtros">
+                <label for="all-items" class="navbar-cursos__lista-elemento">
+                    <input type="radio" name="filtro" id="all-items"/>Todos
+                </label>
+                <label for="programming-items" class="navbar-cursos__lista-elemento">
+                    <input type="radio" name="filtro" id="programming-items"/>Programacion
+                </label>
+                <label for="data-items" class="navbar-cursos__lista-elemento">
+                    <input type="radio" name="filtro" id="data-items"/>Data
+                </label>
+                <label for="design-items" class="navbar-cursos__lista-elemento">
+                    <input type="radio" name="filtro" id="design-items"/>Diseño
+                </label>
+            </div>
+            <div class="cursos-container" id="all-courses">
                 <div class="slider" id="slider">
-                    <div class="item-slide">
-                        <div class="cursos-info-container">
+                        <div class="cursos-info-container item-programacion">
                             <div class="contenedor-imagen__curso">
                                 <img src="../img/cardImages/JavaScript-logo.png" alt="" />
                             </div>
@@ -253,7 +256,7 @@
                                 Comprar
                             </button></a>
                         </div>
-                        <div class="cursos-info-container">
+                        <div class="cursos-info-container item-programacion">
                             <div class="contenedor-imagen__curso">
                                 <img src="../img/cardImages/Python_logo_icon.png" alt="" />
                             </div>
@@ -270,7 +273,7 @@
                                 Comprar
                             </button></a>
                         </div>
-                        <div class="cursos-info-container">
+                        <div class="cursos-info-container item-programacion">
                             <div class="contenedor-imagen__curso">
                                 <img src="../img/cardImages/cSharp-logo.png" alt="" />
                             </div>
@@ -287,7 +290,7 @@
                                 Comprar
                             </button></a>
                         </div>
-                        <div class="cursos-info-container">
+                        <div class="cursos-info-container item-programacion">
                             <div class="contenedor-imagen__curso">
                                 <img src="../img/cardImages/vueJs-logo.png" alt="" />
                             </div>
@@ -304,7 +307,7 @@
                                 Comprar
                             </button></a>
                         </div>
-                        <div class="cursos-info-container">
+                        <div class="cursos-info-container item-data">
                             <div class="contenedor-imagen__curso">
                                 <img src="../img/cardImages/sql-logo.png" alt="" />
                             </div>
@@ -321,9 +324,7 @@
                                 Comprar
                             </button></a>
                         </div>
-                    </div>
-                    <div class="item-slide">
-                        <div class="cursos-info-container">
+                        <div class="cursos-info-container item-data">
                             <div class="contenedor-imagen__curso">
                                 <img src="../img/cardImages/mysql-logo.png" alt="" />
                             </div>
@@ -340,7 +341,7 @@
                                 Comprar
                             </button></a>
                         </div>
-                        <div class="cursos-info-container">
+                        <div class="cursos-info-container item-disenio">
                             <div class="contenedor-imagen__curso">
                                 <img src="../img/cardImages/photoshop-logo.png" alt="" />
                             </div>
@@ -357,7 +358,7 @@
                                 Comprar
                             </button></a>
                         </div>
-                        <div class="cursos-info-container">
+                        <div class="cursos-info-container item-disenio">
                             <div class="contenedor-imagen__curso">
                                 <img src="../img/cardImages/illustrator-logo.png" alt="" />
                             </div>
@@ -375,7 +376,6 @@
                             </button></a>
                         </div>
                     </div>
-                </div>
                 <button class="action-buttons" id="prev"> < </button>
                 <button class="action-buttons" id="next"> > </button>
             </div>

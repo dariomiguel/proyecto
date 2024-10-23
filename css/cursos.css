@@ -92,8 +92,6 @@
     background-color: rgb(155, 155, 155);
 }
 
-
-
 .contenido__unidades{
     display: flex;
     flex-direction: column;
@@ -212,8 +210,50 @@
     display: flex;
     gap: 2rem;
     flex-wrap: nowrap;
-    overflow: hidden;
+    overflow-x: auto;
     position: relative;
+}
+
+.contenedor-filtros{
+    display: flex;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.cursos-info{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    padding: 3em;
+    gap: 3.8em;
+    justify-content: space-around;
+}
+
+.cursos-info .subtitulo-curso{
+    text-align: center;
+}
+
+.navbar-cursos{
+    height: fit-content;
+    display: flex;
+    gap: 1em;
+}
+
+.cursos-info label{
+    color: #f5f5f5;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: rgba(66, 66, 66, .5);
+    padding: 1em;
+    border-radius: 1em;
+    margin: 0;
+}
+
+#programming-items:checked ~ .cursos-container .slider .item-slide .item-data,
+#programming-items:checked ~ .cursos-container .slider .item-slide .item-disenio{
+    display: none;
 }
 
 .action-buttons__container{
@@ -240,59 +280,19 @@
 #next{
     right: 0;
 }
+
 #prev{
     left: 0;
 }
 
 .slider{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
+    width: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 23%;
     gap: 1.5em;
     z-index: 9;
     padding: 0 2.5em;
-}
-
-.item-slide{
-    display: flex;
-    gap: 1.5em;
-}
-
-.cursos-info{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 100%;
-    padding: 3em;
-    gap: 3.8em;
-    justify-content: space-around;
-}
-
-.cursos-info .subtitulo-curso{
-    text-align: center;
-}
-
-.navbar-cursos__lista{
-    height: fit-content;
-    display: flex;
-    gap: 1em;
-}
-
-.navbar-cursos__lista-elemento{
-    list-style-type: none;
-    color: #f5f5f5;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
-    font-style: normal;
-    background-color: rgba(66, 66, 66, .5);
-    padding: 1em;
-    border-radius: 1em;
-    margin: 0;
-    cursor: pointer;
-}
-
-.navbar-cursos__lista-elemento:hover{
-    background-color: #229799;
 }
 
 .cursos-encuadre{
@@ -301,8 +301,8 @@
 }
 
 .cursos-info-container{
-    min-width: 18em;
-    max-height: 100%;
+    max-width: 18em;
+    max-height: 28em;
     border-radius: 1em;
     box-shadow: 0 0 0.5em rgb(66, 66, 66, .5);
     padding: 1rem;
@@ -318,8 +318,8 @@
 }
 
 .contenedor-imagen__curso{
-    max-width: 20em;
-    height: 16em;
+    max-width: 100%;
+    height: 60%;
     overflow: hidden;
     border-radius: 1em;
     display: flex;
@@ -329,7 +329,6 @@
 
 .cursos-info-container .contenedor-imagen__curso img{
     width: 100%;
-    position: absolute;
     object-fit: cover;
 }
 
@@ -411,7 +410,7 @@
 /*MQ*/
 
 /*SmartPhones*/
-@media (max-width: 47em){
+@media screen and (max-width: 47em){
     .navbar-cursos__lista{
         display: flex;
         flex-direction: column;
@@ -426,13 +425,24 @@
     .subtitulo-curso, .nombre-docente, .titulos-unidades{
         font-size: .8em;
     }
+    .cursos-info-container .cursos-info__detalles, .cursos-info__contenedor__titulo-detalles{
+        flex-direction: column;
+        text-align: center;
+    }
+    .cursos-info-container button{
+        font-size: .8em;
+    }
+    .slider{
+        width: 100%;
+        grid-auto-columns: 100%;
+    }
     .descripcion__info-curso .curso-item, .boton-inscripcion,
     .descripcion-docente, .contenedor-checkbox, .navbar-cursos__lista-elemento, .cursos-info__detalles{
         font-size: .7em;
     }
 }
 
-@media(max-width: 60em){
+@media screen and (max-width: 60em){
     .subtitulo-curso, .nombre-docente, .titulos-unidades{
         font-size: 1.1em;
     }

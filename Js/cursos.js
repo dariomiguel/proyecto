@@ -6,7 +6,7 @@ const btnPrev = document.querySelector('#prev');
 const btnNext = document.querySelector('#next');
 
 function moveNext(){
-    slider.style.transform = "translateX(-50%)";
+    slider.style.transform = "translateX(-85%)";
 }
 
 function movePrev(){
@@ -20,7 +20,3 @@ btnPrev.addEventListener("click", function(){
     movePrev();
 });
 /*FIN SLIDER*/
-
-/*FILTRO*/
-
-/*FIN FILTRO*/
