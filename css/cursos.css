@@ -49,13 +49,9 @@
     align-items: center;
 }
 
-.contenedor-imagen{
-    height: 25rem;
-}
-
-
 .main-detalle .descripcion .descripcion__imagen .contenedor-imagen img{
     width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -212,7 +208,6 @@
 
 .cursos-container{
     display: flex;
-    justify-content: center;
     gap: 2rem;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -313,7 +308,6 @@
     padding: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     gap: 2em;
     transition: .3s;
     margin: 2em 0;
@@ -428,17 +422,6 @@
     .descripcion__contenido{
         display: block;
     }
-
-    .cursos-info{
-        padding: 0;
-    }
-
-    .cursos-container{
-        flex-direction: column;
-        overflow: visible;
-        width: 100%;
-        height: 100%;
-    }
     .subtitulo-curso, .nombre-docente, .titulos-unidades{
         font-size: .8em;
     }
@@ -462,10 +445,6 @@
 @media screen and (max-width: 60em){
     .subtitulo-curso, .nombre-docente, .titulos-unidades{
         font-size: 1.1em;
-    }
-
-    .cursos-container{
-        overflow: visible;
     }
     .descripcion__info-curso .curso-item, .boton-inscripcion,
     .descripcion-docente, .contenedor-checkbox, .navbar-cursos__lista-elemento, .cursos-info__detalles{
