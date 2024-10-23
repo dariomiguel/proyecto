@@ -58,7 +58,6 @@
                         <li class="nav_list-item"><a href="../registrarse.html">Registrarse</a></li>
                         <li class="nav_list-item"><a href="../contacto.html">Contacto</a></li>
                         <li class="nav_list-item"><a href="../calendario_de_cursos.html">Calendario</a></li>
-                        <li class="nav_list-item"><a href="../detalle_de_curso.html">Detalles</a></li>
                         <li class="nav_list-item"><a href="../formulario_de_inscripcion.html">Inscripcion</a></li>
                         <li class="nav_list-item"><a href="../personalizacion_de_gift_card.html">Gift Card</a></li>
                     </ul>
@@ -92,9 +91,6 @@
                         <a href="../calendario_de_cursos.html">Calendario</a>
                     </li>
                     <li class="nav_list-item">
-                        <a href="../detalle_de_curso.html">Detalles</a>
-                    </li>
-                    <li class="nav_list-item">
                         <a href="../formulario_de_inscripcion.html">Inscripcion</a>
                     </li>
                     <li class="nav_list-item">
@@ -112,12 +108,12 @@
                 </div>
             </div>
             <div class="descripcion__info-curso">
-                <h2 class="subtitulo-curso">Titulo Curso</h2>
-                <p class="curso-item">Valor:</p>
-                <p class="curso-item">Tiempo de dedicacion necesario:</p>
-                <p class="curso-item">Descripcion del curso:</p>
-                <p class="curso-item">Requisitos Previos:</p>
-                <a href="../formulario_de_inscripcion.html">
+                <h2 class="subtitulo-curso">Iniciando en JavaScript</h2>
+                <p class="curso-item"><span class="negrita">Valor:   </span>$1000</p>
+                <p class="curso-item"><span class="negrita">Tiempo de dedicacion necesario: </span>60hs</p>
+                <p class="curso-item"><span class="negrita">Descripcion del curso: </span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem</p>
+                <p class="curso-item"><span class="negrita">Requisitos Previos: </span>Ninguno</p>
+                <a href="formulario_de_inscripcion.html">
                     <button class="boton-inscripcion">Inscribirse</button>
                 </a>
             </div>
@@ -125,29 +121,32 @@
                 <h2 class="subtitulo-curso">Contenidos por clase</h2>
                 <div class="contenido__unidades">
                     <div class="contenedor__unidad">
-                        <h3 class="titulos-unidades">UNIDAD 1</h3>
-                        <ul class="menu-vertical">
-                            <li class="contenedor-checkbox">
-                                <input id="opcion__checkbox1--ID" type="checkbox"
-                                    class="opcion-checkbox" /><label>1283-1 Taller Modelo de Mecanica</label>
-                            </li>
-                            <li class="contenedor-checkbox">
-                                <input id="opcion__checkbox2--ID" type="checkbox" class="opcion-checkbox" /><label>283-2
-                                    Desarmado del Motor de
-                                    Gasolina</label>
-                            </li>
-                            <li class="contenedor-checkbox">
-                                <input id="opcion__checkbox3--ID" type="checkbox" class="opcion-checkbox" /><label>284.2
-                                    Motores</label>
-                            </li>
-                            <li class="contenedor-checkbox">
-                                <input id="opcion__checkbox4--ID" type="checkbox"
-                                    class="opcion-checkbox" /><label>EXAMEN</label>
-                            </li>
-                        </ul>
+                        <button class="titulos-unidades" onclick="ampliarUnidades('unidadUno')">UNIDAD 1</button>
+                        <div class="unidades activo" id="unidadUno">
+                            <ul class="menu-vertical">
+                                <li class="contenedor-checkbox">
+                                    <input id="opcion__checkbox1--ID" type="checkbox"
+                                        class="opcion-checkbox" /><label>1283-1 Taller Modelo de Mecanica</label>
+                                </li>
+                                <li class="contenedor-checkbox">
+                                    <input id="opcion__checkbox2--ID" type="checkbox" class="opcion-checkbox" /><label>283-2
+                                        Desarmado del Motor de
+                                        Gasolina</label>
+                                </li>
+                                <li class="contenedor-checkbox">
+                                    <input id="opcion__checkbox3--ID" type="checkbox" class="opcion-checkbox" /><label>284.2
+                                        Motores</label>
+                                </li>
+                                <li class="contenedor-checkbox">
+                                    <input id="opcion__checkbox4--ID" type="checkbox"
+                                        class="opcion-checkbox" /><label>EXAMEN</label>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="contenedor__unidad">
-                        <h3 class="titulos-unidades">UNIDAD 2</h3>
+                        <button class="titulos-unidades unidad-dos" onclick="ampliarUnidades('unidadDos')">UNIDAD 2</button>
+                        <div class="unidades" id="unidadDos">
                         <ul class="menu-vertical">
                             <li class="contenedor-checkbox">
                                 <input id="opcion__checkbox5--ID" type="checkbox" class="opcion-uno" /><label>opcion
@@ -162,9 +161,11 @@
                                     tres</label>
                             </li>
                         </ul>
+                        </div>
                     </div>
                     <div class="contenedor__unidad">
-                        <h3 class="titulos-unidades">UNIDAD 3</h3>
+                        <button class="titulos-unidades" onclick="ampliarUnidades('unidadTres')">UNIDAD 3</button>
+                        <div class="unidades" id="unidadTres">
                         <ul class="menu-vertical">
                             <li class="contenedor-checkbox">
                                 <input id="opcion__checkbox8--ID" type="checkbox" class="opcion-uno" /><label>opcion
@@ -179,6 +180,7 @@
                                     tres</label>
                             </li>
                         </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -431,6 +433,7 @@
     </footer>
     <script src="../../Js/menuHamburguesa.js"></script>
     <script src="../../Js/cursos.js"></script>
+    <script src="../../Js/detalles.js"></script>
 </body>
 
 </html>
