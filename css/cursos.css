@@ -210,7 +210,6 @@
     display: flex;
     gap: 2rem;
     flex-wrap: nowrap;
-    overflow-x: auto;
     position: relative;
 }
 
@@ -293,6 +292,9 @@
     gap: 1.5em;
     z-index: 9;
     padding: 0 2.5em;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: thin;
 }
 
 .cursos-encuadre{
