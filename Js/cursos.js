@@ -1,3 +1,4 @@
+/*SLIDER*/
 const slider = document.querySelector('#slider');
 let sliderItem = document.querySelectorAll('.item-slide');
 
@@ -18,3 +19,8 @@ btnNext.addEventListener("click", function(){
 btnPrev.addEventListener("click", function(){
     movePrev();
 });
+/*FIN SLIDER*/
+
+/*FILTRO*/
+
+/*FIN FILTRO*/

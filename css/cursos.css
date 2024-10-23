@@ -44,24 +44,20 @@
 .main-detalle .descripcion .descripcion__imagen .contenedor-imagen{
     max-height: 25em;
     max-width: 25em;
-}
-
-.contenedor-imagen{
     display: flex;
-    height: 25rem;
     justify-content: center;
     align-items: center;
 }
 
-.imagen-cursos{
+.main-detalle .descripcion .descripcion__imagen .contenedor-imagen img{
     width: 100%;
-    align
+    height: 100%;
+    object-fit: cover;
 }
 
 .main-detalle .descripcion .descripcion__imagen .contenedor-imagen {
     width: 100%;
     border-radius: .4em;
-    box-shadow: 0 0 5px rgb(66, 66, 66, .5);
 }
 
 .main-detalle.descripcion__info-curso{
