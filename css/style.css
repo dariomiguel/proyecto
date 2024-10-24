@@ -243,6 +243,28 @@ a.inscribirse {
 
 /*Formulario de Inscrición*/
 
+.formularioDeInscricion__info-container {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #f9f9f9;
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+    margin: 1rem auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenedorInscripciones h2 {
+    margin: 2rem 0.75rem 1rem;
+}
+
+.contenedorPersonasAgregadas {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
 main {
     display: flex;
     flex-direction: column;
