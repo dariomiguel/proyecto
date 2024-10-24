@@ -73,6 +73,24 @@ const datosDeLosCursos = {
             img: "../../img/cardImages/vueJs-logo.png",
             detalle: "/pages/cursos/vueJs.html",
             dataname: "item-programacion",
+        },
+        {
+            id: 9,
+            nombre: "Iniciando en Scala",
+            duracion: "60hs",
+            precio: "1000",
+            img: "../../img/cardImages/Scala-logo.png",
+            detalle: "/pages/cursos/vueJs.html",
+            dataname: "item-data"
+        },
+        {
+            id: 10,
+            nombre: "Iniciando en Adobe Express",
+            duracion: "60hs",
+            precio: "1000",
+            img: "../../img/cardImages/adobe-express.png",
+            detalle: "/pages/cursos/vueJs.html",
+            dataname: "item-disenio",
         }
     ]
 };
