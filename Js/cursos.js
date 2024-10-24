@@ -85,7 +85,7 @@ const datosDeLosCursos = {
         },
         {
             id: 10,
-            nombre: "Iniciando en Adobe Express",
+            nombre: "Iniciando en Express",
             duracion: "60hs",
             precio: "1000",
             img: "../../img/cardImages/adobe-express.png",
