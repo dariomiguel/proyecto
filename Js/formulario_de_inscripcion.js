@@ -1,24 +1,45 @@
 const botonAgregarPersona = document.getElementById("boton__agregarPersona");
-
 botonAgregarPersona.addEventListener("click", agregarTexto);
 
-function agregarTexto() {
-    let contenedor = document.getElementById("contenedorPersonasAgregadas");
-    let parrafo = document.createElement("div");
-    parrafo.innerHTML = `
-        <div class="inscripcion__input">
-            <label for="curso">Nombre</label>
-            <input id="curso" name="curso" type="text" placeholder="Nombre" required/>
-        </div>
-        <div class="inscripcion__input">
-            <label for="descripcion">Apellido</label>
-            <input id="descripcion" name="descripcion" placeholder="Apellido" required/>
-        </div>
-        <div class="inscripcion__input">
-            <label for="duracion">DNI</label>
-            <input id="tel" name="duracion" placeholder="DNI" pattern="\\d*" title="Por favor, ingrese un DNI válido" required/>
-        </div>
-    `;
+let inputNombre = document.getElementById("nombre");
+let inputApellido = document.getElementById("apellido");
+let inputDni = document.getElementById("dni");
 
-    contenedor.appendChild(parrafo);
+function agregarTexto() {
+    let contenedor = document.getElementById("contenedorPersonasAgregadas__Id");
+    let parrafo = document.createElement("div");
+    parrafo.classList.add("formularioDeInscricion__info-container");
+
+    let valorDeNombre = inputNombre.value;
+    let valorDeApellido = inputApellido.value;
+    let valorDeDni = inputDni.value;
+
+    // Validar si algún campo está vacío
+    if (
+        !(valorDeNombre === "" || valorDeApellido === "" || valorDeDni === "")
+    ) {
+        parrafo.innerHTML = `
+            <p>${valorDeApellido}, ${valorDeNombre} - DNI:${valorDeDni}</p>
+            <input type="checkbox" name="alumnoAInscribir" value="${valorDeDni}" id="${valorDeDni}">
+
+        `;
+
+        contenedor.appendChild(parrafo);
+
+        inputNombre.value = "";
+        inputApellido.value = "";
+        inputDni.value = "";
+    }
 }
+
+const botonConfirmarInscriptos = document.getElementById("boton__confirmar");
+botonConfirmarInscriptos.addEventListener("click", function () {
+    const checkboxes = document.querySelectorAll(
+        'input[name="alumnoAInscribir"]:checked'
+    );
+    const valoresSeleccionados = [];
+
+    checkboxes.forEach((checkbox) => {
+        valoresSeleccionados.push(checkbox.value);
+    });
+});
