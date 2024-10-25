@@ -1,3 +1,49 @@
+const formulario = document.getElementById('formularioGiftcard');
+if (formulario){
+formulario.addEventListener('submit', function(event) {
+
+    const giftcardHecha = document.getElementById('giftcard');
+    const giftcardHechaUbicacion = document.getElementById('giftcardPrecio');
+    const giftcard = {
+        nombre: document.getElementById('input__destinatario--Id').value,
+        colorLetra: document.getElementById('giftcardTexto').style.color,
+        tamañoFuente: document.getElementById('giftcardFuente').style.fontSize,
+        monto: document.getElementById('inputMonto').value,
+        top: giftcardHechaUbicacion.style.top,
+        right: giftcardHechaUbicacion.style.right,
+        left: giftcardHechaUbicacion.style.left,
+        bottom: giftcardHechaUbicacion.style.bottom,
+        fondo: giftcardHecha.style.backgroundColor,
+        codigoDeLaGiftcard: '7553608'
+    };
+    localStorage.setItem('giftcard', JSON.stringify(giftcard));
+    console.log(JSON.parse(localStorage.getItem('giftcard')));
+});
+}
+const giftcardContainer = document.getElementById('JS-GiftcardContainer');
+
+function generarGiftcard() {
+    
+    const giftcard = JSON.parse(localStorage.getItem('giftcard'));
+    console.log(giftcardContainer); 
+    const contenedor = document.createElement('div');
+    contenedor.id = 'giftcard';
+    contenedor.classList.add('giftcard-destinatario');
+    contenedor.style.backgroundColor = giftcard.fondo;
+    contenedor.innerHTML = `
+        <div class="giftcard-precio" id="giftcardPrecio" style="top: ${giftcard.top}; right: ${giftcard.right}; left: ${giftcard.left}; bottom: ${giftcard.bottom};">
+            <p id="monto">$${giftcard.monto}.-</p>
+        </div>
+        <div class="contenedor-texto" id="giftcardTexto" style="color: ${giftcard.colorLetra}">
+            <p class="giftcard-texto" id="giftcardFuente" style="font-size: ${giftcard.tamañoFuente}">
+                GIFTCARD para <br> <span class="negrita" id="destinatario">${giftcard.nombre}</span>
+            </p>
+            <p>Tu código de descuento es: <span>${giftcard.codigoDeLaGiftcard}</span>
+        </div>`
+    giftcardContainer.appendChild(contenedor);
+}
+
+
 function cambiarColorDeLaGiftCard(){
     const radios = document.querySelectorAll('input[name="fondos"]');
     const giftcard = document.getElementById('giftcard');
@@ -90,9 +136,15 @@ function cambiarElPrecioDeLaGiftcardEnTiempoReal(){
         });
     }
 
+
+if(formulario){
 cambiarLaPosicionDelMonto();
 cambiarElPrecioDeLaGiftcardEnTiempoReal();
 cambiarElNombreDelDestinatarioEnTiempoReal();
 cambiarTamañoDelTextoDeLaGiftCard();
 cambiarColorDelTextoDeLaGiftCard();
 cambiarColorDeLaGiftCard();
+}
+if(giftcardContainer){
+generarGiftcard();
+}

@@ -108,7 +108,7 @@ datosDeLosCursos.forEach((item) => {
     console.log(item);
 });
     cursosContainer.innerHTML = '';
-    datosDeLosCursos.forEach((item, index) => {
+    datosDeLosCursos.forEach((item) => {
         const ContenedorDeCurso = document.createElement('div');
         ContenedorDeCurso.classList.add("cursos-info-container");
         ContenedorDeCurso.dataset.name = item.dataname;
