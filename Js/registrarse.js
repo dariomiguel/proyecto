@@ -1,21 +1,31 @@
-document
-    .getElementById("form__registerInputId")
-    .addEventListener("submit", function () {
-        const nombre = document.getElementById("nombre").value;
-        const apellido = document.getElementById("apellido").value;
-        const correo = document.getElementById("correo").value;
-        const usuario = document.getElementById("usuario").value;
-        const contrasena = document.getElementById("contrasena").value;
+document.getElementById("form__registerInputId").addEventListener("submit", function (e) {
+    e.preventDefault();
+    let baseDeDatosGuardada = JSON.parse(localStorage.getItem("BDUsuarios"));
 
-        const contrasenaCifrada = cifradoCesar(contrasena, contrasena.length);
+    if (baseDeDatosGuardada === null) localStorage.setItem("BDUsuarios", JSON.stringify([]));
 
-        localStorage.setItem("nombre", nombre);
-        localStorage.setItem("apellido", apellido);
-        localStorage.setItem("correo", correo);
-        localStorage.setItem("usuario", usuario);
-        localStorage.setItem("contrasena", contrasenaCifrada);
-        localStorage.setItem("estadoDeSesion", "Activo");
-    });
+    const nombre = document.getElementById("nombre").value;
+    const apellido = document.getElementById("apellido").value;
+    const correo = document.getElementById("correo").value;
+    const nombreDeUsuario = document.getElementById("usuario").value;
+    const contrasena = document.getElementById("contrasena").value;
+    const contrasenaCifrada = cifradoCesar(contrasena, contrasena.length);
+
+    const ListaDeUsuarios = {
+        nombre: nombre,
+        apellido: apellido,
+        correo: correo,
+        nombreDeUsuario: nombreDeUsuario,
+        contrasena: contrasenaCifrada,
+    };
+
+    baseDeDatosGuardada = JSON.parse(localStorage.getItem("BDUsuarios"));
+    baseDeDatosGuardada.push(ListaDeUsuarios);
+
+    localStorage.setItem("BDUsuarios", JSON.stringify(baseDeDatosGuardada));
+    localStorage.setItem("estadoDeSesion", "Activo");
+    window.location.href = "../index.html";
+});
 
 function cifradoCesar(contrasena, desplazamiento) {
     let resultado = "";
@@ -25,20 +35,14 @@ function cifradoCesar(contrasena, desplazamiento) {
         // Cifrado solo para letras mayúsculas y minúsculas
         if (charCode >= 65 && charCode <= 90) {
             // Letras mayúsculas
-            resultado += String.fromCharCode(
-                ((charCode - 65 + desplazamiento) % 26) + 65
-            );
+            resultado += String.fromCharCode(((charCode - 65 + desplazamiento) % 26) + 65);
         } else if (charCode >= 97 && charCode <= 122) {
             // Letras minúsculas
-            resultado += String.fromCharCode(
-                ((charCode - 97 + desplazamiento) % 26) + 97
-            );
+            resultado += String.fromCharCode(((charCode - 97 + desplazamiento) % 26) + 97);
         }
         // Cifrado para números (0-9)
         else if (charCode >= 48 && charCode <= 57) {
-            resultado += String.fromCharCode(
-                ((charCode - 48 + desplazamiento) % 10) + 48
-            );
+            resultado += String.fromCharCode(((charCode - 48 + desplazamiento) % 10) + 48);
         } else {
             // Otros caracteres permanecen sin cambios
             resultado += contrasena[i];
