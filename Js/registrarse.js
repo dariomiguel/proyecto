@@ -1,5 +1,5 @@
 document
-    .getElementById("form__loginInputId")
+    .getElementById("form__registerInputId")
     .addEventListener("submit", function () {
         const nombre = document.getElementById("nombre").value;
         const apellido = document.getElementById("apellido").value;
