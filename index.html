@@ -72,10 +72,10 @@
                                 d="M6 18 18 6M6 6l12 12"
                             />
                         </svg>
-                        <li class="nav_list-item">
+                        <li class="nav_list-item visibleEnSesionCerrada">
                             <a href="./pages/login.html">IniciarSesion</a>
                         </li>
-                        <li class="nav_list-item">
+                        <li class="nav_list-item visibleEnSesionCerrada">
                             <a href="./pages/registrarse.html">Registrarse</a>
                         </li>
                         <li class="nav_list-item">
@@ -94,6 +94,11 @@
                         <li class="nav_list-item">
                             <a href="./pages/personalizacion_de_gift_card.html"
                                 >Gift Card</a
+                            >
+                        </li>
+                        <li class="nav_list-item ocultoEnSesionCerrada">
+                            <a href="./" id="cerrarSesionDesdeBarra"
+                                >Cerrar sesión</a
                             >
                         </li>
                     </ul>
@@ -117,17 +122,18 @@
                 <div class="botonAcceso">
                     <a
                         href="./pages/login.html"
-                        class="visibleEnSesionActiva iniciarSesion"
+                        class="visibleEnSesionCerrada iniciarSesion"
                         >Iniciar Sesion</a
                     >
                     <a
-                        class="ocultoEnSesionActiva iniciarSesion"
-                        href="./pages/login.html"
+                        class="ocultoEnSesionCerrada iniciarSesion"
+                        id="cerrarSesion"
+                        href="./"
                         >Cerrar Sesion</a
                     >
                     <a
                         href="./pages/registrarse.html"
-                        class="visibleEnSesionActiva registrarse"
+                        class="visibleEnSesionCerrada registrarse"
                         >Registrarse</a
                     >
                 </div>

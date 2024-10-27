@@ -33,6 +33,12 @@ function cifradoCesar(contrasena, desplazamiento) {
             resultado += String.fromCharCode(
                 ((charCode - 97 + desplazamiento) % 26) + 97
             );
+        }
+        // Cifrado para números (0-9)
+        else if (charCode >= 48 && charCode <= 57) {
+            resultado += String.fromCharCode(
+                ((charCode - 48 + desplazamiento) % 10) + 48
+            );
         } else {
             // Otros caracteres permanecen sin cambios
             resultado += contrasena[i];
