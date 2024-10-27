@@ -27,6 +27,7 @@ function generarGiftcard() {
     const giftcard = JSON.parse(localStorage.getItem('giftcard'));
     console.log(giftcardContainer); 
     const contenedor = document.createElement('div');
+    const fontSizeNegrita = parseFloat(giftcard.tamañoFuente) * 2;
     contenedor.id = 'giftcard';
     contenedor.classList.add('giftcard-destinatario');
     contenedor.style.backgroundColor = giftcard.fondo;
@@ -36,7 +37,7 @@ function generarGiftcard() {
         </div>
         <div class="contenedor-texto" id="giftcardTexto" style="color: ${giftcard.colorLetra}">
             <p class="giftcard-texto" id="giftcardFuente" style="font-size: ${giftcard.tamañoFuente}">
-                GIFTCARD para <br> <span class="negrita" id="destinatario">${giftcard.nombre}</span>
+                GIFTCARD para <br> <span class="negrita" style="font-size: ${fontSizeNegrita}rem" id="destinatario">${giftcard.nombre}</span>
             </p>
             <p>Tu código de descuento es: <span>${giftcard.codigoDeLaGiftcard}</span>
         </div>`
