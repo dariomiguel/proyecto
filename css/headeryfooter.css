@@ -33,13 +33,18 @@ header {
 }
 .buscador-barra {
     padding: 0.625em;
+    box-sizing: border-box;
     width: 100%;
     border-radius: 0.315em 0 0 0.315em;
+    position: relative;
+    border: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
 }
 .buscador-boton {
     background: #48cfcb;
-    margin: auto;
-    padding: 0.81em 1.25em;
+    padding: 0.25rem 0.5rem;
     position: relative;
     border: 0;
     top: 0;
@@ -53,6 +58,7 @@ header {
     width: 100%;
     padding: 0.6em;
     background-color: #fff;
+    border-radius: 0.315em;
     color: black;
     text-decoration: none;
 }
@@ -60,6 +66,7 @@ header {
     width: 100%;
     padding: 0.6em;
     background-color: #229799;
+    border-radius: 0.315em;
     color: #fff;
     text-decoration: none;
 }

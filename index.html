@@ -106,13 +106,28 @@
                         placeholder="Buscar..."
                         id="buscador__barra--input"
                     />
-                    <button class="buscador-boton">OK</button>
+                    <button type="button" class="buscador-boton">
+                        <img
+                            src="./img/icon/lupa.png"
+                            alt="lupa Buscar"
+                            height="20px"
+                        />
+                    </button>
                 </div>
                 <div class="botonAcceso">
-                    <a href="./pages/login.html" class="iniciarSesion"
-                        >IniciarSesion</a
+                    <a
+                        href="./pages/login.html"
+                        class="visibleEnSesionActiva iniciarSesion"
+                        >Iniciar Sesion</a
                     >
-                    <a href="./pages/registrarse.html" class="registrarse"
+                    <a
+                        class="ocultoEnSesionActiva iniciarSesion"
+                        href="./pages/login.html"
+                        >Cerrar Sesion</a
+                    >
+                    <a
+                        href="./pages/registrarse.html"
+                        class="visibleEnSesionActiva registrarse"
                         >Registrarse</a
                     >
                 </div>

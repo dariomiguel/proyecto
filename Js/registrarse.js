@@ -14,6 +14,7 @@ document
         localStorage.setItem("correo", correo);
         localStorage.setItem("usuario", usuario);
         localStorage.setItem("contrasena", contrasenaCifrada);
+        localStorage.setItem("estadoDeSesion", "Activo");
     });
 
 function cifradoCesar(contrasena, desplazamiento) {
