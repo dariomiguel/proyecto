@@ -17,7 +17,7 @@ formulario.addEventListener('submit', function(event) {
         codigoDeLaGiftcard: '7553608'
     };
     localStorage.setItem('giftcard', JSON.stringify(giftcard));
-    console.log(JSON.parse(localStorage.getItem('giftcard')));
+    console.log(localStorage.getItem('giftcard'));
 });
 }
 const giftcardContainer = document.getElementById('JS-GiftcardContainer');

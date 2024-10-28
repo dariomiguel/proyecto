@@ -100,6 +100,11 @@ formulario.addEventListener('submit', (event)=>{
     });
 }
 
+function descuentoPorGiftcard(){}
+    const giftcard = localStorage.getItem('giftcard');
+
+    console.log(giftcard);
+
 soloPermitirNumerosEnlaFechaDeVencimiento();
 soloPermitirNumerosEnLaTarjeta();
 soloPermitirLetrasEnElNombre();
