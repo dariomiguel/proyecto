@@ -125,7 +125,7 @@ datosDeLosCursos.forEach((item) => {
             </div>
         </div>
         <div class="precio-cursos">
-        <a class="Compracurso" href="/pages/formulario_de_inscripcion.html"><button class="boton-inscripcion">Comprar</button></a>
+        <a class="Compracurso" id="JS-botonCompra" href="/pages/carrito_de_compras.html"><button class="boton-inscripcion" onclick="agregarAlCarrito(${item.id})">Comprar</button></a>
         <p class="precio">$<span id="precioJavascript">${item.precio}</span></p>
         </div>
     </div>`

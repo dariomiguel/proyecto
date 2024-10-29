@@ -149,13 +149,15 @@
         </div>
     </header>
     <main>
-        <section class="contenedor-cursos">
-            <div class="cursos">
+        <section class="contenedor-cursos" id="JS-contenedorCursos">
+            <div class="cursos" id="JS-carritoVacio">
+                <img class="carrito-vacio" src="../img/empty-cart_2762885.png">
                 <p class="cesta-vacia">Tu cesta está vacía!</p>
                     <a class="boton-comprar" href="../index.html">
                         <button class="boton-comprar">Seguir comprando</button>
                         </a>
             </div>
+            <div id="carrito" style="display: none;"></div>
         </section>
         <section class="resumen">
                 <h2 class="resumen-texto">Resumen</h2>
@@ -248,5 +250,6 @@
         </footer>
         <script src="../Js/general.js"></script>
         <script src="../Js/menuHamburguesa.js"></script>
+        <script src="../Js/carrito.js"></script>
 </body>
 </html>

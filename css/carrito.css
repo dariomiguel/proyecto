@@ -1,13 +1,11 @@
 main{
-    height: 100%;
-    width: 100%;
+    min-height: 45rem;
     display: grid;
     grid-template-columns: 2fr 1fr;
 }
 
-html, body{
-    height: 100%;
-    width: 100%;
+body{
+    height: 35rem;
 }
 
 
@@ -20,23 +18,37 @@ html, body{
 
 }
 
-
+.carrito-vacio{
+    height: 80%;
+    width: 80%;
+    justify-self: center;
+    padding-right: 2.5rem;
+}
 
 .cursos{
     display: grid;
-    gap: 2rem;
     align-self: center;
     justify-self: center;
-    height: 80%;
+    padding: 1rem;
     width: 80%;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 0 2px #d1d7dc;
+    box-shadow: 0 0 2px #a4a7aa;
 }
+
+.activo{
+    display: grid;
+}
+
+.oculto{
+    display: none;
+}
+
 
 .cesta-vacia{
     font-weight: 700;
     font-size: 1rem;
+    justify-self: center;
 }
 
 .total{
@@ -110,6 +122,10 @@ span{
     width: 100%;
 }
 
+.boton-comprar{
+    height: 3.5rem;
+    
+}
 
 .codigo-de-descuento{
     display: grid;
