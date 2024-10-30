@@ -9,55 +9,55 @@ const cursos = [
         nombre: "C",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "./pages/cursos/cSharp.html",
+        link: "../pages/cursos/cSharp.html",
     },
     {
         nombre: "Illustrator",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "./pages/cursos/illustrator.html",
+        link: "../pages/cursos/illustrator.html",
     },
     {
         nombre: "Mysql",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "./pages/cursos/mysql.html",
+        link: "../pages/cursos/mysql.html",
     },
     {
         nombre: "SQL",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "./pages/cursos/sql.html",
+        link: "../pages/cursos/sql.html",
     },
     {
         nombre: "Photoshop",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "./pages/cursos/photoshop.html",
+        link: "../pages/cursos/photoshop.html",
     },
     {
         nombre: "Python",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "./pages/cursos/python.html",
+        link: "../pages/cursos/python.html",
     },
     {
         nombre: "Vuejs",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "./pages/cursos/vuejs.html",
+        link: "../pages/cursos/vuejs.html",
     },
     {
         nombre: "Scala",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "./pages/cursos/cSharp.html",
+        link: "../pages/cursos/cSharp.html",
     },
     {
         nombre: "Express",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "./pages/cursos/cSharp.html",
+        link: "../pages/cursos/cSharp.html",
     },
 ];
 
