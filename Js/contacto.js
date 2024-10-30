@@ -10,8 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Expresión regular para validar el email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-    // Expresión regular para validar el teléfono (opcional con guión)
+    // Expresión regular para validar el teléfono
     const telefonoRegex = /^\d{4}-\d{4}$/;
 
     // Contador de caracteres del comentario
@@ -25,36 +24,28 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (event) {
         let valid = true;
 
-        // Validar nombre y apellido (que no estén vacíos)
         if (nombre.value.trim() === "") {
             alert("El nombre no puede estar vacío.");
             valid = false;
         }
-
-        // Validar email con la expresión regular
         if (!emailRegex.test(email.value)) {
             alert("Por favor, ingresa un correo válido.");
             valid = false;
         }
-
-        // Validar teléfono solo si el usuario lo ingresó
         if (telefono.value && !telefonoRegex.test(telefono.value)) {
             alert("El teléfono debe tener el formato correcto: 1234-5678.");
             valid = false;
         }
 
-        // Si alguna validación falla, se previene el envío
         if (!valid) {
             event.preventDefault();
         } else {
-            // Mostrar popup y evitar el comportamiento por defecto del formulario
             event.preventDefault();
             popup.style.display = "block";
         }
     });
 
-    // Botón "Aceptar" en el popup que redirige a la página principal
     aceptarBtn.addEventListener("click", function () {
-        window.location.href = "index.html"; // Cambia esto a la página de inicio correspondiente
+        window.location.href = "../pages/mensaje_enviado.html";
     });
 });
