@@ -97,16 +97,11 @@ const datosDeLosCursos = {
 
 
 localStorage.setItem("cursos", JSON.stringify(datosDeLosCursos.cursos));
-console.log(JSON.parse(localStorage.getItem("cursos")));
 
 
 function mostrarCursos(){
     const datosDeLosCursos = JSON.parse(localStorage.getItem("cursos"));
     const cursosContainer = document.getElementById('slider');
-console.log(cursosContainer);
-datosDeLosCursos.forEach((item) => {
-    console.log(item);
-});
     cursosContainer.innerHTML = '';
     datosDeLosCursos.forEach((item) => {
         const ContenedorDeCurso = document.createElement('div');
@@ -125,7 +120,7 @@ datosDeLosCursos.forEach((item) => {
             </div>
         </div>
         <div class="precio-cursos">
-        <a class="Compracurso" id="JS-botonCompra" href="/pages/carrito_de_compras.html"><button class="boton-inscripcion" onclick="agregarAlCarrito(${item.id})">Comprar</button></a>
+        <button class="boton-inscripcion" id="JS-botonCompra" onclick="agregarAlCarrito(${item.id})">Comprar</button>
         <p class="precio">$<span id="precioJavascript">${item.precio}</span></p>
         </div>
     </div>`
@@ -138,7 +133,29 @@ mostrarCursos();
 const botonesFiltro = document.querySelectorAll(".contenedor-filtros button");
 const itemsFiltrables = document.querySelectorAll(".slider .cursos-info-container");
 
-console.log(botonesFiltro, itemsFiltrables);
+
+
+const botonCompra = document.getElementById('JS-botonCompra');
+let carritoDeCompras = JSON.parse(localStorage.getItem('carrito')) || [];
+function agregarAlCarrito(id) {
+    const agregadoAlCarrito = document.getElementById('JS-agregadoAlCarrito');
+    console.log(carritoDeCompras);
+    const curso = cursos.find(c => c.id === id);
+    if (curso) {
+        const existe = carritoDeCompras.find(item => item.id === curso.id);
+        if(!existe){
+        carritoDeCompras.push(curso);
+        }
+        agregadoAlCarrito.classList.add('visible');
+        setTimeout(() =>{
+            agregadoAlCarrito.classList.remove('visible');
+        }, 2000);
+        localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));
+        console.log(JSON.parse(localStorage.getItem('carrito')));
+    }
+}
+
+
 
 const filtrarItems = (e) => {
     document.querySelector(".active").classList.remove("active");
