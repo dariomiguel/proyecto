@@ -12,7 +12,7 @@ document.getElementById("form__registerInputId").addEventListener("submit", func
 
     // Expresión regular para validar el email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email.value)) {
+    if (!emailRegex.test(correo)) {
         alert("Por favor, ingresa un correo válido.");
         valid = false;
     }
