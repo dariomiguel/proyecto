@@ -1,5 +1,4 @@
 document.getElementById("form__registerInputId").addEventListener("submit", function (e) {
-    e.preventDefault();
     let baseDeDatosGuardada = JSON.parse(localStorage.getItem("BDUsuarios"));
 
     if (baseDeDatosGuardada === null) localStorage.setItem("BDUsuarios", JSON.stringify([]));
@@ -11,23 +10,35 @@ document.getElementById("form__registerInputId").addEventListener("submit", func
     const contrasena = document.getElementById("contrasena").value;
     const contrasenaCifrada = cifradoCesar(contrasena, contrasena.length);
 
-    const ListaDeUsuarios = {
-        nombre: nombre,
-        apellido: apellido,
-        correo: correo,
-        nombreDeUsuario: nombreDeUsuario,
-        contrasena: contrasenaCifrada,
-    };
+    // Expresión regular para validar el email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value)) {
+        alert("Por favor, ingresa un correo válido.");
+        valid = false;
+    }
 
-    baseDeDatosGuardada = JSON.parse(localStorage.getItem("BDUsuarios"));
-    let indice = baseDeDatosGuardada.length;
+    if (!valid) {
+        e.preventDefault();
+    } else {
+        e.preventDefault();
+        const ListaDeUsuarios = {
+            nombre: nombre,
+            apellido: apellido,
+            correo: correo,
+            nombreDeUsuario: nombreDeUsuario,
+            contrasena: contrasenaCifrada,
+        };
 
-    baseDeDatosGuardada.push(ListaDeUsuarios);
-    localStorage.setItem("BDUsuarios", JSON.stringify(baseDeDatosGuardada));
-    localStorage.setItem("estadoDeSesion", "Activo");
-    localStorage.setItem("idUsuario", indice);
+        baseDeDatosGuardada = JSON.parse(localStorage.getItem("BDUsuarios"));
+        let indice = baseDeDatosGuardada.length;
 
-    window.location.href = "../index.html";
+        baseDeDatosGuardada.push(ListaDeUsuarios);
+        localStorage.setItem("BDUsuarios", JSON.stringify(baseDeDatosGuardada));
+        localStorage.setItem("estadoDeSesion", "Activo");
+        localStorage.setItem("idUsuario", indice);
+
+        window.location.href = "../index.html";
+    }
 });
 
 function encontrarUsuario(miArray, nombreAComparar) {
