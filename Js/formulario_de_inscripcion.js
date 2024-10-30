@@ -15,12 +15,10 @@ function agregarTexto() {
     let valorDeDni = inputDni.value;
 
     // Validar si algún campo está vacío
-    if (
-        !(valorDeNombre === "" || valorDeApellido === "" || valorDeDni === "")
-    ) {
+    if (!(valorDeNombre === "" || valorDeApellido === "" || valorDeDni === "")) {
         parrafo.innerHTML = `
-            <p>${valorDeApellido}, ${valorDeNombre} - DNI:${valorDeDni}</p>
-            <input type="checkbox" name="alumnoAInscribir" value="${valorDeDni}" id="${valorDeDni}">
+            <label for="${valorDeDni}">${valorDeApellido}, ${valorDeNombre} - DNI:${valorDeDni}</label>
+            <input type="checkbox" name="${valorDeDni}" value="${valorDeDni}" id="${valorDeDni}">
 
         `;
 
@@ -34,9 +32,7 @@ function agregarTexto() {
 
 const botonConfirmarInscriptos = document.getElementById("boton__confirmar");
 botonConfirmarInscriptos.addEventListener("click", function () {
-    const checkboxes = document.querySelectorAll(
-        'input[name="alumnoAInscribir"]:checked'
-    );
+    const checkboxes = document.querySelectorAll('input[name="alumnoAInscribir"]:checked');
     const valoresSeleccionados = [];
 
     checkboxes.forEach((checkbox) => {
