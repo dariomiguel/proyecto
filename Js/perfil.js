@@ -6,14 +6,15 @@ let botonCerrarSesion = document.getElementById("btn__cerrar-sesion");
 let botonEliminarPerfil = document.getElementById("btn__eliminar-perfil");
 
 let nombre = document.createElement("p");
+let usuario = document.createElement("p");
+let correo = document.createElement("p");
+
 nombre.textContent = "Nombre:" + listaDeUsuarios[indice].nombre;
 contenedor.appendChild(nombre);
 
-let usuario = document.createElement("p");
 usuario.textContent = "Usuario:" + listaDeUsuarios[indice].usuario;
 contenedor.appendChild(usuario);
 
-let correo = document.createElement("p");
 correo.textContent = "Correo:" + listaDeUsuarios[indice].correo;
 contenedor.appendChild(correo);
 

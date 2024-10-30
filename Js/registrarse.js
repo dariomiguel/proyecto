@@ -20,10 +20,13 @@ document.getElementById("form__registerInputId").addEventListener("submit", func
     };
 
     baseDeDatosGuardada = JSON.parse(localStorage.getItem("BDUsuarios"));
-    baseDeDatosGuardada.push(ListaDeUsuarios);
+    let indice = baseDeDatosGuardada.length;
 
+    baseDeDatosGuardada.push(ListaDeUsuarios);
     localStorage.setItem("BDUsuarios", JSON.stringify(baseDeDatosGuardada));
     localStorage.setItem("estadoDeSesion", "Activo");
+    localStorage.setItem("idUsuario", indice);
+
     window.location.href = "../index.html";
 });
 
