@@ -14,7 +14,8 @@ formulario.addEventListener('submit', function(event) {
         left: giftcardHechaUbicacion.style.left,
         bottom: giftcardHechaUbicacion.style.bottom,
         fondo: giftcardHecha.style.backgroundColor,
-        codigoDeLaGiftcard: '7553608'
+        codigoDeLaGiftcard: '7553608',
+        utilizada: false
     };
     localStorage.setItem('giftcard', JSON.stringify(giftcard));
     console.log(localStorage.getItem('giftcard'));
