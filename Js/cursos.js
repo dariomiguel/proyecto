@@ -193,7 +193,7 @@ function mostrarDetalles(id) {
     const cursoSeleccionado = cursos.find((curso) => curso.id === id);
     cursoSeleccionado.innerHTML = "";
 
-    document.getElementById("js-imagen-curso").scr = cursoSeleccionado.img;
+    document.getElementById("js-imagen-curso").src = cursoSeleccionado.img;
     document.getElementById("js-titulo-curso").innerHTML = cursoSeleccionado.nombre;
     document.getElementById("js-valor-curso").innerHTML = cursoSeleccionado.precio;
     document.getElementById("js-duracion-curso").innerHTML = cursoSeleccionado.duracion;
