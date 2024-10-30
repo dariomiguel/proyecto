@@ -1,0 +1,69 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.contenedor-perfil {
+    max-width: 37rem;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 0.625rem;
+    box-shadow: 0 0.125 0.625rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.cabecera-perfil {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 1.25rem;
+}
+
+.titulo {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.contenido-perfil {
+    padding: 1.25rem;
+}
+
+.datos-basicos p {
+    font-size: 1.2rem;
+    margin-bottom: 0.625rem;
+}
+
+.acciones {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.25rem;
+}
+
+.btn {
+    padding: 0.625rem 1.25rem;
+    border: none;
+    border-radius: 0.3125rem;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cerrar-sesion {
+    background-color: #3498db;
+    color: white;
+}
+
+.eliminar-perfil {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
