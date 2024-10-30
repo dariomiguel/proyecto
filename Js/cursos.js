@@ -1,7 +1,6 @@
 
 
-const datosDeLosCursos = {
-    cursos: [
+const datosDeLosCursos = [
         {
             id: 1,
             nombre: "Iniciando en JavaScript",
@@ -92,12 +91,10 @@ const datosDeLosCursos = {
             detalle: "/pages/cursos/vueJs.html",
             dataname: "item-disenio",
         }
-    ]
-};
+    ];
 
 
-localStorage.setItem("cursos", JSON.stringify(datosDeLosCursos.cursos));
-
+localStorage.setItem("cursos", JSON.stringify(datosDeLosCursos));
 
 function mostrarCursos(){
     const datosDeLosCursos = JSON.parse(localStorage.getItem("cursos"));
@@ -140,7 +137,7 @@ let carritoDeCompras = JSON.parse(localStorage.getItem('carrito')) || [];
 function agregarAlCarrito(id) {
     const agregadoAlCarrito = document.getElementById('JS-agregadoAlCarrito');
     console.log(carritoDeCompras);
-    const curso = cursos.find(c => c.id === id);
+    const curso = datosDeLosCursos.find(c => c.id === id);
     if (curso) {
         const existe = carritoDeCompras.find(item => item.id === curso.id);
         if(!existe){

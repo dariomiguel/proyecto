@@ -39,7 +39,7 @@ function mostrarCarrito() {
                     <button class="boton-curso">Ver detalles</button>
                     <button class="boton-curso" onclick="eliminarDelCarrito(${item.id})">Eliminar</button>
                 </div>
-            </div>`; // Muestra el nombre del curso
+            </div>`; 
                 contenedorCarrito.appendChild(contenedorCurso);
             });
         } 
