@@ -51,13 +51,13 @@ const cursos = [
         nombre: "Scala",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "../pages/cursos/cSharp.html",id:9,img: "../../img/cardImages/Scala-logo.png",duracion:"60hs",precio:"1900"
+        link: "#",id:9,img: "../../img/cardImages/Scala-logo.png",duracion:"60hs",precio:"1900"
     },
     {
         nombre: "Express",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "../pages/cursos/cSharp.html",id:10,img: "../../img/cardImages/adobe-express.png"
+        link: "#",id:10,img: "../../img/cardImages/adobe-express.png"
     },
 ];
 
