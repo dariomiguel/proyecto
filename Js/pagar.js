@@ -1,3 +1,7 @@
+const total = JSON.parse(localStorage.getItem('total'));
+const montoTotal = JSON.parse(localStorage.getItem('precioOriginal'));
+const descuentoPorGiftcards = JSON.parse(localStorage.getItem('descuento')) || 0;
+
 function desplegarTarjeta(){
     const datosTarjeta = document.getElementById('datosDeTarjeta');
     const mercadoPago = document.getElementById('datosMercadoPago');
@@ -100,11 +104,16 @@ formulario.addEventListener('submit', (event)=>{
     });
 }
 
-function descuentoPorGiftcard(){}
-    const giftcard = localStorage.getItem('giftcard');
+function actualizarValores(){
+    const descuento = document.getElementById('JS-descuento');
+    const precioOriginal = document.getElementById('JS-precioOriginal');
+    const totalCompra = document.getElementById('JS-totalCompra');
+    descuento.textContent = descuentoPorGiftcards === 0 ? '$0.00 US$' : `$${descuentoPorGiftcards} US$`;
+    precioOriginal.textContent = montoTotal <= 0 ? '$0.00 US$' : `$${montoTotal} US$`;
+    totalCompra.textContent = total <= 0 ? '$0.00 US$' : `$${total} US$`;
+}
 
-    console.log(giftcard);
-
+actualizarValores();
 soloPermitirNumerosEnlaFechaDeVencimiento();
 soloPermitirNumerosEnLaTarjeta();
 soloPermitirLetrasEnElNombre();

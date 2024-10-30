@@ -6,6 +6,9 @@ const contenedorCarrito = document.getElementById('JS-contenedorCursos');
 const carritoVacio = document.getElementById('JS-carritoVacio');
 let montoTotal = 0;
 let descuentoPorGiftcards = parseFloat(localStorage.getItem('descuento')) || 0;
+let total = 0;
+const PrecioTotal = document.getElementById('JS-precioTotal');
+console.log(PrecioTotal);
 const giftcard = JSON.parse(localStorage.getItem('giftcard'));
 console.log(giftcard);
 
@@ -27,6 +30,7 @@ function mostrarCarrito() {
         </div>`
         cambiarElMontoTotalEnTiempoReal();
         cambiarElMontoDeDescuentoEnTiempoReal();
+        actualizarElTotal();
         contenedorCarrito.appendChild(ContenedorCarritoVacio);
         } else {
             carritoVacio.classList.add('oculto');
@@ -55,6 +59,7 @@ function mostrarCarrito() {
         } 
         cambiarElMontoTotalEnTiempoReal();
         cambiarElMontoDeDescuentoEnTiempoReal();
+        actualizarElTotal();
         localStorage.setItem('precioOriginal', JSON.stringify(montoTotal));
         }
     }
@@ -64,7 +69,6 @@ function mostrarCarrito() {
 
 function cambiarElMontoTotalEnTiempoReal(){
     if(contenedorCarrito){
-        montoTotal -= descuentoPorGiftcards;
         precioOriginal.textContent = montoTotal  <= 0 ? '$0.00 US$' : `$${montoTotal.toFixed(2)} US$`;
         localStorage.setItem('precioOriginal', JSON.stringify(montoTotal));
     }   
@@ -94,6 +98,12 @@ function generarDescuentoPorGiftcard(){
     }
 }
 
+function actualizarElTotal(){
+    total = montoTotal - descuentoPorGiftcards;
+    PrecioTotal.textContent = total <= 0 ? '$0.00 US$' : `$${total.toFixed(2)} US$`;
+    localStorage.setItem('total', JSON.stringify(total));
+    console.log(JSON.parse(localStorage.getItem('total')));
+}
 
     function eliminarDelCarrito(id){
         cursosAlmacenados = cursosAlmacenados.filter(item => item.id !== id);
