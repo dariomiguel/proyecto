@@ -59,24 +59,6 @@ const cursos = [
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
         link: "#",
     },
-    {
-        nombre: "CSS",
-        resumen:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
-    },
-    {
-        nombre: "HTML",
-        resumen:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
-    },
-    {
-        nombre: "Java",
-        resumen:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
-    },
 ];
 
 let titulosCurso = document.querySelectorAll(".cursoCalendario");
