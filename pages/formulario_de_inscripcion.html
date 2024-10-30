@@ -159,62 +159,77 @@
 
         <main>
             <h1>INSCRIPCIÓN</h1>
+            <form action="" method="get" class="login" id="form__inscripcionInputId">
+                <div class="contenedorInscripciones">
+                    <div class="inscripcion">
+                        <div class="inscripcion__contenedor">
+                            <div class="inscripcion__input">
+                                <label for="nombre">Nombre</label>
+                                <input
+                                    id="nombre"
+                                    name="nombre"
+                                    type="text"
+                                    placeholder="Nombre"
+                                    required
+                                />
+                            </div>
+                            <div class="inscripcion__input">
+                                <label for="apellido">Apellido</label>
+                                <input
+                                    id="apellido"
+                                    type="text"
+                                    name="apellido"
+                                    placeholder="Apellido"
+                                    required
+                                />
+                            </div>
 
-            <div class="contenedorInscripciones">
-                <div class="inscripcion">
-                    <div class="inscripcion__contenedor">
-                        <div class="inscripcion__input">
-                            <label for="nombre">Nombre</label>
-                            <input
-                                id="nombre"
-                                name="nombre"
-                                type="text"
-                                placeholder="Nombre"
-                                required
-                            />
-                        </div>
-                        <div class="inscripcion__input">
-                            <label for="apellido">Apellido</label>
-                            <input id="apellido" name="apellido" placeholder="Apellido" required />
-                        </div>
-
-                        <div class="inscripcion__input">
-                            <label for="dni">DNI</label>
-                            <input
-                                id="dni"
-                                name="dni"
-                                placeholder="DNI"
-                                pattern="\d*"
-                                title="Por favor, ingrese un DNI válido"
-                                required
-                            />
+                            <div class="inscripcion__input">
+                                <label for="dni">DNI</label>
+                                <input
+                                    id="dni"
+                                    name="dni"
+                                    type="number"
+                                    placeholder="DNI"
+                                    pattern="\d*"
+                                    title="Por favor, ingrese un DNI válido"
+                                    required
+                                />
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="contenedorAgregarPersona">
-                    <button
-                        id="boton__agregarPersona"
-                        title="Haz clic para agregar una persona"
-                        type="button"
-                        class="agregarPersona"
-                    ></button>
-                    <p>Agregar Persona</p>
-                </div>
-                <h2>Personas agregadas</h2>
+                    <div class="contenedorAgregarPersona">
+                        
+                        <label for="boton__agregarPersona">Agregar Persona</label>
+                        <button
+                            id="boton__agregarPersona"
+                            title="Haz clic para agregar una persona"
+                            type="submit"
+                            class="agregarPersona"
+                        ></button>
+                    </div>
+                </form>
+                    <h2>Personas agregadas</h2>
 
-                <div class="contenedorPersonasAgregadas" id="contenedorPersonasAgregadas__Id"></div>
+                    <form action="" method="post">
+                    <div
+                        class="contenedorPersonasAgregadas"
+                        id="contenedorPersonasAgregadas__Id"
+                    ></div>
 
-                <div class="contenedorInscribirse">
-                    <button
-                        id="boton__confirmar"
-                        type="submit"
-                        class="inscribirse boton-confirmar"
-                        value="Inscribirse"
-                    >
-                        Inscribir
-                    </button>
+                    <div class="contenedorInscribirse">
+                        <button
+                            id="boton__confirmar"
+                            type="submit"
+                            class="inscribirse boton-confirmar"
+                            value="Inscribirse"
+                        >
+                            Inscribir
+                        </button>
+                    </div>
+                </form>
                 </div>
-            </div>
+
         </main>
 
         <footer>
