@@ -9,6 +9,7 @@ document.getElementById("form__registerInputId").addEventListener("submit", func
     const nombreDeUsuario = document.getElementById("usuario").value;
     const contrasena = document.getElementById("contrasena").value;
     const contrasenaCifrada = cifradoCesar(contrasena, contrasena.length);
+    const valid = true;
 
     // Expresión regular para validar el email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
