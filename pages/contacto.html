@@ -161,7 +161,7 @@
             <div class="contenedorContactos">
                 <h1>Contacto</h1>
 
-                <form action="./mensaje_enviado.html" method="GET">
+                <form id="contactoForm" action="./mensaje_enviado.html" method="GET">
                     <div class="contacto">
                         <div class="contacto__input">
                             <label for="nombre">Nombre</label>
@@ -174,13 +174,7 @@
                                 required
                             />
                             <label for="telefono">Teléfono</label>
-                            <input
-                                type="tel"
-                                placeholder="Ingresar telefono"
-                                pattern="\d*"
-                                title="Por favor, ingrese un teléfono válido"
-                                id="telefono"
-                            />
+                            <input type="tel" placeholder="Ingresar telefono" id="telefono" />
                             <label for="email">Email</label>
                             <input
                                 type="email"
@@ -199,8 +193,10 @@
                                 id="comentario"
                                 name="comentario"
                                 placeholder="Escriba su comentario aquí..."
+                                maxlength="1000"
                                 required
                             ></textarea>
+                            <p id="charCount">Caracteres restantes: 1000</p>
                         </div>
                     </div>
                 </form>
@@ -210,6 +206,11 @@
                         <img src="../img/mapa - San Justo.png" alt="" />
                     </div>
                 </div>
+            </div>
+
+            <div id="popup" style="display: none;">
+                <p>Consulta enviada</p>
+                <button id="aceptar">Aceptar</button>
             </div>
         </main>
 
@@ -274,5 +275,6 @@
         </footer>
         <script src="../Js/menuHamburguesa.js"></script>
         <script src="../Js/general.js"></script>
+        <script src="../Js/contacto.js"></script>
     </body>
 </html>
