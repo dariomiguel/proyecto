@@ -142,11 +142,11 @@ function agregarAlCarrito(id) {
         const existe = carritoDeCompras.find(item => item.id === curso.id);
         if(!existe){
         carritoDeCompras.push(curso);
-        }
         agregadoAlCarrito.classList.add('visible');
         setTimeout(() =>{
             agregadoAlCarrito.classList.remove('visible');
         }, 2000);
+        }
         localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));
         console.log(JSON.parse(localStorage.getItem('carrito')));
     }
