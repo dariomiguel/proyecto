@@ -3,49 +3,49 @@ const cursos = [
         nombre: "JavaScript",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "../pages/cursos/javscript.html",id:1,img: "../../img/cardImages/javaScript-logo.png"
+        link: "#",id:1,img: "../../img/cardImages/javaScript-logo.png"
     },
     {
         nombre: "C",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "../pages/cursos/cSharp.html",id:2,img: "../../img/cardImages/cSharp-logo.png"
+        link: "#",id:2,img: "../../img/cardImages/cSharp-logo.png"
     },
     {
         nombre: "Illustrator",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "../pages/cursos/illustrator.html",id:3,img: "../../img/cardImages/illustrator-logo.png"
+        link: "#",id:3,img: "../../img/cardImages/illustrator-logo.png"
     },
     {
         nombre: "Mysql",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "../pages/cursos/mysql.html",id:4,img: "../../img/cardImages/mysql-logo.png"
+        link: "#",id:4,img: "../../img/cardImages/mysql-logo.png"
     },
     {
         nombre: "SQL",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "../pages/cursos/sql.html",id:5,img: "../../img/cardImages/sql-logo.png"
+        link: "#",id:5,img: "../../img/cardImages/sql-logo.png"
     },
     {
         nombre: "Photoshop",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "../pages/cursos/photoshop.html",id:6,img: "../../img/cardImages/photoshop-logo.png"
+        link: "#",id:6,img: "../../img/cardImages/photoshop-logo.png"
     },
     {
         nombre: "Python",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "../pages/cursos/python.html",id:7,img: "../../img/cardImages/Python_logo_icon.png"
+        link: "#",id:7,img: "../../img/cardImages/Python_logo_icon.png"
     },
     {
         nombre: "Vuejs",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "../pages/cursos/vuejs.html",id:8,img: "../../img/cardImages/vueJs-logo.png"
+        link: "#",id:8,img: "../../img/cardImages/vueJs-logo.png"
     },
     {
         nombre: "Scala",
