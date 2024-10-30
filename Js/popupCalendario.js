@@ -3,7 +3,7 @@ const cursos = [
         nombre: "JavaScript",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "../pages/cursos/javscript.html",id:1
+        link: "../pages/cursos/javscript.html",id:1,img: "../../img/cardImages/javaScript-logo.png"
     },
     {
         nombre: "C",
