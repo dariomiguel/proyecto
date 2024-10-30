@@ -63,6 +63,28 @@ dialog button{
     margin-top: .5rem;
 }
 
+.agregado-al-carrito{
+    height: 8rem;
+    width: 16rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    visibility: hidden;
+    opacity: 0;
+    padding: 1rem;
+    background-color: #0f06;
+    position: fixed;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
 
 
 @media screen and (max-width:47em){

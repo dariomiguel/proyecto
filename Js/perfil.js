@@ -12,7 +12,7 @@ let correo = document.createElement("p");
 nombre.textContent = "Nombre:" + listaDeUsuarios[indice].nombre;
 contenedor.appendChild(nombre);
 
-usuario.textContent = "Usuario:" + listaDeUsuarios[indice].usuario;
+usuario.textContent = "Usuario:" + listaDeUsuarios[indice].nombreDeUsuario;
 contenedor.appendChild(usuario);
 
 correo.textContent = "Correo:" + listaDeUsuarios[indice].correo;

@@ -3,79 +3,61 @@ const cursos = [
         nombre: "JavaScript",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
+        link: "../pages/cursos/javscript.html",id:1,img: "../../img/cardImages/javaScript-logo.png"
     },
     {
         nombre: "C",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
+        link: "../pages/cursos/cSharp.html",id:2,img: "../../img/cardImages/cSharp-logo.png"
     },
     {
         nombre: "Illustrator",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
+        link: "../pages/cursos/illustrator.html",id:3,img: "../../img/cardImages/illustrator-logo.png"
     },
     {
         nombre: "Mysql",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
+        link: "../pages/cursos/mysql.html",id:4,img: "../../img/cardImages/mysql-logo.png"
     },
     {
         nombre: "SQL",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
+        link: "../pages/cursos/sql.html",id:5,img: "../../img/cardImages/sql-logo.png"
     },
     {
         nombre: "Photoshop",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
+        link: "../pages/cursos/photoshop.html",id:6,img: "../../img/cardImages/photoshop-logo.png"
     },
     {
         nombre: "Python",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
+        link: "../pages/cursos/python.html",id:7,img: "../../img/cardImages/Python_logo_icon.png"
     },
     {
         nombre: "Vuejs",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
+        link: "../pages/cursos/vuejs.html",id:8,img: "../../img/cardImages/vueJs-logo.png"
     },
     {
         nombre: "Scala",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
+        link: "../pages/cursos/cSharp.html",id:9,img: "../../img/cardImages/Scala-logo.png"
     },
     {
         nombre: "Express",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
-    },
-    {
-        nombre: "CSS",
-        resumen:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
-    },
-    {
-        nombre: "HTML",
-        resumen:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
-    },
-    {
-        nombre: "Java",
-        resumen:
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",
+        link: "../pages/cursos/cSharp.html",id:10,img: "../../img/cardImages/adobe-express.png"
     },
 ];
 
@@ -97,7 +79,7 @@ function mostrarPopup(aux) {
             <h2>Nuevo curso de ${curso.nombre}</h2>
             <p>${curso.resumen}<p>
             <a href=${curso.link}>Ver Detalle</a>
-            <button class="agregarAlCarrito ocultoEnSesionCerrada">Agregar al carrito</button>
+            <button class="agregarAlCarrito ocultoEnSesionCerrada" onclick="agregarAlCarrito(${curso.id})">Agregar al carrito</button>
             <button class="botonCerrar">Cerrar</button>`;
 
             document.body.appendChild(popup);
@@ -121,4 +103,24 @@ function mostrarPopup(aux) {
             body.style.overflow = "";
         }
     });
+}
+
+
+let carritoDeCompras = JSON.parse(localStorage.getItem('carrito')) || [];
+    function agregarAlCarrito(id) {
+        const agregadoAlCarrito = document.getElementById('JS-agregadoAlCarrito');
+        console.log(carritoDeCompras);
+        const curso = cursos.find(c => c.id === id);
+            if (curso) {
+            const existe = carritoDeCompras.find(item => item.id === curso.id);
+            if(!existe){
+            carritoDeCompras.push(curso);
+            }
+        agregadoAlCarrito.classList.add('visible');
+            setTimeout(() =>{
+                agregadoAlCarrito.classList.remove('visible');
+            }, 2000);
+        localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));
+        console.log(JSON.parse(localStorage.getItem('carrito')));
+    }
 }
