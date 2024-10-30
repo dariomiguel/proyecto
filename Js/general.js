@@ -20,6 +20,7 @@ if (sesion === null) {
 } else {
     console.log("Estado de sesión: " + sesion);
 
+    if (carrito !== null) carrito.style.display = "block";
     if (lista !== null) {
         const nombreUsuario = lista[indiceUsuario].nombre;
         console.log("lista: " + lista[indiceUsuario].nombre);
