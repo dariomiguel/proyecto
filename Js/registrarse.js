@@ -27,6 +27,19 @@ document.getElementById("form__registerInputId").addEventListener("submit", func
     window.location.href = "../index.html";
 });
 
+function encontrarUsuario(miArray, nombreAComparar) {
+    let seEncuentra = false;
+
+    miArray.forEach((usuario) => {
+        if (usuario.nombreDeUsuario === nombreAComparar) seEncuentra = true;
+    });
+
+    return seEncuentra;
+}
+
+///////////////////////////////////////////////////////////////////////////////////
+///Para hacer un pequeño encriptado y que no aparezca directamente la contraseña///
+///////////////////////////////////////////////////////////////////////////////////
 function cifradoCesar(contrasena, desplazamiento) {
     let resultado = "";
     for (let i = 0; i < contrasena.length; i++) {

@@ -91,7 +91,7 @@
                             <a href="../pages/personalizacion_de_gift_card.html">Gift Card</a>
                         </li>
                         <li class="nav_list-item ocultoEnSesionCerrada">
-                            <a href="./" id="cerrarSesionDesdeBarra">Cerrar sesión</a>
+                            <a href="../" id="cerrarSesionDesdeBarra">Cerrar sesión</a>
                         </li>
                     </ul>
                 </div>
@@ -165,19 +165,21 @@
                 <div class="cabecera-perfil">
                     <h1 class="titulo">Perfil de Usuario</h1>
                 </div>
-                <div class="contenido-perfil">
-                    <div class="datos-basicos">
-                        <p>Nombre: Juan Pérez</p>
-                        <p>Correo: juan.perez@ejemplo.com</p>
-                    </div>
-                    <div class="acciones">
-                        <button class="btn cerrar-sesion">Cerrar sesión</button>
-                        <button class="btn eliminar-perfil">Eliminar perfil</button>
-                    </div>
-                </div>
+                <section class="contenido-perfil">
+                    <article class="datos-basicos" id="datos-basicosId"></article>
+                    <article class="acciones">
+                        <button class="btn cerrar-sesion" id="btn__cerrar-sesion">
+                            Cerrar sesión
+                        </button>
+                        <button class="btn eliminar-perfil" id="btn__eliminar-perfil">
+                            Eliminar perfil
+                        </button>
+                    </article>
+                </section>
             </div>
         </main>
         <script src="../Js/menuHamburguesa.js"></script>
         <script src="../Js/general.js"></script>
+        <script src="../Js/perfil.js"></script>
     </body>
 </html>

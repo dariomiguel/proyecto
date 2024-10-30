@@ -20,6 +20,7 @@ formLogin.addEventListener("submit", function (e) {
 
         if (contrasenaCoinciden) {
             localStorage.setItem("estadoDeSesion", "Activo");
+            localStorage.setItem("idUsuario", indice);
             return;
         }
     }
