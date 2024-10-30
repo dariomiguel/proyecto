@@ -6,7 +6,7 @@ const visibleEnSesionCerrada = document.getElementsByClassName("visibleEnSesionC
 const cerrarSesionDesdeBarra = document.getElementById("cerrarSesionDesdeBarra");
 const cerrarSesion = document.getElementById("cerrarSesion");
 
-if (sesion == null || sesion == "cerrada") {
+if (sesion === null) {
     if (carrito !== null) carrito.style.display = "none";
 
     // Ocultar cada elemento con la clase "ocultoSesionDesactivada"
@@ -16,7 +16,7 @@ if (sesion == null || sesion == "cerrada") {
 } else {
     console.log("Estado de sesión: " + sesion);
 
-    // Ocultar cada elemento con la clase "ocultoSesionDesactivada"
+    // Ocultar cada elemento con la clase "visibleEnSesionCerrada"
     for (let i = 0; i < visibleEnSesionCerrada.length; i++) {
         visibleEnSesionCerrada[i].style.display = "none";
     }
