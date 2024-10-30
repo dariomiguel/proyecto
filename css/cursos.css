@@ -5,6 +5,7 @@
     box-sizing: border-box;
     font-family: 'Roboto','SUSE', 'Bebas Neue', 'Poiret One';
     font-weight: 400;
+    scroll-behavior: smooth;
 }
 /* ------------- MAIN ------------- */
 
@@ -39,6 +40,7 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);  
     margin-bottom: 10rem;
+    scroll-margin: 6ex;
 }
 
 .main-detalle .descripcion .descripcion__imagen .contenedor-imagen{

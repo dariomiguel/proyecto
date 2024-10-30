@@ -6,90 +6,100 @@ const datosDeLosCursos = {
             id: 1,
             nombre: "Iniciando en JavaScript",
             duracion: "60hs",
-            precio: "1000",
+            precio: "1500",
             img: "../../img/cardImages/javaScript-logo.png",
-            detalle: "/pages/cursos/javscript.html",
+            descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
+            requisitos: "Ninguno",
             dataname: "item-programacion",
         },
         {
             id: 2,
             nombre: "Iniciando en C#",
-            duracion: "60hs",
-            precio: "1000",
+            duracion: "120hs",
+            precio: "3000",
             img: "../../img/cardImages/cSharp-logo.png",
-            detalle: "/pages/cursos/cSharp.html",
+            descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
+            requisitos: "Ninguno",
             dataname: "item-programacion",
         },
         {
             id: 3,
             nombre: "Iniciando en Illustrator",
-            duracion: "60hs",
-            precio: "1000",
+            duracion: "40hs",
+            precio: "1200",
             img: "../../img/cardImages/illustrator-logo.png",
-            detalle: "/pages/cursos/illustrator.html",
+            descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
+            requisitos: "Ninguno",
             dataname: "item-disenio",
         },
         {
             id: 4,
             nombre: "Iniciando en MySQL",
-            duracion: "60hs",
-            precio: "1000",
+            duracion: "80hs",
+            precio: "2300",
             img: "../../img/cardImages/mysql-logo.png",
-            detalle: "/pages/cursos/mysql.html",
+            descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
+            requisitos: "Ninguno",
             dataname: "item-data",
         },
         {
             id: 5,
             nombre: "Iniciando en SQL",
-            duracion: "60hs",
-            precio: "1000",
+            duracion: "80hs",
+            precio: "2000",
             img: "../../img/cardImages/sql-logo.png",
-            detalle: "/pages/cursos/sql.html",
+            descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
+            requisitos: "Ninguno",
             dataname: "item-data",
         },
         {
             id: 6,
             nombre: "Iniciando en Photoshop",
-            duracion: "60hs",
-            precio: "1000",
+            duracion: "50hs",
+            precio: "1500",
             img: "../../img/cardImages/photoshop-logo.png",
-            detalle: "/pages/cursos/photoshop.html",
+            descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
+            requisitos: "Ninguno",
             dataname: "item-disenio",
         },
         {
             id: 7,
             nombre: "Iniciando en Python",
             duracion: "60hs",
-            precio: "1000",
+            precio: "1800",
             img: "../../img/cardImages/Python_logo_icon.png",
-            detalle: "/pages/cursos/python.html",
+            descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
+            requisitos: "Ninguno",
             dataname: "item-programacion",
         },
         {
             id: 8,
             nombre: "Iniciando en VueJS",
-            duracion: "60hs",
-            precio: "1000",
+            duracion: "70hs",
+            precio: "1600",
             img: "../../img/cardImages/vueJs-logo.png",
-            detalle: "/pages/cursos/vueJs.html",
+            descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
+            requisitos: "Ninguno",
             dataname: "item-programacion",
         },
         {
             id: 9,
             nombre: "Iniciando en Scala",
             duracion: "60hs",
-            precio: "1000",
+            precio: "1900",
             img: "../../img/cardImages/Scala-logo.png",
-            detalle: "/pages/cursos/vueJs.html",
+            descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
+            requisitos: "Ninguno",
             dataname: "item-data"
         },
         {
             id: 10,
             nombre: "Iniciando en Express",
-            duracion: "60hs",
-            precio: "1000",
+            duracion: "50hs",
+            precio: "1300",
             img: "../../img/cardImages/adobe-express.png",
-            detalle: "/pages/cursos/vueJs.html",
+            descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
+            requisitos: "Ninguno",
             dataname: "item-disenio",
         }
     ]
@@ -116,7 +126,7 @@ function mostrarCursos(){
                 <p class="cursos-info__titulo">
                     ${item.nombre}
                 </p>
-                <a href="${item.detalle}">Ver Detalles</a>
+                <a href="#js-descripcion__contenido" onclick="mostrarDetalles(${item.id})">Ver Detalles</a>
             </div>
         </div>
         <div class="precio-cursos">
@@ -140,7 +150,7 @@ let carritoDeCompras = JSON.parse(localStorage.getItem('carrito')) || [];
 function agregarAlCarrito(id) {
     const agregadoAlCarrito = document.getElementById('JS-agregadoAlCarrito');
     console.log(carritoDeCompras);
-    const curso = cursos.find(c => c.id === id);
+    const curso = curso.find(c => c.id === id);
     if (curso) {
         const existe = carritoDeCompras.find(item => item.id === curso.id);
         if(!existe){
@@ -154,8 +164,6 @@ function agregarAlCarrito(id) {
         console.log(JSON.parse(localStorage.getItem('carrito')));
     }
 }
-
-
 
 const filtrarItems = (e) => {
     document.querySelector(".active").classList.remove("active");
@@ -171,3 +179,15 @@ const filtrarItems = (e) => {
 
 botonesFiltro.forEach(button => button.addEventListener("click", filtrarItems));
 
+function mostrarDetalles(id){
+    const cursos = JSON.parse(localStorage.getItem("cursos"));
+    const cursoSeleccionado = cursos.find(curso => curso.id === id);
+    cursoSeleccionado.innerHTML = '';
+
+    document.getElementById("js-imagen-curso").scr = cursoSeleccionado.img;
+    document.getElementById("js-titulo-curso").innerHTML = cursoSeleccionado.nombre;
+    document.getElementById("js-valor-curso").innerHTML = cursoSeleccionado.precio;
+    document.getElementById("js-duracion-curso").innerHTML = cursoSeleccionado.duracion;
+    document.getElementById("js-descripcion-curso").innerHTML = cursoSeleccionado.descripcion;
+    document.getElementById("js-requisitos-curso").innerHTML = cursoSeleccionado.requisitos;
+}
