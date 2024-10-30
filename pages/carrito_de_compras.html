@@ -129,29 +129,28 @@
             <div>
                 <div class="total">
                     <span>Precio original: </span>
-                    <span>$74,99 US$</span>
+                    <span id="JS-montoTotal"></span>
                 </div>
 
                 <div class="total">
                     <span>Descuentos</span>
-                    <span>$0,00 US$</span>
+                    <span id="JS-descuentoPorGiftcard"></span>
                 </div>
                 <div class="linea"></div>
                 <div class="total">
                     <h3 class="total-texto">Total</h3>
-                    <h3 class="total-texto">$74,99 US$</h3>
+                    <h3 class="total-texto"></h3>
                 </div>
             </div>
             <div class="contenedor-confirmar">
-                <input class="boton-confirmar" onclick="soloPermitir16Digitos();" id="botonConfirmar" type="submit"
-                    value="Pagar" />
+                <input class="boton-confirmar" id="botonConfirmar" type="submit" value="Pagar" />
             </div>
             <div class="linea"></div>
             <h3 class="total-texto">Promociones</h3>
-            <form onsubmit="aplicarCupon()" class="codigo-de-descuento">
+            <div class="codigo-de-descuento">
                 <input type="text" id="JS-input-codigo" placeholder="Introducir cupón" />
-                <input type="submit" id="JS-aplicar" class="boton-aplicar" value="Aplicar" />
-            </form>
+                <button type="submit" onclick="generarDescuentoPorGiftcard()" id="JS-aplicar" class="boton-aplicar">Aplicar</button>
+            </div>
         </section>
     </main>
     <footer>
