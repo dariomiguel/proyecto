@@ -3,55 +3,55 @@ const cursos = [
         nombre: "JavaScript",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",id:1,img: "../../img/cardImages/javaScript-logo.png"
+        link: "#",id:1,img: "../../img/cardImages/javaScript-logo.png",duracion:"60hs",precio:"1500"
     },
     {
         nombre: "C",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",id:2,img: "../../img/cardImages/cSharp-logo.png"
+        link: "#",id:2,img: "../../img/cardImages/cSharp-logo.png",duracion:"120hs",precio:"3000"
     },
     {
         nombre: "Illustrator",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",id:3,img: "../../img/cardImages/illustrator-logo.png"
+        link: "#",id:3,img: "../../img/cardImages/illustrator-logo.png",duracion:"40hs",precio:"1200"
     },
     {
         nombre: "Mysql",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",id:4,img: "../../img/cardImages/mysql-logo.png"
+        link: "#",id:4,img: "../../img/cardImages/mysql-logo.png",duracion:"80hs",precio:"2300"
     },
     {
         nombre: "SQL",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",id:5,img: "../../img/cardImages/sql-logo.png"
+        link: "#",id:5,img: "../../img/cardImages/sql-logo.png",duracion:"80hs",precio:"2000"
     },
     {
         nombre: "Photoshop",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",id:6,img: "../../img/cardImages/photoshop-logo.png"
+        link: "#",id:6,img: "../../img/cardImages/photoshop-logo.png",duracion:"50hs",precio:"1500"
     },
     {
         nombre: "Python",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",id:7,img: "../../img/cardImages/Python_logo_icon.png"
+        link: "#",id:7,img: "../../img/cardImages/Python_logo_icon.png",duracion:"60hs",precio:"1800"
     },
     {
         nombre: "Vuejs",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",id:8,img: "../../img/cardImages/vueJs-logo.png"
+        link: "#",id:8,img: "../../img/cardImages/vueJs-logo.png",duracion:"70hs",precio:"1600"
     },
     {
         nombre: "Scala",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "../pages/cursos/cSharp.html",id:9,img: "../../img/cardImages/Scala-logo.png"
+        link: "../pages/cursos/cSharp.html",id:9,img: "../../img/cardImages/Scala-logo.png",duracion:"60hs",precio:"1900"
     },
     {
         nombre: "Express",
