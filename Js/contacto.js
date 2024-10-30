@@ -37,11 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
             valid = false;
         }
 
-        // Si alguna validación falla, se previene el envío
         if (!valid) {
             event.preventDefault();
         } else {
-            window.location.href = "../index.html";
+            event.preventDefault();
+            popup.style.display = "block";
         }
+    });
+
+    aceptarBtn.addEventListener("click", function () {
+        window.location.href = "../pages/mensaje_enviado.html";
     });
 });
