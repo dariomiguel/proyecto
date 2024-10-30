@@ -36,6 +36,12 @@
     font-size: 1.6rem;
 }
 
+.precio-cursos{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .descripcion{
     display: grid;
     grid-template-columns: repeat(3, 1fr);  
