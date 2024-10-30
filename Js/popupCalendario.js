@@ -108,18 +108,18 @@ function mostrarPopup(aux) {
 
 let carritoDeCompras = JSON.parse(localStorage.getItem('carrito')) || [];
     function agregarAlCarrito(id) {
-        //const agregadoAlCarrito = document.getElementById('JS-agregadoAlCarrito');
-        //console.log(carritoDeCompras);
+        const agregadoAlCarrito = document.getElementById('JS-agregadoAlCarrito');
+        console.log(carritoDeCompras);
         const curso = cursos.find(c => c.id === id);
             if (curso) {
             const existe = carritoDeCompras.find(item => item.id === curso.id);
             if(!existe){
             carritoDeCompras.push(curso);
             }
-        //agregadoAlCarrito.classList.add('visible');
-          //  setTimeout(() =>{
-            //    agregadoAlCarrito.classList.remove('visible');
-            //}, 2000);
+        agregadoAlCarrito.classList.add('visible');
+            setTimeout(() =>{
+                agregadoAlCarrito.classList.remove('visible');
+            }, 2000);
         localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));
         console.log(JSON.parse(localStorage.getItem('carrito')));
     }
