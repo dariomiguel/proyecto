@@ -27,10 +27,11 @@ function mostrarCarrito() {
                 <a class="boton-comprar" href="../index.html">
                     <button class="boton-comprar">Seguir comprando</button>
                     </a>
-        </div>`
+        </div>`       
         cambiarElMontoTotalEnTiempoReal();
         cambiarElMontoDeDescuentoEnTiempoReal();
         actualizarElTotal();
+
         contenedorCarrito.appendChild(ContenedorCarritoVacio);
         } else {
             carritoVacio.classList.add('oculto');
@@ -57,9 +58,11 @@ function mostrarCarrito() {
 
             });
         } 
-        cambiarElMontoTotalEnTiempoReal();
-        cambiarElMontoDeDescuentoEnTiempoReal();
         actualizarElTotal();
+        cambiarElMontoTotalEnTiempoReal();
+
+        cambiarElMontoDeDescuentoEnTiempoReal();
+
         localStorage.setItem('precioOriginal', JSON.stringify(montoTotal));
         }
     }
@@ -91,6 +94,7 @@ function generarDescuentoPorGiftcard(){
                 localStorage.setItem('descuento', JSON.stringify(descuentoPorGiftcards));
                 cambiarElMontoTotalEnTiempoReal();
                 cambiarElMontoDeDescuentoEnTiempoReal();
+                actualizarElTotal();
             }
         });
     }else {
@@ -103,6 +107,18 @@ function actualizarElTotal(){
     PrecioTotal.textContent = total <= 0 ? '$0.00 US$' : `$${total.toFixed(2)} US$`;
     localStorage.setItem('total', JSON.stringify(total));
     console.log(JSON.parse(localStorage.getItem('total')));
+}
+
+function eliminarDescuento(){
+    if(giftcard){
+    giftcard.utilizada = false;
+    localStorage.setItem('giftcard', JSON.stringify(giftcard));
+    descuentoPorGiftcards = 0;
+    localStorage.setItem('descuento', JSON.stringify(descuentoPorGiftcards));
+    cambiarElMontoTotalEnTiempoReal();
+    actualizarElTotal();
+    cambiarElMontoDeDescuentoEnTiempoReal();
+    }
 }
 
     function eliminarDelCarrito(id){

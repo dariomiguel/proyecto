@@ -143,7 +143,9 @@
                 </div>
             </div>
             <div class="contenedor-confirmar">
-                <input class="boton-confirmar" id="botonConfirmar" type="submit" value="Pagar" />
+                <a href="../pages/pagar.html">
+                <button class="boton-confirmar" id="botonConfirmar" type="submit">Pagar</button>
+                </a>
             </div>
             <div class="linea"></div>
             <h3 class="total-texto">Promociones</h3>
@@ -151,6 +153,7 @@
                 <input type="text" id="JS-input-codigo" placeholder="Introducir cupón" />
                 <button type="submit" onclick="generarDescuentoPorGiftcard()" id="JS-aplicar" class="boton-aplicar">Aplicar</button>
             </div>
+            <button onclick="eliminarDescuento()" class="boton-curso">Eliminar Descuento</button>
         </section>
     </main>
     <footer>
