@@ -145,8 +145,9 @@ const itemsFiltrables = document.querySelectorAll(".slider .cursos-info-containe
 
 
 const botonCompra = document.getElementById('JS-botonCompra');
+let carritoDeCompras;
 if(estaLogueado){
-let carritoDeCompras = JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
+carritoDeCompras = JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
 }
 function agregarAlCarrito(id) {
     const agregadoAlCarrito = document.getElementById('JS-agregadoAlCarrito');

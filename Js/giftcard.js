@@ -1,4 +1,6 @@
 const formulario = document.getElementById('formularioGiftcard');
+const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
+
 if (formulario){
 formulario.addEventListener('submit', function(event) {
 
@@ -18,14 +20,14 @@ formulario.addEventListener('submit', function(event) {
         codigoDeLaGiftcard: '7553608',
         utilizada: false
     };
-    localStorage.setItem('giftcard', JSON.stringify(giftcard));
-    console.log(localStorage.getItem('giftcard'));
+    localStorage.setItem(`giftcardParaComprar${usuarioLogueado.correo}`, JSON.stringify(giftcard));
+    console.log(localStorage.getItem(`giftcardParaComprar${usuarioLogueado.correo}`));
 });
 }
 const giftcardContainer = document.getElementById('JS-GiftcardContainer');
 
 function generarGiftcard() {
-    const giftcard = JSON.parse(localStorage.getItem('giftcard'));
+    const giftcard = JSON.parse(localStorage.getItem(`giftcardParaComprar${usuarioLogueado.correo}`));
     console.log(giftcardContainer); 
     const contenedor = document.createElement('div');
     const fontSizeNegrita = parseFloat(giftcard.tamañoFuente) * 2;
@@ -138,20 +140,6 @@ function cambiarElPrecioDeLaGiftcardEnTiempoReal(){
     }
 
 
-function guardarGiftcardEnElUsuario(){
-    const giftcard = JSON.parse(localStorage.getItem('giftcard'));
-    const emailDelUsuario = giftcard.email;
-    const usuariosRegistrados = JSON.parse(localStorage.getItem('BDUsuarios'));
-    const usuarioParaMandarGiftcard = usuariosRegistrados.find(item => item.email === emailDelUsuario);
-    if(usuarioParaMandarGiftcard){
-        const index = usuariosRegistrados.findIndex(usuario => usuario.email === giftcard.email);
-        usuarioParaMandarGiftcard.giftcard = giftcard;
-        usuariosRegistrados[index].giftcard = usuarioParaMandarGiftcard.giftcard;
-        localStorage.setItem('BDUsuarios', JSON.stringify(usuariosRegistrados));
-    }
-}
-
-guardarGiftcardEnElUsuario()
 
 if(formulario){
 cambiarLaPosicionDelMonto();
