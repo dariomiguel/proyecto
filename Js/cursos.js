@@ -7,7 +7,7 @@ const datosDeLosCursos = [
             nombre: "Iniciando en JavaScript",
             duracion: "60hs",
             precio: "1500",
-            img: "../../img/cardImages/javaScript-logo.png",
+            img: "../img/cardImages/JavaScript-logo.png",
             descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
             requisitos: "Ninguno",
             dataname: "item-programacion",
@@ -17,7 +17,7 @@ const datosDeLosCursos = [
             nombre: "Iniciando en C#",
             duracion: "120hs",
             precio: "3000",
-            img: "../../img/cardImages/cSharp-logo.png",
+            img: "../img/cardImages/cSharp-logo.png",
             descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
             requisitos: "Ninguno",
             dataname: "item-programacion",
@@ -27,7 +27,7 @@ const datosDeLosCursos = [
             nombre: "Iniciando en Illustrator",
             duracion: "40hs",
             precio: "1200",
-            img: "../../img/cardImages/illustrator-logo.png",
+            img: "../img/cardImages/illustrator-logo.png",
             descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
             requisitos: "Ninguno",
             dataname: "item-disenio",
@@ -37,7 +37,7 @@ const datosDeLosCursos = [
             nombre: "Iniciando en MySQL",
             duracion: "80hs",
             precio: "2300",
-            img: "../../img/cardImages/mysql-logo.png",
+            img: "../img/cardImages/mysql-logo.png",
             descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
             requisitos: "Ninguno",
             dataname: "item-data",
@@ -47,7 +47,7 @@ const datosDeLosCursos = [
             nombre: "Iniciando en SQL",
             duracion: "80hs",
             precio: "2000",
-            img: "../../img/cardImages/sql-logo.png",
+            img: "../img/cardImages/sql-logo.png",
             descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
             requisitos: "Ninguno",
             dataname: "item-data",
@@ -57,7 +57,7 @@ const datosDeLosCursos = [
             nombre: "Iniciando en Photoshop",
             duracion: "50hs",
             precio: "1500",
-            img: "../../img/cardImages/photoshop-logo.png",
+            img: "../img/cardImages/photoshop-logo.png",
             descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
             requisitos: "Ninguno",
             dataname: "item-disenio",
@@ -67,7 +67,7 @@ const datosDeLosCursos = [
             nombre: "Iniciando en Python",
             duracion: "60hs",
             precio: "1800",
-            img: "../../img/cardImages/Python_logo_icon.png",
+            img: "../img/cardImages/Python_logo_icon.png",
             descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
             requisitos: "Ninguno",
             dataname: "item-programacion",
@@ -77,7 +77,7 @@ const datosDeLosCursos = [
             nombre: "Iniciando en VueJS",
             duracion: "70hs",
             precio: "1600",
-            img: "../../img/cardImages/vueJs-logo.png",
+            img: "../img/cardImages/vueJs-logo.png",
             descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
             requisitos: "Ninguno",
             dataname: "item-programacion",
@@ -87,7 +87,7 @@ const datosDeLosCursos = [
             nombre: "Iniciando en Scala",
             duracion: "60hs",
             precio: "1900",
-            img: "../../img/cardImages/Scala-logo.png",
+            img: "../img/cardImages/Scala-logo.png",
             descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
             requisitos: "Ninguno",
             dataname: "item-data"
@@ -97,7 +97,7 @@ const datosDeLosCursos = [
             nombre: "Iniciando en Express",
             duracion: "50hs",
             precio: "1300",
-            img: "../../img/cardImages/adobe-express.png",
+            img: "../img/cardImages/adobe-express.png",
             descripcion: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic voluptate vitae, dolor provident minima consequuntur a inventore necessitatibus temporibus voluptatem",
             requisitos: "Ninguno",
             dataname: "item-disenio",
@@ -185,7 +185,7 @@ function mostrarDetalles(id){
     const cursoSeleccionado = cursos.find(curso => curso.id === id);
     cursoSeleccionado.innerHTML = '';
 
-    document.getElementById("js-imagen-curso").scr = cursoSeleccionado.img;
+    document.getElementById("js-imagen-curso").src = cursoSeleccionado.img;
     document.getElementById("js-titulo-curso").innerHTML = cursoSeleccionado.nombre;
     document.getElementById("js-valor-curso").innerHTML = cursoSeleccionado.precio;
     document.getElementById("js-duracion-curso").innerHTML = cursoSeleccionado.duracion;

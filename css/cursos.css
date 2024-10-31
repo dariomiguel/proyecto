@@ -28,7 +28,6 @@
 
 .descripcion__imagen{
     justify-self: flex-end;
-    padding-right: 3rem;
 }
 
 .negrita {
@@ -55,17 +54,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    border-radius: .4em;
+    padding: 1em;
 }
 
 .main-detalle .descripcion .descripcion__imagen .contenedor-imagen img{
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-.main-detalle .descripcion .descripcion__imagen .contenedor-imagen {
-    width: 100%;
-    border-radius: .4em;
 }
 
 .main-detalle.descripcion__info-curso{
