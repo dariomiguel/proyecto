@@ -1,7 +1,12 @@
-
+const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
 const cursos = JSON.parse(localStorage.getItem('cursos'));
-let cursosAlmacenados = JSON.parse(localStorage.getItem('carrito')) || [];
+const estadoDeSesion = localStorage.getItem("estadoDeSesion");
+let cursosAlmacenados;
+if(estadoDeSesion){
+cursosAlmacenados = JSON.parse(localStorage.getItem(`carrito_${usuarioLogueado.correo}`)) || [];
 console.log(cursosAlmacenados);
+}
+
 const contenedorCarrito = document.getElementById('JS-contenedorCursos');
 const carritoVacio = document.getElementById('JS-carritoVacio');
 let montoTotal = 0;
@@ -11,6 +16,7 @@ const PrecioTotal = document.getElementById('JS-precioTotal');
 console.log(PrecioTotal);
 const giftcard = JSON.parse(localStorage.getItem('giftcard'));
 console.log(giftcard);
+const usuariosRegistrados = JSON.parse(localStorage.getItem('BDUsuarios'));
 
 
 function mostrarCarrito() {
@@ -55,7 +61,6 @@ function mostrarCarrito() {
             </div>`;
                 montoTotal += parseFloat(item.precio);
                 contenedorCarrito.appendChild(contenedorCurso);
-
             });
             if(giftcard){
                 const contenedorCurso = document.createElement('div');
@@ -97,7 +102,6 @@ function cambiarElMontoTotalEnTiempoReal(){
 
 function eliminarGiftcard(){
     const emailDelUsuario = giftcard.email;
-    const usuariosRegistrados = JSON.parse(localStorage.getItem('BDUsuarios'));
     const usuarioParaBorrarGiftcard = usuariosRegistrados.find(item => item.email === emailDelUsuario);
     if(usuarioParaBorrarGiftcard){
         const index = usuariosRegistrados.findIndex(usuario => usuario.email === giftcard.email);
@@ -154,7 +158,7 @@ function eliminarDescuento(){
 
     function eliminarDelCarrito(id){
     cursosAlmacenados = cursosAlmacenados.filter(item => item.id !== id);
-    localStorage.setItem('carrito', JSON.stringify(cursosAlmacenados));
+    localStorage.setItem(`carrito_${usuarioLogueado.correo}`, JSON.stringify(cursosAlmacenados));
     mostrarCarrito();
     }
     

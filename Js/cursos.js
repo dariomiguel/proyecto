@@ -1,5 +1,6 @@
 const usuarios = document.getElementById('BDUsuarios');
-
+const usuarioEnSesion = JSON.parse(localStorage.getItem('usuarioLogueado'));
+const estaLogueado = localStorage.getItem("estadoDeSesion");
 const datosDeLosCursos = [
         {
             id: 1,
@@ -144,7 +145,9 @@ const itemsFiltrables = document.querySelectorAll(".slider .cursos-info-containe
 
 
 const botonCompra = document.getElementById('JS-botonCompra');
-let carritoDeCompras = JSON.parse(localStorage.getItem('carrito')) || [];
+if(estaLogueado){
+let carritoDeCompras = JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
+}
 function agregarAlCarrito(id) {
     const agregadoAlCarrito = document.getElementById('JS-agregadoAlCarrito');
     console.log(carritoDeCompras);
@@ -158,8 +161,8 @@ function agregarAlCarrito(id) {
         setTimeout(() =>{
             agregadoAlCarrito.classList.remove('visible');
         }, 2000);
-        localStorage.setItem(`carrito`, JSON.stringify(carritoDeCompras));
-        console.log(JSON.parse(localStorage.getItem('carrito')));
+        localStorage.setItem(`carrito_${usuarioEnSesion.correo}`, JSON.stringify(carritoDeCompras));
+        console.log(JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)));
     }
 }
 

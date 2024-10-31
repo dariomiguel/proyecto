@@ -44,4 +44,5 @@ if (cerrarSesion !== null && cerrarSesionDesdeBarra !== null) {
 
 function cerrarSesionActual() {
     localStorage.removeItem("estadoDeSesion");
+    localStorage.removeItem("usuarioLogueado");
 }
