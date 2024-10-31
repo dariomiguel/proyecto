@@ -72,14 +72,14 @@ function mostrarCarrito() {
 
 function cambiarElMontoTotalEnTiempoReal(){
     if(contenedorCarrito){
-        precioOriginal.textContent = montoTotal  <= 0 ? '$0.00 US$' : `$${montoTotal.toFixed(2)} US$`;
+        precioOriginal.textContent = montoTotal  <= 0 ? '$0.00 ARS' : `$${montoTotal.toFixed(2)} ARS`;
         localStorage.setItem('precioOriginal', JSON.stringify(montoTotal));
     }   
 }
 
 function cambiarElMontoDeDescuentoEnTiempoReal(){
     const descuento = document.getElementById('JS-descuentoPorGiftcard');
-    descuento.textContent = descuentoPorGiftcards === 0 ? '$0.00 US$' : `$${descuentoPorGiftcards.toFixed(2)} US$`;
+    descuento.textContent = descuentoPorGiftcards === 0 ? '$0.00 ARS' : `$${descuentoPorGiftcards.toFixed(2)} ARS`;
 }
 
 function generarDescuentoPorGiftcard(){
@@ -104,7 +104,7 @@ function generarDescuentoPorGiftcard(){
 
 function actualizarElTotal(){
     total = montoTotal - descuentoPorGiftcards;
-    PrecioTotal.textContent = total <= 0 ? '$0.00 US$' : `$${total.toFixed(2)} US$`;
+    PrecioTotal.textContent = total <= 0 ? '$0.00 ARS' : `$${total.toFixed(2)} ARS`;
     localStorage.setItem('total', JSON.stringify(total));
     console.log(JSON.parse(localStorage.getItem('total')));
 }

@@ -44,7 +44,6 @@ function desplegarMercadoPago(){
 
 function soloPermitirLetrasEnElNombre(){
     const inputNombre = document.getElementById('nombreTarjeta__input--Id');
-
     inputNombre.addEventListener('input', (event) =>{
         let valorDelInput = event.target.value;
         valorDelInput = valorDelInput.replace(/[^A-Za-z\s]/g, '');
@@ -108,9 +107,9 @@ function actualizarValores(){
     const descuento = document.getElementById('JS-descuento');
     const precioOriginal = document.getElementById('JS-precioOriginal');
     const totalCompra = document.getElementById('JS-totalCompra');
-    descuento.textContent = descuentoPorGiftcards === 0 ? '$0.00 US$' : `$${descuentoPorGiftcards} US$`;
-    precioOriginal.textContent = montoTotal <= 0 ? '$0.00 US$' : `$${montoTotal} US$`;
-    totalCompra.textContent = total <= 0 ? '$0.00 US$' : `$${total} US$`;
+    descuento.textContent = descuentoPorGiftcards === 0 ? '$0.00 ARS' : `$${descuentoPorGiftcards} ARS`;
+    precioOriginal.textContent = montoTotal <= 0 ? '$0.00 ARS' : `$${montoTotal} ARS`;
+    totalCompra.textContent = total <= 0 ? '$0.00 ARS' : `$${total} ARS`;
 }
 
 actualizarValores();
