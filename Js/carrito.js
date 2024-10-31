@@ -57,6 +57,22 @@ function mostrarCarrito() {
                 contenedorCarrito.appendChild(contenedorCurso);
 
             });
+            if(giftcard){
+                contenedorCurso.innerHTML = `<img class="imagen-curso" src="${item.img}" />
+                <div class="info-curso">
+                    <h2 class="titulo-curso">${item.nombre}</h2>
+                    <div class="textos-curso">
+                        <p class="texto-curso">${item.duracion}</p>
+                        <p class="texto-curso">Cantidad: 1</p>
+                        <p class="texto-curso">Precio: $${item.precio}</p>
+                        </div>
+                </div>
+                <div class="botones-curso">
+                    <button class="boton-curso">Ver detalles</button>
+                    <button class="boton-curso" onclick="eliminarDelCarrito(${item.id})">Eliminar</button>
+                </div>
+            </div>`;
+            }
         } 
         actualizarElTotal();
         cambiarElMontoTotalEnTiempoReal();
