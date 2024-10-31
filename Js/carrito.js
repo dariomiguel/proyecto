@@ -17,7 +17,7 @@ function mostrarCarrito() {
     if(contenedorCarrito){
         montoTotal = 0;
         contenedorCarrito.innerHTML = '';
-        if (cursosAlmacenados.length === 0) {
+        if (cursosAlmacenados.length === 0 && !giftcard) {
             const ContenedorCarritoVacio = document.createElement('div');
             ContenedorCarritoVacio.classList.add('cursos');
             ContenedorCarritoVacio.id = 'JS-carritoVacio';
@@ -58,25 +58,27 @@ function mostrarCarrito() {
 
             });
             if(giftcard){
-                contenedorCurso.innerHTML = `<img class="imagen-curso" src="${item.img}" />
+                const contenedorCurso = document.createElement('div');
+                contenedorCurso.classList.add('cursos-en-carrito');
+                contenedorCurso.id = 'carrito';
+                contenedorCurso.innerHTML = `<img class="imagen-curso" src="../img/giftcard.png" />
                 <div class="info-curso">
-                    <h2 class="titulo-curso">${item.nombre}</h2>
+                    <h2 class="titulo-curso">Giftcard para ${giftcard.nombre}</h2>
                     <div class="textos-curso">
-                        <p class="texto-curso">${item.duracion}</p>
                         <p class="texto-curso">Cantidad: 1</p>
-                        <p class="texto-curso">Precio: $${item.precio}</p>
+                        <p class="texto-curso">Precio: $${giftcard.monto}</p>
                         </div>
                 </div>
                 <div class="botones-curso">
-                    <button class="boton-curso">Ver detalles</button>
-                    <button class="boton-curso" onclick="eliminarDelCarrito(${item.id})">Eliminar</button>
+                    <button class="boton-curso" onclick="eliminarGiftcard()">Eliminar</button>
                 </div>
             </div>`;
+            contenedorCarrito.appendChild(contenedorCurso);
+            montoTotal += parseFloat(giftcard.monto);
             }
         } 
         actualizarElTotal();
         cambiarElMontoTotalEnTiempoReal();
-
         cambiarElMontoDeDescuentoEnTiempoReal();
 
         localStorage.setItem('precioOriginal', JSON.stringify(montoTotal));
@@ -91,6 +93,19 @@ function cambiarElMontoTotalEnTiempoReal(){
         precioOriginal.textContent = montoTotal  <= 0 ? '$0.00 ARS' : `$${montoTotal.toFixed(2)} ARS`;
         localStorage.setItem('precioOriginal', JSON.stringify(montoTotal));
     }   
+}
+
+function eliminarGiftcard(){
+    const emailDelUsuario = giftcard.email;
+    const usuariosRegistrados = JSON.parse(localStorage.getItem('BDUsuarios'));
+    const usuarioParaBorrarGiftcard = usuariosRegistrados.find(item => item.email === emailDelUsuario);
+    if(usuarioParaBorrarGiftcard){
+        const index = usuariosRegistrados.findIndex(usuario => usuario.email === giftcard.email);
+        usuarioParaBorrarGiftcard.giftcard = [];
+        usuariosRegistrados[index].giftcard = usuarioParaBorrarGiftcard.giftcard;
+        localStorage.setItem('BDUsuarios', JSON.stringify(usuariosRegistrados));
+    }
+    mostrarCarrito();
 }
 
 function cambiarElMontoDeDescuentoEnTiempoReal(){
@@ -138,7 +153,7 @@ function eliminarDescuento(){
 }
 
     function eliminarDelCarrito(id){
-        cursosAlmacenados = cursosAlmacenados.filter(item => item.id !== id);
+    cursosAlmacenados = cursosAlmacenados.filter(item => item.id !== id);
     localStorage.setItem('carrito', JSON.stringify(cursosAlmacenados));
     mostrarCarrito();
     }

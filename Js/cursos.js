@@ -1,4 +1,4 @@
-
+const usuarios = document.getElementById('BDUsuarios');
 
 const datosDeLosCursos = [
         {
@@ -158,7 +158,7 @@ function agregarAlCarrito(id) {
         setTimeout(() =>{
             agregadoAlCarrito.classList.remove('visible');
         }, 2000);
-        localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));
+        localStorage.setItem(`carrito`, JSON.stringify(carritoDeCompras));
         console.log(JSON.parse(localStorage.getItem('carrito')));
     }
 }
