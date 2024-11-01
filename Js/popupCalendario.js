@@ -57,7 +57,7 @@ const cursos = [
         nombre: "Express",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#",id:10,img: "../../img/cardImages/adobe-express.png"
+        link: "#",id:10,img: "../../img/cardImages/adobe-express.png",duracion:"50hs",precio:"1300"
     },
 ];
 
