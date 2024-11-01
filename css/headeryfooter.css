@@ -279,4 +279,12 @@ li a:hover {
         justify-content: center;
         column-gap: 10em;
     }
+
+    .barraHeader__Usuario--contenedorBienvenida{
+        display: none;
+    }
+    .barraHeader__Usuario{
+        justify-content: center;
+    }
+
 }
