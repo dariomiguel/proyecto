@@ -107,6 +107,7 @@ function mostrarPopup(aux) {
 
 
 let carritoDeCompras;
+const usuarioEnSesion = JSON.parse(localStorage.getItem('usuarioLogueado'));
 const estaLogueado = localStorage.getItem("estadoDeSesion");
 if(estaLogueado){
 carritoDeCompras = JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
