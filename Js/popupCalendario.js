@@ -106,21 +106,25 @@ function mostrarPopup(aux) {
 }
 
 
-let carritoDeCompras = JSON.parse(localStorage.getItem('carrito')) || [];
-    function agregarAlCarrito(id) {
-        const agregadoAlCarrito = document.getElementById('JS-agregadoAlCarrito');
-        console.log(carritoDeCompras);
-        const curso = cursos.find(c => c.id === id);
-            if (curso) {
-            const existe = carritoDeCompras.find(item => item.id === curso.id);
-            if(!existe){
-            carritoDeCompras.push(curso);
-            }
+let carritoDeCompras;
+const estaLogueado = localStorage.getItem("estadoDeSesion");
+if(estaLogueado){
+carritoDeCompras = JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
+}
+function agregarAlCarrito(id) {
+    const agregadoAlCarrito = document.getElementById('JS-agregadoAlCarrito');
+    console.log(carritoDeCompras);
+    const curso = datosDeLosCursos.find(c => c.id === id);
+    if (curso) {
+        const existe = carritoDeCompras.find(item => item.id === curso.id);
+        if(!existe){
+        carritoDeCompras.push(curso);
+        }
         agregadoAlCarrito.classList.add('visible');
-            setTimeout(() =>{
-                agregadoAlCarrito.classList.remove('visible');
-            }, 2000);
-        localStorage.setItem('carrito', JSON.stringify(carritoDeCompras));
-        console.log(JSON.parse(localStorage.getItem('carrito')));
+        setTimeout(() =>{
+            agregadoAlCarrito.classList.remove('visible');
+        }, 2000);
+        localStorage.setItem(`carrito_${usuarioEnSesion.correo}`, JSON.stringify(carritoDeCompras));
+        console.log(JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)));
     }
 }
