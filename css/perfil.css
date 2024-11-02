@@ -10,13 +10,40 @@ body {
     color: #333;
 }
 
+main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
 .contenedor-perfil {
+    justify-self: right;
     max-width: 37rem;
     margin: 0 auto;
     background: #fff;
     border-radius: 0.625rem;
     box-shadow: 0 0.125 0.625rem rgba(0, 0, 0, 0.1);
     overflow: hidden;
+}
+
+.giftcard{
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+
+.texto-giftcard{
+    display: none;
+    justify-self: center;
+}
+
+.giftcard-contenedor{
+    width: 100%;
+    justify-self: center;
+}
+
+.titulo-giftcard{
+    align-self: flex-start;
+    justify-self: center;
 }
 
 .cabecera-perfil {

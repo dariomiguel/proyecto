@@ -1,7 +1,7 @@
 const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
 const cursos = JSON.parse(localStorage.getItem('cursos'));
 const estadoDeSesion = localStorage.getItem("estadoDeSesion");
-let cursosAlmacenados;
+let indice = localStorage.getItem("idUsuario");
 if(estadoDeSesion){
 cursosAlmacenados = JSON.parse(localStorage.getItem(`carrito_${usuarioLogueado.correo}`)) || [];
 console.log(cursosAlmacenados);
@@ -52,7 +52,7 @@ function mostrarCarrito() {
                         <p class="texto-curso">${item.duracion}</p>
                         <p class="texto-curso">Cantidad: 1</p>
                         <p class="texto-curso">Precio: $${item.precio}</p>
-                        </div>
+                    </div>
                 </div>
                 <div class="botones-curso">
                     <button class="boton-curso">Ver detalles</button>
@@ -112,15 +112,19 @@ function cambiarElMontoDeDescuentoEnTiempoReal(){
 }
 
 function generarDescuentoPorGiftcard(){
+    let indice = localStorage.getItem("idUsuario");
     const inputCodigo = document.getElementById('JS-input-codigo');
     const botonAplicar = document.getElementById('JS-aplicar');
     const giftcardDelUsuario = usuarioLogueado.giftcard;
+    console.log(giftcardDelUsuario);
     if(giftcardDelUsuario){
         botonAplicar.addEventListener('click', (event) =>{
             if (inputCodigo.value === giftcardDelUsuario.codigoDeLaGiftcard && !giftcardDelUsuario.utilizada) {
-                descuentoPorGiftcards += parseFloat(giftcard.monto);
+                descuentoPorGiftcards = parseFloat(giftcard.monto);
                 giftcardDelUsuario.utilizada = true;
-                localStorage.setItem(`giftcardDelUsuario_${usuarioLogueado.correo}`), JSON.stringify(giftcardDelUsuario);
+                usuarioLogueado.giftcard = giftcardDelUsuario;
+                usuariosRegistrados[indice] = usuarioLogueado;
+                localStorage.setItem('BDUsuarios', JSON.stringify(usuariosRegistrados));
                 localStorage.setItem('descuento', JSON.stringify(descuentoPorGiftcards));
                 cambiarElMontoTotalEnTiempoReal();
                 cambiarElMontoDeDescuentoEnTiempoReal();
@@ -142,7 +146,9 @@ function actualizarElTotal(){
 function eliminarDescuento(){
     if(giftcard){
     giftcard.utilizada = false;
-    localStorage.setItem('giftcard', JSON.stringify(giftcard));
+    usuarioLogueado.giftcard = giftcard;
+    usuariosRegistrados[indice] = usuarioLogueado;
+    localStorage.setItem('BDUsuarios', JSON.stringify(usuariosRegistrados));
     descuentoPorGiftcards = 0;
     localStorage.setItem('descuento', JSON.stringify(descuentoPorGiftcards));
     cambiarElMontoTotalEnTiempoReal();

@@ -1,6 +1,10 @@
 const total = JSON.parse(localStorage.getItem('total'));
 const montoTotal = JSON.parse(localStorage.getItem('precioOriginal'));
 const descuentoPorGiftcards = JSON.parse(localStorage.getItem('descuento')) || 0;
+const baseDeUsuarios = JSON.parse(localStorage.getItem('BDUsuarios'));
+const usuarioEnSesion = JSON.parse(localStorage.getItem('usuarioLogueado'));
+const giftcardARegalar = JSON.parse(localStorage.getItem(`giftcardParaComprar${usuarioEnSesion.correo}`));
+
 
 function desplegarTarjeta(){
     const datosTarjeta = document.getElementById('datosDeTarjeta');
@@ -91,6 +95,7 @@ function soloPermitir16Digitos(){
     const formulario = document.getElementById('formularioDePago');
     const mensajeError = document.getElementById('mensajeDeError');
     
+ 
 formulario.addEventListener('submit', (event)=>{
     if(inputNumero.value.length !== 19 && inputNumero.value.length > 0 ){
         mensajeError.classList.add('visible');
@@ -103,16 +108,34 @@ formulario.addEventListener('submit', (event)=>{
     });
 }
 
+
 function actualizarValores(){
     const descuento = document.getElementById('JS-descuento');
     const precioOriginal = document.getElementById('JS-precioOriginal');
     const totalCompra = document.getElementById('JS-totalCompra');
-    descuento.textContent = descuentoPorGiftcards === 0 ? '$0.00 ARS' : `$${descuentoPorGiftcards} ARS`;
-    precioOriginal.textContent = montoTotal <= 0 ? '$0.00 ARS' : `$${montoTotal} ARS`;
-    totalCompra.textContent = total <= 0 ? '$0.00 ARS' : `$${total} ARS`;
+    descuento.textContent = descuentoPorGiftcards === 0 ? '$0.00 ARS' : `$${descuentoPorGiftcards.toFixed(2)} ARS`;
+    precioOriginal.textContent = montoTotal <= 0 ? '$0.00 ARS' : `$${montoTotal.toFixed(2)} ARS`;
+    totalCompra.textContent = total <= 0 ? '$0.00 ARS' : `$${total.toFixed(2)} ARS`;
 }
 
+function agregarGiftcardAlUsuario(){
+    if(giftcardARegalar){
+    const usuarioParaCargarGiftcard = baseDeUsuarios.find(item => item.correo === giftcardARegalar.email);
+    const index = baseDeUsuarios.findIndex(usuario => usuario.correo === usuarioParaCargarGiftcard.correo);
+    usuarioParaCargarGiftcard.giftcard = giftcardARegalar;
+    baseDeUsuarios[index] = usuarioParaCargarGiftcard;
+    localStorage.setItem('BDUsuarios', JSON.stringify(baseDeUsuarios));
+    }
+}
+
+const compraRealizada = document.getElementById('JS-compraRealizada');
+if(compraRealizada){
+agregarGiftcardAlUsuario();
+}
+
+if(total){
 actualizarValores();
 soloPermitirNumerosEnlaFechaDeVencimiento();
 soloPermitirNumerosEnLaTarjeta();
 soloPermitirLetrasEnElNombre();
+}

@@ -37,3 +37,36 @@ botonEliminarPerfil.addEventListener("click", function () {
         window.location.href = "../index.html";
     }
 });
+
+function mostrarGiftcard(){
+    const textoGiftcard = document.getElementById('JS-textoGiftcard');
+    const giftcardContainer = document.getElementById('JS-giftcardContenedor');
+    const giftcard = listaDeUsuarios[indice].giftcard;
+    console.log(listaDeUsuarios[indice]);
+    console.log(giftcard.length);
+    if(giftcard.length > 0){
+        textoGiftcard.style.display = 'none';
+        giftcardContainer.style.display = 'flex';
+        const contenedor = document.createElement('div');
+    const fontSizeNegrita = parseFloat(giftcard.tamañoFuente) * 2;
+    contenedor.id = 'giftcard';
+    contenedor.classList.add('giftcard-destinatario');
+    contenedor.style.backgroundColor = giftcard.fondo;
+    contenedor.innerHTML = `
+        <div class="giftcard-precio" id="giftcardPrecio" style="top: ${giftcard.top}; right: ${giftcard.right}; left: ${giftcard.left}; bottom: ${giftcard.bottom};">
+            <p id="monto">$${giftcard.monto}.-</p>
+        </div>
+        <div class="contenedor-texto" id="giftcardTexto" style="color: ${giftcard.colorLetra}">
+            <p class="giftcard-texto" id="giftcardFuente" style="font-size: ${giftcard.tamañoFuente}">
+                GIFTCARD para <br> <span class="negrita" style="font-size: ${fontSizeNegrita}rem" id="destinatario">${giftcard.nombre}</span>
+            </p>
+            <p>Tu código de descuento es: <span>${giftcard.codigoDeLaGiftcard}</span>
+        </div>`
+    giftcardContainer.appendChild(contenedor);
+    } else {
+        textoGiftcard.style.display = 'block';
+        giftcardContainer.style.display = 'none';
+    }
+}
+
+mostrarGiftcard();
