@@ -1,6 +1,6 @@
-const total = JSON.parse(localStorage.getItem('total'));
+const totalPagar = JSON.parse(localStorage.getItem('total'));
 const montoTotal = JSON.parse(localStorage.getItem('precioOriginal'));
-const descuentoPorGiftcards = JSON.parse(localStorage.getItem('descuento')) || 0;
+const descuentoPorGiftcardsPagar = JSON.parse(localStorage.getItem('descuento')) || 0;
 const baseDeUsuarios = JSON.parse(localStorage.getItem('BDUsuarios'));
 const usuarioEnSesion = JSON.parse(localStorage.getItem('usuarioLogueado'));
 const giftcardARegalar = JSON.parse(localStorage.getItem(`giftcardParaComprar${usuarioEnSesion.correo}`));
@@ -112,9 +112,9 @@ const descuento = document.getElementById('JS-descuento');
 function actualizarValores(){
     const precioOriginal = document.getElementById('JS-precioOriginal');
     const totalCompra = document.getElementById('JS-totalCompra');
-    descuento.textContent = descuentoPorGiftcards === 0 ? '$0.00 ARS' : `$${descuentoPorGiftcards.toFixed(2)} ARS`;
+    descuento.textContent = descuentoPorGiftcardsPagar === 0 ? '$0.00 ARS' : `$${descuentoPorGiftcardsPagar.toFixed(2)} ARS`;
     precioOriginal.textContent = montoTotal <= 0 ? '$0.00 ARS' : `$${montoTotal.toFixed(2)} ARS`;
-    totalCompra.textContent = total <= 0 ? '$0.00 ARS' : `$${total.toFixed(2)} ARS`;
+    totalCompra.textContent = totalPagar <= 0 ? '$0.00 ARS' : `$${totalPagar.toFixed(2)} ARS`;
 }
 
 function agregarGiftcardAlUsuario(){
