@@ -142,8 +142,6 @@ mostrarCursos();
 const botonesFiltro = document.querySelectorAll(".contenedor-filtros button");
 const itemsFiltrables = document.querySelectorAll(".slider .cursos-info-container");
 
-
-
 const botonCompra = document.getElementById('JS-botonCompra');
 let carritoDeCompras;
 if(estaLogueado){
