@@ -43,8 +43,8 @@ function mostrarGiftcard(){
     const giftcardContainer = document.getElementById('JS-giftcardContenedor');
     const giftcard = listaDeUsuarios[indice].giftcard;
     console.log(listaDeUsuarios[indice]);
-    console.log(giftcard.length);
-    if(giftcard.length > 0){
+    console.log(giftcard);
+    if(giftcard && !giftcard.utilizada){
         textoGiftcard.style.display = 'none';
         giftcardContainer.style.display = 'flex';
         const contenedor = document.createElement('div');

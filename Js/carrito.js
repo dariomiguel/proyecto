@@ -14,8 +14,12 @@ let descuentoPorGiftcards = parseFloat(localStorage.getItem('descuento')) || 0;
 let total = 0;
 const PrecioTotal = document.getElementById('JS-precioTotal');
 console.log(PrecioTotal);
-let giftcard = JSON.parse(localStorage.getItem(`giftcardParaComprar${usuarioLogueado.correo}`));
+let giftcard;
+if(estadoDeSesion){
+giftcard = JSON.parse(localStorage.getItem(`giftcardParaComprar${usuarioLogueado.correo}`));
 console.log(giftcard);
+}
+
 const usuariosRegistrados = JSON.parse(localStorage.getItem('BDUsuarios'));
 
 
@@ -101,7 +105,7 @@ function cambiarElMontoTotalEnTiempoReal(){
 }
 
 function eliminarGiftcard(){
-    giftcard = null;
+    giftcard = {};
     localStorage.removeItem(`giftcardParaComprar${usuarioLogueado.correo}`);
     mostrarCarrito();
 }
@@ -120,7 +124,7 @@ function generarDescuentoPorGiftcard(){
     if(giftcardDelUsuario){
         botonAplicar.addEventListener('click', (event) =>{
             if (inputCodigo.value === giftcardDelUsuario.codigoDeLaGiftcard && !giftcardDelUsuario.utilizada) {
-                descuentoPorGiftcards = parseFloat(giftcard.monto);
+                descuentoPorGiftcards = parseFloat(giftcardDelUsuario.monto);
                 giftcardDelUsuario.utilizada = true;
                 usuarioLogueado.giftcard = giftcardDelUsuario;
                 usuariosRegistrados[indice] = usuarioLogueado;
@@ -151,6 +155,7 @@ function eliminarDescuento(){
     localStorage.setItem('BDUsuarios', JSON.stringify(usuariosRegistrados));
     descuentoPorGiftcards = 0;
     localStorage.setItem('descuento', JSON.stringify(descuentoPorGiftcards));
+    console.log(descuentoPorGiftcards);
     cambiarElMontoTotalEnTiempoReal();
     actualizarElTotal();
     cambiarElMontoDeDescuentoEnTiempoReal();

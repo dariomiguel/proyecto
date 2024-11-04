@@ -108,9 +108,8 @@ formulario.addEventListener('submit', (event)=>{
     });
 }
 
-
+const descuento = document.getElementById('JS-descuento');
 function actualizarValores(){
-    const descuento = document.getElementById('JS-descuento');
     const precioOriginal = document.getElementById('JS-precioOriginal');
     const totalCompra = document.getElementById('JS-totalCompra');
     descuento.textContent = descuentoPorGiftcards === 0 ? '$0.00 ARS' : `$${descuentoPorGiftcards.toFixed(2)} ARS`;
@@ -133,7 +132,7 @@ if(compraRealizada){
 agregarGiftcardAlUsuario();
 }
 
-if(total){
+if(descuento){
 actualizarValores();
 soloPermitirNumerosEnlaFechaDeVencimiento();
 soloPermitirNumerosEnLaTarjeta();
