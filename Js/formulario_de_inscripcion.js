@@ -61,7 +61,7 @@ let total = 0;
 botonConfirmarInscriptos.addEventListener("click", function () {
 
     const checkboxes = document.querySelectorAll('input[name="alumnoAInscribir"]:checked');
-    const valoresSeleccionados = JSON.parse(localStorage.getItem("personasInscriptasPor")) || [];
+    const valoresSeleccionados = JSON.parse(localStorage.getItem(`personasInscriptasPor${usuarioEnSesion.nombre}`)) || [];
 
     checkboxes.forEach((checkbox) => {
         let persona = {
@@ -72,7 +72,7 @@ botonConfirmarInscriptos.addEventListener("click", function () {
     });
     total+=20 * valoresSeleccionados.length;
     localStorage.setItem("totalCursos",JSON.stringify(total));
-    localStorage.setItem("personasInscriptasPor",JSON.stringify(valoresSeleccionados));
+    localStorage.setItem(`personasInscriptasPor${usuarioEnSesion.nombre}`,JSON.stringify(valoresSeleccionados));
     
 });
 
