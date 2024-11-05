@@ -1,9 +1,10 @@
 const formulario = document.getElementById('formularioGiftcard');
 const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
-
+const baseDeDatosGiftcard = JSON.parse(localStorage.getItem('BDUsuarios'));
 if (formulario){
 formulario.addEventListener('submit', function(event) {
-
+    event.preventDefault();
+ 
     const giftcardHecha = document.getElementById('giftcard');
     const giftcardHechaUbicacion = document.getElementById('giftcardPrecio');
     const giftcard = {
@@ -20,8 +21,19 @@ formulario.addEventListener('submit', function(event) {
         codigoDeLaGiftcard: '7553608',
         utilizada: false
     };
-    localStorage.setItem(`giftcardParaComprar${usuarioLogueado.correo}`, JSON.stringify(giftcard));
-    console.log(localStorage.getItem(`giftcardParaComprar${usuarioLogueado.correo}`));
+    const mensajeDeErrorGiftcard = document.getElementById('mensajeDeErrorGiftcard');
+    const existe = baseDeDatosGiftcard.find(item => item.correo === giftcard.email);
+    console.log(existe);
+        if(!existe){
+            mensajeDeErrorGiftcard.classList.add('visible');
+            setTimeout(() =>{
+                mensajeDeErrorGiftcard.classList.remove('visible');
+            }, 7000);
+        } else{
+            localStorage.setItem(`giftcardParaComprar${usuarioLogueado.correo}`, JSON.stringify(giftcard));
+            console.log(localStorage.getItem(`giftcardParaComprar${usuarioLogueado.correo}`));
+            formulario.submit();
+        }
 });
 }
 const giftcardContainer = document.getElementById('JS-GiftcardContainer');

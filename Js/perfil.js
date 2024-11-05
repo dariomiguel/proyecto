@@ -1,6 +1,6 @@
 let listaDeUsuarios = JSON.parse(localStorage.getItem("BDUsuarios"));
 let indice = localStorage.getItem("idUsuario");
-
+const cursosDelUsuarioPerfil = JSON.parse(localStorage.getItem(`cursosDe_${listaDeUsuarios[indice].correo}`));
 let contenedor = document.getElementById("datos-basicosId");
 let botonCerrarSesion = document.getElementById("btn__cerrar-sesion");
 let botonEliminarPerfil = document.getElementById("btn__eliminar-perfil");
@@ -69,4 +69,29 @@ function mostrarGiftcard(){
     }
 }
 
+const contenedorCursos = document.getElementById('contenedorCursos');
+function mostrarCursos(){
+    const textoCurso = document.getElementById('JS-textoCursos');
+    console.log(cursosDelUsuarioPerfil);
+    if(cursosDelUsuarioPerfil){
+    cursosDelUsuarioPerfil.forEach(item => {
+        const contenedorCurso = document.createElement('div');
+                contenedorCurso.classList.add('cursos-en-perfil');
+                contenedorCurso.id = 'perfil';
+                contenedorCurso.innerHTML = `<img class="imagen-curso" src="${item.img}" />
+                <div class="info-curso">
+                    <h2 class="titulo-curso">${item.nombre}</h2>
+                    <div class="textos-curso">
+                        <p class="texto-curso">${item.duracion}</p>
+                    </div>
+                </div>`;
+            contenedorCursos.appendChild(contenedorCurso);
+    });
+    } else {
+        textoCurso.style.display = 'block';
+        contenedorCursos.style.display = 'none';
+    }
+}
+
+mostrarCursos();
 mostrarGiftcard();

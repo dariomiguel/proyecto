@@ -16,6 +16,7 @@ let total = 0;
 const PrecioTotal = document.getElementById('JS-precioTotal');
 console.log(PrecioTotal);
 let giftcard;
+let cursosDelUsuario = JSON.parse(localStorage.getItem(`cursosDe_${usuarioLogueado.correo}`)) || [];
 if(estadoDeSesion){
 giftcard = JSON.parse(localStorage.getItem(`giftcardParaComprar${usuarioLogueado.correo}`));
 console.log(giftcard);
@@ -181,8 +182,16 @@ function eliminarDescuento(){
         console.log(cursosAlmacenados);
         mostrarCarrito();
     }
+
+    function guardarCursosEnElUsuario(){
+       cursosDelUsuario = cursosDelUsuario.concat(cursosAlmacenados);
+       console.log(cursosDelUsuario);
+       console.log(cursosAlmacenados);
+        localStorage.setItem(`cursosDe_${usuarioLogueado.correo}`, JSON.stringify(cursosDelUsuario));
+    }
     
     if(compraHecha){
+        guardarCursosEnElUsuario();
         vaciarCarrito();
     }
     mostrarCarrito();

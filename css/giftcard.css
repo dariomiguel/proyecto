@@ -7,6 +7,10 @@
     background-color: #fff;
 }
 
+main{
+    position: relative;
+}
+
 .giftcard-main {
     display: flex;
     flex-direction: row;
@@ -289,6 +293,39 @@ background-color: #fff;
 
 .negro {
     background-color: #000;
+}
+
+.mensaje-de-error{
+    position: absolute;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    display: grid;
+    opacity: 0;
+    visibility: hidden;
+    padding: 1rem;
+    padding-left: 0;
+    grid-template-columns: 1fr 4fr;
+    justify-items: center;
+    align-items: start;
+    bottom: 0;
+    right: 0;
+    margin: 1rem;
+    width: 20rem;
+    background-color: #f002;
+}
+
+.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.imagen-error{
+    grid-column: 1;
+    width: 2rem;
+    height: 2rem;
+}
+
+.texto-error{
+    font-size: 0.9rem;
 }
 
 @media screen and (max-width: 60rem) {

@@ -28,7 +28,7 @@ document.getElementById("form__registerInputId").addEventListener("submit", func
             correo: correo,
             nombreDeUsuario: nombreDeUsuario,
             contrasena: contrasenaCifrada,
-            giftcard: {}
+            giftcard: null
         };
 
         baseDeDatosGuardada = JSON.parse(localStorage.getItem("BDUsuarios"));

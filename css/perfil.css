@@ -12,7 +12,7 @@ body {
 
 main{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .contenedor-perfil {
@@ -93,4 +93,37 @@ main{
 
 .btn:hover {
     opacity: 0.8;
+}
+
+.cursos-en-perfil{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-auto-flow: column;
+    box-shadow: 0 0 2px #a4a7aa;
+    height: 5rem;
+    width: 100%;
+    margin-bottom: 2rem;
+    align-items: center;
+    padding: 0.5rem 1rem;
+}
+
+.imagen-curso{
+    height: 3rem;
+    justify-self: center;
+}
+
+.titulo-curso{
+    align-self: baseline;
+    grid-column: 2;
+}
+
+.texto-curso{
+    font-size: 0.9rem;
+    color: #747577;
+}
+
+.info-curso{
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
 }
