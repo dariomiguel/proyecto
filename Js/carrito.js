@@ -178,6 +178,7 @@ function eliminarDelCarrito(id) {
     localStorage.setItem(`carrito_${usuarioLogueado.correo}`, JSON.stringify(cursosAlmacenados));
     actualizarContador();
     mostrarCarrito();
+    mostrarContadorDinamico();
 }
 
 
@@ -209,3 +210,12 @@ if (compraHecha) {
     vaciarCarrito();
 }
 mostrarCarrito();
+
+
+function mostrarContadorDinamico(){
+    let contadorCarrito = document.querySelector(".contadorCarrito");
+    let contador = parseInt(sessionStorage.getItem("contador")) || 0;
+    contadorCarrito.innerHTML=`${contador}`;
+}
+
+
