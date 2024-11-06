@@ -164,3 +164,4 @@ cambiarColorDeLaGiftCard();
 if(giftcardContainer){
 generarGiftcard();
 }
+
