@@ -259,7 +259,8 @@ function guardarCursosEnElUsuario() {
     console.log(cursos)
     console.log(cursosAlmacenados);
     listaDeUsuarios = JSON.parse(localStorage.getItem(`alumnosInscriptos_${usuarioLogueado.correo}`));
-    localStorage.setItem(`listaDeUsuarios_${usuarioLogueado.correo}${cursosDelUsuarioEmpresa}`, JSON.stringify(listaDeUsuarios));
+    console.log()
+    localStorage.setItem(`listaDeUsuarios_${usuarioLogueado.correo}${cursosAInscribirse}`, JSON.stringify(listaDeUsuarios));
     localStorage.setItem(`CursosEmpresaDe_${usuarioLogueado.correo}`, JSON.stringify(cursosDelUsuarioEmpresa));
     console.log(cursosDelUsiarioEmpresa, listaDeUsuarios);
     localStorage.setItem(`cursosDe_${usuarioLogueado.correo}`, JSON.stringify(cursosDelUsuario));

@@ -123,6 +123,7 @@ function verInscriptos(id) {
     inscriptoContenedor.innerHTML = ''; 
     const cursoParaVer = cursosDelUsuarioEmpresa.find((item) => item.id === id);
     const alumnosInscriptos = JSON.parse(localStorage.getItem(`listaDeUsuarios_${listaDeUsuarios[indice].correo}${cursoParaVer}`));
+    console.log(alumnosInscriptos);
     alumnosInscriptos.forEach((item) => {
         const contenedorInscriptos = document.createElement('div');
         contenedorInscriptos.classList.add('inscripto-contenedor');
