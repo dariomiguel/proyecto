@@ -23,8 +23,9 @@ let total = 0;
 const PrecioTotal = document.getElementById("JS-precioTotal");
 console.log(PrecioTotal);
 let giftcard;
+let cursosDelUsuario;
 if (usuarioLogueado != null) {
-    let cursosDelUsuario =
+     cursosDelUsuario =
         JSON.parse(localStorage.getItem(`cursosDe_${usuarioLogueado.correo}`)) || [];
     if (estadoDeSesion) {
         giftcard = JSON.parse(localStorage.getItem(`giftcardParaComprar${usuarioLogueado.correo}`));
