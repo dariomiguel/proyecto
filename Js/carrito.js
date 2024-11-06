@@ -181,6 +181,11 @@ function generarDescuentoPorGiftcard() {
 
 function actualizarElTotal() {
     total = montoTotalCarrito - descuentoPorGiftcards;
+    const contenedorResumen = document.getElementsByClassName("resumen");
+    if (total <= 0) {
+        contenedorResumen[0].style.display = "none";
+        console.log("Oculto");
+    }
     PrecioTotal.textContent = total <= 0 ? "$0.00 ARS" : `$${total.toFixed(2)} ARS`;
     localStorage.setItem("total", JSON.stringify(total));
 }
