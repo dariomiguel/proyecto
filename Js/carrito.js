@@ -236,6 +236,7 @@ function vaciarCarrito() {
     console.log(giftcard);
     cursosAlmacenados = [];
     localStorage.setItem(`carrito_${usuarioLogueado.correo}`, JSON.stringify(cursosAlmacenados));
+    sessionStorage.removeItem(`contador_${usuarioLogueado.correo}`)
     console.log(cursosAlmacenados);
     alumnosInscriptos = [];
     montoTotalEmpresas = [];
