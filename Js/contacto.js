@@ -49,3 +49,14 @@ document.addEventListener("DOMContentLoaded", function () {
         window.location.href = "../pages/mensaje_enviado.html";
     });
 });
+
+
+const usuarioEnSesion = JSON.parse(localStorage.getItem('usuarioLogueado'));
+
+function mostrarContadorDinamico(){
+    let contadorCarrito = document.querySelector(".contadorCarrito");
+    let contador = parseInt(sessionStorage.getItem(`contador_${usuarioEnSesion.correo}`)) || 0;
+    contadorCarrito.innerHTML=`${contador}`;
+}
+
+mostrarContadorDinamico();
