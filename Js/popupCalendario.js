@@ -120,6 +120,7 @@ function agregarAlCarrito(id) {
         const existe = carritoDeCompras.find(item => item.id === curso.id);
         if(!existe){
         carritoDeCompras.push(curso);
+        actualizarContador();
         }
         agregadoAlCarrito.classList.add('visible');
         setTimeout(() =>{
@@ -172,4 +173,11 @@ function mostrarDetalles(id) {
     } else {
         window.location.href = "../pages/cursos.html";
     }
+}
+
+function actualizarContador() {
+    // Obtiene el valor actual del contador desde sessionStorage o usa 0 si no existe
+    let contador = parseInt(sessionStorage.getItem("contador")) || 0;
+    contador += 1;
+    sessionStorage.setItem("contador", contador); // Guarda el nuevo valor en sessionStorage
 }
