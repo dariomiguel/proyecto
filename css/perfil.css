@@ -10,7 +10,7 @@ body {
     color: #333;
 }
 
-main{
+main {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
@@ -25,23 +25,23 @@ main{
     overflow: hidden;
 }
 
-.giftcard{
+.giftcard {
     display: grid;
     height: 100%;
     width: 100%;
 }
 
-.texto-giftcard{
+.texto-giftcard {
     display: none;
     justify-self: center;
 }
 
-.giftcard-contenedor{
+.giftcard-contenedor {
     width: 100%;
     justify-self: center;
 }
 
-.titulo-giftcard{
+.titulo-giftcard {
     align-self: flex-start;
     justify-self: center;
 }
@@ -95,7 +95,7 @@ main{
     opacity: 0.8;
 }
 
-.cursos-en-perfil{
+.cursos-en-perfil {
     display: grid;
     grid-template-columns: 1fr 3fr;
     grid-auto-flow: column;
@@ -107,23 +107,33 @@ main{
     padding: 0.5rem 1rem;
 }
 
-.imagen-curso{
+.imagen-curso {
     height: 3rem;
     justify-self: center;
 }
 
-.titulo-curso{
+.titulo-curso {
     align-self: baseline;
     grid-column: 2;
 }
 
-.texto-curso{
+.texto-curso {
     font-size: 0.9rem;
     color: #747577;
 }
 
-.info-curso{
+.info-curso {
     grid-column: 2;
     display: flex;
     flex-direction: column;
+}
+
+/* MediaQueries */
+
+@media (max-width: 60em) {
+    main {
+        display: flex;
+        flex-direction: column;
+        row-gap: 1rem;
+    }
 }
