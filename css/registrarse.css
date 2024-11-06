@@ -43,13 +43,7 @@
     border-top-left-radius: 1rem;
     border-bottom-left-radius: 1rem;
 
-    background: linear-gradient(
-        to LEFT,
-        #229799,
-        #229799 85%,
-        #97d8d9 100%,
-        #333 65%
-    );
+    background: linear-gradient(to LEFT, #229799, #229799 85%, #97d8d9 100%, #333 65%);
 }
 
 .contenedorLogin__bienvenida h1,
@@ -146,3 +140,104 @@
 }
 
 /*Login*/
+/*MEDIA QUERIES*/
+
+/* Tablets */
+@media (max-width: 60em) {
+    .contenedorLogin {
+        grid-template-columns: 1fr;
+    }
+
+    .contenedorLogin__bienvenida {
+        display: none;
+    }
+
+    .contacto {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    .bloqueDeTexto {
+        margin: 1rem 0 1rem 0;
+        height: 10rem;
+    }
+}
+
+/* Smartphones */
+@media (max-width: 47em) {
+    .login__input {
+        flex-wrap: initial;
+    }
+
+    .login__input input {
+        width: 75%;
+        align-self: center;
+        justify-self: center;
+    }
+
+    .contenedorSlider,
+    .contenedorLogin__bienvenida {
+        display: none;
+    }
+
+    .mediosDePago,
+    .pasos {
+        flex-direction: column;
+        align-items: center;
+        row-gap: 0.625rem;
+    }
+
+    .cursosDestacados {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .loginMain {
+        margin: 0;
+        min-height: 100%;
+    }
+
+    .contenedorLogin {
+        width: 100vw;
+        height: 100%;
+        min-height: 100%;
+        margin: 0;
+        border-radius: 0;
+    }
+
+    .contenedorContactos {
+        width: 90%;
+    }
+
+    .contactoMain input {
+        width: 100%;
+    }
+
+    .ubicacion__map {
+        width: 100%;
+        margin: 0;
+    }
+
+    .inscripcion:nth-of-type(2),
+    .inscripcion:nth-of-type(3),
+    .removerCurso {
+        display: none;
+    }
+
+    .inscripcion__contenedor {
+        flex-direction: column;
+    }
+
+    .contenedorAgregarPersona button {
+        margin-right: 0;
+    }
+
+    .contenedorInscribirse {
+        flex-direction: column;
+        padding-left: 0;
+        align-items: normal;
+        margin-top: 1rem;
+        width: fit-content;
+    }
+}
+
+/*MEDIA QUERIES*/
