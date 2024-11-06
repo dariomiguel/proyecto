@@ -149,16 +149,19 @@ mostrarCursos();
 
 const botonesFiltro = document.querySelectorAll(".contenedor-filtros button");
 const itemsFiltrables = document.querySelectorAll(".slider .cursos-info-container");
-
 let carritoDeCompras;
+
 if (estaLogueado) {
     carritoDeCompras = JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
 }
+
 function agregarAlCarrito(id) {
     actualizarContador();
+
     const agregadoAlCarrito = document.getElementById("JS-agregadoAlCarrito");
-    console.log(carritoDeCompras);
     const curso = datosDeLosCursos.find((c) => c.id === id);
+    console.log(carritoDeCompras);
+
     if (curso && carritoDeCompras != undefined) {
         const existe = carritoDeCompras.find((item) => item.id === curso.id);
         if (!existe) {
@@ -195,6 +198,17 @@ function mostrarDetalles(id) {
     const cursoSeleccionado = cursos.find((curso) => curso.id === id);
     cursoSeleccionado.innerHTML = "";
 
+    if (cursoSeleccionado) {
+        // Almacenar cada propiedad individual en sessionStorage
+        sessionStorage.setItem("cursoId", cursoSeleccionado.id);
+        sessionStorage.setItem("cursoNombre", cursoSeleccionado.nombre);
+        sessionStorage.setItem("cursoImagen", cursoSeleccionado.img);
+        sessionStorage.setItem("cursoPrecio", cursoSeleccionado.precio);
+        sessionStorage.setItem("cursoDuracion", cursoSeleccionado.duracion);
+        sessionStorage.setItem("cursoDescripcion", cursoSeleccionado.descripcion);
+        sessionStorage.setItem("cursoRequisitos", cursoSeleccionado.requisitos);
+    }
+
     const imagenCurso = document.getElementById("js-imagen-curso");
     const tituloCurso = document.getElementById("js-titulo-curso");
     const valorCurso = document.getElementById("js-valor-curso");
@@ -229,3 +243,30 @@ function actualizarContador() {
     contador += 1;
     sessionStorage.setItem("contador", contador); // Guarda el nuevo valor en sessionStorage
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Recuperar los datos del sessionStorage
+    // sessionStorage.getItem("cursoId");
+
+    let cursoSeleccionadoImg = sessionStorage.getItem("cursoImagen");
+    let cursoSeleccionadoNombre = sessionStorage.getItem("cursoNombre");
+    let cursoSeleccionadoPrecio = sessionStorage.getItem("cursoPrecio");
+    let cursoSeleccionadoDuracion = sessionStorage.getItem("cursoDuracion");
+    let cursoSeleccionadoDescripcion = sessionStorage.getItem("cursoDescripcion");
+    let cursoSeleccionadoRequisitos = sessionStorage.getItem("cursoRequisitos");
+
+    // Acceder a los elementos donde mostrar la información
+    const imagenCurso = document.getElementById("js-imagen-curso");
+    const tituloCurso = document.getElementById("js-titulo-curso");
+    const valorCurso = document.getElementById("js-valor-curso");
+    const duracionCurso = document.getElementById("js-duracion-curso");
+    const descripcionCurso = document.getElementById("js-descripcion-curso");
+    const requisitosCurso = document.getElementById("js-requisitos-curso");
+
+    imagenCurso.src = cursoSeleccionadoImg;
+    tituloCurso.innerHTML = cursoSeleccionadoNombre;
+    valorCurso.innerHTML = cursoSeleccionadoPrecio;
+    duracionCurso.innerHTML = cursoSeleccionadoDuracion;
+    descripcionCurso.innerHTML = cursoSeleccionadoDescripcion;
+    requisitosCurso.innerHTML = cursoSeleccionadoRequisitos;
+});
