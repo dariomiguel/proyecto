@@ -108,11 +108,12 @@ function mostrarCarrito() {
                         <p class="texto-curso">Precio: $${cursosAInscribirse.precio} c/u</p>
                     </div>
                 </div>
+                <p class="texto-curso empresas">Para empresas</p>
                 <div class="botones-curso">
                     <a href="#js-descripcion__contenido"><button class="boton-curso" onclick="mostrarDetalles(${cursosAInscribirse.id})">Ver detalles</button></a>
                     <button class="boton-curso" onclick="eliminarCursoEmpresa()">Eliminar</button>
-                    <p class="texto-curso empresas">Para empresas</p>
-                </div>
+                    <button class="boton-curso" onclick="verInscriptos()">Ver inscriptos</button>
+                </div> 
             </div>`;
             contenedorCarrito.appendChild(contenedorCurso);
             montoTotalCarrito += montoTotalEmpresas;
@@ -240,7 +241,22 @@ function guardarCursosEnElUsuario() {
     console.log(cursosAlmacenados);
     localStorage.setItem(`cursosDe_${usuarioLogueado.correo}`, JSON.stringify(cursosDelUsuario));
 }
+const overlay = document.getElementById('JS-overlay');
+const inscriptoContenedor = document.getElementById('JS-contenedorInscripto');
+function verInscriptos() {
+    overlay.style.display = 'grid';
+    inscriptoContenedor.innerHTML = '';  
+    alumnosInscriptos.forEach((item) => {
+        const contenedorInscriptos = document.createElement('div');
+        contenedorInscriptos.classList.add('inscripto-contenedor');
+        contenedorInscriptos.innerHTML = `<label for="${item.dni}">${item.nombre} ${item.apellido} - DNI: ${item.dni}</label>`;
+        inscriptoContenedor.appendChild(contenedorInscriptos);
+    });
+}
 
+function cerrarOverlay(){
+    overlay.style.display = 'none';
+}
 
 
 function mostrarContadorDinamico(){

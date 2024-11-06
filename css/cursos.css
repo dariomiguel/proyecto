@@ -212,18 +212,19 @@
 /* ------------- CURSOS (INFO) ------------- */
 
 .overlay{
-    position: fixed; /* Fija la capa en la pantalla */
+    position: fixed;
     top: 0;
     left: 0;
     display: none;
-    width: 100vw; /* Ocupa todo el ancho de la pantalla */
-    height: 100vh; /* Ocupa toda la altura de la pantalla */
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
-    z-index: 9999; /* Asegura que esté por encima de todo */ /* La capa está oculta inicialmente */
-    justify-content: center; /* Centra el contenido dentro de la capa */
-    align-items: center;
-    pointer-events: all; /* Asegura que esta capa sea interactuable */
+    width: 100vw; 
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    justify-content: center; 
+    pointer-events: all; 
 }
+
+
 .eleccion-compra-contenedor{
     position: fixed;
     align-self: center;
