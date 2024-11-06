@@ -218,6 +218,8 @@ function mostrarDetalles(id) {
         requisitosCurso.innerHTML = cursoSeleccionado.requisitos;
     } else if (localStorage.getItem("estadoDeSesion") == null) {
         window.location.href = "../pages/login.html";
+    } else {
+        window.location.href = "../pages/cursos.html";
     }
 }
 
