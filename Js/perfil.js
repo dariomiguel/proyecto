@@ -1,9 +1,13 @@
 let listaDeUsuarios = JSON.parse(localStorage.getItem("BDUsuarios"));
 let indice = localStorage.getItem("idUsuario");
 let usuarioEnSesion = JSON.parse(localStorage.getItem("usuarioLogueado"));
-const cursosDelUsuarioPerfil = JSON.parse(localStorage.getItem(`cursosDe_${listaDeUsuarios[indice].correo}`));
-const cursosDelUsuarioEmpresa = JSON.parse(localStorage.getItem(`CursosEmpresaDe_${listaDeUsuarios[indice].correo}`));
-console.log(cursosDelUsuarioEmpresa);
+const cursosDelUsuarioPerfil = JSON.parse(
+    localStorage.getItem(`cursosDe_${listaDeUsuarios[indice].correo}`)
+);
+const cursosDelUsuarioEmpresa = JSON.parse(
+    localStorage.getItem(`CursosEmpresaDe_${listaDeUsuarios[indice].correo}`)
+);
+
 let contenedor = document.getElementById("datos-basicosId");
 let botonCerrarSesion = document.getElementById("btn__cerrar-sesion");
 let botonEliminarPerfil = document.getElementById("btn__eliminar-perfil");
@@ -42,21 +46,20 @@ botonEliminarPerfil.addEventListener("click", function () {
     }
 });
 
-function mostrarGiftcard(){
-    const textoGiftcard = document.getElementById('JS-textoGiftcard');
-    const giftcardContainer = document.getElementById('JS-giftcardContenedor');
+function mostrarGiftcard() {
+    const textoGiftcard = document.getElementById("JS-textoGiftcard");
+    const giftcardContainer = document.getElementById("JS-giftcardContenedor");
     const giftcard = listaDeUsuarios[indice].giftcard;
-    console.log(listaDeUsuarios[indice]);
-    console.log(giftcard);
-    if(giftcard && !giftcard.utilizada){
-        textoGiftcard.style.display = 'none';
-        giftcardContainer.style.display = 'flex';
-        const contenedor = document.createElement('div');
-    const fontSizeNegrita = parseFloat(giftcard.tamañoFuente) * 2;
-    contenedor.id = 'giftcard';
-    contenedor.classList.add('giftcard-destinatario');
-    contenedor.style.backgroundColor = giftcard.fondo;
-    contenedor.innerHTML = `
+
+    if (giftcard && !giftcard.utilizada) {
+        textoGiftcard.style.display = "none";
+        giftcardContainer.style.display = "flex";
+        const contenedor = document.createElement("div");
+        const fontSizeNegrita = parseFloat(giftcard.tamañoFuente) * 2;
+        contenedor.id = "giftcard";
+        contenedor.classList.add("giftcard-destinatario");
+        contenedor.style.backgroundColor = giftcard.fondo;
+        contenedor.innerHTML = `
         <div class="giftcard-precio" id="giftcardPrecio" style="top: ${giftcard.top}; right: ${giftcard.right}; left: ${giftcard.left}; bottom: ${giftcard.bottom};">
             <p id="monto">$${giftcard.monto}.-</p>
         </div>
@@ -65,24 +68,24 @@ function mostrarGiftcard(){
                 GIFTCARD para <br> <span class="negrita" style="font-size: ${fontSizeNegrita}rem" id="destinatario">${giftcard.nombre}</span>
             </p>
             <p>Tu código de descuento es: <span>${giftcard.codigoDeLaGiftcard}</span>
-        </div>`
-    giftcardContainer.appendChild(contenedor);
+        </div>`;
+        giftcardContainer.appendChild(contenedor);
     } else {
-        textoGiftcard.style.display = 'block';
-        giftcardContainer.style.display = 'none';
+        textoGiftcard.style.display = "block";
+        giftcardContainer.style.display = "none";
     }
 }
 
-const contenedorCursos = document.getElementById('contenedorCursos');
-function mostrarCursos(){
-    const textoCurso = document.getElementById('JS-textoCursos');
-    console.log(cursosDelUsuarioPerfil);
-    if(cursosDelUsuarioPerfil){
-    cursosDelUsuarioPerfil.forEach(item => {
-        const contenedorCurso = document.createElement('div');
-                contenedorCurso.classList.add('cursos-en-perfil');
-                contenedorCurso.id = 'perfil';
-                contenedorCurso.innerHTML = `<img class="imagen-curso" src="${item.img}" />
+const contenedorCursos = document.getElementById("contenedorCursos");
+function mostrarCursos() {
+    const textoCurso = document.getElementById("JS-textoCursos");
+
+    if (cursosDelUsuarioPerfil) {
+        cursosDelUsuarioPerfil.forEach((item) => {
+            const contenedorCurso = document.createElement("div");
+            contenedorCurso.classList.add("cursos-en-perfil");
+            contenedorCurso.id = "perfil";
+            contenedorCurso.innerHTML = `<img class="imagen-curso" src="${item.img}" />
                 <div class="info-curso">
                     <h2 class="titulo-curso">${item.nombre}</h2>
                     <div class="textos-curso">
@@ -90,14 +93,13 @@ function mostrarCursos(){
                     </div>
                 </div>`;
             contenedorCursos.appendChild(contenedorCurso);
-    });
+        });
     }
-    if (cursosDelUsuarioEmpresa){
-        console.log('hola');
+    if (cursosDelUsuarioEmpresa) {
         cursosDelUsuarioEmpresa.forEach((item) => {
-            const contenedorCurso = document.createElement('div');
-            contenedorCurso.classList.add('cursos-en-perfil');
-            contenedorCurso.id = 'perfil';
+            const contenedorCurso = document.createElement("div");
+            contenedorCurso.classList.add("cursos-en-perfil");
+            contenedorCurso.id = "perfil";
             contenedorCurso.innerHTML = `<img class="imagen-curso" src="${item.img}" />
             <p class="texto-curso empresas">Para empresas</p>
             <div class="info-curso">
@@ -107,41 +109,41 @@ function mostrarCursos(){
                 </div>
                 <button class="boton-curso" onclick="verInscriptos(${item.id})">Ver inscriptos </button>
             </div>`;
-        contenedorCursos.appendChild(contenedorCurso);
+            contenedorCursos.appendChild(contenedorCurso);
         });
     } else {
-        textoCurso.style.display = 'block';
-        contenedorCursos.style.display = 'none';
+        textoCurso.style.display = "block";
+        contenedorCursos.style.display = "none";
     }
 }
 
-const overlayCarrito = document.getElementById('JS-overlay');
-const inscriptoContenedor = document.getElementById('JS-contenedorInscripto');
+const overlayCarrito = document.getElementById("JS-overlay");
+const inscriptoContenedor = document.getElementById("JS-contenedorInscripto");
 
 function verInscriptos(id) {
-    overlayCarrito.style.display = 'grid';
-    inscriptoContenedor.innerHTML = ''; 
+    overlayCarrito.style.display = "grid";
+    inscriptoContenedor.innerHTML = "";
     const cursoParaVer = cursosDelUsuarioEmpresa.find((item) => item.id === id);
-    const alumnosInscriptos = JSON.parse(localStorage.getItem(`listaDeUsuarios_${listaDeUsuarios[indice].correo}${cursoParaVer}`));
-    console.log(alumnosInscriptos);
+    const alumnosInscriptos = JSON.parse(
+        localStorage.getItem(`listaDeUsuarios_${listaDeUsuarios[indice].correo}${cursoParaVer}`)
+    );
+
     alumnosInscriptos.forEach((item) => {
-        const contenedorInscriptos = document.createElement('div');
-        contenedorInscriptos.classList.add('inscripto-contenedor');
+        const contenedorInscriptos = document.createElement("div");
+        contenedorInscriptos.classList.add("inscripto-contenedor");
         contenedorInscriptos.innerHTML = `<label for="${item.dni}">${item.nombre} ${item.apellido} - DNI: ${item.dni}</label>`;
         inscriptoContenedor.appendChild(contenedorInscriptos);
     });
 }
 
-function cerrarOverlay(){
-    overlayCarrito.style.display = 'none';
+function cerrarOverlay() {
+    overlayCarrito.style.display = "none";
 }
-
 
 function actualizarContador() {
     // Obtiene el valor actual del contador desde sessionStorage o usa 0 si no existe
     sessionStorage.removeItem(`contador_${usuarioEnSesion.correo}`);
 }
-
 
 mostrarCursos();
 mostrarGiftcard();

@@ -157,10 +157,8 @@ if (estaLogueado) {
 }
 
 function agregarAlCarrito(id) {
-    console.log("hola");
     overlay.style.display = "none";
     const agregadoAlCarrito = document.getElementById("JS-agregadoAlCarrito");
-    console.log(carritoDeCompras);
     const curso = datosDeLosCursos.find((c) => c.id === id);
     if (curso) {
         const existe = carritoDeCompras.find((item) => item.id === curso.id);
@@ -176,7 +174,6 @@ function agregarAlCarrito(id) {
                 `carrito_${usuarioEnSesion.correo}`,
                 JSON.stringify(carritoDeCompras)
             );
-            console.log(JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)));
         }
     }
 }
@@ -221,7 +218,6 @@ function comprarParaEmpresas(id) {
         `CursosEmpresas_${usuarioEnSesion.correo}`,
         JSON.stringify(cursoParaComprar)
     );
-    console.log(JSON.parse(localStorage.getItem(`CursosEmpresas_${usuarioEnSesion.correo}`)));
 }
 
 const filtrarItems = (e) => {

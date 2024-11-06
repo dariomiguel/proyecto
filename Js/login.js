@@ -12,8 +12,6 @@ formLogin.addEventListener("submit", function (e) {
         seEncontroUsuario = encontrarUsuario(baseDeDatosGuardada, usuarioDesdeInput);
     }
 
-    // console.log("Existe el usuario en la base de datos?  " + seEncontroUsuario);
-
     if (seEncontroUsuario) {
         let indice = posicionDeUsuarioEnBaseDeDatos(baseDeDatosGuardada, usuarioDesdeInput);
         let contrasenaCoinciden = contrasenaCorrecta(baseDeDatosGuardada, indice, contrasenaInput);

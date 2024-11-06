@@ -26,7 +26,7 @@ if (formulario) {
             };
             const mensajeDeErrorGiftcard = document.getElementById("mensajeDeErrorGiftcard");
             const existe = baseDeDatosGiftcard.find((item) => item.correo === giftcard.email);
-            console.log(existe);
+
             if (!existe) {
                 mensajeDeErrorGiftcard.classList.add("visible");
                 setTimeout(() => {
@@ -37,7 +37,7 @@ if (formulario) {
                     `giftcardParaComprar${usuarioLogueado.correo}`,
                     JSON.stringify(giftcard)
                 );
-                console.log(localStorage.getItem(`giftcardParaComprar${usuarioLogueado.correo}`));
+
                 formulario.submit();
             }
         } else {
@@ -52,7 +52,7 @@ function generarGiftcard() {
     const giftcard = JSON.parse(
         localStorage.getItem(`giftcardParaComprar${usuarioLogueado.correo}`)
     );
-    console.log(giftcardContainer);
+
     const contenedor = document.createElement("div");
     const fontSizeNegrita = parseFloat(giftcard.tamañoFuente) * 2;
     contenedor.id = "giftcard";

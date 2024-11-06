@@ -8,7 +8,6 @@ const cerrarSesion = document.getElementById("cerrarSesion");
 const indiceUsuario = localStorage.getItem("idUsuario");
 const lista = JSON.parse(localStorage.getItem("BDUsuarios"));
 
-
 const contenedorBienvenida = document.querySelector(".barraHeader__Usuario--contenedorBienvenida");
 
 if (sesion === null) {
@@ -19,14 +18,9 @@ if (sesion === null) {
         ocultoEnSesionCerrada[i].style.display = "none";
     }
 } else {
-    console.log("Estado de sesión: " + sesion);
-
     if (carrito !== null) carrito.style.display = "block";
     if (lista !== null) {
         const nombreUsuario = lista[indiceUsuario].nombre;
-        console.log("lista: " + lista[indiceUsuario].nombre);
-        console.log("indiceUsuario: " + indiceUsuario);
-        console.log("nombre: " + nombreUsuario);
         const nombreEnSpan = document.createElement("span");
         nombreEnSpan.textContent = nombreUsuario;
         contenedorBienvenida.appendChild(nombreEnSpan);
@@ -47,5 +41,3 @@ function cerrarSesionActual() {
     localStorage.removeItem("estadoDeSesion");
     localStorage.removeItem("usuarioLogueado");
 }
-
-

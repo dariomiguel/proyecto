@@ -8,29 +8,29 @@ let montoTotalEmpresas = [];
 let cursosAInscribirse = 0;
 if (estadoDeSesion) {
     cursosAlmacenados = JSON.parse(localStorage.getItem(`carrito_${usuarioLogueado.correo}`)) || [];
-    alumnosInscriptos = JSON.parse(localStorage.getItem(`alumnosInscriptos_${usuarioLogueado.correo}`)) || [];
-    montoTotalEmpresas = JSON.parse(localStorage.getItem(`precioTotal_${usuarioLogueado.correo}`)) || 0;
-    cursosAInscribirse = JSON.parse(localStorage.getItem(`CursosEmpresas_${usuarioLogueado.correo}`)) || [];
-    console.log(cursosAlmacenados);
+    alumnosInscriptos =
+        JSON.parse(localStorage.getItem(`alumnosInscriptos_${usuarioLogueado.correo}`)) || [];
+    montoTotalEmpresas =
+        JSON.parse(localStorage.getItem(`precioTotal_${usuarioLogueado.correo}`)) || 0;
+    cursosAInscribirse =
+        JSON.parse(localStorage.getItem(`CursosEmpresas_${usuarioLogueado.correo}`)) || [];
 }
 
-console.log(alumnosInscriptos, montoTotalEmpresas, cursosAInscribirse);
 const contenedorCarrito = document.getElementById("JS-contenedorCursos");
 const carritoVacio = document.getElementById("JS-carritoVacio");
 let montoTotalCarrito = 0;
 let descuentoPorGiftcards = parseFloat(localStorage.getItem("descuento")) || 0;
 let total = 0;
 const PrecioTotal = document.getElementById("JS-precioTotal");
-console.log(PrecioTotal);
 let giftcard;
 let cursosDelUsuario = [];
 let cursosDelUsiarioEmpresa = [];
 if (usuarioLogueado != null) {
     cursosDelUsuario = JSON.parse(localStorage.getItem(`cursosDe_${usuarioLogueado.correo}`)) || [];
-    cursosDelUsiarioEmpresa = JSON.parse(localStorage.getItem(`CursosEmpresaDe_${usuarioLogueado.correo}`)) || [];
+    cursosDelUsiarioEmpresa =
+        JSON.parse(localStorage.getItem(`CursosEmpresaDe_${usuarioLogueado.correo}`)) || [];
     if (estadoDeSesion) {
         giftcard = JSON.parse(localStorage.getItem(`giftcardParaComprar${usuarioLogueado.correo}`));
-        console.log(giftcard);
     }
 }
 
@@ -40,8 +40,6 @@ function mostrarCarrito() {
     if (contenedorCarrito) {
         montoTotalCarrito = 0;
         contenedorCarrito.innerHTML = "";
-        console.log(cursosAlmacenados.length);
-        console.log(giftcard);
         if (cursosAlmacenados.length === 0 && !giftcard && cursosAInscribirse.length === 0) {
             const ContenedorCarritoVacio = document.createElement("div");
             ContenedorCarritoVacio.classList.add("cursos");
@@ -100,8 +98,7 @@ function mostrarCarrito() {
                 contenedorCarrito.appendChild(contenedorCurso);
                 montoTotalCarrito += parseFloat(giftcard.monto);
             }
-            if(cursosAInscribirse.length !== 0){
-                console.log('hola');
+            if (cursosAInscribirse.length !== 0) {
                 const contenedorCurso = document.createElement("div");
                 contenedorCurso.classList.add("cursos-en-carrito");
                 contenedorCurso.id = "carrito";
@@ -121,8 +118,8 @@ function mostrarCarrito() {
                     <button class="boton-curso" onclick="verInscriptos()">Ver inscriptos</button>
                 </div> 
             </div>`;
-            contenedorCarrito.appendChild(contenedorCurso);
-            montoTotalCarrito += montoTotalEmpresas;
+                contenedorCarrito.appendChild(contenedorCurso);
+                montoTotalCarrito += montoTotalEmpresas;
             }
         }
         actualizarElTotal();
@@ -155,13 +152,11 @@ function cambiarElMontoDeDescuentoEnTiempoReal() {
         descuentoPorGiftcards === 0 ? "$0.00 ARS" : `$${descuentoPorGiftcards.toFixed(2)} ARS`;
 }
 
-
 function generarDescuentoPorGiftcard() {
     let indice = localStorage.getItem("idUsuario");
     const inputCodigo = document.getElementById("JS-input-codigo");
     const botonAplicar = document.getElementById("JS-aplicar");
     const giftcardDelUsuario = usuarioLogueado.giftcard;
-    console.log(giftcardDelUsuario);
     if (giftcardDelUsuario) {
         botonAplicar.addEventListener("click", (event) => {
             if (
@@ -188,19 +183,17 @@ function actualizarElTotal() {
     total = montoTotalCarrito - descuentoPorGiftcards;
     PrecioTotal.textContent = total <= 0 ? "$0.00 ARS" : `$${total.toFixed(2)} ARS`;
     localStorage.setItem("total", JSON.stringify(total));
-    console.log(JSON.parse(localStorage.getItem("total")));
 }
 
 function eliminarDescuento() {
     if (usuarioLogueado.giftcard) {
-        console.log("asd");
-        console.log(descuentoPorGiftcards);
         usuarioLogueado.giftcard.utilizada = false;
         usuariosRegistrados[indice] = usuarioLogueado;
+
         localStorage.setItem("BDUsuarios", JSON.stringify(usuariosRegistrados));
         descuentoPorGiftcards = 0;
         localStorage.setItem("descuento", JSON.stringify(descuentoPorGiftcards));
-        console.log(descuentoPorGiftcards);
+
         cambiarElMontoTotalEnTiempoReal();
         actualizarElTotal();
         cambiarElMontoDeDescuentoEnTiempoReal();
@@ -215,17 +208,18 @@ function eliminarDelCarrito(id) {
     mostrarContadorDinamico();
 }
 
-function eliminarCursoEmpresa(){
+function eliminarCursoEmpresa() {
     cursosAInscribirse = null;
-    localStorage.setItem(`CursosEmpresas_${usuarioLogueado.correo}`, JSON.stringify(cursosAInscribirse));
+    localStorage.setItem(
+        `CursosEmpresas_${usuarioLogueado.correo}`,
+        JSON.stringify(cursosAInscribirse)
+    );
     actualizarContador();
     mostrarCarrito();
     mostrarContadorDinamico();
 }
 
-
-
-function actualizarContador(){
+function actualizarContador() {
     let contador = parseInt(sessionStorage.getItem(`contador_${usuarioLogueado.correo}`)) || 0;
     contador -= 1;
     sessionStorage.setItem(`contador_${usuarioLogueado.correo}`, contador);
@@ -234,61 +228,71 @@ function actualizarContador(){
 function vaciarCarrito() {
     giftcard = null;
     localStorage.setItem(`giftcardParaComprar${usuarioLogueado.correo}`, JSON.stringify(giftcard));
-    console.log(giftcard);
+
     cursosAlmacenados = [];
     localStorage.setItem(`carrito_${usuarioLogueado.correo}`, JSON.stringify(cursosAlmacenados));
-    sessionStorage.removeItem(`contador_${usuarioLogueado.correo}`)
-    console.log(cursosAlmacenados);
+    sessionStorage.removeItem(`contador_${usuarioLogueado.correo}`);
+
     alumnosInscriptos = [];
     montoTotalEmpresas = [];
     cursosAInscribirse = 0;
-    localStorage.setItem(`alumnosInscriptos_${usuarioLogueado.correo}`, JSON.stringify(alumnosInscriptos));
-    localStorage.setItem(`precioTotal_${usuarioLogueado.correo}`, JSON.stringify(montoTotalEmpresas));
-    localStorage.setItem(`CursosEmpresas_${usuarioLogueado.correo}`, JSON.stringify(cursosAInscribirse));
+    localStorage.setItem(
+        `alumnosInscriptos_${usuarioLogueado.correo}`,
+        JSON.stringify(alumnosInscriptos)
+    );
+    localStorage.setItem(
+        `precioTotal_${usuarioLogueado.correo}`,
+        JSON.stringify(montoTotalEmpresas)
+    );
+    localStorage.setItem(
+        `CursosEmpresas_${usuarioLogueado.correo}`,
+        JSON.stringify(cursosAInscribirse)
+    );
 
     mostrarCarrito();
 }
 
 function guardarCursosEnElUsuario() {
-    if(cursosAlmacenados){
-    cursosDelUsuario = cursosDelUsuario.concat(cursosAlmacenados);
+    if (cursosAlmacenados) {
+        cursosDelUsuario = cursosDelUsuario.concat(cursosAlmacenados);
     }
-    console.log(cursosAInscribirse);
     cursosDelUsuarioEmpresa = cursosDelUsiarioEmpresa.concat(cursosAInscribirse);
-    console.log(cursosDelUsuario);
-    console.log(cursos)
-    console.log(cursosAlmacenados);
-    listaDeUsuarios = JSON.parse(localStorage.getItem(`alumnosInscriptos_${usuarioLogueado.correo}`));
-    console.log()
-    localStorage.setItem(`listaDeUsuarios_${usuarioLogueado.correo}${cursosAInscribirse}`, JSON.stringify(listaDeUsuarios));
-    localStorage.setItem(`CursosEmpresaDe_${usuarioLogueado.correo}`, JSON.stringify(cursosDelUsuarioEmpresa));
-    console.log(cursosDelUsiarioEmpresa, listaDeUsuarios);
+
+    listaDeUsuarios = JSON.parse(
+        localStorage.getItem(`alumnosInscriptos_${usuarioLogueado.correo}`)
+    );
+    localStorage.setItem(
+        `listaDeUsuarios_${usuarioLogueado.correo}${cursosAInscribirse}`,
+        JSON.stringify(listaDeUsuarios)
+    );
+    localStorage.setItem(
+        `CursosEmpresaDe_${usuarioLogueado.correo}`,
+        JSON.stringify(cursosDelUsuarioEmpresa)
+    );
     localStorage.setItem(`cursosDe_${usuarioLogueado.correo}`, JSON.stringify(cursosDelUsuario));
 }
 
-
-const overlayCarrito = document.getElementById('JS-overlay');
-const inscriptoContenedor = document.getElementById('JS-contenedorInscripto');
+const overlayCarrito = document.getElementById("JS-overlay");
+const inscriptoContenedor = document.getElementById("JS-contenedorInscripto");
 function verInscriptos() {
-    overlayCarrito.style.display = 'grid';
-    inscriptoContenedor.innerHTML = '';  
+    overlayCarrito.style.display = "grid";
+    inscriptoContenedor.innerHTML = "";
     alumnosInscriptos.forEach((item) => {
-        const contenedorInscriptos = document.createElement('div');
-        contenedorInscriptos.classList.add('inscripto-contenedor');
+        const contenedorInscriptos = document.createElement("div");
+        contenedorInscriptos.classList.add("inscripto-contenedor");
         contenedorInscriptos.innerHTML = `<label for="${item.dni}">${item.nombre} ${item.apellido} - DNI: ${item.dni}</label>`;
         inscriptoContenedor.appendChild(contenedorInscriptos);
     });
 }
 
-function cerrarOverlay(){
-    overlayCarrito.style.display = 'none';
+function cerrarOverlay() {
+    overlayCarrito.style.display = "none";
 }
 
-
-function mostrarContadorDinamico(){
+function mostrarContadorDinamico() {
     let contadorCarrito = document.querySelector(".contadorCarrito");
     let contador = parseInt(sessionStorage.getItem("contador")) || 0;
-    contadorCarrito.innerHTML=`${contador}`;
+    contadorCarrito.innerHTML = `${contador}`;
 }
 
 function mostrarDetalles(id) {
@@ -340,4 +344,3 @@ if (compraHecha) {
     vaciarCarrito();
 }
 mostrarCarrito();
-

@@ -3,61 +3,101 @@ const cursos = [
         nombre: "JavaScript",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#js-descripcion__contenido",id:1,img: "../../img/cardImages/javaScript-logo.png",duracion:"60hs",precio:"1500"
+        link: "#js-descripcion__contenido",
+        id: 1,
+        img: "../../img/cardImages/javaScript-logo.png",
+        duracion: "60hs",
+        precio: "1500",
     },
     {
         nombre: "C",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#js-descripcion__contenido",id:2,img: "../../img/cardImages/cSharp-logo.png",duracion:"120hs",precio:"3000"
+        link: "#js-descripcion__contenido",
+        id: 2,
+        img: "../../img/cardImages/cSharp-logo.png",
+        duracion: "120hs",
+        precio: "3000",
     },
     {
         nombre: "Illustrator",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#js-descripcion__contenido",id:3,img: "../../img/cardImages/illustrator-logo.png",duracion:"40hs",precio:"1200"
+        link: "#js-descripcion__contenido",
+        id: 3,
+        img: "../../img/cardImages/illustrator-logo.png",
+        duracion: "40hs",
+        precio: "1200",
     },
     {
         nombre: "Mysql",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#js-descripcion__contenido",id:4,img: "../../img/cardImages/mysql-logo.png",duracion:"80hs",precio:"2300"
+        link: "#js-descripcion__contenido",
+        id: 4,
+        img: "../../img/cardImages/mysql-logo.png",
+        duracion: "80hs",
+        precio: "2300",
     },
     {
         nombre: "SQL",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#js-descripcion__contenido",id:5,img: "../../img/cardImages/sql-logo.png",duracion:"80hs",precio:"2000"
+        link: "#js-descripcion__contenido",
+        id: 5,
+        img: "../../img/cardImages/sql-logo.png",
+        duracion: "80hs",
+        precio: "2000",
     },
     {
         nombre: "Photoshop",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#js-descripcion__contenido",id:6,img: "../../img/cardImages/photoshop-logo.png",duracion:"50hs",precio:"1500"
+        link: "#js-descripcion__contenido",
+        id: 6,
+        img: "../../img/cardImages/photoshop-logo.png",
+        duracion: "50hs",
+        precio: "1500",
     },
     {
         nombre: "Python",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#js-descripcion__contenido",id:7,img: "../../img/cardImages/Python_logo_icon.png",duracion:"60hs",precio:"1800"
+        link: "#js-descripcion__contenido",
+        id: 7,
+        img: "../../img/cardImages/Python_logo_icon.png",
+        duracion: "60hs",
+        precio: "1800",
     },
     {
         nombre: "Vuejs",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#js-descripcion__contenido",id:8,img: "../../img/cardImages/vueJs-logo.png",duracion:"70hs",precio:"1600"
+        link: "#js-descripcion__contenido",
+        id: 8,
+        img: "../../img/cardImages/vueJs-logo.png",
+        duracion: "70hs",
+        precio: "1600",
     },
     {
         nombre: "Scala",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#js-descripcion__contenido",id:9,img: "../../img/cardImages/Scala-logo.png",duracion:"60hs",precio:"1900"
+        link: "#js-descripcion__contenido",
+        id: 9,
+        img: "../../img/cardImages/Scala-logo.png",
+        duracion: "60hs",
+        precio: "1900",
     },
     {
         nombre: "Express",
         resumen:
             "Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam voluptatem quam voluptate. Iure eos enim nisi dolores velit facilis veniam quia, repellat aperiam voluptates qui! Illum placeat quibusdam similique excepturi?",
-        link: "#js-descripcion__contenido",id:10,img: "../../img/cardImages/adobe-express.png",duracion:"50hs",precio:"1300"
+        link: "#js-descripcion__contenido",
+        id: 10,
+        img: "../../img/cardImages/adobe-express.png",
+        duracion: "50hs",
+        precio: "1300",
     },
 ];
 
@@ -105,30 +145,28 @@ function mostrarPopup(aux) {
     });
 }
 
-
 let carritoDeCompras;
-const usuarioEnSesion = JSON.parse(localStorage.getItem('usuarioLogueado'));
+const usuarioEnSesion = JSON.parse(localStorage.getItem("usuarioLogueado"));
 const estaLogueado = localStorage.getItem("estadoDeSesion");
-if(estaLogueado){
-carritoDeCompras = JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
+if (estaLogueado) {
+    carritoDeCompras = JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
 }
 function agregarAlCarrito(id) {
-    const agregadoAlCarrito = document.getElementById('JS-agregadoAlCarrito');
-    console.log(carritoDeCompras);
-    const curso = cursos.find(c => c.id === id);
+    const agregadoAlCarrito = document.getElementById("JS-agregadoAlCarrito");
+
+    const curso = cursos.find((c) => c.id === id);
     if (curso) {
-        const existe = carritoDeCompras.find(item => item.id === curso.id);
-        if(!existe){
-        carritoDeCompras.push(curso);
-        actualizarContador();
-        mostrarContadorDinamico();
+        const existe = carritoDeCompras.find((item) => item.id === curso.id);
+        if (!existe) {
+            carritoDeCompras.push(curso);
+            actualizarContador();
+            mostrarContadorDinamico();
         }
-        agregadoAlCarrito.classList.add('visible');
-        setTimeout(() =>{
-            agregadoAlCarrito.classList.remove('visible');
+        agregadoAlCarrito.classList.add("visible");
+        setTimeout(() => {
+            agregadoAlCarrito.classList.remove("visible");
         }, 2000);
         localStorage.setItem(`carrito_${usuarioEnSesion.correo}`, JSON.stringify(carritoDeCompras));
-        console.log(JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)));
     }
 }
 
@@ -179,15 +217,16 @@ function mostrarDetalles(id) {
 function actualizarContador() {
     // Obtiene el valor actual del contador desde sessionStorage o usa 0 si no existe
     let contador = parseInt(sessionStorage.getItem(`contador_${usuarioEnSesion.correo}`)) || 0;
-    let carritoDeCompras = JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
-    contador = carritoDeCompras.length+1;
+    let carritoDeCompras =
+        JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
+    contador = carritoDeCompras.length + 1;
     sessionStorage.setItem(`contador_${usuarioEnSesion.correo}`, contador); // Guarda el nuevo valor en sessionStorage
 }
 
-function mostrarContadorDinamico(){
+function mostrarContadorDinamico() {
     let contadorCarrito = document.querySelector(".contadorCarrito");
     let contador = parseInt(sessionStorage.getItem(`contador_${usuarioEnSesion.correo}`)) || 0;
-    contadorCarrito.innerHTML=`${contador}`;
+    contadorCarrito.innerHTML = `${contador}`;
 }
 
 mostrarContadorDinamico();
