@@ -32,7 +32,7 @@ botonEliminarPerfil.addEventListener("click", function () {
     if (confirmacion) {
         localStorage.removeItem("estadoDeSesion");
         localStorage.removeItem("idUsuario");
-        localStorage.removeItem(`carrito${usuarioEnSesion.correo}`);
+        localStorage.removeItem(`carrito_${usuarioEnSesion.correo}`);
         listaDeUsuarios.splice(indice, 1);
         localStorage.setItem("BDUsuarios", JSON.stringify(listaDeUsuarios));
 
