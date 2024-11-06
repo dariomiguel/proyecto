@@ -80,6 +80,7 @@ header {
     position: absolute;
     right: 0;
     top: 0;
+    color: white;
 }
 .carrito svg {
     width: 100%;
