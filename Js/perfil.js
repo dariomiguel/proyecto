@@ -34,6 +34,7 @@ botonEliminarPerfil.addEventListener("click", function () {
         localStorage.removeItem("idUsuario");
         localStorage.removeItem(`carrito_${usuarioEnSesion.correo}`);
         listaDeUsuarios.splice(indice, 1);
+        actualizarContador();
         localStorage.setItem("BDUsuarios", JSON.stringify(listaDeUsuarios));
 
         window.location.href = "../index.html";
@@ -94,6 +95,14 @@ function mostrarCursos(){
         contenedorCursos.style.display = 'none';
     }
 }
+
+function actualizarContador() {
+    // Obtiene el valor actual del contador desde sessionStorage o usa 0 si no existe
+    let contador = parseInt(sessionStorage.getItem("contador")) || 0;
+    contador += 1;
+    sessionStorage.setItem("contador", contador); // Guarda el nuevo valor en sessionStorage
+}
+
 
 mostrarCursos();
 mostrarGiftcard();
