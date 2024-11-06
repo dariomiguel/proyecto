@@ -73,6 +73,13 @@ header {
 
 .carrito {
     width: 3em;
+    position: relative;
+}
+
+.contadorCarrito{
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 .carrito svg {
     width: 100%;
