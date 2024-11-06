@@ -237,6 +237,13 @@ function vaciarCarrito() {
     cursosAlmacenados = [];
     localStorage.setItem(`carrito_${usuarioLogueado.correo}`, JSON.stringify(cursosAlmacenados));
     console.log(cursosAlmacenados);
+    alumnosInscriptos = [];
+    montoTotalEmpresas = [];
+    cursosAInscribirse = 0;
+    localStorage.setItem(`alumnosInscriptos_${usuarioLogueado.correo}`, JSON.stringify(alumnosInscriptos));
+    localStorage.setItem(`precioTotal_${usuarioLogueado.correo}`, JSON.stringify(montoTotalEmpresas));
+    localStorage.setItem(`CursosEmpresas_${usuarioLogueado.correo}`, JSON.stringify(cursosAInscribirse));
+
     mostrarCarrito();
 }
 
