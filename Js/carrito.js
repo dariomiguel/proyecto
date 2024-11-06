@@ -241,10 +241,10 @@ function guardarCursosEnElUsuario() {
     console.log(cursosAlmacenados);
     localStorage.setItem(`cursosDe_${usuarioLogueado.correo}`, JSON.stringify(cursosDelUsuario));
 }
-const overlay = document.getElementById('JS-overlay');
+const overlayCarrito = document.getElementById('JS-overlay');
 const inscriptoContenedor = document.getElementById('JS-contenedorInscripto');
 function verInscriptos() {
-    overlay.style.display = 'grid';
+    overlayCarrito.style.display = 'grid';
     inscriptoContenedor.innerHTML = '';  
     alumnosInscriptos.forEach((item) => {
         const contenedorInscriptos = document.createElement('div');
@@ -255,7 +255,7 @@ function verInscriptos() {
 }
 
 function cerrarOverlay(){
-    overlay.style.display = 'none';
+    overlayCarrito.style.display = 'none';
 }
 
 
