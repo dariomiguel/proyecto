@@ -42,7 +42,7 @@ function mostrarCarrito() {
         contenedorCarrito.innerHTML = "";
         console.log(cursosAlmacenados.length);
         console.log(giftcard);
-        if (cursosAlmacenados.length === 0 && !giftcard && !cursosAInscribirse) {
+        if (cursosAlmacenados.length === 0 && !giftcard && cursosAInscribirse.length === 0) {
             const ContenedorCarritoVacio = document.createElement("div");
             ContenedorCarritoVacio.classList.add("cursos");
             ContenedorCarritoVacio.id = "JS-carritoVacio";
@@ -100,7 +100,7 @@ function mostrarCarrito() {
                 contenedorCarrito.appendChild(contenedorCurso);
                 montoTotalCarrito += parseFloat(giftcard.monto);
             }
-            if(cursosAInscribirse){
+            if(cursosAInscribirse.length !== 0){
                 console.log('hola');
                 const contenedorCurso = document.createElement("div");
                 contenedorCurso.classList.add("cursos-en-carrito");
