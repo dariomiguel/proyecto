@@ -40,29 +40,30 @@ function mostrarCarrito() {
     if (contenedorCarrito) {
         montoTotalCarrito = 0;
         contenedorCarrito.innerHTML = "";
-        if (cursosAlmacenados.length === 0 && !giftcard && cursosAInscribirse.length === 0) {
-            const ContenedorCarritoVacio = document.createElement("div");
-            ContenedorCarritoVacio.classList.add("cursos");
-            ContenedorCarritoVacio.id = "JS-carritoVacio";
-            ContenedorCarritoVacio.innerHTML = `
+        if (cursosAlmacenados && cursosAInscribirse) {
+            if (cursosAlmacenados.length === 0 && !giftcard && cursosAInscribirse.length === 0) {
+                const ContenedorCarritoVacio = document.createElement("div");
+                ContenedorCarritoVacio.classList.add("cursos");
+                ContenedorCarritoVacio.id = "JS-carritoVacio";
+                ContenedorCarritoVacio.innerHTML = `
             <img class="carrito-vacio" src="../img/empty-cart_2762885.png">
             <p class="cesta-vacia">Tu cesta está vacía!</p>
                 <a class="boton-comprar" href="../index.html">
                     <button class="boton-comprar">Seguir comprando</button>
                     </a>
         </div>`;
-            cambiarElMontoTotalEnTiempoReal();
-            cambiarElMontoDeDescuentoEnTiempoReal();
-            actualizarElTotal();
+                cambiarElMontoTotalEnTiempoReal();
+                cambiarElMontoDeDescuentoEnTiempoReal();
+                actualizarElTotal();
 
-            contenedorCarrito.appendChild(ContenedorCarritoVacio);
-        } else {
-            carritoVacio.classList.add("oculto");
-            cursosAlmacenados.forEach((item) => {
-                const contenedorCurso = document.createElement("div");
-                contenedorCurso.classList.add("cursos-en-carrito");
-                contenedorCurso.id = "carrito";
-                contenedorCurso.innerHTML = `<img class="imagen-curso" src="${item.img}" />
+                contenedorCarrito.appendChild(ContenedorCarritoVacio);
+            } else {
+                carritoVacio.classList.add("oculto");
+                cursosAlmacenados.forEach((item) => {
+                    const contenedorCurso = document.createElement("div");
+                    contenedorCurso.classList.add("cursos-en-carrito");
+                    contenedorCurso.id = "carrito";
+                    contenedorCurso.innerHTML = `<img class="imagen-curso" src="${item.img}" />
                 <div class="info-curso">
                     <h2 class="titulo-curso">${item.nombre}</h2>
                     <div class="textos-curso">
@@ -76,14 +77,14 @@ function mostrarCarrito() {
                     <button class="boton-curso" onclick="eliminarDelCarrito(${item.id})">Eliminar</button>
                 </div>
             </div>`;
-                montoTotalCarrito += parseFloat(item.precio);
-                contenedorCarrito.appendChild(contenedorCurso);
-            });
-            if (giftcard) {
-                const contenedorCurso = document.createElement("div");
-                contenedorCurso.classList.add("cursos-en-carrito");
-                contenedorCurso.id = "carrito";
-                contenedorCurso.innerHTML = `<img class="imagen-curso" src="../img/giftcard.png" />
+                    montoTotalCarrito += parseFloat(item.precio);
+                    contenedorCarrito.appendChild(contenedorCurso);
+                });
+                if (giftcard) {
+                    const contenedorCurso = document.createElement("div");
+                    contenedorCurso.classList.add("cursos-en-carrito");
+                    contenedorCurso.id = "carrito";
+                    contenedorCurso.innerHTML = `<img class="imagen-curso" src="../img/giftcard.png" />
                 <div class="info-curso">
                     <h2 class="titulo-curso">Giftcard para ${giftcard.nombre}</h2>
                     <div class="textos-curso">
@@ -95,14 +96,14 @@ function mostrarCarrito() {
                     <button class="boton-curso" onclick="eliminarGiftcard()">Eliminar</button>
                 </div>
             </div>`;
-                contenedorCarrito.appendChild(contenedorCurso);
-                montoTotalCarrito += parseFloat(giftcard.monto);
-            }
-            if (cursosAInscribirse.length !== 0) {
-                const contenedorCurso = document.createElement("div");
-                contenedorCurso.classList.add("cursos-en-carrito");
-                contenedorCurso.id = "carrito";
-                contenedorCurso.innerHTML = `<img class="imagen-curso" src="${cursosAInscribirse.img}" />
+                    contenedorCarrito.appendChild(contenedorCurso);
+                    montoTotalCarrito += parseFloat(giftcard.monto);
+                }
+                if (cursosAInscribirse.length !== 0) {
+                    const contenedorCurso = document.createElement("div");
+                    contenedorCurso.classList.add("cursos-en-carrito");
+                    contenedorCurso.id = "carrito";
+                    contenedorCurso.innerHTML = `<img class="imagen-curso" src="${cursosAInscribirse.img}" />
                 <div class="info-curso">
                     <h2 class="titulo-curso">${cursosAInscribirse.nombre}</h2>
                     <div class="textos-curso">
@@ -118,13 +119,14 @@ function mostrarCarrito() {
                     <button class="boton-curso" onclick="verInscriptos()">Ver inscriptos</button>
                 </div> 
             </div>`;
-                contenedorCarrito.appendChild(contenedorCurso);
-                montoTotalCarrito += montoTotalEmpresas;
+                    contenedorCarrito.appendChild(contenedorCurso);
+                    montoTotalCarrito += montoTotalEmpresas;
+                }
             }
+            actualizarElTotal();
+            cambiarElMontoTotalEnTiempoReal();
+            cambiarElMontoDeDescuentoEnTiempoReal();
         }
-        actualizarElTotal();
-        cambiarElMontoTotalEnTiempoReal();
-        cambiarElMontoDeDescuentoEnTiempoReal();
 
         localStorage.setItem("precioOriginal", JSON.stringify(montoTotalCarrito));
     }
@@ -183,6 +185,7 @@ function actualizarElTotal() {
     total = montoTotalCarrito - descuentoPorGiftcards;
     const contenedorResumen = document.getElementsByClassName("resumen");
     if (total <= 0) {
+        //Se selecciona el primer elemento que tenga la clase resumen
         contenedorResumen[0].style.display = "none";
         console.log("Oculto");
     }
