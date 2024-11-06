@@ -7,6 +7,7 @@ const cerrarSesionDesdeBarra = document.getElementById("cerrarSesionDesdeBarra")
 const cerrarSesion = document.getElementById("cerrarSesion");
 const indiceUsuario = localStorage.getItem("idUsuario");
 const lista = JSON.parse(localStorage.getItem("BDUsuarios"));
+let usuarioEnSesion = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
 const contenedorBienvenida = document.querySelector(".barraHeader__Usuario--contenedorBienvenida");
 
@@ -49,7 +50,7 @@ function cerrarSesionActual() {
 
 function mostrarContadorDinamico(){
     let contadorCarrito = document.querySelector(".contadorCarrito");
-    let contador = parseInt(sessionStorage.getItem("contador")) || 0;
+    let contador = parseInt(sessionStorage.getItem(`contador_${usuarioEnSesion.correo}`)) || 0;
     contadorCarrito.innerHTML=`${contador}`;
 }
 
