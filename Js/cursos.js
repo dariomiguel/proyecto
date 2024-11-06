@@ -1,7 +1,7 @@
 const usuarios = document.getElementById("BDUsuarios");
 const usuarioEnSesion = JSON.parse(localStorage.getItem("usuarioLogueado"));
 const estaLogueado = localStorage.getItem("estadoDeSesion");
-const overlay = document.getElementById('JS-overlay');
+const overlay = document.getElementById("JS-overlay");
 const datosDeLosCursos = [
     {
         id: 1,
@@ -157,61 +157,72 @@ if (estaLogueado) {
 }
 
 function agregarAlCarrito(id) {
-    console.log('hola');
-    overlay.style.display = 'none';
-    const agregadoAlCarrito = document.getElementById('JS-agregadoAlCarrito');
+    console.log("hola");
+    overlay.style.display = "none";
+    const agregadoAlCarrito = document.getElementById("JS-agregadoAlCarrito");
     console.log(carritoDeCompras);
-    const curso = datosDeLosCursos.find(c => c.id === id);
+    const curso = datosDeLosCursos.find((c) => c.id === id);
     if (curso) {
-        const existe = carritoDeCompras.find(item => item.id === curso.id);
-        if(!existe){
-        carritoDeCompras.push(curso);
-        actualizarContador();
-        mostrarContadorDinamico();
-        agregadoAlCarrito.classList.add('visible');
-        setTimeout(() =>{
-            agregadoAlCarrito.classList.remove('visible');
-        }, 2000);
-        localStorage.setItem(`carrito_${usuarioEnSesion.correo}`, JSON.stringify(carritoDeCompras));
-        console.log(JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)));
+        const existe = carritoDeCompras.find((item) => item.id === curso.id);
+        if (!existe) {
+            carritoDeCompras.push(curso);
+            actualizarContador();
+            mostrarContadorDinamico();
+            agregadoAlCarrito.classList.add("visible");
+            setTimeout(() => {
+                agregadoAlCarrito.classList.remove("visible");
+            }, 2000);
+            localStorage.setItem(
+                `carrito_${usuarioEnSesion.correo}`,
+                JSON.stringify(carritoDeCompras)
+            );
+            console.log(JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)));
+        }
     }
 }
-}
 
-function elegirCompra(id){
-    const eleccionCompraContenedor = document.createElement('div');
-    overlay.style.display = 'grid';
-    eleccionCompraContenedor.classList.add('eleccion-compra-contenedor');
-    eleccionCompraContenedor.innerHTML = `<h2 class="titulo-eleccion">Elige como comprar tu curso</h2>
-            <div class="eleccion-compra">
-                <div class="particulares">
-                    <h3>Particular</h3>
-                    <img class="imagen-eleccion" src="img/particulares.png"/>
-                    <button class="botones-eleccion" onclick="agregarAlCarrito(${id})">Comprar</button>
+function elegirCompra(id) {
+    const eleccionCompraContenedor = document.createElement("div");
+    overlay.style.display = "grid";
+    let estadoDeSesion = localStorage.getItem("estadoDeSesion");
+
+    if (estadoDeSesion) {
+        eleccionCompraContenedor.classList.add("eleccion-compra-contenedor");
+        eleccionCompraContenedor.innerHTML = `<h2 class="titulo-eleccion">Elige como comprar tu curso</h2>
+                <div class="eleccion-compra">
+                    <div class="particulares">
+                        <h3>Particular</h3>
+                        <img class="imagen-eleccion" src="img/particulares.png"/>
+                        <button class="botones-eleccion" onclick="agregarAlCarrito(${id})">Comprar</button>
+                    </div>
+                    <div class="empresas">  
+                        <h3>Para empresas</h3>
+                        <img class="imagen-eleccion" src="img/empresa.png" />
+                        <a href="../pages/formulario_de_inscripcion.html"><button class="botones-eleccion" onclick="comprarParaEmpresas(${id})">Comprar</button></a>
+                    </div>
                 </div>
-                <div class="empresas">  
-                    <h3>Para empresas</h3>
-                    <img class="imagen-eleccion" src="img/empresa.png" />
-                    <a href="../pages/formulario_de_inscripcion.html"><button class="botones-eleccion" onclick="comprarParaEmpresas(${id})">Comprar</button></a>
-                </div>
-            </div>
-            <button class="botones-eleccion cerrar" onclick="cerrarOverlay()">Cerrar</button>
-            </div>`
+                <button class="botones-eleccion cerrar" onclick="cerrarOverlay()">Cerrar</button>
+                </div>`;
 
-    overlay.appendChild(eleccionCompraContenedor);
+        overlay.appendChild(eleccionCompraContenedor);
+    } else {
+        window.location.href = "../pages/login.html";
+    }
 }
 
-function cerrarOverlay(){
-    overlay.style.display = 'none';
+function cerrarOverlay() {
+    overlay.style.display = "none";
 }
 
-function comprarParaEmpresas(id){
-    const cursoParaComprar = datosDeLosCursos.find(c => c.id === id);
+function comprarParaEmpresas(id) {
+    const cursoParaComprar = datosDeLosCursos.find((c) => c.id === id);
     actualizarContadorEmpresa();
-    localStorage.setItem(`CursosEmpresas_${usuarioEnSesion.correo}`, JSON.stringify(cursoParaComprar));
+    localStorage.setItem(
+        `CursosEmpresas_${usuarioEnSesion.correo}`,
+        JSON.stringify(cursoParaComprar)
+    );
     console.log(JSON.parse(localStorage.getItem(`CursosEmpresas_${usuarioEnSesion.correo}`)));
 }
-
 
 const filtrarItems = (e) => {
     document.querySelector(".active").classList.remove("active");
@@ -277,16 +288,18 @@ function mostrarDetalles(id) {
 function actualizarContador() {
     // Obtiene el valor actual del contador desde sessionStorage o usa 0 si no existe
     let contador = parseInt(sessionStorage.getItem(`contador_${usuarioEnSesion.correo}`)) || 0;
-    let carritoDeCompras = JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
-    contador = carritoDeCompras.length+1;
+    let carritoDeCompras =
+        JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
+    contador = carritoDeCompras.length + 1;
     sessionStorage.setItem(`contador_${usuarioEnSesion.correo}`, contador); // Guarda el nuevo valor en sessionStorage
 }
 
 function actualizarContadorEmpresa() {
     // Obtiene el valor actual del contador desde sessionStorage o usa 0 si no existe
     let contador = parseInt(sessionStorage.getItem(`contador_${usuarioEnSesion.correo}`)) || 0;
-    let carritoDeCompras = JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
-    contador ++;
+    let carritoDeCompras =
+        JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
+    contador++;
     sessionStorage.setItem(`contador_${usuarioEnSesion.correo}`, contador); // Guarda el nuevo valor en sessionStorage
 }
 
@@ -308,20 +321,22 @@ document.addEventListener("DOMContentLoaded", () => {
     const duracionCurso = document.getElementById("js-duracion-curso");
     const descripcionCurso = document.getElementById("js-descripcion-curso");
     const requisitosCurso = document.getElementById("js-requisitos-curso");
-    if(imagenCurso){
-    imagenCurso.src = cursoSeleccionadoImg;
-    tituloCurso.innerHTML = cursoSeleccionadoNombre;
-    valorCurso.innerHTML = cursoSeleccionadoPrecio;
-    duracionCurso.innerHTML = cursoSeleccionadoDuracion;
-    descripcionCurso.innerHTML = cursoSeleccionadoDescripcion;
-    requisitosCurso.innerHTML = cursoSeleccionadoRequisitos;
+    if (imagenCurso) {
+        imagenCurso.src = cursoSeleccionadoImg;
+        tituloCurso.innerHTML = cursoSeleccionadoNombre;
+        valorCurso.innerHTML = cursoSeleccionadoPrecio;
+        duracionCurso.innerHTML = cursoSeleccionadoDuracion;
+        descripcionCurso.innerHTML = cursoSeleccionadoDescripcion;
+        requisitosCurso.innerHTML = cursoSeleccionadoRequisitos;
     }
 });
 
-function mostrarContadorDinamico(){
+function mostrarContadorDinamico() {
     let contadorCarrito = document.querySelector(".contadorCarrito");
-    let contador = parseInt(sessionStorage.getItem(`contador_${usuarioEnSesion.correo}`)) || 0;
-    contadorCarrito.innerHTML=`${contador}`;
+    if (usuarioEnSesion) {
+        let contador = parseInt(sessionStorage.getItem(`contador_${usuarioEnSesion.correo}`)) || 0;
+        contadorCarrito.innerHTML = `${contador}`;
+    }
 }
 
 mostrarContadorDinamico();
