@@ -176,7 +176,15 @@ function eliminarDescuento() {
 function eliminarDelCarrito(id) {
     cursosAlmacenados = cursosAlmacenados.filter((item) => item.id !== id);
     localStorage.setItem(`carrito_${usuarioLogueado.correo}`, JSON.stringify(cursosAlmacenados));
+    actualizarContador();
     mostrarCarrito();
+}
+
+
+function actualizarContador(){
+    let contador = parseInt(sessionStorage.getItem("contador")) || 0;
+    contador -= 1;
+    sessionStorage.setItem("contador", contador);
 }
 
 function vaciarCarrito() {
