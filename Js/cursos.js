@@ -156,7 +156,6 @@ if (estaLogueado) {
 }
 
 function agregarAlCarrito(id) {
-    actualizarContador();
 
     const agregadoAlCarrito = document.getElementById("JS-agregadoAlCarrito");
     const curso = datosDeLosCursos.find((c) => c.id === id);
@@ -168,13 +167,13 @@ function agregarAlCarrito(id) {
     eventoModal.innerHTML = `
     Nombre: ${curso.nombre}<br>
     Duración: ${curso.duracion}<br>
-    Precio: $ ${curso.precio}
-  `;
+    Precio: $ ${curso.precio}`;
 
     if (curso && carritoDeCompras != undefined) {
         const existe = carritoDeCompras.find((item) => item.id === curso.id);
         if (!existe) {
             carritoDeCompras.push(curso);
+            actualizarContador();
         }
         agregadoAlCarrito.classList.add("visible");
         setTimeout(() => {
