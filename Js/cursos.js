@@ -150,12 +150,12 @@ mostrarCursos();
 const botonesFiltro = document.querySelectorAll(".contenedor-filtros button");
 const itemsFiltrables = document.querySelectorAll(".slider .cursos-info-container");
 
-const botonCompra = document.getElementById("JS-botonCompra");
 let carritoDeCompras;
 if (estaLogueado) {
     carritoDeCompras = JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
 }
 function agregarAlCarrito(id) {
+    actualizarContador();
     const agregadoAlCarrito = document.getElementById("JS-agregadoAlCarrito");
     console.log(carritoDeCompras);
     const curso = datosDeLosCursos.find((c) => c.id === id);
@@ -219,4 +219,11 @@ function mostrarDetalles(id) {
     } else if (localStorage.getItem("estadoDeSesion") == null) {
         window.location.href = "../pages/login.html";
     }
+}
+
+function actualizarContador() {
+    // Obtiene el valor actual del contador desde sessionStorage o usa 0 si no existe
+    let contador = parseInt(sessionStorage.getItem("contador")) || 0;
+    contador += 1; // Incrementa el contador
+    sessionStorage.setItem("contador", contador); // Guarda el nuevo valor en sessionStorage
 }
