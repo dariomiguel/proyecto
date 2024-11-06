@@ -210,6 +210,39 @@
 /* ------------- FIN DOCENTE ------------- */
 
 /* ------------- CURSOS (INFO) ------------- */
+.eleccion-compra-contenedor{
+    top: 15rem;
+    margin: auto;
+    align-self: center;
+    height: 30rem;
+    width: 40rem;
+    background-color: white;
+    border: 1px solid black;
+    z-index: 9999;
+}
+
+.eleccion-compra{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 20rem;
+    width: 100%;
+}
+
+.particulares{
+    width: 100%;
+    height: 20rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.titulo-eleccion{
+    align-self: center;
+    justify-self: center;
+
+}
+
 
 .cursos-container {
     display: flex;

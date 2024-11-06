@@ -165,7 +165,6 @@ function agregarAlCarrito(id) {
         carritoDeCompras.push(curso);
         actualizarContador();
         mostrarContadorDinamico();
-        }
         agregadoAlCarrito.classList.add('visible');
         setTimeout(() =>{
             agregadoAlCarrito.classList.remove('visible');
@@ -173,6 +172,7 @@ function agregarAlCarrito(id) {
         localStorage.setItem(`carrito_${usuarioEnSesion.correo}`, JSON.stringify(carritoDeCompras));
         console.log(JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)));
     }
+}
 }
 
 const filtrarItems = (e) => {
