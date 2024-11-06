@@ -2,10 +2,11 @@ let listaDeUsuarios = JSON.parse(localStorage.getItem("BDUsuarios"));
 let indice = localStorage.getItem("idUsuario");
 let usuarioEnSesion = JSON.parse(localStorage.getItem("usuarioLogueado"));
 const cursosDelUsuarioPerfil = JSON.parse(localStorage.getItem(`cursosDe_${listaDeUsuarios[indice].correo}`));
+const cursosDelUsuarioEmpresa = JSON.parse(localStorage.getItem(`CursosEmpresaDe_${listaDeUsuarios[indice].correo}`));
+console.log(cursosDelUsuarioEmpresa);
 let contenedor = document.getElementById("datos-basicosId");
 let botonCerrarSesion = document.getElementById("btn__cerrar-sesion");
 let botonEliminarPerfil = document.getElementById("btn__eliminar-perfil");
-
 let nombre = document.createElement("p");
 let usuario = document.createElement("p");
 let correo = document.createElement("p");
@@ -90,11 +91,51 @@ function mostrarCursos(){
                 </div>`;
             contenedorCursos.appendChild(contenedorCurso);
     });
+    }
+    if (cursosDelUsuarioEmpresa){
+        console.log('hola');
+        cursosDelUsuarioEmpresa.forEach((item) => {
+            const contenedorCurso = document.createElement('div');
+            contenedorCurso.classList.add('cursos-en-perfil');
+            contenedorCurso.id = 'perfil';
+            contenedorCurso.innerHTML = `<img class="imagen-curso" src="${item.img}" />
+            <p class="texto-curso empresas">Para empresas</p>
+            <div class="info-curso">
+                <h2 class="titulo-curso">${item.nombre}</h2>
+                <div class="textos-curso">
+                    <p class="texto-curso">${item.duracion}</p>
+                </div>
+                <button class="boton-curso" onclick="verInscriptos(${item.id})">Ver inscriptos </button>
+            </div>`;
+        contenedorCursos.appendChild(contenedorCurso);
+        });
     } else {
         textoCurso.style.display = 'block';
         contenedorCursos.style.display = 'none';
     }
 }
+
+const overlayCarrito = document.getElementById('JS-overlay');
+const inscriptoContenedor = document.getElementById('JS-contenedorInscripto');
+
+function verInscriptos(id) {
+    overlayCarrito.style.display = 'grid';
+    inscriptoContenedor.innerHTML = ''; 
+    const cursoParaVer = cursosDelUsuarioEmpresa.find((item) => item.id === id);
+    const alumnosInscriptos = JSON.parse(localStorage.getItem(`listaDeUsuarios_${listaDeUsuarios[indice].correo}${cursoParaVer}`));
+    console.log(alumnosInscriptos);
+    alumnosInscriptos.forEach((item) => {
+        const contenedorInscriptos = document.createElement('div');
+        contenedorInscriptos.classList.add('inscripto-contenedor');
+        contenedorInscriptos.innerHTML = `<label for="${item.dni}">${item.nombre} ${item.apellido} - DNI: ${item.dni}</label>`;
+        inscriptoContenedor.appendChild(contenedorInscriptos);
+    });
+}
+
+function cerrarOverlay(){
+    overlayCarrito.style.display = 'none';
+}
+
 
 function actualizarContador() {
     // Obtiene el valor actual del contador desde sessionStorage o usa 0 si no existe
