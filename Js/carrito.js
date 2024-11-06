@@ -3,7 +3,7 @@ const cursos = JSON.parse(localStorage.getItem("cursos"));
 const estadoDeSesion = localStorage.getItem("estadoDeSesion");
 let indice = localStorage.getItem("idUsuario");
 const compraHecha = document.getElementById("JS-compraRealizada");
-const alumnosInscriptos = [];
+let alumnosInscriptos = [];
 const montoTotalEmpresas = [];
 let cursosAInscribirse = 0;
 if (estadoDeSesion) {
