@@ -52,6 +52,18 @@ main {
     background-color: white;
 }
 
+.texto-curso{
+    font-size: 0.9rem;
+    color: #747577;
+}
+
+.empresas{
+    font-weight: 700;
+    padding: 0;
+    grid-column: 3;
+}
+
+
 .boton-cerrar{
     box-sizing: border-box;
     border: 0;

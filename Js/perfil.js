@@ -99,6 +99,7 @@ function mostrarCursos(){
             contenedorCurso.classList.add('cursos-en-perfil');
             contenedorCurso.id = 'perfil';
             contenedorCurso.innerHTML = `<img class="imagen-curso" src="${item.img}" />
+            <p class="texto-curso empresas">Para empresas</p>
             <div class="info-curso">
                 <h2 class="titulo-curso">${item.nombre}</h2>
                 <div class="textos-curso">
