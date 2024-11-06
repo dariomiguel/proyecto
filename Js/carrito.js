@@ -65,7 +65,7 @@ function mostrarCarrito() {
                     </div>
                 </div>
                 <div class="botones-curso">
-                    <button class="boton-curso">Ver detalles</button>
+                    <a href="#js-descripcion__contenido" class="boton-curso" onclick="mostrarDetalles(${item.id})">Ver detalles</a>
                     <button class="boton-curso" onclick="eliminarDelCarrito(${item.id})">Eliminar</button>
                 </div>
             </div>`;
@@ -216,6 +216,50 @@ function mostrarContadorDinamico(){
     let contadorCarrito = document.querySelector(".contadorCarrito");
     let contador = parseInt(sessionStorage.getItem("contador")) || 0;
     contadorCarrito.innerHTML=`${contador}`;
+}
+
+function mostrarDetalles(id) {
+    const cursos = JSON.parse(localStorage.getItem("cursos"));
+    const cursoSeleccionado = cursos.find((curso) => curso.id === id);
+    cursoSeleccionado.innerHTML = "";
+
+    if (cursoSeleccionado) {
+        // Almacenar cada propiedad individual en sessionStorage
+        sessionStorage.setItem("cursoId", cursoSeleccionado.id);
+        sessionStorage.setItem("cursoNombre", cursoSeleccionado.nombre);
+        sessionStorage.setItem("cursoImagen", cursoSeleccionado.img);
+        sessionStorage.setItem("cursoPrecio", cursoSeleccionado.precio);
+        sessionStorage.setItem("cursoDuracion", cursoSeleccionado.duracion);
+        sessionStorage.setItem("cursoDescripcion", cursoSeleccionado.descripcion);
+        sessionStorage.setItem("cursoRequisitos", cursoSeleccionado.requisitos);
+    }
+
+    const imagenCurso = document.getElementById("js-imagen-curso");
+    const tituloCurso = document.getElementById("js-titulo-curso");
+    const valorCurso = document.getElementById("js-valor-curso");
+    const duracionCurso = document.getElementById("js-duracion-curso");
+    const descripcionCurso = document.getElementById("js-descripcion-curso");
+    const requisitosCurso = document.getElementById("js-requisitos-curso");
+
+    if (
+        imagenCurso != null &&
+        tituloCurso != null &&
+        valorCurso != null &&
+        duracionCurso != null &&
+        descripcionCurso != null &&
+        requisitosCurso != null
+    ) {
+        imagenCurso.src = cursoSeleccionado.img;
+        tituloCurso.innerHTML = cursoSeleccionado.nombre;
+        valorCurso.innerHTML = cursoSeleccionado.precio;
+        duracionCurso.innerHTML = cursoSeleccionado.duracion;
+        descripcionCurso.innerHTML = cursoSeleccionado.descripcion;
+        requisitosCurso.innerHTML = cursoSeleccionado.requisitos;
+    } else if (localStorage.getItem("estadoDeSesion") == null) {
+        window.location.href = "../pages/login.html";
+    } else {
+        window.location.href = "../pages/cursos.html";
+    }
 }
 
 
