@@ -189,3 +189,5 @@ function mostrarContadorDinamico(){
     let contador = parseInt(sessionStorage.getItem("contador")) || 0;
     contadorCarrito.innerHTML=`${contador}`;
 }
+
+mostrarContadorDinamico();
