@@ -1,6 +1,6 @@
 let listaDeUsuarios = JSON.parse(localStorage.getItem("BDUsuarios"));
 let indice = localStorage.getItem("idUsuario");
-let usuarioEnSesion = localStorage.getItem("usuarioLogueado");
+let usuarioEnSesion = JSON.parse(localStorage.getItem("usuarioLogueado"));
 const cursosDelUsuarioPerfil = JSON.parse(localStorage.getItem(`cursosDe_${listaDeUsuarios[indice].correo}`));
 let contenedor = document.getElementById("datos-basicosId");
 let botonCerrarSesion = document.getElementById("btn__cerrar-sesion");
