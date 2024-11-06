@@ -173,6 +173,7 @@
                                     required
                                 />
                             </div>
+
                             <div class="inscripcion__input">
                                 <label for="apellido">Apellido</label>
                                 <input
@@ -197,19 +198,16 @@
                                 />
                             </div>
 
-
                             <div class="inscripcion__input">
-                                <label for="curso">Curso</label>
+                                <label for="importe">Importe:</label>
                                 <input
-                                    id="curso"
-                                    name="curso"
                                     type="text"
-                                    placeholder="CURSO"
-                                    title="Por favor, ingrese el curso"
-                                    required
+                                    id="importe"
+                                    name="importe[]"
+                                    value="20"
+                                    disabled
                                 />
                             </div>
-
                         </div>
                     </div>
                     <div class="contenedorAgregarPersona">
@@ -217,7 +215,7 @@
                         <button
                             id="boton__agregarPersona"
                             title="Haz clic para agregar una persona"
-                            type="submit"
+                            type="button"
                             class="agregarPersona"
                         ></button>
                     </div>
@@ -237,7 +235,7 @@
                     >
                         Inscribir
                     </button>
-                    <p class="totalCursos">Total:</p>
+                    <p class="totalCursos">Total: <span id="valorTotal">0</span></p>
                 </div>
             </form>
         </main>
