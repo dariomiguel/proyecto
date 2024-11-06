@@ -48,7 +48,7 @@ function cerrarSesionActual() {
 }
 
 function mostrarContadorDinamico(){
-    let contadorCarrito = document.querySelector("contadorCarrito");
+    let contadorCarrito = document.querySelector(".contadorCarrito");
     let contador = parseInt(sessionStorage.getItem("contador")) || 0;
     contadorCarrito.innerHTML=`${contador}`;
 }
