@@ -225,8 +225,10 @@ function actualizarContador() {
 
 function mostrarContadorDinamico() {
     let contadorCarrito = document.querySelector(".contadorCarrito");
-    let contador = parseInt(sessionStorage.getItem(`contador_${usuarioEnSesion.correo}`)) || 0;
-    contadorCarrito.innerHTML = `${contador}`;
+    if (usuarioEnSesion) {
+        let contador = parseInt(sessionStorage.getItem(`contador_${usuarioEnSesion.correo}`)) || 0;
+        contadorCarrito.innerHTML = `${contador}`;
+    }
 }
 
 mostrarContadorDinamico();
