@@ -111,7 +111,7 @@ function cambiarElMontoTotalEnTiempoReal() {
 }
 
 function eliminarGiftcard() {
-    giftcard = {};
+    giftcard = null;
     localStorage.removeItem(`giftcardParaComprar${usuarioLogueado.correo}`);
     mostrarCarrito();
 }
