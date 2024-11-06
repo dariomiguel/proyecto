@@ -10,7 +10,7 @@ if (estadoDeSesion) {
     cursosAlmacenados = JSON.parse(localStorage.getItem(`carrito_${usuarioLogueado.correo}`)) || [];
     alumnosInscriptos = JSON.parse(localStorage.getItem(`alumnosInscriptos_${usuarioLogueado.correo}`)) || [];
     montoTotalEmpresas = JSON.parse(localStorage.getItem(`precioTotal_${usuarioLogueado.correo}`)) || 0;
-    cursosAInscribirse = JSON.parse(localStorage.getItem(`CursosEmpresas_${usuarioLogueado.correo}`));
+    cursosAInscribirse = JSON.parse(localStorage.getItem(`CursosEmpresas_${usuarioLogueado.correo}`)) || [];
     console.log(cursosAlmacenados);
 }
 
@@ -23,10 +23,11 @@ let total = 0;
 const PrecioTotal = document.getElementById("JS-precioTotal");
 console.log(PrecioTotal);
 let giftcard;
-let cursosDelUsuario;
+let cursosDelUsuario = [];
+let cursosDelUsiarioEmpresa = [];
 if (usuarioLogueado != null) {
-     cursosDelUsuario =
-        JSON.parse(localStorage.getItem(`cursosDe_${usuarioLogueado.correo}`)) || [];
+    cursosDelUsuario = JSON.parse(localStorage.getItem(`cursosDe_${usuarioLogueado.correo}`)) || [];
+    cursosDelUsiarioEmpresa = JSON.parse(localStorage.getItem(`CursosEmpresaDe_${usuarioLogueado.correo}`)) || [];
     if (estadoDeSesion) {
         giftcard = JSON.parse(localStorage.getItem(`giftcardParaComprar${usuarioLogueado.correo}`));
         console.log(giftcard);
@@ -249,11 +250,22 @@ function vaciarCarrito() {
 }
 
 function guardarCursosEnElUsuario() {
+    if(cursosAlmacenados){
     cursosDelUsuario = cursosDelUsuario.concat(cursosAlmacenados);
+    }
+    console.log(cursosAInscribirse);
+    cursosDelUsuarioEmpresa = cursosDelUsiarioEmpresa.concat(cursosAInscribirse);
     console.log(cursosDelUsuario);
+    console.log(cursos)
     console.log(cursosAlmacenados);
+    listaDeUsuarios = JSON.parse(localStorage.getItem(`alumnosInscriptos_${usuarioLogueado.correo}`));
+    localStorage.setItem(`listaDeUsuarios_${usuarioLogueado.correo}${cursosDelUsuarioEmpresa}`, JSON.stringify(listaDeUsuarios));
+    localStorage.setItem(`CursosEmpresaDe_${usuarioLogueado.correo}`, JSON.stringify(cursosDelUsuarioEmpresa));
+    console.log(cursosDelUsiarioEmpresa, listaDeUsuarios);
     localStorage.setItem(`cursosDe_${usuarioLogueado.correo}`, JSON.stringify(cursosDelUsuario));
 }
+
+
 const overlayCarrito = document.getElementById('JS-overlay');
 const inscriptoContenedor = document.getElementById('JS-contenedorInscripto');
 function verInscriptos() {
