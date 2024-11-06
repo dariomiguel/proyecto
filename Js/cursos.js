@@ -160,7 +160,16 @@ function agregarAlCarrito(id) {
 
     const agregadoAlCarrito = document.getElementById("JS-agregadoAlCarrito");
     const curso = datosDeLosCursos.find((c) => c.id === id);
+    const eventoModal = document.getElementById("evento-modal");
     console.log(carritoDeCompras);
+    console.log(curso);
+    console.log(curso.nombre);
+
+    eventoModal.innerHTML = `
+    Nombre: ${curso.nombre}<br>
+    Duración: ${curso.duracion}<br>
+    Precio: $ ${curso.precio}
+  `;
 
     if (curso && carritoDeCompras != undefined) {
         const existe = carritoDeCompras.find((item) => item.id === curso.id);
