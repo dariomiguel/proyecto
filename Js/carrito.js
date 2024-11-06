@@ -229,9 +229,9 @@ function vaciarCarrito() {
     giftcard = null;
     localStorage.setItem(`giftcardParaComprar${usuarioLogueado.correo}`, JSON.stringify(giftcard));
     console.log(giftcard);
-    cursosAlmacenados = [];
-    localStorage.setItem(`carrito_${usuarioLogueado.correo}`, JSON.stringify(cursosAlmacenados));
-    console.log(cursosAlmacenados);
+    localStorage.removeItem(`carrito_${usuarioLogueado.correo}`);
+    sessionStorage.removeItem(`contador_${usuarioLogueado.correo}`);
+    
     mostrarCarrito();
 }
 
