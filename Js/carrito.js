@@ -220,9 +220,9 @@ function eliminarCursoEmpresa(){
 
 
 function actualizarContador(){
-    let contador = parseInt(sessionStorage.getItem("contador")) || 0;
+    let contador = parseInt(sessionStorage.getItem(`contador_${usuarioLogueado.correo}`)) || 0;
     contador -= 1;
-    sessionStorage.setItem("contador", contador);
+    sessionStorage.setItem(`contador_${usuarioLogueado.correo}`, contador);
 }
 
 function vaciarCarrito() {

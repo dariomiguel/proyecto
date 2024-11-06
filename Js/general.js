@@ -8,6 +8,7 @@ const cerrarSesion = document.getElementById("cerrarSesion");
 const indiceUsuario = localStorage.getItem("idUsuario");
 const lista = JSON.parse(localStorage.getItem("BDUsuarios"));
 
+
 const contenedorBienvenida = document.querySelector(".barraHeader__Usuario--contenedorBienvenida");
 
 if (sesion === null) {
@@ -47,10 +48,4 @@ function cerrarSesionActual() {
     localStorage.removeItem("usuarioLogueado");
 }
 
-function mostrarContadorDinamico(){
-    let contadorCarrito = document.querySelector(".contadorCarrito");
-    let contador = parseInt(sessionStorage.getItem("contador")) || 0;
-    contadorCarrito.innerHTML=`${contador}`;
-}
 
-mostrarContadorDinamico();

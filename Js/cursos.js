@@ -207,6 +207,7 @@ function cerrarOverlay(){
 
 function comprarParaEmpresas(id){
     const cursoParaComprar = datosDeLosCursos.find(c => c.id === id);
+    actualizarContadorEmpresa();
     localStorage.setItem(`CursosEmpresas_${usuarioEnSesion.correo}`, JSON.stringify(cursoParaComprar));
     console.log(JSON.parse(localStorage.getItem(`CursosEmpresas_${usuarioEnSesion.correo}`)));
 }
@@ -275,10 +276,18 @@ function mostrarDetalles(id) {
 
 function actualizarContador() {
     // Obtiene el valor actual del contador desde sessionStorage o usa 0 si no existe
-    let contador = parseInt(sessionStorage.getItem("contador")) || 0;
+    let contador = parseInt(sessionStorage.getItem(`contador_${usuarioEnSesion.correo}`)) || 0;
     let carritoDeCompras = JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
     contador = carritoDeCompras.length+1;
-    sessionStorage.setItem("contador", contador); // Guarda el nuevo valor en sessionStorage
+    sessionStorage.setItem(`contador_${usuarioEnSesion.correo}`, contador); // Guarda el nuevo valor en sessionStorage
+}
+
+function actualizarContadorEmpresa() {
+    // Obtiene el valor actual del contador desde sessionStorage o usa 0 si no existe
+    let contador = parseInt(sessionStorage.getItem(`contador_${usuarioEnSesion.correo}`)) || 0;
+    let carritoDeCompras = JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)) || [];
+    contador ++;
+    sessionStorage.setItem(`contador_${usuarioEnSesion.correo}`, contador); // Guarda el nuevo valor en sessionStorage
 }
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -311,7 +320,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function mostrarContadorDinamico(){
     let contadorCarrito = document.querySelector(".contadorCarrito");
-    let contador = parseInt(sessionStorage.getItem("contador")) || 0;
+    let contador = parseInt(sessionStorage.getItem(`contador_${usuarioEnSesion.correo}`)) || 0;
     contadorCarrito.innerHTML=`${contador}`;
 }
 

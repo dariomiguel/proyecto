@@ -165,3 +165,10 @@ if(giftcardContainer){
 generarGiftcard();
 }
 
+function mostrarContadorDinamico(){
+    let contadorCarrito = document.querySelector(".contadorCarrito");
+    let contador = parseInt(sessionStorage.getItem(`contador_${usuarioLogueado.correo}`)) || 0;
+    contadorCarrito.innerHTML=`${contador}`;
+}
+
+mostrarContadorDinamico();

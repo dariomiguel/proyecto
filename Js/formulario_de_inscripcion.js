@@ -103,6 +103,12 @@ function updateTotal() {
 actualizarTitulo();
 updateTotal();
 
+
+
+
+
+
+
 // const botonConfirmarInscriptos = document.getElementById("boton__confirmar");
 // let usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
 
