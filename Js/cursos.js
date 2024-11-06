@@ -156,29 +156,19 @@ if (estaLogueado) {
 }
 
 function agregarAlCarrito(id) {
-
-    const agregadoAlCarrito = document.getElementById("JS-agregadoAlCarrito");
-    const curso = datosDeLosCursos.find((c) => c.id === id);
-    const eventoModal = document.getElementById("evento-modal");
+    const agregadoAlCarrito = document.getElementById('JS-agregadoAlCarrito');
     console.log(carritoDeCompras);
-    console.log(curso);
-    console.log(curso.nombre);
-
-    eventoModal.innerHTML = `
-    Nombre: ${curso.nombre}<br>
-    Duración: ${curso.duracion}<br>
-    Precio: $ ${curso.precio}`;
-
-    if (curso && carritoDeCompras != undefined) {
-        const existe = carritoDeCompras.find((item) => item.id === curso.id);
-        if (!existe) {
-            carritoDeCompras.push(curso);
-            actualizarContador();
-            mostrarContadorDinamico();
+    const curso = cursos.find(c => c.id === id);
+    if (curso) {
+        const existe = carritoDeCompras.find(item => item.id === curso.id);
+        if(!existe){
+        carritoDeCompras.push(curso);
+        actualizarContador();
+        mostrarContadorDinamico();
         }
-        agregadoAlCarrito.classList.add("visible");
-        setTimeout(() => {
-            agregadoAlCarrito.classList.remove("visible");
+        agregadoAlCarrito.classList.add('visible');
+        setTimeout(() =>{
+            agregadoAlCarrito.classList.remove('visible');
         }, 2000);
         localStorage.setItem(`carrito_${usuarioEnSesion.correo}`, JSON.stringify(carritoDeCompras));
         console.log(JSON.parse(localStorage.getItem(`carrito_${usuarioEnSesion.correo}`)));
