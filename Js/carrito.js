@@ -65,7 +65,7 @@ function mostrarCarrito() {
                     </div>
                 </div>
                 <div class="botones-curso">
-                    <a href="#js-descripcion__contenido" class="boton-curso" onclick="mostrarDetalles(${item.id})">Ver detalles</a>
+                    <a href="#js-descripcion__contenido"><button class="boton-curso" onclick="mostrarDetalles(${item.id})">Ver detalles</button></a>
                     <button class="boton-curso" onclick="eliminarDelCarrito(${item.id})">Eliminar</button>
                 </div>
             </div>`;

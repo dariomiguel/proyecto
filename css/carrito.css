@@ -42,6 +42,7 @@ body{
 .imagen-curso{
     height: 3rem;
     justify-self: center;
+    grid-column: 1
 }
 
 .cursos-en-carrito{
@@ -74,6 +75,9 @@ body{
 .botones-curso{
     display: grid;
     gap: 1rem;
+    align-self: center;
+    justify-self: center;
+    grid-column: 3;
 }
 
 .boton-curso{
@@ -137,6 +141,10 @@ h2{
     letter-spacing: 0;
     font-size: 1.5rem;
 }
+.contenedor-info{
+    display: grid;
+    grid-template-columns: auto;
+}
 
 a{
     color: #fff;
@@ -149,6 +157,7 @@ h3{
     padding: 0.6rem;
     padding-left: 0;
 }
+
 
 
 span{
@@ -186,4 +195,85 @@ span{
     display: grid;
     grid-template-columns: 3fr 1fr;
 
+}
+
+@media (max-width: 70rem){
+    main{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contenedor-info{
+        display: grid;
+        grid-template-columns: auto;
+    }
+
+    .resumen{
+        align-self: center;
+        width: 100%;
+    }
+
+    .contenedor-cursos{
+        width: 100%;
+    }
+
+    .botones-curso{
+        grid-column: 3;
+    }
+
+    .cursos-en-carrito{
+        width: 80%;
+    }
+}
+
+@media(max-width: 40rem){
+    .cursos-en-carrito {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; 
+        width: 90%;
+        height: auto; 
+    }
+
+    .imagen-curso {
+        height: 3rem;
+        justify-self: center;
+        align-self: center; 
+    }
+
+    .info-curso {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+    }
+
+    .titulo-curso {
+        font-size: 1rem; 
+        justify-self: center;
+        align-self: center;
+    }
+
+    .textos-curso {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .botones-curso {
+        display: flex;
+        justify-content: center;
+        gap: 1rem; 
+        align-items: center;
+        width: 100%; 
+    }
+
+    .boton-curso {
+        font-size: 0.8rem;
+    }
+
+    .texto-curso {
+        font-size: 0.6rem; 
 }
