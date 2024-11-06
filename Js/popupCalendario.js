@@ -121,6 +121,7 @@ function agregarAlCarrito(id) {
         if(!existe){
         carritoDeCompras.push(curso);
         actualizarContador();
+        mostrarContadorDinamico();
         }
         agregadoAlCarrito.classList.add('visible');
         setTimeout(() =>{
@@ -180,4 +181,10 @@ function actualizarContador() {
     let contador = parseInt(sessionStorage.getItem("contador")) || 0;
     contador += 1;
     sessionStorage.setItem("contador", contador); // Guarda el nuevo valor en sessionStorage
+}
+
+function mostrarContadorDinamico(){
+    let contadorCarrito = document.querySelector(".contadorCarrito");
+    let contador = parseInt(sessionStorage.getItem("contador")) || 0;
+    contadorCarrito.innerHTML=`${contador}`;
 }

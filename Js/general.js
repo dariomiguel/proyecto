@@ -50,7 +50,7 @@ function cerrarSesionActual() {
 function mostrarContadorDinamico(){
     let contadorCarrito = document.querySelector(".contadorCarrito");
     let contador = parseInt(sessionStorage.getItem("contador")) || 0;
-    contadorCarrito.textContent=`${contador}`;
+    contadorCarrito.innerHTML=`${contador}`;
 }
 
 mostrarContadorDinamico();
