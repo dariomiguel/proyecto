@@ -158,7 +158,7 @@ if (estaLogueado) {
 function agregarAlCarrito(id) {
     const agregadoAlCarrito = document.getElementById('JS-agregadoAlCarrito');
     console.log(carritoDeCompras);
-    const curso = cursos.find(c => c.id === id);
+    const curso = datosDeLosCursos.find(c => c.id === id);
     if (curso) {
         const existe = carritoDeCompras.find(item => item.id === curso.id);
         if(!existe){
