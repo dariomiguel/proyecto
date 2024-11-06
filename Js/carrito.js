@@ -7,7 +7,10 @@ if (estadoDeSesion) {
     cursosAlmacenados = JSON.parse(localStorage.getItem(`carrito_${usuarioLogueado.correo}`)) || [];
     console.log(cursosAlmacenados);
 }
-
+const alumnosInscriptos = JSON.parse(localStorage.getItem(`alumnosInscriptos_${usuarioLogueado.correo}`)) || [];
+const montoTotalEmpresas = JSON.parse(localStorage.getItem(`precioTotal_${usuarioLogueado.correo}`)) || 0;
+let cursosAInscribirse = JSON.parse(localStorage.getItem(`CursosEmpresas_${usuarioLogueado.correo}`));
+console.log(alumnosInscriptos, montoTotalEmpresas, cursosAInscribirse);
 const contenedorCarrito = document.getElementById("JS-contenedorCursos");
 const carritoVacio = document.getElementById("JS-carritoVacio");
 let montoTotalCarrito = 0;
@@ -33,7 +36,7 @@ function mostrarCarrito() {
         contenedorCarrito.innerHTML = "";
         console.log(cursosAlmacenados.length);
         console.log(giftcard);
-        if (cursosAlmacenados.length === 0 && !giftcard) {
+        if (cursosAlmacenados.length === 0 && !giftcard && !cursosAInscribirse) {
             const ContenedorCarritoVacio = document.createElement("div");
             ContenedorCarritoVacio.classList.add("cursos");
             ContenedorCarritoVacio.id = "JS-carritoVacio";
@@ -91,6 +94,29 @@ function mostrarCarrito() {
                 contenedorCarrito.appendChild(contenedorCurso);
                 montoTotalCarrito += parseFloat(giftcard.monto);
             }
+            if(cursosAInscribirse){
+                console.log('hola');
+                const contenedorCurso = document.createElement("div");
+                contenedorCurso.classList.add("cursos-en-carrito");
+                contenedorCurso.id = "carrito";
+                contenedorCurso.innerHTML = `<img class="imagen-curso" src="${cursosAInscribirse.img}" />
+                <div class="info-curso">
+                    <h2 class="titulo-curso">${cursosAInscribirse.nombre}</h2>
+                    <div class="textos-curso">
+                        <p class="texto-curso">${cursosAInscribirse.duracion}</p>
+                        <p class="texto-curso">Cantidad: ${alumnosInscriptos.length}</p>
+                        <p class="texto-curso">Precio: $${cursosAInscribirse.precio} c/u</p>
+                    </div>
+                </div>
+                <div class="botones-curso">
+                    <a href="#js-descripcion__contenido"><button class="boton-curso" onclick="mostrarDetalles(${cursosAInscribirse.id})">Ver detalles</button></a>
+                    <button class="boton-curso" onclick="eliminarCursoEmpresa()">Eliminar</button>
+                    <p class="texto-curso empresas">Para empresas</p>
+                </div>
+            </div>`;
+            contenedorCarrito.appendChild(contenedorCurso);
+            montoTotalCarrito += montoTotalEmpresas;
+            }
         }
         actualizarElTotal();
         cambiarElMontoTotalEnTiempoReal();
@@ -121,6 +147,7 @@ function cambiarElMontoDeDescuentoEnTiempoReal() {
     descuento.textContent =
         descuentoPorGiftcards === 0 ? "$0.00 ARS" : `$${descuentoPorGiftcards.toFixed(2)} ARS`;
 }
+
 
 function generarDescuentoPorGiftcard() {
     let indice = localStorage.getItem("idUsuario");
@@ -181,6 +208,15 @@ function eliminarDelCarrito(id) {
     mostrarContadorDinamico();
 }
 
+function eliminarCursoEmpresa(){
+    cursosAInscribirse = null;
+    localStorage.setItem(`CursosEmpresas_${usuarioLogueado.correo}`, JSON.stringify(cursosAInscribirse));
+    actualizarContador();
+    mostrarCarrito();
+    mostrarContadorDinamico();
+}
+
+
 
 function actualizarContador(){
     let contador = parseInt(sessionStorage.getItem("contador")) || 0;
@@ -205,11 +241,6 @@ function guardarCursosEnElUsuario() {
     localStorage.setItem(`cursosDe_${usuarioLogueado.correo}`, JSON.stringify(cursosDelUsuario));
 }
 
-if (compraHecha) {
-    guardarCursosEnElUsuario();
-    vaciarCarrito();
-}
-mostrarCarrito();
 
 
 function mostrarContadorDinamico(){
@@ -262,4 +293,9 @@ function mostrarDetalles(id) {
     }
 }
 
+if (compraHecha) {
+    guardarCursosEnElUsuario();
+    vaciarCarrito();
+}
+mostrarCarrito();
 

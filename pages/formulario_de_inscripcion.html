@@ -198,33 +198,21 @@
                                     required
                                 />
                             </div>
-
-                            <div class="inscripcion__input">
-                                <label for="importe">Importe:</label>
-                                <input
-                                    type="text"
-                                    id="importe"
-                                    name="importe[]"
-                                    value="20"
-                                    disabled
-                                />
-                            </div>
                         </div>
                     </div>
                     <div class="contenedorAgregarPersona">
-                        <label for="boton__agregarPersona">Agregar Persona</label>
-                        <button
+                        <input type="submit"
                             id="boton__agregarPersona"
                             title="Haz clic para agregar una persona"
                             type="button"
                             class="agregarPersona"
-                        ></button>
+                            value="Agregar persona">
                     </div>
                 </div>
             </form>
             <h2>Personas agregadas</h2>
 
-            <form action="#" method="get">
+            <form action="../pages/carrito_de_compras.html" method="get">
                 <div class="contenedorPersonasAgregadas" id="contenedorPersonasAgregadas__Id"></div>
 
                 <div class="contenedorInscribirse">
@@ -236,7 +224,7 @@
                     >
                         Inscribir
                     </button>
-                    <p class="totalCursos">Total: <span id="valorTotal">0</span></p>
+                    <p class="totalCursos">Total: <span id="valorTotal"></span></p>
                 </div>
             </form>
         </main>

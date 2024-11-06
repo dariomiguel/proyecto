@@ -1,76 +1,107 @@
 const botonAgregarPersona = document.getElementById("boton__agregarPersona");
-botonAgregarPersona.addEventListener("click", agregarTexto);
 const usuarioLogueadoFormulario = JSON.parse(localStorage.getItem("usuarioLogueado"));
 const cursosAInscribirse = JSON.parse(localStorage.getItem(`CursosEmpresas_${usuarioLogueadoFormulario.correo}`));
 console.log(cursosAInscribirse);
+let alumnosInscriptos = [];
 let inputNombre = document.getElementById("nombre");
 let inputApellido = document.getElementById("apellido");
 let inputDni = document.getElementById("dni");
 let valorCurso1 = document.getElementById("importe");
-
+botonAgregarPersona.addEventListener("click", agregarPersonas);
 function actualizarTitulo(){
     const tituloInscripcion = document.getElementById('JS-tituloInscripcion');
     tituloInscripcion.textContent = `Inscripción a ${cursosAInscribirse.nombre}`;
 }
 
-function agregarTexto() {
-    let contenedor = document.getElementById("contenedorPersonasAgregadas__Id");
-    let parrafo = document.createElement("div");
-    parrafo.classList.add("formularioDeInscricion__info-container");
 
+inputDni.addEventListener('input', (event) =>{
+    let dni = event.target.value.replace(/[^0-9]/g, '')
+    inputDni.value = dni;
+});
+
+inputNombre.addEventListener('input', (event) =>{
+    let nombre = event.target.value.replace(/[^A-Za-z]/g, '');
+    inputNombre.value = nombre;
+});
+
+inputApellido.addEventListener('input', (event) =>{
+    let apellido = event.target.value.replace(/[^A-Za-z\s]/g, '');
+    inputApellido.value = apellido;
+});
+
+function agregarPersonas() {
+
+    const alumnoInscripto = {
+        nombre: inputNombre.value,
+        apellido: inputApellido.value,
+        dni: inputDni.value
+    }
     let valorDeNombre = inputNombre.value;
     let valorDeApellido = inputApellido.value;
     let valorDeDni = inputDni.value;
-    let valorCurso = valorCurso1.value;
 
     // Validar si algún campo está vacío
     if (
-        !(valorDeNombre === "" || valorDeApellido === "" || valorDeDni === "" || valorCurso === "")
+        !(valorDeNombre === "" || valorDeApellido === "" || valorDeDni === "")
     ) {
-        parrafo.innerHTML = `
-            <label for="${valorDeDni}">${valorDeApellido}, ${valorDeNombre} - DNI:${valorDeDni} , Curso:${valorCurso}</label>
-            <input type="checkbox" class="terra" name="${valorDeDni}" value="20" id="${valorDeDni}" data-curso="${valorCurso}" required>
-            <button type="button" class="eliminarInscripto" onclick="eliminarInscripto('${valorDeDni}')">Eliminar</button>
-        `;
-
-        contenedor.appendChild(parrafo);
-
-        inputNombre.value = "";
-        inputApellido.value = "";
-        inputDni.value = "";
+        alumnosInscriptos.push(alumnoInscripto);
+        localStorage.setItem(`alumnosInscriptos_${usuarioLogueadoFormulario.correo}`, JSON.stringify(alumnosInscriptos));
+        mostrarPersonas();
     }
+    inputNombre.value = '';
+    inputApellido.value = '';
+    inputDni.value = '';
+}
+
+function mostrarPersonas() {
+    let contenedor = document.getElementById("contenedorPersonasAgregadas__Id");
+    contenedor.innerHTML = "";
+
+    alumnosInscriptos.forEach((item) => {
+        let parrafo = document.createElement("div");
+        parrafo.classList.add("formularioDeInscricion__info-container");
+
+        parrafo.innerHTML = `
+            <label for="${item.dni}">${item.nombre}, ${item.apellido} - DNI: ${item.dni}</label>
+            <button type="button" class="eliminarInscripto" onclick="eliminarInscripto('${item.dni}')">Eliminar</button>
+        `;
+        
+        contenedor.appendChild(parrafo);
+        updateTotal();
+    });
 }
 
 function eliminarInscripto(dniAux) {
-    let inscripto = document.querySelectorAll(".formularioDeInscricion__info-container");
-    inscripto.forEach((inscripcion) => {
-        let dniInput = inscripcion.querySelector("input[type='checkbox']");
-        if (dniInput && dniInput.name == dniAux) {
-            inscripcion.remove();
-        }
-    });
-}
+    // Encontrar al alumno con el dniAux
+    const alumnoAEliminar = alumnosInscriptos.find((item) => item.dni === dniAux);
+    console.log(alumnoAEliminar);
 
-const checkboxes = document.querySelectorAll(".terra");
+    // Si se encontró el alumno, lo eliminamos
+    if (alumnoAEliminar) {
+        alumnosInscriptos = alumnosInscriptos.filter((item) => item.dni !== dniAux);
+    }
+
+    // Guardar el array actualizado en localStorage
+    localStorage.setItem(`alumnosInscriptos_${usuarioLogueadoFormulario.correo}`, JSON.stringify(alumnosInscriptos));
+
+    // Volver a mostrar la lista de personas después de la eliminación
+    updateTotal();
+    mostrarPersonas();
+}
 
 // Función para actualizar el total
 function updateTotal() {
-    let total = 10;
-    checkboxes.forEach((checkbox) => {
-        if (checkbox.checked) {
-            total += parseInt(checkbox.value);
-        }
-    });
-    document.getElementById("valorTotal").textContent = total;
+    const total = document.getElementById('valorTotal');
+    let precioTotal = parseFloat(cursosAInscribirse.precio)*alumnosInscriptos.length;
+    total.textContent = alumnosInscriptos.length === 0 ? '$0.00 ARS' : `$${precioTotal} ARS`;
+    console.log(alumnosInscriptos.length);
+    localStorage.setItem(`precioTotal_${usuarioLogueadoFormulario.correo}`, JSON.stringify(precioTotal));
 }
 
-// Agregamos un evento de cambio a cada checkbox
-checkboxes.forEach((checkbox) => {
-    console.log("hola");
-    checkbox.addEventListener("change", updateTotal());
-});
+
 
 actualizarTitulo();
+updateTotal();
 
 // const botonConfirmarInscriptos = document.getElementById("boton__confirmar");
 // let usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
