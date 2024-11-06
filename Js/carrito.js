@@ -1,58 +1,60 @@
-const usuarioLogueado = JSON.parse(localStorage.getItem('usuarioLogueado'));
-const cursos = JSON.parse(localStorage.getItem('cursos'));
+const usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));
+const cursos = JSON.parse(localStorage.getItem("cursos"));
 const estadoDeSesion = localStorage.getItem("estadoDeSesion");
 let indice = localStorage.getItem("idUsuario");
-const compraHecha = document.getElementById('JS-compraRealizada');
-if(estadoDeSesion){
-cursosAlmacenados = JSON.parse(localStorage.getItem(`carrito_${usuarioLogueado.correo}`)) || [];
-console.log(cursosAlmacenados);
+const compraHecha = document.getElementById("JS-compraRealizada");
+if (estadoDeSesion) {
+    cursosAlmacenados = JSON.parse(localStorage.getItem(`carrito_${usuarioLogueado.correo}`)) || [];
+    console.log(cursosAlmacenados);
 }
 
-const contenedorCarrito = document.getElementById('JS-contenedorCursos');
-const carritoVacio = document.getElementById('JS-carritoVacio');
+const contenedorCarrito = document.getElementById("JS-contenedorCursos");
+const carritoVacio = document.getElementById("JS-carritoVacio");
 let montoTotalCarrito = 0;
-let descuentoPorGiftcards = parseFloat(localStorage.getItem('descuento')) || 0;
+let descuentoPorGiftcards = parseFloat(localStorage.getItem("descuento")) || 0;
 let total = 0;
-const PrecioTotal = document.getElementById('JS-precioTotal');
+const PrecioTotal = document.getElementById("JS-precioTotal");
 console.log(PrecioTotal);
 let giftcard;
-let cursosDelUsuario = JSON.parse(localStorage.getItem(`cursosDe_${usuarioLogueado.correo}`)) || [];
-if(estadoDeSesion){
-giftcard = JSON.parse(localStorage.getItem(`giftcardParaComprar${usuarioLogueado.correo}`));
-console.log(giftcard);
+if (usuarioLogueado != null) {
+    let cursosDelUsuario =
+        JSON.parse(localStorage.getItem(`cursosDe_${usuarioLogueado.correo}`)) || [];
+    if (estadoDeSesion) {
+        giftcard = JSON.parse(localStorage.getItem(`giftcardParaComprar${usuarioLogueado.correo}`));
+        console.log(giftcard);
+    }
 }
 
-const usuariosRegistrados = JSON.parse(localStorage.getItem('BDUsuarios'));
-
+const usuariosRegistrados = JSON.parse(localStorage.getItem("BDUsuarios"));
 
 function mostrarCarrito() {
-    if(contenedorCarrito){
+    if (contenedorCarrito) {
         montoTotalCarrito = 0;
-        contenedorCarrito.innerHTML = '';
+        contenedorCarrito.innerHTML = "";
         console.log(cursosAlmacenados.length);
         console.log(giftcard);
         if (cursosAlmacenados.length === 0 && !giftcard) {
-            const ContenedorCarritoVacio = document.createElement('div');
-            ContenedorCarritoVacio.classList.add('cursos');
-            ContenedorCarritoVacio.id = 'JS-carritoVacio';
+            const ContenedorCarritoVacio = document.createElement("div");
+            ContenedorCarritoVacio.classList.add("cursos");
+            ContenedorCarritoVacio.id = "JS-carritoVacio";
             ContenedorCarritoVacio.innerHTML = `
             <img class="carrito-vacio" src="../img/empty-cart_2762885.png">
             <p class="cesta-vacia">Tu cesta está vacía!</p>
                 <a class="boton-comprar" href="../index.html">
                     <button class="boton-comprar">Seguir comprando</button>
                     </a>
-        </div>`       
-        cambiarElMontoTotalEnTiempoReal();
-        cambiarElMontoDeDescuentoEnTiempoReal();
-        actualizarElTotal();
+        </div>`;
+            cambiarElMontoTotalEnTiempoReal();
+            cambiarElMontoDeDescuentoEnTiempoReal();
+            actualizarElTotal();
 
-        contenedorCarrito.appendChild(ContenedorCarritoVacio);
+            contenedorCarrito.appendChild(ContenedorCarritoVacio);
         } else {
-            carritoVacio.classList.add('oculto');
+            carritoVacio.classList.add("oculto");
             cursosAlmacenados.forEach((item) => {
-                const contenedorCurso = document.createElement('div');
-                contenedorCurso.classList.add('cursos-en-carrito');
-                contenedorCurso.id = 'carrito';
+                const contenedorCurso = document.createElement("div");
+                contenedorCurso.classList.add("cursos-en-carrito");
+                contenedorCurso.id = "carrito";
                 contenedorCurso.innerHTML = `<img class="imagen-curso" src="${item.img}" />
                 <div class="info-curso">
                     <h2 class="titulo-curso">${item.nombre}</h2>
@@ -67,13 +69,13 @@ function mostrarCarrito() {
                     <button class="boton-curso" onclick="eliminarDelCarrito(${item.id})">Eliminar</button>
                 </div>
             </div>`;
-            montoTotalCarrito += parseFloat(item.precio);
+                montoTotalCarrito += parseFloat(item.precio);
                 contenedorCarrito.appendChild(contenedorCurso);
             });
-            if(giftcard){
-                const contenedorCurso = document.createElement('div');
-                contenedorCurso.classList.add('cursos-en-carrito');
-                contenedorCurso.id = 'carrito';
+            if (giftcard) {
+                const contenedorCurso = document.createElement("div");
+                contenedorCurso.classList.add("cursos-en-carrito");
+                contenedorCurso.id = "carrito";
                 contenedorCurso.innerHTML = `<img class="imagen-curso" src="../img/giftcard.png" />
                 <div class="info-curso">
                     <h2 class="titulo-curso">Giftcard para ${giftcard.nombre}</h2>
@@ -86,115 +88,116 @@ function mostrarCarrito() {
                     <button class="boton-curso" onclick="eliminarGiftcard()">Eliminar</button>
                 </div>
             </div>`;
-            contenedorCarrito.appendChild(contenedorCurso);
-            montoTotalCarrito += parseFloat(giftcard.monto);
+                contenedorCarrito.appendChild(contenedorCurso);
+                montoTotalCarrito += parseFloat(giftcard.monto);
             }
-        } 
+        }
         actualizarElTotal();
         cambiarElMontoTotalEnTiempoReal();
         cambiarElMontoDeDescuentoEnTiempoReal();
 
-        localStorage.setItem('precioOriginal', JSON.stringify(montoTotalCarrito));
-        }
+        localStorage.setItem("precioOriginal", JSON.stringify(montoTotalCarrito));
     }
-
-
-    const precioOriginal = document.getElementById('JS-montoTotal');
-
-function cambiarElMontoTotalEnTiempoReal(){
-    if(contenedorCarrito){
-        precioOriginal.textContent = montoTotalCarrito  <= 0 ? '$0.00 ARS' : `$${montoTotalCarrito.toFixed(2)} ARS`;
-        localStorage.setItem('precioOriginal', JSON.stringify(montoTotalCarrito));
-    }   
 }
 
-function eliminarGiftcard(){
+const precioOriginal = document.getElementById("JS-montoTotal");
+
+function cambiarElMontoTotalEnTiempoReal() {
+    if (contenedorCarrito) {
+        precioOriginal.textContent =
+            montoTotalCarrito <= 0 ? "$0.00 ARS" : `$${montoTotalCarrito.toFixed(2)} ARS`;
+        localStorage.setItem("precioOriginal", JSON.stringify(montoTotalCarrito));
+    }
+}
+
+function eliminarGiftcard() {
     giftcard = {};
     localStorage.removeItem(`giftcardParaComprar${usuarioLogueado.correo}`);
     mostrarCarrito();
 }
 
-function cambiarElMontoDeDescuentoEnTiempoReal(){
-    const descuento = document.getElementById('JS-descuentoPorGiftcard');
-    descuento.textContent = descuentoPorGiftcards === 0 ? '$0.00 ARS' : `$${descuentoPorGiftcards.toFixed(2)} ARS`;
+function cambiarElMontoDeDescuentoEnTiempoReal() {
+    const descuento = document.getElementById("JS-descuentoPorGiftcard");
+    descuento.textContent =
+        descuentoPorGiftcards === 0 ? "$0.00 ARS" : `$${descuentoPorGiftcards.toFixed(2)} ARS`;
 }
 
-function generarDescuentoPorGiftcard(){
+function generarDescuentoPorGiftcard() {
     let indice = localStorage.getItem("idUsuario");
-    const inputCodigo = document.getElementById('JS-input-codigo');
-    const botonAplicar = document.getElementById('JS-aplicar');
+    const inputCodigo = document.getElementById("JS-input-codigo");
+    const botonAplicar = document.getElementById("JS-aplicar");
     const giftcardDelUsuario = usuarioLogueado.giftcard;
     console.log(giftcardDelUsuario);
-    if(giftcardDelUsuario){
-        botonAplicar.addEventListener('click', (event) =>{
-            if (inputCodigo.value === giftcardDelUsuario.codigoDeLaGiftcard && !giftcardDelUsuario.utilizada) {
+    if (giftcardDelUsuario) {
+        botonAplicar.addEventListener("click", (event) => {
+            if (
+                inputCodigo.value === giftcardDelUsuario.codigoDeLaGiftcard &&
+                !giftcardDelUsuario.utilizada
+            ) {
                 descuentoPorGiftcards = parseFloat(giftcardDelUsuario.monto);
                 giftcardDelUsuario.utilizada = true;
                 usuarioLogueado.giftcard = giftcardDelUsuario;
                 usuariosRegistrados[indice] = usuarioLogueado;
-                localStorage.setItem('BDUsuarios', JSON.stringify(usuariosRegistrados));
-                localStorage.setItem('descuento', JSON.stringify(descuentoPorGiftcards));
+                localStorage.setItem("BDUsuarios", JSON.stringify(usuariosRegistrados));
+                localStorage.setItem("descuento", JSON.stringify(descuentoPorGiftcards));
                 cambiarElMontoTotalEnTiempoReal();
                 cambiarElMontoDeDescuentoEnTiempoReal();
                 actualizarElTotal();
             }
         });
-    }else {
-        console.error('No se encontró ninguna giftcard válida.');
+    } else {
+        console.error("No se encontró ninguna giftcard válida.");
     }
 }
 
-function actualizarElTotal(){
+function actualizarElTotal() {
     total = montoTotalCarrito - descuentoPorGiftcards;
-    PrecioTotal.textContent = total <= 0 ? '$0.00 ARS' : `$${total.toFixed(2)} ARS`;
-    localStorage.setItem('total', JSON.stringify(total));
-    console.log(JSON.parse(localStorage.getItem('total')));
+    PrecioTotal.textContent = total <= 0 ? "$0.00 ARS" : `$${total.toFixed(2)} ARS`;
+    localStorage.setItem("total", JSON.stringify(total));
+    console.log(JSON.parse(localStorage.getItem("total")));
 }
 
-function eliminarDescuento(){
-    if(usuarioLogueado.giftcard){
-        console.log('asd');
+function eliminarDescuento() {
+    if (usuarioLogueado.giftcard) {
+        console.log("asd");
         console.log(descuentoPorGiftcards);
-    usuarioLogueado.giftcard.utilizada = false;
-    usuariosRegistrados[indice] = usuarioLogueado;
-    localStorage.setItem('BDUsuarios', JSON.stringify(usuariosRegistrados));
-    descuentoPorGiftcards = 0;
-    localStorage.setItem('descuento', JSON.stringify(descuentoPorGiftcards));
-    console.log(descuentoPorGiftcards);
-    cambiarElMontoTotalEnTiempoReal();
-    actualizarElTotal();
-    cambiarElMontoDeDescuentoEnTiempoReal();
+        usuarioLogueado.giftcard.utilizada = false;
+        usuariosRegistrados[indice] = usuarioLogueado;
+        localStorage.setItem("BDUsuarios", JSON.stringify(usuariosRegistrados));
+        descuentoPorGiftcards = 0;
+        localStorage.setItem("descuento", JSON.stringify(descuentoPorGiftcards));
+        console.log(descuentoPorGiftcards);
+        cambiarElMontoTotalEnTiempoReal();
+        actualizarElTotal();
+        cambiarElMontoDeDescuentoEnTiempoReal();
     }
 }
 
-    function eliminarDelCarrito(id){
-    cursosAlmacenados = cursosAlmacenados.filter(item => item.id !== id);
+function eliminarDelCarrito(id) {
+    cursosAlmacenados = cursosAlmacenados.filter((item) => item.id !== id);
     localStorage.setItem(`carrito_${usuarioLogueado.correo}`, JSON.stringify(cursosAlmacenados));
     mostrarCarrito();
-    }
+}
 
-    function vaciarCarrito(){
-        giftcard = null;
-        localStorage.setItem(`giftcardParaComprar${usuarioLogueado.correo}`, JSON.stringify(giftcard));
-        console.log(giftcard);
-        cursosAlmacenados = [];
-        localStorage.setItem(`carrito_${usuarioLogueado.correo}`, JSON.stringify(cursosAlmacenados));
-        console.log(cursosAlmacenados);
-        mostrarCarrito();
-    }
-
-    function guardarCursosEnElUsuario(){
-       cursosDelUsuario = cursosDelUsuario.concat(cursosAlmacenados);
-       console.log(cursosDelUsuario);
-       console.log(cursosAlmacenados);
-        localStorage.setItem(`cursosDe_${usuarioLogueado.correo}`, JSON.stringify(cursosDelUsuario));
-    }
-    
-    if(compraHecha){
-        guardarCursosEnElUsuario();
-        vaciarCarrito();
-    }
+function vaciarCarrito() {
+    giftcard = null;
+    localStorage.setItem(`giftcardParaComprar${usuarioLogueado.correo}`, JSON.stringify(giftcard));
+    console.log(giftcard);
+    cursosAlmacenados = [];
+    localStorage.setItem(`carrito_${usuarioLogueado.correo}`, JSON.stringify(cursosAlmacenados));
+    console.log(cursosAlmacenados);
     mostrarCarrito();
+}
 
+function guardarCursosEnElUsuario() {
+    cursosDelUsuario = cursosDelUsuario.concat(cursosAlmacenados);
+    console.log(cursosDelUsuario);
+    console.log(cursosAlmacenados);
+    localStorage.setItem(`cursosDe_${usuarioLogueado.correo}`, JSON.stringify(cursosDelUsuario));
+}
 
-
+if (compraHecha) {
+    guardarCursosEnElUsuario();
+    vaciarCarrito();
+}
+mostrarCarrito();

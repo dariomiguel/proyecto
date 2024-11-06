@@ -195,10 +195,28 @@ function mostrarDetalles(id) {
     const cursoSeleccionado = cursos.find((curso) => curso.id === id);
     cursoSeleccionado.innerHTML = "";
 
-    document.getElementById("js-imagen-curso").src = cursoSeleccionado.img;
-    document.getElementById("js-titulo-curso").innerHTML = cursoSeleccionado.nombre;
-    document.getElementById("js-valor-curso").innerHTML = cursoSeleccionado.precio;
-    document.getElementById("js-duracion-curso").innerHTML = cursoSeleccionado.duracion;
-    document.getElementById("js-descripcion-curso").innerHTML = cursoSeleccionado.descripcion;
-    document.getElementById("js-requisitos-curso").innerHTML = cursoSeleccionado.requisitos;
+    const imagenCurso = document.getElementById("js-imagen-curso");
+    const tituloCurso = document.getElementById("js-titulo-curso");
+    const valorCurso = document.getElementById("js-valor-curso");
+    const duracionCurso = document.getElementById("js-duracion-curso");
+    const descripcionCurso = document.getElementById("js-descripcion-curso");
+    const requisitosCurso = document.getElementById("js-requisitos-curso");
+
+    if (
+        imagenCurso != null &&
+        tituloCurso != null &&
+        valorCurso != null &&
+        duracionCurso != null &&
+        descripcionCurso != null &&
+        requisitosCurso != null
+    ) {
+        imagenCurso.src = cursoSeleccionado.img;
+        tituloCurso.innerHTML = cursoSeleccionado.nombre;
+        valorCurso.innerHTML = cursoSeleccionado.precio;
+        duracionCurso.innerHTML = cursoSeleccionado.duracion;
+        descripcionCurso.innerHTML = cursoSeleccionado.descripcion;
+        requisitosCurso.innerHTML = cursoSeleccionado.requisitos;
+    } else if (localStorage.getItem("estadoDeSesion") == null) {
+        window.location.href = "../pages/login.html";
+    }
 }
