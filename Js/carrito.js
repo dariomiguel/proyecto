@@ -3,11 +3,14 @@ const cursos = JSON.parse(localStorage.getItem("cursos"));
 const estadoDeSesion = localStorage.getItem("estadoDeSesion");
 let indice = localStorage.getItem("idUsuario");
 const compraHecha = document.getElementById("JS-compraRealizada");
+const alumnosInscriptos;
+const montoTotalEmpresas;
+let cursosAInscribirse;
 if (estadoDeSesion) {
     cursosAlmacenados = JSON.parse(localStorage.getItem(`carrito_${usuarioLogueado.correo}`)) || [];
-    const alumnosInscriptos = JSON.parse(localStorage.getItem(`alumnosInscriptos_${usuarioLogueado.correo}`)) || [];
-    const montoTotalEmpresas = JSON.parse(localStorage.getItem(`precioTotal_${usuarioLogueado.correo}`)) || 0;
-    let cursosAInscribirse = JSON.parse(localStorage.getItem(`CursosEmpresas_${usuarioLogueado.correo}`));
+    alumnosInscriptos = JSON.parse(localStorage.getItem(`alumnosInscriptos_${usuarioLogueado.correo}`)) || [];
+    montoTotalEmpresas = JSON.parse(localStorage.getItem(`precioTotal_${usuarioLogueado.correo}`)) || 0;
+    cursosAInscribirse = JSON.parse(localStorage.getItem(`CursosEmpresas_${usuarioLogueado.correo}`));
     console.log(cursosAlmacenados);
 }
 
