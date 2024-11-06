@@ -1,10 +1,17 @@
 const botonAgregarPersona = document.getElementById("boton__agregarPersona");
 botonAgregarPersona.addEventListener("click", agregarTexto);
-
+const usuarioLogueadoFormulario = JSON.parse(localStorage.getItem("usuarioLogueado"));
+const cursosAInscribirse = JSON.parse(localStorage.getItem(`CursosEmpresas_${usuarioLogueadoFormulario.correo}`));
+console.log(cursosAInscribirse);
 let inputNombre = document.getElementById("nombre");
 let inputApellido = document.getElementById("apellido");
 let inputDni = document.getElementById("dni");
 let valorCurso1 = document.getElementById("importe");
+
+function actualizarTitulo(){
+    const tituloInscripcion = document.getElementById('JS-tituloInscripcion');
+    tituloInscripcion.textContent = `Inscripción a ${cursosAInscribirse.nombre}`;
+}
 
 function agregarTexto() {
     let contenedor = document.getElementById("contenedorPersonasAgregadas__Id");
@@ -62,6 +69,8 @@ checkboxes.forEach((checkbox) => {
     console.log("hola");
     checkbox.addEventListener("change", updateTotal());
 });
+
+actualizarTitulo();
 
 // const botonConfirmarInscriptos = document.getElementById("boton__confirmar");
 // let usuarioLogueado = JSON.parse(localStorage.getItem("usuarioLogueado"));

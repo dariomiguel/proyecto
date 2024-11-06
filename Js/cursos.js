@@ -1,6 +1,7 @@
 const usuarios = document.getElementById("BDUsuarios");
 const usuarioEnSesion = JSON.parse(localStorage.getItem("usuarioLogueado"));
 const estaLogueado = localStorage.getItem("estadoDeSesion");
+const overlay = document.getElementById('JS-overlay');
 const datosDeLosCursos = [
     {
         id: 1,
@@ -137,7 +138,7 @@ function mostrarCursos() {
             </div>
         </div>
         <div class="precio-cursos">
-        <button class="boton-inscripcion" id="JS-botonCompra" onclick="agregarAlCarrito(${item.id})">Comprar</button>
+        <button class="boton-inscripcion" id="JS-botonCompra" onclick="elegirCompra(${item.id})">Comprar</button>
         <p class="precio">$<span id="precioJavascript">${item.precio}</span></p>
         </div>
     </div>`;
@@ -156,6 +157,8 @@ if (estaLogueado) {
 }
 
 function agregarAlCarrito(id) {
+    console.log('hola');
+    overlay.style.display = 'none';
     const agregadoAlCarrito = document.getElementById('JS-agregadoAlCarrito');
     console.log(carritoDeCompras);
     const curso = datosDeLosCursos.find(c => c.id === id);
@@ -174,6 +177,40 @@ function agregarAlCarrito(id) {
     }
 }
 }
+
+function elegirCompra(id){
+    const eleccionCompraContenedor = document.createElement('div');
+    overlay.style.display = 'grid';
+    eleccionCompraContenedor.classList.add('eleccion-compra-contenedor');
+    eleccionCompraContenedor.innerHTML = `<h2 class="titulo-eleccion">Elige como comprar tu curso</h2>
+            <div class="eleccion-compra">
+                <div class="particulares">
+                    <h3>Particular</h3>
+                    <img class="imagen-eleccion" src="img/particulares.png"/>
+                    <button class="botones-eleccion" onclick="agregarAlCarrito(${id})">Comprar</button>
+                </div>
+                <div class="empresas">  
+                    <h3>Para empresas</h3>
+                    <img class="imagen-eleccion" src="img/empresa.png" />
+                    <a href="../pages/formulario_de_inscripcion.html"><button class="botones-eleccion" onclick="comprarParaEmpresas(${id})">Comprar</button></a>
+                </div>
+            </div>
+            <button class="botones-eleccion cerrar" onclick="cerrarOverlay()">Cerrar</button>
+            </div>`
+
+    overlay.appendChild(eleccionCompraContenedor);
+}
+
+function cerrarOverlay(){
+    overlay.style.display = 'none';
+}
+
+function comprarParaEmpresas(id){
+    const cursoParaComprar = datosDeLosCursos.find(c => c.id === id);
+    localStorage.setItem(`CursosEmpresas_${usuarioEnSesion.correo}`, JSON.stringify(cursoParaComprar));
+    console.log(JSON.parse(localStorage.getItem(`CursosEmpresas_${usuarioEnSesion.correo}`)));
+}
+
 
 const filtrarItems = (e) => {
     document.querySelector(".active").classList.remove("active");
@@ -261,13 +298,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const duracionCurso = document.getElementById("js-duracion-curso");
     const descripcionCurso = document.getElementById("js-descripcion-curso");
     const requisitosCurso = document.getElementById("js-requisitos-curso");
-
+    if(imagenCurso){
     imagenCurso.src = cursoSeleccionadoImg;
     tituloCurso.innerHTML = cursoSeleccionadoNombre;
     valorCurso.innerHTML = cursoSeleccionadoPrecio;
     duracionCurso.innerHTML = cursoSeleccionadoDuracion;
     descripcionCurso.innerHTML = cursoSeleccionadoDescripcion;
     requisitosCurso.innerHTML = cursoSeleccionadoRequisitos;
+    }
 });
 
 function mostrarContadorDinamico(){
