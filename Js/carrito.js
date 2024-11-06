@@ -4,7 +4,7 @@ const estadoDeSesion = localStorage.getItem("estadoDeSesion");
 let indice = localStorage.getItem("idUsuario");
 const compraHecha = document.getElementById("JS-compraRealizada");
 let alumnosInscriptos = [];
-const montoTotalEmpresas = [];
+let montoTotalEmpresas = [];
 let cursosAInscribirse = 0;
 if (estadoDeSesion) {
     cursosAlmacenados = JSON.parse(localStorage.getItem(`carrito_${usuarioLogueado.correo}`)) || [];
@@ -233,9 +233,9 @@ function vaciarCarrito() {
     giftcard = null;
     localStorage.setItem(`giftcardParaComprar${usuarioLogueado.correo}`, JSON.stringify(giftcard));
     console.log(giftcard);
-    localStorage.removeItem(`carrito_${usuarioLogueado.correo}`);
-    sessionStorage.removeItem(`contador_${usuarioLogueado.correo}`);
-    
+    cursosAlmacenados = [];
+    localStorage.setItem(`carrito_${usuarioLogueado.correo}`, JSON.stringify(cursosAlmacenados));
+    console.log(cursosAlmacenados);
     mostrarCarrito();
 }
 
