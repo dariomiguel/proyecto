@@ -98,7 +98,7 @@ function mostrarCursos(){
 
 function actualizarContador() {
     // Obtiene el valor actual del contador desde sessionStorage o usa 0 si no existe
-    localStorage.removeItem(`contador_${usuarioEnSesion.correo}`);
+    sessionStorage.removeItem(`contador_${usuarioEnSesion.correo}`);
 }
 
 
