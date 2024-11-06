@@ -98,9 +98,7 @@ function mostrarCursos(){
 
 function actualizarContador() {
     // Obtiene el valor actual del contador desde sessionStorage o usa 0 si no existe
-    let contador = parseInt(sessionStorage.getItem("contador")) || 0;
-    contador = 0;
-    sessionStorage.setItem("contador", contador); // Guarda el nuevo valor en sessionStorage
+    localStorage.removeItem(`contador_${usuarioEnSesion.correo}`);
 }
 
 

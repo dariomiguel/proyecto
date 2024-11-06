@@ -105,13 +105,7 @@ updateTotal();
 
 
 
-function mostrarContadorDinamico(){
-    let contadorCarrito = document.querySelector(".contadorCarrito");
-    let contador = parseInt(sessionStorage.getItem(`contador_${usuarioLogueadoFormulario.correo}`)) || 0;
-    contadorCarrito.innerHTML=`${contador}`;
-}
 
-mostrarContadorDinamico();
 
 
 
