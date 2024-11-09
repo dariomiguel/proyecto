@@ -1,8 +1,7 @@
 const botonAgregarPersona = document.getElementById("boton__agregarPersona");
 const usuarioLogueadoFormulario = JSON.parse(localStorage.getItem("usuarioLogueado"));
-const cursosAInscribirse = JSON.parse(
-    localStorage.getItem(`CursosEmpresas_${usuarioLogueadoFormulario.correo}`)
-);
+console.log(usuarioLogueadoFormulario);
+const cursosAInscribirse = JSON.parse(localStorage.getItem(`CursosEmpresas_${usuarioLogueadoFormulario.correo}`));
 
 let alumnosInscriptos = [];
 let inputNombre = document.getElementById("nombre");

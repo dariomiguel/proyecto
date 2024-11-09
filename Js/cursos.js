@@ -206,6 +206,31 @@ function elegirCompra(id) {
         window.location.href = "../pages/login.html";
     }
 }
+const idDelCurso = JSON.parse(sessionStorage.getItem('cursoId'));
+    console.log(idDelCurso);
+function elegirCompraDetalles(){
+    const idDelCurso = JSON.parse(sessionStorage.getItem('cursoId'));
+    console.log(idDelCurso);
+    const eleccionCompraContenedor = document.createElement("div");
+    overlay.style.display = "grid";
+    eleccionCompraContenedor.classList.add("eleccion-compra-contenedor");
+    eleccionCompraContenedor.innerHTML = `<h2 class="titulo-eleccion">Elige como comprar tu curso</h2>
+            <div class="eleccion-compra">
+                <div class="particulares">
+                    <h3>Particular</h3>
+                    <img class="imagen-eleccion" src="../img/particulares.png"/>
+                    <button class="botones-eleccion" onclick="agregarAlCarrito(${idDelCurso})">Comprar</button>
+                </div>
+                <div class="empresas">  
+                    <h3>Para empresas</h3>
+                    <img class="imagen-eleccion" src="../img/empresa.png" />
+                    <a href="../pages/formulario_de_inscripcion.html"><button class="botones-eleccion" onclick="comprarParaEmpresas(${idDelCurso})">Comprar</button></a>
+                </div>
+            </div>
+            <button class="botones-eleccion cerrar" onclick="cerrarOverlay()">Cerrar</button>
+            </div>`;
+            overlay.appendChild(eleccionCompraContenedor);
+}
 
 function cerrarOverlay() {
     overlay.style.display = "none";
@@ -214,10 +239,8 @@ function cerrarOverlay() {
 function comprarParaEmpresas(id) {
     const cursoParaComprar = datosDeLosCursos.find((c) => c.id === id);
     actualizarContadorEmpresa();
-    localStorage.setItem(
-        `CursosEmpresas_${usuarioEnSesion.correo}`,
-        JSON.stringify(cursoParaComprar)
-    );
+    localStorage.setItem(`CursosEmpresas_${usuarioEnSesion.correo}`, JSON.stringify(cursoParaComprar));
+    console.log(JSON.parse(localStorage.getItem(`CursosEmpresas_${usuarioEnSesion.correo}`)));
 }
 
 const filtrarItems = (e) => {
